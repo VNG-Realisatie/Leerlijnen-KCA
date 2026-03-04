@@ -31,7 +31,7 @@
 
 | Kennis | Noodzakelijk kortere termijn | Noodzakelijk langere termijn | Handig |
 | --- | --- | --- | --- |
-| StUFmaster en subversion | x | - | - |
+| Subversion en StUFmaster | x | - | - |
 | XML-Spy | x | - | - |
 | Git en GitHub | x | - | - |
 | GitHub Pages | x | - | - |
