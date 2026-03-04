@@ -3,7 +3,7 @@
 ## Technische kennis
 
 | Kennis | Noodzakelijk kortere termijn | Noodzakelijk middellange termijn | Noodzakelijk langere termijn | Handig |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | XML | x | - | - | - |
 | XML-Schema | x | - | - | - |
 | Xslt | - | - | - | x |
@@ -30,7 +30,7 @@
 ## Tooling
 
 | Kennis | Noodzakelijk kortere termijn | Noodzakelijk middellange termijn | Noodzakelijk langere termijn | Handig |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Subversion en StUFmaster | x | - | - | - |
 | XML-Spy | x | - | - | - |
 | Git en GitHub | - | x | - | - |
