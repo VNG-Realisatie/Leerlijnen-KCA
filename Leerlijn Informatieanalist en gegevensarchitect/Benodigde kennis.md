@@ -2,30 +2,30 @@
 
 ## Technische kennis
 
-| Kennis | Noodzakelijk kortere termijn | Noodzakelijk middellange termijn | Noodzakelijk langere termijn | Handig || Opleider |
-| --- | --- | --- | --- | --- | --- | --- |
-| XML | x | - | - | - | | KCA |
-| XML-Schema | x | - | - | - | | KCA |
-| Xslt | - | - | - | x | | KCA |
-| Gemeentelijk ICT landschap en de rol van StUF | x | - | - | - | | KCA |
-| GEMMA | x | - | - | - | | KCA |
-| StUF (3.01 en 2.04) | x | - | - | - | | KCA |
-| Conceptuele en logische informatiemodellen zoals gedefinieerd in MIM | x | - | - | - | | KCA |
-| RSGB | x | - | - | - | | KCA |
-| StUF-BG (3.10 en 2.04) | x | - | - | - | | KCA |
-| RGBZ | x | - | - | - | | KCA |
-| StUF-ZKN (3.10) | x | - | - | - | | KCA |
-| Im-ZTC | x | - | - | - | | KCA |
-| StUF-ZTC (3.10) | x | - | - | - | | KCA |
-| WSDL | - | x | - | - | | KCA |
-| StUF bindingen | - | x | - | - | | KCA |
-| UML (Class diagrammen) | - | x | - | - | | ? |
-| UML (andere diagrammen) | - | - | - | x | | ? |
-| API-designprincipes en best practices | - | - | x | - | | KCA |
-| Begrip van verschillende API-types, zoals REST, RPC en GraphQL | - | - | x | - | | ? |
-| Json | - | - | x | - | | ? |
-| Json-schema | - |  - |x | - | | ? |
-| Yaml | - | - | x | - | | ? |
+| | Kennis | Noodzakelijk kortere termijn | Noodzakelijk middellange termijn | Noodzakelijk langere termijn | Handig || Opleider |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1. | XML | x | - | - | - | | KCA |
+| 2. | XML-Schema | x | - | - | - | | KCA |
+| 3. | Xslt | - | - | - | x | | KCA |
+| 4. | Gemeentelijk ICT landschap en de rol van StUF | x | - | - | - | | KCA |
+| 5. | GEMMA | x | - | - | - | | KCA |
+| 6. | StUF (3.01 en 2.04) | x | - | - | - | | KCA |
+| 7. | Conceptuele en logische informatiemodellen zoals gedefinieerd in MIM | x | - | - | - | | KCA |
+| 8. | RSGB | x | - | - | - | | KCA |
+| 9. | StUF-BG (3.10 en 2.04) | x | - | - | - | | KCA |
+| 10. | RGBZ | x | - | - | - | | KCA |
+| 11. | StUF-ZKN (3.10) | x | - | - | - | | KCA |
+| 12. | Im-ZTC | x | - | - | - | | KCA |
+| 13. | StUF-ZTC (3.10) | x | - | - | - | | KCA |
+| 14. | WSDL | - | x | - | - | | KCA |
+| 15. | StUF bindingen | - | x | - | - | | KCA |
+| 16. | UML (Class diagrammen) | - | x | - | - | | ? |
+| 17. | UML (andere diagrammen) | - | - | - | x | | ? |
+| 18. | API-designprincipes en best practices | - | - | x | - | | KCA |
+| 19. | Begrip van verschillende API-types, zoals REST, RPC en GraphQL | - | - | x | - | | ? |
+| 20. | Json | - | - | x | - | | ? |
+| 21. | Json-schema | - |  - |x | - | | ? |
+| 22. | Yaml | - | - | x | - | | ? |
 
 ## Tooling
 
