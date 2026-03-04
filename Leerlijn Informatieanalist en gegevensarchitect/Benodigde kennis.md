@@ -33,7 +33,7 @@
 | --- | --- | --- | --- |
 | StUFmaster en subversion | x | - | - |
 | XML-Spy | x | - | - |
-| GitHub | x | - | - |
+| Git en GitHub | x | - | - |
 | GitHub Pages | x | - | - |
 | Enterprise Architect | - | x | - |
 | Imvertor | - | x | - |
