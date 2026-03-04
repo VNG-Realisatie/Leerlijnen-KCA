@@ -2,36 +2,39 @@
 
 ## Technische kennis
 
-| Kennis | Noodzakelijk | Handig |
-| --- | --- | --- |
-| XML | x | - |
-| XML-Schema | x | - |
-| Xslt | - | x |
-| Gemeentelijk ICT landschap en de rol van StUF | x | - |
-| StUF (3.01 en 2.04) | x | - |
-| WSDL | x | - |
-| StUF bindingen | x | - |
-| UML (Class diagrammen) | x | - |
-| UML (andere diagrammen) | - | x |
-| MIM | x | - |
-| RSGB | x | - |
-| StUF-BG (3.10 en 2.04) | x | - |
-| RGBZ | x | - |
-| StUF-ZKN (3.10) | x | - |
-| Im-ZTC | x | - |
-| StUF-ZTC | x | - |
-| Json | x | - |
-| Json-schema | x | - |
-| Yaml | x | - |
+| Kennis | Noodzakelijk korte termijn | Noodzakelijk langere termijn | Handig |
+| --- | --- | --- | --- |
+| XML | x | - | - |
+| XML-Schema | x | - | - |
+| Xslt | - | - | x |
+| Gemeentelijk ICT landschap en de rol van StUF | x | - | - |
+| GEMMA | x | - | - |
+| StUF (3.01 en 2.04) | x | - | - |
+| WSDL | x | - | - |
+| StUF bindingen | x | - | - |
+| UML (Class diagrammen) | x | - | - |
+| UML (andere diagrammen) | - | - | x |
+| Conceptuele en logische informatiemodellen zoals gedefinieerd in MIM | x | - | - |
+| RSGB | x | - | - |
+| StUF-BG (3.10 en 2.04) | x | - | - |
+| RGBZ | x | - | - |
+| StUF-ZKN (3.10) | x | - | - |
+| Im-ZTC | x | - | - |
+| StUF-ZTC | x | - | - |
+| API-designprincipes en best practices | - | x | - |
+| Begrip van verschillende API-types, zoals REST, RPC en GraphQL | - | x | - |
+| Json | - | x | - |
+| Json-schema | - | x | - |
+| Yaml | - | x | - |
 
 ## Tooling
 
-| Kennis | Noodzakelijk | Handig |
-| --- | --- | --- |
-| StUFmaster en subversion | x | - |
-| XML-Spy | x | - |
-| GitHub | x | - |
-| Enterprise Architect | x | - |
+| Kennis | Noodzakelijk korte termijn | Noodzakelijk langere termijn | Handig |
+| --- | --- | --- | --- |
+| StUFmaster en subversion | x | - | - |
+| XML-Spy | x | - | - |
+| GitHub | x | - | - |
+| Enterprise Architect | - | x | - |
 
 ## In de vacature gevraagde kennis
 * Begrip van XML-schemavalidatie en gerelateerde technologieën;
