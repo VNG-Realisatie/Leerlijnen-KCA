@@ -34,7 +34,9 @@
 | StUFmaster en subversion | x | - | - |
 | XML-Spy | x | - | - |
 | GitHub | x | - | - |
+| GitHub Pages | x | - | - |
 | Enterprise Architect | - | x | - |
+| Imvertor | - | x | - |
 
 ## In de vacature gevraagde kennis
 * Begrip van XML-schemavalidatie en gerelateerde technologieën;
