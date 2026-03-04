@@ -1,4 +1,4 @@
-# Benodigde kennis Leerlijn Informatieanalist en gegevensarchitect
+# Benodigde kennis Leerlijn Informatieanalist en Gegevensarchitect
 
 ## Technische kennis
 
