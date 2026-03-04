@@ -31,8 +31,8 @@
 
 | Kennis | Noodzakelijk kortere termijn | Noodzakelijk middellange termijn | Noodzakelijk langere termijn | Handig |
 | --- | --- | --- | --- | --- |
-| Subversion en StUFmaster | x | - | - | - |
 | XML-Spy | x | - | - | - |
+| Subversion en StUFmaster | x | - | - | - |
 | Git en GitHub | - | x | - | - |
 | GitHub Pages | - | x | - | - |
 | Enterprise Architect | - | - | x | - |
