@@ -1,14 +1,12 @@
 ---
 title: "1.1 Overzicht van gemeentelijke applicatielandschappen"
 date: 2026-03-04
-weight: 1
+weight: 2
 leerlijn: 1
 paragraaf: "1.1"
+leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-<div class="back-link-wrapper">
-  <a href="{{< relref "../01-gemeentelijk-ict-landschap" >}}" class="back-link">Terug naar leerlijn 1</a>
-</div>
 
 ## 1.1 Overzicht van gemeentelijke applicatielandschappen
 

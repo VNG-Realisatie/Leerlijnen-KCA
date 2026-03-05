@@ -4,6 +4,7 @@ date: 2026-03-04
 weight: 4
 leerlijn: 5
 paragraaf: "5.4"
+leerdoel: "Leerdoel nog toe te voegen"
 ---
 
 <div class="back-link-wrapper">

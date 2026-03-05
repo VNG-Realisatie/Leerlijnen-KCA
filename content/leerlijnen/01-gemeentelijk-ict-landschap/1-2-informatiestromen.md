@@ -1,14 +1,12 @@
 ---
 title: "1.2 Informatiestromen binnen gemeenten"
 date: 2026-03-04
-weight: 2
+weight: 3
 leerlijn: 1
 paragraaf: "1.2"
+leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-<div class="back-link-wrapper">
-  <a href="{{< relref "../01-gemeentelijk-ict-landschap" >}}" class="back-link">Terug naar leerlijn 1</a>
-</div>
 
 ## 1.2 Informatiestromen binnen gemeenten
 

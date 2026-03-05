@@ -13,6 +13,11 @@ theme = "PaperMod"
   defaultTheme = "light"
   disableThemeToggle = true
 
+  [params.label]
+    text = "Leerlijnen KCA"
+    icon = "/images/VNG-logo.png"
+    iconHeight = 35
+
   [params.homeInfoParams]
     Title = "Leerlijnen KCA"
     Content = "Leerlijnen voor de Informatieanalist en Gegevensarchitect bij VNG Realisatie"

@@ -1,0 +1,760 @@
+/* ========================================
+   Leerlijnen StUF – Enhanced Visual Styles
+   ======================================== */
+
+/* Enhanced Header styling with gradient */
+.header {
+  background: linear-gradient(135deg, #e8f0f8 0%, #f5f9fc 50%, #e8f0f8 100%) !important;
+  border-bottom: 2px solid #006699;
+  box-shadow: 0 2px 10px rgba(0, 102, 153, 0.1);
+  position: relative;
+}
+
+/* Header gradient accent */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #003366 0%, #006699 50%, #0088cc 100%);
+}
+
+/* Logo styling enhancement */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* Leerlijnen Grid */
+.leerlijnen-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.leerlijnen-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #e8f4fd 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #e0f0ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.leerlijnen-intro::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,102,153,0.05) 0%, transparent 50%);
+  animation: gentle-rotate 20s linear infinite;
+}
+
+@keyframes gentle-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.leerlijnen-intro h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+  color: #003366;
+  text-shadow: 0 2px 4px rgba(0,51,102,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.leerlijnen-intro p {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 10;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+
+.leerlijnen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Enhanced Leerlijn Card with vibrant styling */
+.leerlijn-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #e0e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 102, 153, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card hover effects */
+.leerlijn-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 102, 153, 0.15);
+  border-color: #006699;
+}
+
+/* Card accent line */
+.leerlijn-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #003366 0%, #006699 50%, #0088cc 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.leerlijn-card:hover::before {
+  transform: scaleX(1);
+}
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.leerlijn-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+  border-color: #003366;
+}
+
+.leerlijn-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #003366, #006699);
+  border-radius: 12px 12px 0 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.leerlijn-card:hover::before {
+  opacity: 1;
+}
+
+.leerlijn-nummer {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #003366 0%, #006699 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.25);
+  transition: all 0.3s ease;
+}
+
+.leerlijn-card:hover .leerlijn-nummer {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.35);
+}
+
+.leerlijn-icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.leerlijn-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #003366;
+  line-height: 1.25;
+  padding-right: 1.5rem;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  hyphens: none;
+  transition: color 0.2s ease;
+}
+
+.leerlijn-card:hover h3 {
+  color: #006699;
+}
+
+.leerlijn-beschrijving {
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.45;
+  flex-grow: 1;
+  margin-bottom: 0.6rem;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  hyphens: none;
+}
+
+.leerlijn-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+  border-top: 1px solid #e8f0f8;
+  padding-top: 0.5rem;
+  background: linear-gradient(145deg, #f8fbff 0%, #f0f7ff 100%);
+  margin: 0.5rem -1.2rem -1.1rem -1.2rem;
+  border-radius: 0 0 12px 12px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.leerlijn-card:hover .leerlijn-meta {
+  background: linear-gradient(145deg, #e8f4fd 0%, #d6ebfa 100%);
+  color: #003366;
+}
+
+.leerlijn-onderdelen {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+.leerlijn-onderdelen::before {
+  content: '📋';
+  font-size: 0.9rem;
+  filter: drop-shadow(0 1px 2px rgba(0,51,102,0.2));
+}
+
+/* Leerlijn Detail Page */
+.leerlijn-header {
+  background: linear-gradient(135deg, #003366 0%, #006699 100%);
+  color: #fff;
+  padding: 0.5rem 1.5rem; /* Terug naar meer padding - van 0.3rem naar 0.5rem */
+  border-radius: 8px; /* Kleinere border radius */
+  margin-bottom: 1rem; /* Verkleind van 2rem naar 1rem */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem; /* Kleine gap tussen items voor ademruimte */
+}
+
+.leerlijn-header::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px; /* Verkleind van 300px */
+  height: 200px; /* Verkleind van 300px */
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+
+.leerlijn-header .nummer-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 0.2rem 0.6rem; /* Verkleind */
+  border-radius: 15px; /* Verkleind */
+  font-size: 0.9rem; /* Vergroot van 0.75rem naar 0.9rem */
+  margin-bottom: 0.1rem; /* Kleine marge terug voor ademruimte */
+  line-height: 1.0; /* Minimale regelhoogte */
+  align-self: flex-start; /* Badge neemt alleen benodigde ruimte */
+  width: auto; /* Automatische breedte */
+  color: #fff !important; /* Expliciet wit maken */
+}
+
+.leerlijn-header h1 {
+  font-size: 2.0rem !important; /* Terug naar 2.0rem */
+  margin: 0.2rem 0 !important; /* Kleine marges terug - boven en onder */
+  padding: 0 !important; /* Alle padding naar 0 */
+  line-height: 1.2 !important; /* Iets meer ruimte dan 1.0 */
+  color: #fff !important; /* Expliciet wit maken */
+  background: none !important; /* Geen achtergrond gradient */
+}
+
+.leerlijn-header .hoofdleerdoel {
+  font-size: 0.95rem; /* Verkleind van 1.1rem */
+  opacity: 0.9;
+  line-height: 1.2; /* Compactere regelhoogte - van 1.3 naar 1.2 */
+  max-width: 700px;
+  margin-bottom: 0; /* Geen extra margin onderaan */
+  color: #fff !important; /* Expliciet wit maken */
+  background: none !important; /* Geen achtergrond gradient */
+}
+
+.leerdoel-section {
+  background: linear-gradient(145deg, #f0f8ff 0%, #e8f4fd 100%);
+  border: 2px solid #d0e8ff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 3px 12px rgba(0, 102, 153, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent gradient aan de linkerkant */
+.leerdoel-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #003366 0%, #006699 50%, #0088cc 100%);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.leerdoel-section:hover::before {
+  transform: scaleY(1);
+}
+
+a.leerdoel-section {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.leerdoel-section:hover {
+  border-color: #006699;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 102, 153, 0.20);
+  background: linear-gradient(145deg, #e0f2ff 0%, #d0ebff 100%);
+}
+
+.leerdoel-section h2 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,51,102,0.1);
+}
+
+.leerdoel-section h2::before {
+  content: '🎯';
+  font-size: 1.1rem;
+  filter: drop-shadow(0 1px 2px rgba(0,51,102,0.2));
+}
+
+.leerdoel-section p,
+.leerdoel-section li {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #444;
+  text-shadow: 0 0.5px 1px rgba(255,255,255,0.8);
+}
+
+.leerdoel-section ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.leerdoel-section li {
+  margin-bottom: 0.4rem;
+}
+
+.back-link {
+  font-size: 8px; /* Zeer kleine tekst */
+  color: #0066ff;
+  text-decoration: underline;
+  display: inline-block; /* Zichtbaar maken */
+}
+
+.back-link:hover {
+  color: #003366;
+  text-decoration: underline;
+}
+
+.back-link::before {
+  content: '←';
+}
+
+/* Enhanced Archief section */
+.archief-intro {
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f8ff 100%);
+  border: 2px solid #e0f0ff;
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,102,153,0.08);
+  position: relative;
+}
+
+.archief-intro::before {
+  content: '📚';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0,51,102,0.2));
+}
+
+.archief-intro h2 {
+  color: #003366 !important;
+  margin-bottom: 1rem !important;
+  text-shadow: 0 1px 2px rgba(0,51,102,0.1);
+}
+
+.archief-intro p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .leerlijnen-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .leerlijnen-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .leerlijn-header h1 {
+    font-size: 2.1rem !important; /* Behoud grote titel op tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .leerlijnen-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .leerlijn-card {
+    padding: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .leerlijnen-intro {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .leerlijnen-intro h2 {
+    font-size: 1.5rem;
+  }
+  
+  .header {
+    padding: 0.8rem 1rem;
+  }
+  
+  .leerlijn-header {
+    padding: 1rem 1.2rem;
+  }
+  
+  .leerlijn-header h1 {
+    font-size: 1.9rem !important; /* Behoud grote titel op mobiel */
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) {
+  .leerlijnen-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .leerlijnen-intro {
+    padding: 1.8rem 1.5rem;
+  }
+}
+
+/* ========================================
+   Custom Layout Improvements
+   ======================================== */
+
+/* Page title verbergen */
+.page-header h1,
+.post-title {
+  display: none !important;
+}
+
+/* Main container padding verkleinen */
+.main {
+  padding: 3px !important; /* Van 24px naar 3px - ongeveer 1mm */
+}
+
+/* Page header compacter maken */
+.page-header,
+.post-header {
+  margin: 2px auto 4px auto !important; /* Nog kleinere marges - bijna geen ruimte */
+}
+
+/* Breadcrumbs veel subtieler en dichter bij header */
+.breadcrumbs {
+  margin-top: 0.2rem !important; /* Minimale afstand tot header */
+  margin-bottom: 0.4rem !important; /* 20% van normale marge */
+  font-size: 11px !important; /* Iets grotere font */
+  line-height: 1.0 !important; /* Compactere regelhoogte */
+  color: #0066ff !important; /* Fel blauw voor tekst en scheidingstekens */
+}
+
+/* Breadcrumbs links fel blauw en onderstreept */
+.breadcrumbs a {
+  color: #0066ff !important; /* Fel blauw */
+  text-decoration: underline !important; /* Onderstreept */
+  font-size: 11px !important; /* Iets grotere font */
+  font-weight: normal !important;
+}
+
+.breadcrumbs a:hover {
+  color: #0044cc !important; /* Donkerder blauw bij hover */
+}
+
+/* Extra aanpassing voor compacte header */
+.leerlijnen-layout {
+  padding-top: 0px !important; /* Minimale top padding - helemaal weggehaald */
+  padding-bottom: 0 !important;
+}
+
+/* Verberg back-link-wrapper helemaal */
+.back-link-wrapper {
+  display: none !important;
+}
+
+.back-link {
+  font-size: 8px; /* Zeer kleine tekst */
+  color: #0066ff;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.back-link:hover {
+  color: #003366;
+  text-decoration: underline;
+}
+
+/* Extra compacte styling voor leerlijnen pagina's */
+.post-single .post-content {
+  margin: 10px 0 !important; /* Veel kleinere marges rond content */
+}
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #003366 0%, #006699 50%, #0088cc 100%);
+}
+
+/* H3 headings */
+.post-content h3 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.2rem !important;
+  color: #006699 !important;
+  font-weight: 600;
+  padding-left: 0.5rem;
+  border-left: 3px solid #0088cc;
+}
+
+/* Paragraven */
+.post-content p {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: #444 !important;
+  margin-bottom: 1.2rem !important;
+  text-align: justify;
+  text-shadow: 0 0.5px 1px rgba(255,255,255,0.8);
+}
+
+/* Lijsten */
+.post-content ul,
+.post-content ol {
+  margin: 1rem 0 !important;
+  padding-left: 1.5rem !important;
+  background: linear-gradient(145deg, #fbfcff 0%, #f5f9ff 100%);
+  border-radius: 6px;
+  padding: 1rem 1.5rem 1rem 2.5rem !important;
+  border-left: 3px solid #e0f0ff;
+  box-shadow: 0 2px 4px rgba(0,102,153,0.05);
+}
+
+.post-content li {
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  color: #444 !important;
+  margin-bottom: 0.5rem !important;
+  position: relative;
+}
+
+/* Custom bullet points */
+.post-content ul li::before {
+  content: '▶';
+  color: #006699;
+  font-size: 0.8rem;
+  position: absolute;
+  left: -1.2rem;
+  top: 0.1rem;
+}
+
+.post-content ul li {
+  list-style: none;
+}
+
+/* Onderdelen overzicht styling */
+.onderdelen-overzicht {
+  background: linear-gradient(145deg, #f8fbff 0%, #f0f8ff 100%);
+  border: 2px solid #e0f0ff;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,102,153,0.08);
+  position: relative;
+}
+
+.onderdelen-overzicht::before {
+  content: '📋';
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,51,102,0.2));
+}
+
+.onderdelen-overzicht h2 {
+  color: #003366 !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.3rem !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,51,102,0.1);
+}
+
+.onderdelen-overzicht ul {
+  background: rgba(255,255,255,0.6) !important;
+  border-radius: 8px !important;
+  margin: 0 !important;
+  border-left: 4px solid #006699 !important;
+}
+
+.onderdelen-overzicht li a {
+  color: #003366 !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: block;
+  padding: 0.2rem 0;
+}
+
+.onderdelen-overzicht li a:hover {
+  color: #006699 !important;
+  text-decoration: underline !important;
+  transform: translateX(4px);
+}
+
+/* Strong text styling */
+.post-content strong {
+  color: #003366 !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,51,102,0.1);
+}
+
+/* ========================================
+   Enhanced Navigation & Menu
+   ======================================== */
+
+/* Menu links styling */
+.nav a {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav a:hover {
+  color: #006699 !important;
+  transform: translateY(-1px);
+}
+
+/* Menu items with subtle hover background */
+.nav a::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -8px;
+  right: -8px;
+  bottom: -5px;
+  background: rgba(0, 102, 153, 0.05);
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   Visual Polish & Finishing Touches
+   ======================================== */
+
+/* Subtle animations for interactivity */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus states */
+a:focus, button:focus {
+  outline: 2px solid #006699;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Loading animation for dynamic content */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Beautiful selection colors */
+::selection {
+  background: #006699;
+  color: white;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #003366 0%, #006699 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #006699 0%, #0088cc 100%);
+}
