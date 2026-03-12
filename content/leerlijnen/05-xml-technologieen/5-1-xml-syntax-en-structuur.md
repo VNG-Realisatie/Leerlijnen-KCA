@@ -29,12 +29,11 @@ Maar dit levert direct problemen op:
 
 In het verleden werd dit probleem vaak opgelost door specifiek voor deze situatie software te schrijven. Als systeem A vervolgens dezelfde gegevens ook moest uitwisselen met nog een ander systeem (C) werd weer nieuwe code geschreven. Je kunt je voorstellen dat er na verloop van tijd een kluwen van verbindingen was gelegd om gegevens uit te wisselen. 
 
-<img width="220" alt="image" src="https://github.com/user-attachments/assets/67913f5a-3db3-4df5-a1c6-8bcdecc37ea5" />
+<img width="220" alt="spaghetti-probleem" src="https://github.com/user-attachments/assets/67913f5a-3db3-4df5-a1c6-8bcdecc37ea5" />
 
 In de praktijk wordt dit vaak het **"spaghetti-probleem"** genoemd: wanneer *N* systemen met *M* andere systemen gegevens moeten uitwisselen, zijn er tot N×M koppelvlakken nodig — elk met een eigen formaat. Dit leidt tot onbeheersbare "copy-paste"-integraties. De oplossing: één gemeenschappelijke taal voor gegevensuitwisseling.
 
-<img width="220" alt="image" src="https://github.com/user-attachments/assets/4972f388-e351-4339-af6d-d169d2731a70" />
-
+<img width="220" alt="gemeenschappelijke taal" src="https://github.com/user-attachments/assets/933bb4cd-129a-4140-9508-e18a771d4716" />
 
 Er is dus een manier nodig om gegevens **gestructureerd** vast te leggen, zodat computers, maar ook mensen, ondubbelzinnig kunnen begrijpen wat elk gegeven betekent.
 
