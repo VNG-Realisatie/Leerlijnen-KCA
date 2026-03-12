@@ -26,7 +26,7 @@ Maar wat als je nu gegevens wil vastleggen of uitwisselen over entiteiten die we
 | Stam | De hoofdsteel van een boom. | De basisvorm van een werkwoord. |
 | Bal | Een bolvormig voorwerp. | Een formele dansparty (het bal). |
 | Schimmel | Een schimmelcultuur (op voedsel of huid). | Een wit paard. |
-| Vorst | Bevroren water (vrieskou). | Een staatshoofd (koning/keizer). |
+| Vorst | Temperatuurrange waarbij water bevriest (vrieskou). | Een staatshoofd (koning/keizer). |
 
 In dat geval komen XML namespaces om de hoek kijken. Een namespace is een vocabulaire van een bepaald informatiedomein waarbinnen termen uniek zijn. Nu is het weliswaar handig om te weten dat de naam 'vorst' in de 'Weerkunde' namespace iets anders betekent dan in de 'Staatsrechtelijke' namespace maar daar heb je op zich nog niet zo veel aan in een XML bestand. Daarmee kan een computer immers nog niet bepalen wanneer het element 'vorst' nu als iets weerskundig of als iets staatsrechtelijk' moet worden geïnterpreteerd. Het volgende XML fragment geeft daar een voorbeeld van.
 
