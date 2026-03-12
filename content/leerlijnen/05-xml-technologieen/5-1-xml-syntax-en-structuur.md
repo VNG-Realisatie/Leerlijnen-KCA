@@ -41,15 +41,15 @@ Er is dus een manier nodig om gegevens **gestructureerd** vast te leggen, zodat 
 
 De oplossing heet **markup** (letterlijk: "opmaak" of "annotatie"). Je plaatst **labels** (ook wel "tags" genoemd) om stukjes tekst heen, zodat duidelijk is wat elk stukje betekent.
 
-Een **tag** herken je aan de punthaken `<` en `>`. Tags komen in paren: een **openingstag** en een **sluitingstag** (begint met `</`).
+Een **tag** herken je aan de punthaken `<` en `>`. Tags komen in paren: een **begintag** en een **eindtag** (begint met `</`).
 
 ```xml
 <voornaam>Jan</voornaam>
 ```
 
-- `<voornaam>` — de **openingstag**
+- `<voornaam>` — de **begintag**
 - `Jan` — de **inhoud** (het feitelijke gegeven)
-- `</voornaam>` — de **sluitingstag**
+- `</voornaam>` — de **eindtag**
 
 Het geheel noemen we een **element**.
 
@@ -157,7 +157,7 @@ De elementen `<straat>`, `<huisnummer>` etc. zijn **kind-elementen** (child elem
 
 ### Attributen: extra informatie bij een element
 
-Een **attribuut** staat in de openingstag en heeft de vorm `naam="waarde"`:
+Een **attribuut** staat in de begintag en heeft de vorm `naam="waarde"`:
 
 ```xml
 <inwoner burgerservicenummer="123456789">
