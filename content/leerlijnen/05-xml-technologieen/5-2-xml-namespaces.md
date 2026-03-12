@@ -28,7 +28,7 @@ Maar wat als je nu gegevens wil vastleggen of uitwisselen over entiteiten die we
 | Schimmel | Een schimmelcultuur (op voedsel of huid). | Een wit paard. |
 | Vorst | Bevroren water (vrieskou). | Een staatshoofd (koning/keizer). |
 
-In dat geval komen XML namespaces om de hoek kijken. Een namespace is een vocabulaire van een bepaald informatiedomein waarbinnen termen uniek zijn. Het is weliswaar handig om te weten dat de naam 'vorst' in de 'Weerkunde' namespace iets anders betekent dan in de 'Staatsrechtelijke' namespace maar daar heb je op zich nog niet zo veel aan in een XML bestand want daarmee kan een computer ze nog bepalen wanneer het element 'vorst' nu als iets weerskundig of als iets staatsrechtelijk' moet worden geïnterpreteerd. Het volgende XML fragment geeft daar een voorbeeld van.
+In dat geval komen XML namespaces om de hoek kijken. Een namespace is een vocabulaire van een bepaald informatiedomein waarbinnen termen uniek zijn. Nu is het weliswaar handig om te weten dat de naam 'vorst' in de 'Weerkunde' namespace iets anders betekent dan in de 'Staatsrechtelijke' namespace maar daar heb je op zich nog niet zo veel aan in een XML bestand. Daarmee kan een computer immers nog niet bepalen wanneer het element 'vorst' nu als iets weerskundig of als iets staatsrechtelijk' moet worden geïnterpreteerd. Het volgende XML fragment geeft daar een voorbeeld van.
 
 ```xml
 <gebeurtenis>
@@ -37,4 +37,4 @@ In dat geval komen XML namespaces om de hoek kijken. Een namespace is een vocabu
 </gebeurtenis>
 ```
 
-XML voorziet in een techniek om deze termen uniek te maken. 
+XML voorziet echter in een techniek om deze termen uniek te maken. 
