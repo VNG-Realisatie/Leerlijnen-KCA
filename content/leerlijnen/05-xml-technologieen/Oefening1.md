@@ -1,7 +1,7 @@
 ---
 title: "Oefening 1"
 date: 2026-03-13
-weight: 3
+weight: 3.1
 leerlijn: 5
 paragraaf: "5.1.1"
 leerdoel: "Oefen de creatie van een XML bestand, het op basis van een schema toevoegen van elementen en het creëren van een Well-formed XML bestand."
@@ -12,7 +12,7 @@ leerdoel: "Oefen de creatie van een XML bestand, het op basis van een schema toe
 Teneinde de input voor visitekaartjes automatisch te kunnen verwerken, heeft de verantwoordelijke
 afdeling van een groot IT-bedrijf een web-pagina gebouwd. Daarin worden de gegevens ingebracht die op een visitekaartje
 geplaatst kunnen worden. Deze gegevens worden in XML-formaat naar het bedrijf
-gestuurd, dat uiteindelijk de visitekaartjes produceert. Het XML-schema waarin dit XML-formaat is vastgelegd gaat u nu
+gestuurd, dat uiteindelijk de visitekaartjes produceert. Het XML-schema waarin dit XML-formaat is vastgelegd ga je nu
 gebruiken om een XML-bestand te creëren.
 
 **Benodigde files**
