@@ -101,8 +101,8 @@ in het fragment zelf kunnen we vervolgens de elementen aan de namespaces koppele
 
 ```xml
 <gbrt:gebeurtenis xmlns:gbrt="http://www.gebeurtenissen.nl"
-             xmlns:weer="http://www.weerkunde.nl"
-             xmlns:stsr="http://www.staatsrecht.nl">
+                  xmlns:weer="http://www.weerkunde.nl"
+                  xmlns:stsr="http://www.staatsrecht.nl">
   <gbrt:titel>Vorst aan de grond.</gbrt:titel>
   <gbrt:beschrijving>
     Bij een temperatuur van
@@ -129,4 +129,22 @@ Het is zelfs mogelijk om een van die namespaces als default namespace aan te wij
     op de grond.
   </beschrijving>
 </gebeurtenis>
+```
+
+en mogelijk zul je, minder netjes, ook mengvormen tegenkomen zoals:
+
+```xml
+<gbrt:gebeurtenis xmlns="http://www.gebeurtenissen.nl"
+                  xmlns:gbrt="http://www.gebeurtenissen.nl"
+                  xmlns:weer="http://www.weerkunde.nl"
+                  xmlns:stsr="http://www.staatsrecht.nl">
+  <titel>Vorst aan de grond.</titel>
+  <beschrijving>
+    Bij een temperatuur van
+    <weer:vorst>-10 graden</weer:vorst>
+    viel
+    <stsr:vorst>Koning Willem Alexander<stsr:vorst>
+    op de grond.
+  </beschrijving>
+</gbrt:gebeurtenis>
 ```
