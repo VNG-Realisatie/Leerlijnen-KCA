@@ -1,3 +1,12 @@
+---
+title: "5.1.1 Oefening 1"
+date: 2026-03-13
+weight: 2
+leerlijn: 5
+paragraaf: "5.1.1"
+leerdoel: "Leerdoel nog toe te voegen"
+---
+
 ## Oefening 1: Visitekaartje
 
 Teneinde de input voor visitekaartjes automatisch te kunnen verwerken, heeft de verantwoordelijke
