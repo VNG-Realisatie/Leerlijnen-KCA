@@ -16,7 +16,7 @@ gestuurd, dat uiteindelijk de visitekaartjes produceert. Het XML-schema waarin d
 gebruiken om een XML-bestand te creëren.
 
 **Benodigde files**
-* Download [Visitekaartje.zip](content/leerlijnen/05-xml-technologieen/Visitekaartje.zip) en plaats de inhoud (Visitekaartje.xsd) op een locatie waar jij er makkelijk bij kunt.
+* Download [Visitekaartje.zip](../content/leerlijnen/05-xml-technologieen/Visitekaartje.zip) en plaats de inhoud (Visitekaartje.xsd) op een locatie waar jij er makkelijk bij kunt.
 
 **Opdracht**
 * Open XMLSPY Home Edition;
