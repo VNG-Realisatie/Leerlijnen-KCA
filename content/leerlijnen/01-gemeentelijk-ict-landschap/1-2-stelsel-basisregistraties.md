@@ -16,7 +16,7 @@ Het **stelsel van basisregistraties** is het geheel van afspraken en voorziening
 
 #### Doel
 
-Het stelsel biedt een overheidsbrede, organisatie-onafhankelijke gegevensinfrastructuur met authentieke gegevens. Het principe is **eenmalig uitvragen, verplicht gebruiken**: gegevens worden eenmalig bij de burger of het bedrijf opgevraagd en vervolgens door alle overheidsorganisaties hergebruikt.
+Het stelsel biedt een overheidsbrede, organisatie-onafhankelijke gegevensinfrastructuur met authentieke gegevens. Het principe is **eenmalig uitvragen, verplicht gebruiken**: gegevens worden eenmalig bij de burger of het bedrijf opgevraagd en vervolgens door alle daarvoor geautoriseerde overheidsorganisaties hergebruikt.
 
 #### Gebruik
 
@@ -66,7 +66,7 @@ Basisregistraties moeten voldoen aan hoge kwaliteitseisen op het gebied van:
 
 Het primaire doel van basisregistraties is om:
 - Eenduidige en betrouwbare basisgegevens te leveren aan overheidsorganisaties
-- Administratieve lasten voor burgers en ondernemers te verminderen door gegevens eenmalig op te vragen en meermalen te gebruiken
+- Administratieve lasten voor burgers en ondernemers te verminderen door gegevens eenmalig op te vragen en meermalig te gebruiken
 - Efficiëntere en effectievere overheidsprocessen mogelijk te maken
 - De kwaliteit van overheidsdienstverlening te verbeteren (Wet algemene bepalingen burgerservicenummer, 2007)
 
