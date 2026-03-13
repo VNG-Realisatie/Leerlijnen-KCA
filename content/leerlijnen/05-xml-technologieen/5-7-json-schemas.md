@@ -1,7 +1,7 @@
 ---
 title: "5.7 JSON Schema's"
 date: 2026-03-04
-weight: 8
+weight: 9
 leerlijn: 5
 paragraaf: "5.7"
 leerdoel: "Leerdoel nog toe te voegen"
