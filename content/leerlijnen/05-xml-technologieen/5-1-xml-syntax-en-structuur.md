@@ -231,11 +231,6 @@ Merk op hoe de attributen hier meerdere rollen vervullen:
 - **Classificatie**: `weertype="zwaar-bewolkt"` geeft het type weer aan
 - **Eenheden**: `eenheid="Celsius"`, `eenheid="m/sec"` — metagegevens over hoe de waarde gelezen moet worden
 
-### Oefening
-Download en installeer eerst '[Altova XMLSpy 2024 Enterprise XML Editor - Release 2](https://www.altova.com/xmlspy-xml-editor/download)' en vraag de beheerder van de KCA specifieke software (Robert Melskens) om de Licentie gegevens.
-
-[Naar de oefening](Oefening1).
-
 ### Vergelijking met HTML
 
 | | HTML | XML |
@@ -279,3 +274,8 @@ Om met XML te werken gebruik je doorgaans drie soorten tools:
 | **XML-Schema editor** | Tool om XML-documenten (en schema's en stylesheets) te creëren en te bewerken. Heeft vaak een parser en XSLT-processor ingebouwd. Voorbeeld: Altova XMLSpy, Oxygen XML Developer. |
 
 > In de gemeente komt je XML tegen in koppelvlakbeschrijvingen (StUF/WSDL), in configuratiebestanden, en in berichtuitwisseling tussen systemen.
+
+### Oefening
+Download en installeer eerst '[Altova XMLSpy 2024 Enterprise XML Editor - Release 2](https://www.altova.com/xmlspy-xml-editor/download)'. Gebruik de 'free, fully- functional, 30-day trial' of vraag de beheerder van de KCA specifieke software (Robert Melskens) om de Licentie gegevens.
+
+[Naar de oefening](Oefening1).
