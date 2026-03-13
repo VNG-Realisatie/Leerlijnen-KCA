@@ -4,7 +4,7 @@ date: 2026-03-13
 weight: 3.2
 leerlijn: 5
 paragraaf: "5.1.2"
-leerdoel: "Oefen met het toevoegen van attributen aan een XML bestand."
+oefendoel: "Oefen met het toevoegen van attributen aan een XML bestand."
 ---
 
 ## Oefening 2: Luxe visitekaartje
