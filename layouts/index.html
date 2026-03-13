@@ -12,9 +12,13 @@
       <p class="leerlijn-beschrijving">{{ .Params.beschrijving }}</p>
       <div class="leerlijn-meta">
         <span class="leerlijn-onderdelen">{{ .Params.aantal_onderdelen }} onderdelen</span><br/>
+      </div>
+      {{ if .Params.aantal_oefeningen }}
+      <div class="leerlijn-meta">
         <span class="leerlijn-onderdelen">{{ .Params.aantal_oefeningen }} oefeningen</span>
       </div>
-    </a>
+      {{ end }}
+   </a>
     {{ end }}
     {{ end }}
     {{ end }}
