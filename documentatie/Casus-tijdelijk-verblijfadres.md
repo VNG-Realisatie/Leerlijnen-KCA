@@ -17,7 +17,9 @@ Het kan overigens zijn dat de nieuw te publiceren RSGB versie meerdere wijziging
 Deelnemers van de community kunnen in het issue hun mening geven over de wijze waarop de wijziging in het RSGB geïmplementeerd moet worden maar ook zonder dat kunnen we een of meer varianten ontwikkelen.
 
 **Uitleg bepreken in "expertgroep" en tot besluitvorming komen**
-* De uitgewerkte varianten in modellering worden getoond, uitgelegd en besproken;
+* De uitgewerkte varianten in modellering worden getoond, uitgelegd en besproken:
+  - Een nieuwe attribuutsoort "Tijdelijk verblijfadres" bij het objecttype "Ingeschreven Persoon";
+  - Groepsattribuutsoort (gegevensgroep) Verplijfadres wordt uitgebreid met een "Indicatie tijdelijk" (Ja/Nee) en de kardinaliteit van de atribuutsoort moet op *..2 gezet worden.
 * Keuze voor een variant maken op basis van argumenten. 
 
 **Verwerking gekozen variant** 
@@ -37,7 +39,7 @@ Deelnemers van de community kunnen in het issue hun mening geven over de wijze w
 ## Actiestappen m.b.t. StUF-BG
 
 * Aanmaken GitHub issue op basis van wijziging in het RSGB in de [StUF-standaarden GitHub repository](https://github.com/VNG-Realisatie/StUF-Standaarden/issues).
-  Indien aanwezif zullen we overigens wijzigingen aanbrengen op basis van meerdere GitHub issues;
+  Indien aanwezig zullen we overigens wijzigingen aanbrengen op basis van meerdere GitHub issues;
 * Onderhoudsverzoek word aangemaakt in de lijst met onderhoudsverzoeken. --> dit doe je om voor 1 specifieke patch alle relevante issues te verzamelen en op basis daarvan releasenotes te maken;
 * Implementatie-overweging per issue uitwerken en opnemen in de betreffende issue. Voorstel voor de wijze van oplossing kan ook door community-leden worden aangedragen;
 * Community zo nodig over uitwerking informeren en vragen om reactie daarop;
