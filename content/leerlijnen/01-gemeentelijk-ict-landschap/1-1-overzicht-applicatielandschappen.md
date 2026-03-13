@@ -4,7 +4,7 @@ date: 2026-03-04
 weight: 2
 leerlijn: 1
 paragraaf: "1.1"
-leerdoel: "Leerdoel nog toe te voegen"
+leerdoel: "Inzicht krijgen in hoe gemeentelijke applicatielandschappen in elkaar zitten wen welke visies er spelen rondom de gemeentelijke ICT."
 ---
 
 
