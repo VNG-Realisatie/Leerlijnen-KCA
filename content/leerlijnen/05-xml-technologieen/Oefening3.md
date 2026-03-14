@@ -34,6 +34,6 @@ Het bedrijf heeft besloten voor specifieke functies ook privé informatie op een
   - 'stuurgegevens'
   - 'parameters'
 * Check de Wellformedness van het bestand en corrigeer daar waar nodig;
-* Assign het XML-Schema bestand 'zkn0310_msg_totaal_resolved2025.xsd' (eerder verkregen dooe 'Zkn0310-schema.zip' uit te pakken);
+* Assign het XML-Schema bestand 'zkn0310_msg_totaal_resolved2025.xsd' (eerder verkregen door 'Zkn0310-schema.zip' uit te pakken);
 * XMLSPY geeft nu aan dat het bestand valide is of geeft een of meer foutmeldingen. Corrigeer indien nodig de foutmeldingen;
 * Bewaar het bestand.
