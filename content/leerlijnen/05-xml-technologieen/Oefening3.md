@@ -7,7 +7,7 @@ paragraaf: "5.2.1"
 oefendoel: "Oefen met het ordenen van een XML bestand in namespaces."
 ---
 
-## Oefening 2: StUF Zaken
+## Oefening 3: StUF Zaken
 
 Het bedrijf heeft besloten voor specifieke functies ook privé informatie op een visitekaartje toe te staan. Het gaat om het adres, het e-Mailadres, het telefoonnummer en het mobielenummer. Het XML-schema is daartoe aangepast.
 
