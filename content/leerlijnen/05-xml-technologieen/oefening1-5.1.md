@@ -4,7 +4,7 @@ date: 2026-03-13
 weight: 3.1
 leerlijn: 5
 paragraaf: "5.1.1"
-oefendoel: "Oefen de creatie van een XML bestand, het op basis van een schema toevoegen van elementen en het creëren van een Well-formed XML bestand."
+oefendoel: "Oefen de creatie van een XML bestand, het op basis van een schema toevoegen van elementen en het creëren van een welgevormd XML bestand."
 ---
 
 ## Oefening 1: Visitekaartje
@@ -30,7 +30,7 @@ je ook nog enkele niet verplichte elementen aan het bestand kunt toevoegen.<br>V
 icoontje en corrigeer indien nodig de fouten. Je kunt ook valideren via het menu “XML – Validate XML” of m.b.v. “F8”.<br>Eventueel kan je via “DTD\Schema – Go to 
 Schema” de mogelijke structuur bekijken;
 * Bewaar het bestand ergens als “Visitekaartje.xml”;
-* Voeg aan het bestand nog ergens de elementen “Unit” en “Pager” toe en wel zodanig dat het bestand well-formed
+* Voeg aan het bestand nog ergens de elementen “Unit” en “Pager” toe en wel zodanig dat het bestand welgevormd
 blijft. Je kunt dit checken door te klikken op het gele <img width="22" style="display: block; margin-top: 0; margin-bottom: 0;" alt="Check wellformedness" src="/Leerlijnen-KCA/images/check-wellformed.jpg" /> 
 icoontje, via het menu “XML – Check Well-Formedness” of m.b.v. “F7”;
 * Bewaar het bestand als “Visitekaartje-wf.xml”.

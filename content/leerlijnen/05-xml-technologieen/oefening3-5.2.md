@@ -33,7 +33,7 @@ Je krijgt nu een sneak preview in een StUF bericht. Het is een goed voorbeeld va
 * Ken de derde namespace tenslotte toe aan alle resterende elementen in het xml bestand en dus ook aan de elementen:
   - 'stuurgegevens'
   - 'parameters'
-* Check de Wellformedness van het bestand en corrigeer daar waar nodig;
+* Check de welgevormdheid van het bestand en corrigeer daar waar nodig;
 * Assign het XML-Schema bestand 'zkn0310_msg_totaal_resolved2025.xsd' (eerder verkregen door 'Zkn0310-schema.zip' uit te pakken);
 * XMLSPY geeft nu aan dat het bestand valide is of geeft een of meer foutmeldingen. Corrigeer indien nodig de foutmeldingen;
 * Bewaar het bestand.

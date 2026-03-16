@@ -117,6 +117,11 @@ De declaratie staat altijd op de **allereerste regel** en vóór het root-elemen
 <geboortedatum>1985-03-15</geboortedatum>
 ```
 
+**Regels voor elementen**
+* Elementen hebben altijd, met uitzondering van lege elementen (waarover zo meer), een begin- en een eindtag;
+* Elementnamen beginnen met een letter, underscore (_) of een dubbele punt (:) en worden gevolgd door naam karakters;
+* naam karakters bestaan uit letters, underscores, dubbele punten, cijfers, hyphens (-) of een punt (.). In de praktijk wordt de dubbele punt echter niet gebruikt uitgezonderd als scheidingsteken tussen namespace-prefix (waarover meer in het volgende onderdeel) en elementnamen.
+
 > Voor XML is alles tekst. Het getal `12` en de datum `1985-03-15` zijn gewoon tekenreeksen. Pas met XSD (zie 5.3) kun je afdwingen dat een waarde een getal of datum moet zijn.
 
 **Elementen met kind-elementen** — nesting:
@@ -167,10 +172,10 @@ Een **attribuut** staat in de begintag en heeft de vorm `naam="waarde"`:
 ```
 
 **Regels voor attributen:**
-- De waarde staat altijd tussen aanhalingstekens (enkele of dubbele);
-- Een element mag meerdere attributen hebben, gescheiden door spaties;
-- Elk attribuut mag maar één keer voorkomen op hetzelfde element;
-- Attributen hebben geen vaste volgorde.
+* De waarde staat altijd tussen aanhalingstekens (enkele of dubbele);
+* Een element mag meerdere attributen hebben, gescheiden door spaties;
+* Elk attribuut mag maar één keer voorkomen op hetzelfde element;
+* Attributen hebben geen vaste volgorde.
 
 **Wanneer een attribuut, wanneer een kind-element?**
 
@@ -183,6 +188,8 @@ Een **attribuut** staat in de begintag en heeft de vorm `naam="waarde"`:
 > **Let op:** Of een gegeven als een element of juist als een attribuut moet worden gedefinieerd is sterk afhankelijk van het informatiedomein. In een domein dat gaat over temperaturen wordt de waarde 'Celsius' waarschijnlijk in een element opgeslagen, in een domein dat gaat over het weer is het waarschijnlijk een attribuut.
 
 > **Let op:** In StUF-berichten worden attributen veelvuldig gebruikt, onder meer voor het aangeven van het mutatiesoort en de aanduiding van sleutelwaarden.
+
+Als de regels uit de voorgaande paragraaf ('Elementen: de bouwstenen van XML') en deze paragraaf correct worden toegepast ontstaat er een welgevormd (well-formed) XML-bestand (ook vaak een XML-instantie genoemd). Later zullen we zien dat een XML-bestand daarnaast ook nog valide kan zijn.
 
 ### Voorbeeld uit de praktijk: een CV in XML
 
@@ -227,9 +234,9 @@ Herken je de onderdelen?
 ```
 
 Merk op hoe de attributen hier meerdere rollen vervullen:
-- **Identificatie**: `naam="Ameland"` vertelt welk station het betreft
-- **Classificatie**: `weertype="zwaar-bewolkt"` geeft het type weer aan
-- **Eenheden**: `eenheid="Celsius"`, `eenheid="m/sec"` — metagegevens over hoe de waarde gelezen moet worden
+* **Identificatie**: `naam="Ameland"` vertelt welk station het betreft
+* **Classificatie**: `weertype="zwaar-bewolkt"` geeft het type weer aan
+* **Eenheden**: `eenheid="Celsius"`, `eenheid="m/sec"` — metagegevens over hoe de waarde gelezen moet worden
 
 ### Vergelijking met HTML
 
@@ -268,7 +275,7 @@ Om met XML te werken gebruik je doorgaans drie soorten tools:
 
 | Tool | Functie |
 |---|---|
-| **XML-parser** | Leest een XML-document en interpreteert de structuur (controleert o.a. welgevormdheid en validiteit). |
+| **XML-parser** | Leest een XML-document en interpreteert de structuur (controleert o.a. op welgevormdheidheid en validiteit). |
 | **XSLT-processor** | Combineert een XML-document met een XSLT-stylesheet en produceert output (HTML, PDF, ander XML). |
 | **XML-editor** | Tool om XML-documenten (en schema's en stylesheets) te creëren en te bewerken. Heeft vaak een parser en XSLT-processor ingebouwd. Voorbeeld: Altova Authentic, Oxygen XML Editor. |
 | **XML-Schema editor** | Tool om XML-documenten (en schema's en stylesheets) te creëren en te bewerken. Heeft vaak een parser en XSLT-processor ingebouwd. Voorbeeld: Altova XMLSpy, Oxygen XML Developer. |

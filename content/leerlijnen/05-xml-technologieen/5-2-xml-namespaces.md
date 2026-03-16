@@ -163,7 +163,7 @@ Behalve elementen kunnen ook attributen aan een namespace worden toegekend m.b.v
 	...
 </gbrt:gebeurtenis>	
 ```
-> **Let op!** In dit voorbeeld hebben we alleen de van belang zijnde elementen getoond. Het is dus geen Well-formed laat staan valide XML.
+> **Let op!** In dit voorbeeld hebben we alleen de van belang zijnde elementen getoond. Het is dus geen welgevormd laat staan valide XML.
 
 XML-attributen zonder namespace-prefix (namespace identifier) zijn per definitie niet aan een namespace gekoppeld. 
 Dit is een fundamenteel verschil tussen XML-elementen en XML-attributen:
