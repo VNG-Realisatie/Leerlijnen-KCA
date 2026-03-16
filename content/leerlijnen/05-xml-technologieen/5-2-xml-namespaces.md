@@ -167,4 +167,4 @@ In dit voorbeeld hebben we alleen de van belang zijnde elementen getoond. Het is
 
 ### Oefening 3
 
-[Naar de oefening 3](../oefening1-5.2).
+[Naar de oefening 1](../oefening1-52).
