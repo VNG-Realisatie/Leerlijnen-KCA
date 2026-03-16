@@ -97,7 +97,7 @@ xmlns:gbrt="http://www.gebeurtenissen.nl"
 xmlns:weer="http://www.weerkunde.nl"
 xmlns:stsr="http://www.staatsrecht.nl"
 ```
-in het fragment zelf kunnen we vervolgens de elementen aan de namespaces koppelen met de volgende syntax `[alias]:[elementnaam]` dat moet zowel op de begintags als op de eindtags. Het complete XML fragment komt er daarmee als volgt uit te zien:
+in het fragment zelf kunnen we vervolgens de elementen aan de namespaces koppelen door er een namespace-prefix aan toe te voegen. Dit kan met de volgende syntax `[alias]:[elementnaam]` wat zowel op de begintags als op de eindtags moete gebeuren. Het complete XML fragment komt er daarmee als volgt uit te zien:
 
 ```xml
 <gbrt:gebeurtenis xmlns:gbrt="http://www.gebeurtenissen.nl"
@@ -115,7 +115,7 @@ in het fragment zelf kunnen we vervolgens de elementen aan de namespaces koppele
 ```
 
 Nu is duidelijk in welk kader elk element geïnterpreteerd moet worden.
-Het is ook mogelijk om één van die namespaces als default namespace aan te wijzen waardoor de aan de elementen in die namespace geen prefix hoeft te worden toegekens. Dat gebeurd door voor die namespace geen alias te definiëren. Het fragment ziet er dan als volgt uit:
+Het is ook mogelijk om één van die namespaces als default namespace aan te wijzen waardoor de aan de elementen in die namespace geen namespace-prefix hoeft te worden toegekend. Dat gebeurd door voor die namespace geen alias te definiëren. Het fragment ziet er dan als volgt uit:
 
 ```xml
 <gebeurtenis xmlns="http://www.gebeurtenissen.nl"
@@ -152,7 +152,7 @@ en mogelijk zul je, minder netjes, ook mengvormen tegenkomen zoals:
 
 ## Attributen en namespaces
 
-Behalve elementen kunnen ook attributen aan een namespace worden toegekend. Daarmee kun je ook op attribuutniveau naamconflicten voorkomen. Het is daarbij heel goed mogelijk om een element aan de ene namespace te koppelen en een attribuut op dat element aan de andere namespace. Een volgende constructie is dus toegestaan:
+Behalve elementen kunnen ook attributen aan een namespace worden toegekend m.b.v. een namespace-prefix. Daarmee kun je ook op attribuutniveau naamconflicten voorkomen. Het is daarbij heel goed mogelijk om een element aan de ene namespace te koppelen en een attribuut op dat element aan de andere namespace. Een volgende constructie is dus toegestaan:
 
 ```xml
 <gbrt:gebeurtenis xmlns:gbrt="http://www.gebeurtenissen.nl"
@@ -163,7 +163,12 @@ Behalve elementen kunnen ook attributen aan een namespace worden toegekend. Daar
 	...
 </gbrt:gebeurtenis>	
 ```
-In dit voorbeeld hebben we alleen de van belang zijnde elementen getoond. Het is dus geen Well-formed laat staan valide XML.
+> **Let op!** In dit voorbeeld hebben we alleen de van belang zijnde elementen getoond. Het is dus geen Well-formed laat staan valide XML.
+
+XML-attributen zonder namespace-prefix (namespace identifier) zijn per definitie niet aan een namespace gekoppeld. 
+Dit is een fundamenteel verschil tussen XML-elementen en XML-attributen:
+* **Elementen**: Als er een "default namespace" is gedefinieerd (bijv. xmlns="http://example.com"), dan vallen onbeprefixte elementen wel onder die namespace.
+* **Attributen**: Een default namespace declaration (xmlns="...") is niet van toepassing op attributen zonder een prefix.
 
 ### Oefening
 
