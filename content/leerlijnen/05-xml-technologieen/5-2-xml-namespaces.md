@@ -165,6 +165,6 @@ Behalve elementen kunnen ook attributen aan een namespace worden toegekend. Daar
 ```
 In dit voorbeeld hebben we alleen de van belang zijnde elementen getoond. Het is dus geen Well-formed laat staan valide XML.
 
-### Oefening 3
+### Oefening
 
-[Naar de oefening 1](../oefening-1-5.2).
+[Naar de oefening](../oefening-3-5.2).

@@ -1,5 +1,5 @@
 ---
-title: "Oefening 1 5.2"
+title: "Oefening 3 5.2"
 date: 2026-03-14
 weight: 3.2
 leerlijn: 5
@@ -7,7 +7,7 @@ paragraaf: "5.2.1"
 oefendoel: "Oefen met het ordenen van een XML bestand in namespaces."
 ---
 
-## Oefening 3: StUF Zaken
+## Oefening: StUF Zaken
 
 Je krijgt nu een sneak preview in een StUF bericht. Het is een goed voorbeeld van het toepassen van namespaces en we kijken dus nog niet naar de semantiek achter het bericht. 
 
