@@ -4,7 +4,9 @@ date: 2026-03-04
 weight: 1
 leerlijn: 6
 paragraaf: "6.1"
-leerdoel: "Leerdoel nog toe te voegen"
+leerdoel: "Begrip opbouwen van de generieke onderlaag (StUF 03.01), horizontale sectormodellen (bv. StUF-BG), verticale sectormodellen (bv. StUF-WOZ) en specifieke koppelvlakken (bv. LV-WOZ).
+
+StUF biedt functionaliteit die verder gaat dan een simpel dataformaat: gestandaardiseerde mutatiesoorten, bitemporele elementen en kennisgevingspatronen."
 ---
 
 ## 6.1 Opbouw en werking van StUF
@@ -57,7 +59,7 @@ graph TB
 - Identificatie en tijdsstempeling
 
 **2. Sectormodel**
-- Domein-specifieke informatiemodellen (RSGB, RSGB-BGT)
+- Domein-specifieke informatiemodellen (RSGB, RGBZ, ) 
 - Business-objecten en relaties
 - Sectorspecifieke regels
 
