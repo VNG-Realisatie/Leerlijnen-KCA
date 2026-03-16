@@ -90,7 +90,7 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 | `<xs:element name="voornaam" type="xs:string"/>` | Er moet een element `<voornaam>` zijn, met een tekstwaarde |
 | `<xs:element name="geboortedatum" type="xs:date"/>` | Er moet een element `<geboortedatum>` zijn, met een datumwaarde (formaat `JJJJ-MM-DD`) |
 
-**Geldig** (valide) XML-document:
+Een valide XML-document volgens dit XML-Schema kan er als volgt uitzien:
 
 ```xml
 <persoon>
@@ -100,7 +100,7 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 </persoon>
 ```
 
-**Ongeldig** XML-document (drie fouten):
+Hieronder ook een voorbeeld van een XML-document waarin, volgens het XML-Schema, drie fouten staan:
 
 ```xml
 <persoon>
@@ -110,11 +110,13 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 </persoon>
 ```
 
-1. `<achternaam>` staat vóór `<voornaam>` — het schema eist een vaste volgorde
-2. `<geboortedatum>` bevat `"15 maart 1985"` — het schema eist `xs:date` (formaat `JJJJ-MM-DD`)
-
 Een XML-Parser zal bijv. de volgende foutmelding genereren:
 
+<img width="660" alt="Validate" src="/Leerlijnen-KCA/images/Foutmeldingen.jpg" /> 
+
+Dit betekent zoveel als
+1. het element `<achternaam>` komt vóór het element `<voornaam>`. Het schema eist echter een volgorde waarbij `<achternaam>` na het element `<voornaam>` maar vóór het element `<geboortedatum>` staat.
+2. Het element `<geboortedatum>` heeft de waarde `"15 maart 1985"`. Het schema eist echter een waarde die voldoet aan het datatype`xs:date` wat betekent dat een formaat als `JJJJ-MM-DD` moet worden gebruikt.
 
 
 ### Welgevormd vs. geldig
