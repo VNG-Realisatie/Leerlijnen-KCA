@@ -15,3 +15,7 @@ Thumbs.db
 
 # Hugo temporary
 hugo_stats.json
+
+# Standard (Hugo) files
+.gitignore
+hugo.toml
