@@ -1,7 +1,7 @@
 ---
 title: "5.3 XML Schema's (XSD)"
 date: 2026-03-04
-weight: 4
+weight: 5
 leerlijn: 5
 paragraaf: "5.3"
 leerdoel: "Leerdoel nog toe te voegen"
@@ -84,13 +84,13 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 | Regel | Betekenis |
 |---|---|
 | `<xs:schema xmlns:xs="...">` | Het root-element van elk XSD-bestand; de prefix `xs` verwijst naar de XML Schema-namespace |
-| `<xs:element name="persoon">` | Er moet een element `<persoon>` bestaan |
-| `<xs:complexType>` | Het element `<persoon>` heeft een complexe opbouw (het bevat kind-elementen) |
+| `<xs:element name="persoon">` | Op root niveau moet een element `<persoon>` bestaan |
+| `<xs:complexType>` | Het element `<persoon>` heeft een complexe opbouw (het bevat kind-elementen en/of attributen) |
 | `<xs:sequence>` | De kind-elementen moeten in de opgegeven volgorde voorkomen |
 | `<xs:element name="voornaam" type="xs:string"/>` | Er moet een element `<voornaam>` zijn, met een tekstwaarde |
 | `<xs:element name="geboortedatum" type="xs:date"/>` | Er moet een element `<geboortedatum>` zijn, met een datumwaarde (formaat `JJJJ-MM-DD`) |
 
-**Geldig** XML-document:
+Een valide XML-document volgens dit XML-Schema kan er als volgt uitzien:
 
 ```xml
 <persoon>
@@ -100,7 +100,7 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 </persoon>
 ```
 
-**Ongeldig** XML-document (drie fouten):
+Hieronder ook een voorbeeld van een XML-document waarin, volgens het XML-Schema, drie fouten staan:
 
 ```xml
 <persoon>
@@ -110,28 +110,36 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 </persoon>
 ```
 
-1. `<achternaam>` staat vóór `<voornaam>` — het schema eist een vaste volgorde
-2. `<geboortedatum>` bevat `"15 maart 1985"` — het schema eist `xs:date` (formaat `JJJJ-MM-DD`)
+Een XML-Parser kan op basis van voorgaand XML-fragment bijv. de volgende foutmelding genereren:
 
-### Welgevormd vs. geldig
+<img width="660" alt="Validate" src="/Leerlijnen-KCA/images/Foutmeldingen.jpg" /> 
 
-Dit is een cruciaal onderscheid:
+Dit betekent zoveel als
+1. het element `<achternaam>` komt vóór het element `<voornaam>`. Het schema eist echter een volgorde waarbij `<achternaam>` na het element `<voornaam>` maar ook vóór het element `<geboortedatum>` staat.
+2. Het element `<geboortedatum>` heeft de waarde `"15 maart 1985"`. Het schema eist echter een waarde die voldoet aan het datatype`xs:date` wat betekent dat een formaat als `JJJJ-MM-DD` moet worden gebruikt.
+
+> **Let op!** We gaven eerder al aan dat XML case-sensitive is. Definieer je in je XML-Schema dus als volgt een element `<xs:element name="voornaam" type="xs:string"/>` dan kan je in je XML-bestand niet het element `<Voornaam>` gebruiken.
+Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` ook een element `<Voornaam>` kan definiëren. Doe dat echter met uiterste terughoudendheid. Voor een computer is het verschil heel duidelijk maar voor een mens die het XML-Bestand leest is dat heel wat minder het geval.
+
+### Welgevormd vs. valide
+
+In het onderdeel '5.1 XML syntax en structuur' hebben we de welgevormdheid van een XML-bestand behandelt. Daarbij gaven we aan dat een XML-bestand daarnaast ook nog valide kan zijn. Dat is een cruciaal onderscheid:
 
 | Begrip | Betekenis | Gecontroleerd door |
 |---|---|---|
-| **Welgevormd** (well-formed) | Het document voldoet aan de XML-syntaxregels (zie 5.1 en 5.4) | Elke XML-parser |
-| **Geldig** (valid) | Het document voldoet aan een specifiek schema (XSD) | Een XML-validator met het bijbehorende schema |
+| **Welgevormd** (well-formed) | Het document voldoet aan de XML-syntaxregels (zie 5.1) | Elke XML-Parser |
+| **Valide** | Het document voldoet aan de XML-syntaxregels en aan een specifiek schema (XSD) | Een XML-Parser met het bijbehorende schema |
 
-Een document moet **eerst** welgevormd zijn voordat het gevalideerd kan worden.
+Een document moet **eerst** welgevormd zijn voordat het gevalideerd kan worden. De volgende beslisboom is dus van toepassing:
 
-```
+```text
 Stap 1: Is het welgevormd?  → Nee  → Afgekeurd (syntaxfout)
-                             → Ja   → Stap 2: Is het geldig volgens het schema?
+                            → Ja   → Stap 2: Is het geldig volgens het schema?
                                               → Nee  → Afgekeurd (validatiefout)
                                               → Ja   → Geaccepteerd ✓
 ```
 
-### XSD vs. DTD
+### XSD vs. DTD <-- _Ik twijfel of we dit wel moeten opnemen. Ik ben al meer dan 20 jaar geen DTD meer tegengekomen._
 
 Voordat XSD bestond (W3C-standaard in 2001), werden structuren beschreven met **DTD's** (Document Type Definitions). XSD is de opvolger:
 
@@ -143,7 +151,7 @@ Voordat XSD bestond (W3C-standaard in 2001), werden structuren beschreven met **
 | **Restricties** | Zeer beperkt | Uitgebreid: patronen, min/max, enumeraties, etc. |
 | **Hergebruik** | Beperkt | Typen, includes, imports, overerving |
 
-> **StUF-context:** StUF gebruikt uitsluitend XSD. DTD's zijn hier niet relevant, maar het is goed om het verschil te kennen als je oudere documentatie tegenkomt.
+> **StUF-context:** StUF gebruikt uitsluitend XSD, DTD's zijn hier niet relevant.
 
 ### Waarom is XSD belangrijk voor StUF?
 
@@ -582,7 +590,7 @@ Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type ba
 
 `MedewerkerType` bevat nu alle elementen van `PersoonType` **plus** de extra elementen:
 
-```
+```text
 PersoonType          (basistype)
   ├── naam
   └── geboortedatum
@@ -702,7 +710,7 @@ In XML moet je met `xsi:type` aangeven welk concreet type je bedoelt:
 
 In echte projecten (en zeker in StUF) zie je een gelaagde opzet:
 
-```
+```text
 basis-typen.xsd
 ├── Simpele typen (Postcode, BSN, Datum, etc.)
 └── Attribuutgroepen (metadata)
@@ -722,7 +730,7 @@ berichten.xsd
 
 In StUF concreet:
 
-```
+```text
 stuf0302.xsd                 ← Basis StUF-types en attributen
     │
     ├── import ──→ bg0310_stuf_simpleTypes.xsd
