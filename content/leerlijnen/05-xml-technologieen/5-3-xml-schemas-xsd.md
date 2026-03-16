@@ -84,13 +84,13 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 | Regel | Betekenis |
 |---|---|
 | `<xs:schema xmlns:xs="...">` | Het root-element van elk XSD-bestand; de prefix `xs` verwijst naar de XML Schema-namespace |
-| `<xs:element name="persoon">` | Er moet een element `<persoon>` bestaan |
-| `<xs:complexType>` | Het element `<persoon>` heeft een complexe opbouw (het bevat kind-elementen) |
+| `<xs:element name="persoon">` | Op root niveau moet een element `<persoon>` bestaan |
+| `<xs:complexType>` | Het element `<persoon>` heeft een complexe opbouw (het bevat kind-elementen en/of attributen) |
 | `<xs:sequence>` | De kind-elementen moeten in de opgegeven volgorde voorkomen |
 | `<xs:element name="voornaam" type="xs:string"/>` | Er moet een element `<voornaam>` zijn, met een tekstwaarde |
 | `<xs:element name="geboortedatum" type="xs:date"/>` | Er moet een element `<geboortedatum>` zijn, met een datumwaarde (formaat `JJJJ-MM-DD`) |
 
-**Geldig** XML-document:
+**Geldig** (valide) XML-document:
 
 ```xml
 <persoon>
@@ -112,6 +112,10 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 
 1. `<achternaam>` staat vóór `<voornaam>` — het schema eist een vaste volgorde
 2. `<geboortedatum>` bevat `"15 maart 1985"` — het schema eist `xs:date` (formaat `JJJJ-MM-DD`)
+
+Een XML-Parser zal bijv. de volgende foutmelding genereren:
+
+
 
 ### Welgevormd vs. geldig
 
