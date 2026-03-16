@@ -15,7 +15,7 @@ aantal_oefeningen: 3
 
 <div class="leerlijn-header">
   <span class="nummer-badge">Leerlijn 5</span>
-  <h1>XML en gerelateerde technologieën</h1>
+  <h1>XSD, XML en gerelateerde technologieën</h1>
   <p class="hoofdleerdoel">De kandidaat heeft begrip van XML-schemavalidatie en gerelateerde technologieën en kan deze toepassen in de context van StUF.</p>
 </div>
 
