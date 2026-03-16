@@ -13,7 +13,7 @@ Je krijgt nu een sneak preview in een StUF bericht. Het is een goed voorbeeld va
 
 **Benodigde files**
 * Download [ZakLk01.zip](/Leerlijnen-KCA/bestanden/oefening-5.2/ZakLk01.zip) en plaats de inhoud (ZakLk01.xml) op een locatie waar jij er makkelijk bij kunt.
-* Download [Zkn0310-schema.zip](/Leerlijnen-KCA/bestanden/oefening-52/Zkn0310-schema.zip) en plaats de inhoud (een aantal XML-Schema bestanden) op een locatie waar jij er makkelijk bij kunt.
+* Download [Zkn0310-schema.zip](/Leerlijnen-KCA/bestanden/oefening-5.2/Zkn0310-schema.zip) en plaats de inhoud (een aantal XML-Schema bestanden) op een locatie waar jij er makkelijk bij kunt.
 
 **Opdracht**
 * Open het bestand 'ZakLk01.xml' met 'Altova XMLSpy 2024 Enterprise XML Editor';

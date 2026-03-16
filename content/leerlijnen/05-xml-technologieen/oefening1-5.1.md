@@ -16,7 +16,7 @@ gestuurd, dat uiteindelijk de visitekaartjes produceert. Het XML-schema waarin d
 gebruiken om een XML-bestand te creëren.
 
 **Benodigde files**
-* Download [Visitekaartje.zip](/Leerlijnen-KCA/bestanden/oefening-51/Visitekaartje.zip) en plaats de inhoud (Visitekaartje.xsd) op een locatie waar jij er makkelijk bij kunt.
+* Download [Visitekaartje.zip](/Leerlijnen-KCA/bestanden/oefening-5.1/Visitekaartje.zip) en plaats de inhoud (Visitekaartje.xsd) op een locatie waar jij er makkelijk bij kunt.
 
 **Opdracht**
 * Open 'Altova XMLSpy 2024 Enterprise XML Editor'.;
