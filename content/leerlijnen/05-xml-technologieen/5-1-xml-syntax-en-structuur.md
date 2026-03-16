@@ -201,7 +201,7 @@ Een **attribuut** staat in de begintag en heeft de vorm `naam="waarde"`:
 
 > **Let op:** In StUF-berichten worden attributen veelvuldig gebruikt, onder meer voor het aangeven van het mutatiesoort en de aanduiding van sleutelwaarden.
 
-Als de regels uit de voorgaande paragraaf ('Elementen: de bouwstenen van XML') en deze paragraaf correct worden toegepast ontstaat er een welgevormd (well-formed) XML-bestand (ook vaak een XML-instantie genoemd). Later zullen we zien dat een XML-bestand daarnaast ook nog valide kan zijn.
+Als de regels uit de voorgaande paragraaf ('Elementen: de bouwstenen van XML') en deze paragraaf correct worden toegepast ontstaat er een welgevormd (well-formed) XML-bestand (ook vaak een XML-instantie genoemd). In een van de volgende onderdelen zullen we zien dat een XML-bestand daarnaast ook nog valide kan zijn.
 
 ### Voorbeeld uit de praktijk: een CV in XML
 
