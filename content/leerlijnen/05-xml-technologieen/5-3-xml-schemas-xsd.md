@@ -123,7 +123,7 @@ Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` o
 
 ### Welgevormd vs. valide
 
-In het onderdeel '5.1 XML syntax en structuur' hebben we de welgevormdheid van een XML-bestand behabdelt. Daarbij gaven we aan dat een XML-bestand daarnaast ook nog valide kan zijn. Dat is een cruciaal onderscheid:
+In het onderdeel '5.1 XML syntax en structuur' hebben we de welgevormdheid van een XML-bestand behandelt. Daarbij gaven we aan dat een XML-bestand daarnaast ook nog valide kan zijn. Dat is een cruciaal onderscheid:
 
 | Begrip | Betekenis | Gecontroleerd door |
 |---|---|---|
