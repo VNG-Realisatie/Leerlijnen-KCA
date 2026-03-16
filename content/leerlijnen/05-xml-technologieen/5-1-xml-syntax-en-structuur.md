@@ -117,12 +117,24 @@ De declaratie staat altijd op de **allereerste regel** en vóór het root-elemen
 <geboortedatum>1985-03-15</geboortedatum>
 ```
 
+> Voor XML is alles tekst. Het getal `12` en de datum `1985-03-15` zijn gewoon tekenreeksen. Pas met XSD (zie 5.3) kun je afdwingen dat een waarde een getal of datum moet zijn.
+
 **Regels voor elementen**
 * Elementen hebben altijd, met uitzondering van lege elementen (waarover zo meer), een begin- en een eindtag;
 * Elementnamen beginnen met een letter, underscore (_) of een dubbele punt (:) en worden gevolgd door naam karakters;
-* naam karakters bestaan uit letters, underscores, dubbele punten, cijfers, hyphens (-) of een punt (.). In de praktijk wordt de dubbele punt echter niet gebruikt uitgezonderd als scheidingsteken tussen namespace-prefix (waarover meer in het volgende onderdeel) en elementnamen.
+* naam karakters bestaan uit letters, underscores, dubbele punten, cijfers, hyphens (-) of een punt (.). In de praktijk wordt de dubbele punt echter niet gebruikt uitgezonderd als scheidingsteken tussen namespace-prefix (waarover meer in het volgende onderdeel) en elementnamen;
+* Letters zijn niet gelimiteerd tot ASCII. De verschillende nationaliteiten mogen dus hun eigen karakters gebruiken in elementnamen; 
+* Elementennamen mogen niet starten met 'XML', 'xml' of een variatie daarop.
 
-> Voor XML is alles tekst. Het getal `12` en de datum `1985-03-15` zijn gewoon tekenreeksen. Pas met XSD (zie 5.3) kun je afdwingen dat een waarde een getal of datum moet zijn.
+| Valide namen | Invalide namen |
+| --- | --- |
+| Artikel | -Artikel |
+| ARTIKEL | 11tal |
+| vng:standaard | Totaal$ |
+| Smörgåsbord | E=mc&#178; |
+| ΩΛΣΦ | XmlData |
+
+> **Let op!** XML is case sensitive, de elementen 'Artikel' en 'ARTIKEL' zijn dus niet dezelfde elementen.
 
 **Elementen met kind-elementen** — nesting:
 
