@@ -238,6 +238,9 @@ In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het
 
 > **Let op:** Het kiezen van het juiste datatype is belangrijk. Als je `xs:string` gebruikt voor een geboortedatum, accepteert het schema elke tekst — ook "gisteren" of "binnenkort". Met `xs:date` dwing je het formaat `JJJJ-MM-DD` af.
 
+### Oefening 1
+
+
 ### Simpel vs. complex
 
 Een element kan van een complex of simpel type zijn. Elementen van het **simpele** type bevatten alleen een waarde (tekst, getal, datum) maar geen kind-elementen en attributen. Elementen van het **complexe** type kunnen naast een waarde wel kind-elementen en/of attributen bevatten. 
@@ -320,6 +323,9 @@ Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoo
 
 > **StUF-context:** In StUF-schema's worden restricties veelvuldig gebruikt. BSN's moeten precies 9 cijfers zijn, postcodes hebben een vast patroon, en geslachtsaanduidingen komen uit een vaste lijst.
 
+### Oefening 2
+
+
 ### Complexe typen: elementen met structuur
 
 In de praktijk bevatten de meeste elementen **kind-elementen** en/of **attributen**. Hiervoor heb je een `<xs:complexType>` nodig.
@@ -373,6 +379,9 @@ Het volgende XML fragment voldoet daaraan:
 <bedrag valuta="EUR">1500.00</bedrag>
 ```
 -->
+### Oefening 3
+
+
 ### Lokaal vs globaal
 
 Tot nu toe heeft het wijzigen van de simpele en complexe types lokaal plaats gevonden. Daarmee bedoelen we dat deze binnen het `<xs:element>` element heeft plaatsevonden. Wat echter als we dezelfde typering ook op een ander `<xs:element>` willen toepassen? Tweemaal dezelfde typering lokaal aanbrengen is vanuit beheers-oogpunt niet handig. Dit kan leiden tot fouten of onzorgvuldigheden. In dit geval is het handiger het type globaal te definiëren en er vanuit de elementen naar te verwijzen.
@@ -394,6 +403,9 @@ Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
 ```
 
 > **Let op!** Tot nu toe hebben we steeds XML-Schema fragmenten gecreëerd die niet aan een namespace zijn gekoppeld. Later zulen we zien dat je in een XML-Schema aan kunt geven op welke namespace dat XML-Schema betrekking heeft. Dat heeft direct gevolgen voor de wijze waarop je in een `type` attribuut verwijst naar een globaal gedefinieerde `<xs:simpleType>` danwel `<xs:complexType>`.
+
+### Oefening 4
+
 
 ### Nillable: expliciet "geen waarde"
 
