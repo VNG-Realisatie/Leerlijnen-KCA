@@ -158,7 +158,7 @@ Voordat XSD bestond (W3C-standaard in 2001), werden structuren beschreven met **
 StUF-berichten worden gedefinieerd door een set XSD-schema's:
 
 1. **Contract tussen systemen** — Het schema legt exact vast hoe een bericht eruit moet zien. Als een leverancier een systeem bouwt dat StUF-berichten verstuurt, moet het elk bericht valideren tegen het relevante StUF-schema.
-2. **Automatische validatie** — Vóórdat een bericht verwerkt wordt, kan het ontvangend systeem het automatisch valideren.
+2. **Automatische validatie** — Vóórdat een bericht verwerkt wordt, kan het ontvangend systeem het automatisch valideren. Bij een succesvolle validatie weet dat systeem dat het dat bericht zonder problemen kan verwerken.
 3. **Documentatie** — De XSD-schema's zijn tegelijk de technische documentatie van de standaard.
 4. **Gelaagde opbouw** — StUF-schema's zijn modulair opgebouwd in lagen (basisschema → sectormodel → koppelvlak), mogelijk gemaakt door XSD-mechanismes als `import`, `include` en type-overerving.
 
@@ -199,55 +199,52 @@ Dit zegt: *"Er mag een element `<voornaam>` bestaan, en de inhoud moet tekst zij
 
 Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-bestand mag beginnen.
 
-### Simpele vs. complexe typen
-
-Een **type** beschrijft welke waarden een element in het met het XML-schema gekoppelde XML-bestand mag bevatten. XML-schema kent twee soorten:
-
-1. **Simpele typen** (`simpleType`) — het element bevat alleen een waarde (tekst, getal, datum), geen kind-elementen
-2. **Complexe typen** (`complexType`) — het element bevat kind-elementen en/of attributen
-
 ### Ingebouwde datatypen
 
-Het W3C heeft naast XML-schema tevens een uitgebreide set **ingebouwde datatypen** gedefinieerd. Een parser die XSD‑validatie ondersteunt, moet dus o.a. de volgende datatypes kennen:
+In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het datatype van het `<voornaam>` element gedefinieerd. In dit geval het `xs:string` datatype, tekst dus. Dit is niet het enige datatype dat je kunt definiëren. Het W3C heeft naast de XML-schema standaard nl. een uitgebreide set **ingebouwde datatypen** gedefinieerd. Een parser die XSD‑validatie ondersteunt, moet dus ook o.a. de volgende datatypes kennen:
 
 **Teksttypen:**
 
 | Type | Beschrijving | Voorbeeldwaarde |
 |---|---|---|
-| `xs:string` | Willekeurige tekst | `"Jan de Vries"` |
-| `xs:normalizedString` | Tekst zonder tabs en regelovergangen | `"Jan de Vries"` |
-| `xs:token` | Tekst zonder overbodige witruimte | `"Jan de Vries"` |
+| `xs:string` | Tekenreeksen (ondersteunt spaties, tabs, etc.). | `" Jan de   Vries "` |
+| `xs:normalizedString` | Tekenreeksen waarin regeleinden en tabs zijn vervangen door spaties. | `" Jan de Vries "` |
+| `xs:token` | Tekenreeksen waarbij ook overtollige spaties aan het begin, einde en dubbele spaties worden verwijderd. | `"Jan de Vries"` |
 
 **Numerieke typen:**
 
 | Type | Beschrijving | Voorbeeldwaarde |
 |---|---|---|
-| `xs:integer` | Geheel getal | `42`, `-7` |
-| `xs:positiveInteger` | Geheel getal > 0 | `1`, `100` |
-| `xs:decimal` | Decimaal getal | `3.14`, `-0.5` |
+| `xs:integer` | Gehele getallen (positief, negatief of nul). | `42`, `-7` |
+| `xs:positiveInteger` | Gehele getallen > 0. | `1`, `100` |
+| `xs:decimal` | Getallen met een vaste komma. | `3.14`, `-0.5` |
 
 **Datum- en tijdtypen:**
 
 | Type | Beschrijving | Voorbeeldwaarde |
 |---|---|---|
-| `xs:date` | Datum (jaar-maand-dag) | `2026-03-04` |
-| `xs:time` | Tijd (uur:minuut:seconde) | `14:30:00` |
-| `xs:dateTime` | Datum + tijd | `2026-03-04T14:30:00` |
+| `xs:date` | Datum (JJJJ-MM-DD). | `2026-03-04` |
+| `xs:time` | Tijd in de notatie hh:mm:ss). | `14:30:00` |
+| `xs:dateTime` | Combinatie van datum en tijd. | `2026-03-04T14:30:00` |
 | `xs:gYear` | Alleen een jaar | `2026` |
-| `xs:duration` | Tijdsduur | `P1Y2M3D` (1 jaar, 2 maanden, 3 dagen) |
+| `xs:duration` | Tijdsduur (PnYnMnDTnHnMnS). | `P1Y2M3D` (1 jaar, 2 maanden, 3 dagen)<br/> `P1Y2M3DT2H13M30S` (1 jaar, 2 maanden, 3 dagen), 2 uur, 13 minuten en 30 seconden).|
 
 **Overige typen:**
 
 | Type | Beschrijving | Voorbeeldwaarde |
 |---|---|---|
 | `xs:boolean` | Waar of onwaar | `true`, `false`, `1`, `0` |
-| `xs:anyURI` | Een URI/URL | `http://www.example.nl` |
+| `xs:anyURI` | Een URI/URL/URN | `http://www.example.nl` |
 
 > **Let op:** Het kiezen van het juiste datatype is belangrijk. Als je `xs:string` gebruikt voor een geboortedatum, accepteert het schema elke tekst — ook "gisteren" of "binnenkort". Met `xs:date` dwing je het formaat `JJJJ-MM-DD` af.
 
+### Simpele vs. complexe typen
+
+Een element kan complex of simpel zijn. **Simpele elementen** bevatten alleen een waarde (tekst, getal, datum) maar geen kind-elementen en attributen. **Complexe elementen** kunnen naast een waarde wel kind-elementen en/of attributen bevatten. In de volgende paragrafen bouwen we voort op dit inzicht.
+
 ### Simpele typen met restricties (facets)
 
-Vaak wil je de toegestane waarden verder beperken. Bijvoorbeeld: een postcode moet precies 4 cijfers gevolgd door 2 letters zijn. Daarvoor gebruik je **restricties** (ook wel **facets** genoemd) binnen een `<xs:simpleType>`:
+Vaak wil je de toegestane waarden verder beperken. Bijvoorbeeld: een postcode moet precies 4 cijfers gevolgd door 2 letters zijn. Daarvoor gebruik je **facets** binnen een **restriction**, hieronder een voorbeeld met de facet `<xs:pattern>`:
 
 ```xml
 <xs:simpleType name="Postcode">
@@ -257,17 +254,17 @@ Vaak wil je de toegestane waarden verder beperken. Bijvoorbeeld: een postcode mo
 </xs:simpleType>
 ```
 
-**Alle beschikbare restricties:**
+**Enkele beschikbare facets:**
 
 | Facet | Werkt op | Betekenis | Voorbeeld |
 |---|---|---|---|
-| `xs:minLength` | Tekst | Minimaal aantal tekens | `<xs:minLength value="1"/>` |
-| `xs:maxLength` | Tekst | Maximaal aantal tekens | `<xs:maxLength value="100"/>` |
-| `xs:length` | Tekst | Exact aantal tekens | `<xs:length value="6"/>` |
-| `xs:pattern` | Tekst | Moet voldoen aan een reguliere expressie | `<xs:pattern value="[0-9]{4}[A-Z]{2}"/>` |
-| `xs:enumeration` | Alle typen | Waarde moet uit een vaste lijst komen | `<xs:enumeration value="M"/>` |
-| `xs:minInclusive` | Getallen/datums | Minimale waarde (inclusief) | `<xs:minInclusive value="0"/>` |
-| `xs:maxInclusive` | Getallen/datums | Maximale waarde (inclusief) | `<xs:maxInclusive value="999"/>` |
+| `xs:minLength` | Tekst | Minimaal aantal tekens. | `<xs:minLength value="1"/>` |
+| `xs:maxLength` | Tekst | Maximaal aantal tekens. | `<xs:maxLength value="100"/>` |
+| `xs:length` | Tekst | Exact aantal tekens. | `<xs:length value="6"/>` |
+| `xs:pattern` | Tekst | Moet voldoen aan een reguliere expressie. | `<xs:pattern value="[0-9]{4}[A-Z]{2}"/>` |
+| `xs:enumeration` | Alle typen | Waarde moet uit een hierin gedefinieerde lijst van waarden komen. | `<xs:enumeration value="M"/>` |
+| `xs:minExclusive` | Getallen/datums | Minimale waarde (exclusief) | `<xs:minExclusive value="8.23"/>` |
+| `xs:maxInclusive` | Getallen/datums | Maximale waarde (inclusief) | `<xs:maxInclusive value="2023-01-01"/>` |
 | `xs:totalDigits` | Getallen | Maximaal aantal cijfers totaal | `<xs:totalDigits value="5"/>` |
 | `xs:fractionDigits` | Decimalen | Maximaal aantal decimalen | `<xs:fractionDigits value="2"/>` |
 
@@ -283,17 +280,19 @@ Vaak wil je de toegestane waarden verder beperken. Bijvoorbeeld: een postcode mo
 </xs:simpleType>
 ```
 
-Dit type accepteert alleen `M`, `V` of `O`. Elke andere waarde is ongeldig.
+Dit type accepteert alleen `M`, `V` of `O` in een element waarop het gedefinieerd is. Elke andere waarde is ongeldig.
 
 **Voorbeeld: patroon (reguliere expressie)**
 
 ```xml
 <xs:simpleType name="BSN">
   <xs:restriction base="xs:string">
-    <xs:pattern value="[0-9]{9}"/>
+    <xs:pattern value="[0-1][0-9]{8}"/>
   </xs:restriction>
 </xs:simpleType>
 ```
+
+Definieert dat een element van dit type uit 9 cijfers bestaat waarvan het eerste cijfer alleen de waarde '0' of '1' mag hebben.
 
 **Restricties combineren:**
 
@@ -305,6 +304,8 @@ Dit type accepteert alleen `M`, `V` of `O`. Elke andere waarde is ongeldig.
   </xs:restriction>
 </xs:simpleType>
 ```
+
+Definieert dat een element van dit type uit 4 cijfers bestaat gevolgd door 2 letters. Daarnaast maghet niet uit meer dan 6 karakters bestaan. In feite is de facet `<xs:length>` hier overbodig aangezien het facet `<pattern>` al definieert dat d emaximale lengte 6 karakters is.
 
 > **StUF-context:** In StUF-schema's worden restricties veelvuldig gebruikt. BSN's moeten precies 9 cijfers zijn, postcodes hebben een vast patroon, en geslachtsaanduidingen komen uit een vaste lijst.
 
