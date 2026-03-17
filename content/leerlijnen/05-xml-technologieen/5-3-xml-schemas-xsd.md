@@ -139,7 +139,7 @@ Stap 1: Is het welgevormd?  → Nee  → Afgekeurd (syntaxfout)
                                               → Ja   → Geaccepteerd ✓
 ```
 
-### XSD vs. DTD <-- _Ik twijfel of we dit wel moeten opnemen. Ik ben al meer dan 20 jaar geen DTD meer tegengekomen._
+<!-- ### XSD vs. DTD <-- _Ik twijfel of we dit wel moeten opnemen. Ik ben al meer dan 20 jaar geen DTD meer tegengekomen._
 
 Voordat XSD bestond (W3C-standaard in 2001), werden structuren beschreven met **DTD's** (Document Type Definitions). XSD is de opvolger:
 
@@ -151,22 +151,20 @@ Voordat XSD bestond (W3C-standaard in 2001), werden structuren beschreven met **
 | **Restricties** | Zeer beperkt | Uitgebreid: patronen, min/max, enumeraties, etc. |
 | **Hergebruik** | Beperkt | Typen, includes, imports, overerving |
 
-> **StUF-context:** StUF gebruikt uitsluitend XSD, DTD's zijn hier niet relevant.
+> **StUF-context:** StUF gebruikt uitsluitend XSD, DTD's zijn hier niet relevant. -->
 
 ### Waarom is XSD belangrijk voor StUF?
 
 StUF-berichten worden gedefinieerd door een set XSD-schema's:
 
-1. **Contract tussen systemen** — Het schema legt exact vast hoe een bericht eruit moet zien. Als een leverancier een systeem bouwt dat StUF-berichten verstuurt, moet elk bericht valideren tegen het schema.
+1. **Contract tussen systemen** — Het schema legt exact vast hoe een bericht eruit moet zien. Als een leverancier een systeem bouwt dat StUF-berichten verstuurt, moet het elk bericht valideren tegen het relevante StUF-schema.
 2. **Automatische validatie** — Vóórdat een bericht verwerkt wordt, kan het ontvangend systeem het automatisch valideren.
 3. **Documentatie** — De XSD-schema's zijn tegelijk de technische documentatie van de standaard.
-4. **Gelaagde opbouw** — StUF-schema's zijn modulair opgebouwd in lagen (basisschema → sectormodel → koppelvlak), mogelijk gemaakt door XSD-mechanismes als `import` en type-overerving.
-
----
+4. **Gelaagde opbouw** — StUF-schema's zijn modulair opgebouwd in lagen (basisschema → sectormodel → koppelvlak), mogelijk gemaakt door XSD-mechanismes als `import`, `include` en type-overerving.
 
 ### De structuur van een XSD-bestand
 
-Elk XSD-bestand is zelf een XML-document. Het root-element is altijd `<xs:schema>`:
+Elk XSD-bestand is zelf een XML-document en kan zelf ook weer tegen een XML-schema (ook wel een meta-schema genaamd) gevalideerd worden. Het root-element is altijd `<xs:schema>`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -182,7 +180,7 @@ Elk XSD-bestand is zelf een XML-document. Het root-element is altijd `<xs:schema
 | `<xs:schema>` | Het root-element van elk XSD-bestand |
 | `xmlns:xs="http://www.w3.org/2001/XMLSchema"` | De namespace-declaratie die de prefix `xs` koppelt aan de XML Schema-namespace |
 
-De prefix `xs` is conventie — je kunt ook `xsd` kiezen. In de praktijk zie je zowel `xs:` als `xsd:`.
+De prefix `xs` is conventie — je kunt ook `xsd` kiezen. In de praktijk zie je zowel `xs:` als `xsd:`. Soms zelfs beide in een set van XML-schema's
 
 ### Elementen definiëren met `xs:element`
 
@@ -196,19 +194,21 @@ Dit zegt: *"Er mag een element `<voornaam>` bestaan, en de inhoud moet tekst zij
 
 | Attribuut | Betekenis | Voorbeeld |
 |---|---|---|
-| `name` | De naam van het element in het XML-document | `name="voornaam"` |
+| `name` | De naam van het element in het met het XML-schema gekoppelde XML-bestand | `name="voornaam"` |
 | `type` | Het datatype van de inhoud | `type="xs:string"` |
+
+Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-bestand mag beginnen.
 
 ### Simpele vs. complexe typen
 
-Een **type** beschrijft welke waarden een element mag bevatten. XSD kent twee soorten:
+Een **type** beschrijft welke waarden een element in het met het XML-schema gekoppelde XML-bestand mag bevatten. XML-schema kent twee soorten:
 
 1. **Simpele typen** (`simpleType`) — het element bevat alleen een waarde (tekst, getal, datum), geen kind-elementen
 2. **Complexe typen** (`complexType`) — het element bevat kind-elementen en/of attributen
 
 ### Ingebouwde datatypen
 
-XSD levert een uitgebreide set **ingebouwde datatypen** mee:
+Het W3C heeft naast XML-schema tevens een uitgebreide set **ingebouwde datatypen** gedefinieerd. Een parser die XSD‑validatie ondersteunt, moet dus o.a. de volgende datatypes kennen:
 
 **Teksttypen:**
 
