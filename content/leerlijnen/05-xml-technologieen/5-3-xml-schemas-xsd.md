@@ -238,21 +238,26 @@ In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het
 
 > **Let op:** Het kiezen van het juiste datatype is belangrijk. Als je `xs:string` gebruikt voor een geboortedatum, accepteert het schema elke tekst — ook "gisteren" of "binnenkort". Met `xs:date` dwing je het formaat `JJJJ-MM-DD` af.
 
-### Simpele vs. complexe typen
+### Simpel vs. complex
 
-Een element kan complex of simpel zijn. **Simpele elementen** bevatten alleen een waarde (tekst, getal, datum) maar geen kind-elementen en attributen. **Complexe elementen** kunnen naast een waarde wel kind-elementen en/of attributen bevatten. In de volgende paragrafen bouwen we voort op dit inzicht.
+Een element kan van een complex of simpel type zijn. Elementen van het **simpele** type bevatten alleen een waarde (tekst, getal, datum) maar geen kind-elementen en attributen. Elementen van het **complexe** type kunnen naast een waarde wel kind-elementen en/of attributen bevatten. 
 
-### Simpele typen met restricties (facets)
+In de volgende paragrafen bouwen we voort op dit inzicht door het beperken van simpele en complexe types of het uitbreiden van complexe types m.b.v. een `<xs:simpleType>` of een `<xs:complexType>`.
 
-Vaak wil je de toegestane waarden verder beperken. Bijvoorbeeld: een postcode moet precies 4 cijfers gevolgd door 2 letters zijn. Daarvoor gebruik je **facets** binnen een **restriction**, hieronder een voorbeeld met de facet `<xs:pattern>`:
+### Simpele typen met restricties
+
+Vaak wil je de toegestane waarden verder beperken. Bijvoorbeeld: een postcode moet precies 4 cijfers gevolgd door 2 letters zijn. Daarvoor gebruik je dan een **facet** binnen een `<xs:restriction>`, hieronder een voorbeeld met de facet `<xs:pattern>`:
 
 ```xml
-<xs:simpleType name="Postcode">
-  <xs:restriction base="xs:string">
-    <xs:pattern value="[0-9]{4}[A-Z]{2}"/>
-  </xs:restriction>
-</xs:simpleType>
+<xs:element name="Postcode">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{4}[A-Z]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
 ```
+<br/>
 
 **Enkele beschikbare facets:**
 
@@ -271,47 +276,53 @@ Vaak wil je de toegestane waarden verder beperken. Bijvoorbeeld: een postcode mo
 **Voorbeeld: enumeratie (vaste keuzelijst)**
 
 ```xml
-<xs:simpleType name="Geslacht">
-  <xs:restriction base="xs:string">
-    <xs:enumeration value="M"/>
-    <xs:enumeration value="V"/>
-    <xs:enumeration value="O"/>
-  </xs:restriction>
-</xs:simpleType>
+<xs:element name="Geslacht">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="M"/>
+      <xs:enumeration value="V"/>
+      <xs:enumeration value="O"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
 ```
 
-Dit type accepteert alleen `M`, `V` of `O` in een element waarop het gedefinieerd is. Elke andere waarde is ongeldig.
+Binnen het element `<Geslacht>` zijn alleen de waaden `M`, `V` of `O` toegestaan. Elke andere waarde is ongeldig.
 
 **Voorbeeld: patroon (reguliere expressie)**
 
 ```xml
-<xs:simpleType name="BSN">
-  <xs:restriction base="xs:string">
-    <xs:pattern value="[0-1][0-9]{8}"/>
-  </xs:restriction>
-</xs:simpleType>
+<xs:element name="BSN">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[1-9]\d{8}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
 ```
 
-Definieert dat een element van dit type uit 9 cijfers bestaat waarvan het eerste cijfer alleen de waarde '0' of '1' mag hebben.
+Definieert dat het element `<BSN>` uit 9 cijfers moet bestaan waarvan het eerste cijfer niet de waarde '0' mag hebben.
 
 **Restricties combineren:**
 
 ```xml
-<xs:simpleType name="Postcode">
-  <xs:restriction base="xs:string">
-    <xs:length value="6"/>
-    <xs:pattern value="[0-9]{4}[A-Z]{2}"/>
-  </xs:restriction>
-</xs:simpleType>
+<xs:element name="Postcode">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:length value="6"/>
+      <xs:pattern value="[0-9]{4}[A-Z]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
 ```
 
-Definieert dat een element van dit type uit 4 cijfers bestaat gevolgd door 2 letters. Daarnaast maghet niet uit meer dan 6 karakters bestaan. In feite is de facet `<xs:length>` hier overbodig aangezien het facet `<pattern>` al definieert dat d emaximale lengte 6 karakters is.
+Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoofdletters. Daarnaast mag het niet uit meer dan 6 karakters bestaan. In feite is de facet `<xs:length>` hier overbodig aangezien het facet `<xs:pattern>` al definieert dat de maximale lengte 6 karakters is.
 
 > **StUF-context:** In StUF-schema's worden restricties veelvuldig gebruikt. BSN's moeten precies 9 cijfers zijn, postcodes hebben een vast patroon, en geslachtsaanduidingen komen uit een vaste lijst.
 
 ### Complexe typen: elementen met structuur
 
-In de praktijk bevatten de meeste elementen **kind-elementen**. Hiervoor heb je een **complex type** nodig.
+In de praktijk bevatten de meeste elementen **kind-elementen**. Hiervoor heb je een `<xs:complexType>` nodig.
 
 **Inline complex type:**
 
