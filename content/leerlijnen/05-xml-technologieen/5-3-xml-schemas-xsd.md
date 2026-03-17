@@ -324,7 +324,7 @@ Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoo
 
 In de praktijk bevatten de meeste elementen **kind-elementen** en/of **attributen**. Hiervoor heb je een `<xs:complexType>` nodig.
 
-**Inline complex type:**
+Hier een voorbeeld:
 
 ```xml
 <xs:element name="persoon">
@@ -337,22 +337,42 @@ In de praktijk bevatten de meeste elementen **kind-elementen** en/of **attribute
 </xs:element>
 ```
 
-**Complex type met simpele inhoud** — een element met tekst én een attribuut:
+Een element kan echter ook tegelijkertijd kind-elementen en attributen bevatten. Hieronder een voorbeeld:
 
 ```xml
-<xs:complexType name="BedragType">
-  <xs:simpleContent>
-    <xs:extension base="xs:decimal">
-      <xs:attribute name="valuta" type="xs:string"/>
-    </xs:extension>
-  </xs:simpleContent>
-</xs:complexType>
+<xs:element name="kostprijs">
+  <xs:complexType>
+    <xs:sequence>
+	  <xs:element name="btw" type="xs:positiveInteger"/>
+	  <xs:element name="prijs" type="xs:nonNegativeInteger"/>
+      <xs:element name="totaal" type="xs:nonNegativeInteger"/>
+    </xs:sequence>
+    <xs:attribute name="valuta" type="xs:string"/>
+  </xs:complexType>
+</xs:element>
 ```
 
+<!--Een element kan als inhoud ook alleen een waarde bevatten en een attribuut. Dat ziet er als volgt uit:
+
+Een element met tekst én een attribuut:
+
+```xml
+<xs:element name="bedrag">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="valuta" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+```
+
+Het volgende XML fragment voldoet daaraan:
 ```xml
 <bedrag valuta="EUR">1500.00</bedrag>
 ```
-
+-->
 ### Lokaal vs globaal
 
 Tot nu toe heeft het wijzigen van de simpele en complexe types lokaal plaats gevonden. Daarmee bedoelen we dat deze binnen het `<xs:element>` element heeft plaatsevonden. Wat echter als we dezelfde typering ook op een ander `<xs:element>` willen toepassen? Tweemaal dezelfde typering lokaal aanbrengen is vanuit beheers-oogpunt niet handig. Dit kan leiden tot fouten of onzorgvuldigheden. In dit geval is het handiger het type globaal te definiëren en er vanuit de elementen naar te verwijzen.
