@@ -322,7 +322,7 @@ Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoo
 
 ### Complexe typen: elementen met structuur
 
-In de praktijk bevatten de meeste elementen **kind-elementen**. Hiervoor heb je een `<xs:complexType>` nodig.
+In de praktijk bevatten de meeste elementen **kind-elementen** en/of **attributen**. Hiervoor heb je een `<xs:complexType>` nodig.
 
 **Inline complex type:**
 
@@ -335,20 +335,6 @@ In de praktijk bevatten de meeste elementen **kind-elementen**. Hiervoor heb je 
     </xs:sequence>
   </xs:complexType>
 </xs:element>
-```
-
-**Benoemd complex type** (herbruikbaar):
-
-```xml
-<xs:complexType name="PersoonType">
-  <xs:sequence>
-    <xs:element name="voornaam" type="xs:string"/>
-    <xs:element name="achternaam" type="xs:string"/>
-  </xs:sequence>
-</xs:complexType>
-
-<xs:element name="persoon" type="PersoonType"/>
-<xs:element name="contactpersoon" type="PersoonType"/>
 ```
 
 **Complex type met simpele inhoud** — een element met tekst én een attribuut:
@@ -366,6 +352,28 @@ In de praktijk bevatten de meeste elementen **kind-elementen**. Hiervoor heb je 
 ```xml
 <bedrag valuta="EUR">1500.00</bedrag>
 ```
+
+### Lokaal vs globaal
+
+Tot nu toe heeft het wijzigen van de simpele en complexe types lokaal plaats gevonden. Daarmee bedoelen we dat deze binnen het `<xs:element>` element heeft plaatsevonden. Wat echter als we dezelfde typering ook op een ander `<xs:element>` willen toepassen? Tweemaal dezelfde typering lokaal aanbrengen is vanuit beheers-oogpunt niet handig. Dit kan leiden tot fouten of onzorgvuldigheden. In dit geval is het handiger het type globaal te definiëren en er vanuit de elementen naar te verwijzen.
+
+Daartoe definieer je direct binnen het `<xs:schema>` element een `<xs:simpleType>` danwel `<xs:complexType>` met daarin een `name` attribuut. Het `<xs:element>` element kijgt i.p.v. een `<xs:simpleType>` danwel `<xs:complexType>` een `type` attribuut met als waarde een verwijzing naar dat `<xs:simpleType>` danwel `<xs:complexType>` element.
+
+Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
+
+```xml
+<xs:complexType name="PersoonType">
+  <xs:sequence>
+    <xs:element name="voornaam" type="xs:string"/>
+    <xs:element name="achternaam" type="xs:string"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="persoon" type="PersoonType"/>
+<xs:element name="contactpersoon" type="PersoonType"/>
+```
+
+> **Let op!** Tot nu toe hebben we steeds XML-Schema fragmenten gecreëerd die niet aan een namespace zijn gekoppeld. Later zulen we zien dat je in een XML-Schema aan kunt geven op welke namespace dat XML-Schema betrekking heeft. Dat heeft direct gevolgen voor de wijze waarop je in een `type` attribuut verwijst naar een globaal gedefinieerde `<xs:simpleType>` danwel `<xs:complexType>`.
 
 ### Nillable: expliciet "geen waarde"
 
