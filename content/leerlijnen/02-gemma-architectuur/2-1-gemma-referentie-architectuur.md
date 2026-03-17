@@ -51,4 +51,4 @@ GEMMA omvat verschillende standaarden:
 
 **Externe resources:**
 - [GEMMA Online](https://www.gemmaonline.nl/)
-- [VNG Realisatie Architecture](https://vng.nl/rubrieken/onderwerpen/architectuur)
+- [VNG Realisatie Architecture](https://vng.nl/projecten/gemeentelijke-model-architectuur-gemma)
