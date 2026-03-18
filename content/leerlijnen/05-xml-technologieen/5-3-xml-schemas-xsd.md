@@ -189,7 +189,7 @@ De meest fundamentele bouwsteen van XSD:
 <xs:element name="voornaam" type="xs:string"/>
 ```
 
-Dit zegt: *"Er mag een element `<voornaam>` bestaan, en de inhoud moet tekst zijn."*
+Dit zegt: *"Er moet een element `<voornaam>` bestaan, en de inhoud moet tekst zijn."*
 
 | Attribuut | Betekenis | Voorbeeld |
 |---|---|---|
@@ -325,6 +325,7 @@ Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoo
 
 ### Oefening 2
 
+[Naar de oefening 2](../oefening-5-5.3).
 
 ### Complexe typen: elementen met structuur
 
