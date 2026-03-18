@@ -90,7 +90,7 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 | `<xs:element name="voornaam" type="xs:string"/>` | Er moet een element `<voornaam>` zijn, met een tekstwaarde |
 | `<xs:element name="geboortedatum" type="xs:date"/>` | Er moet een element `<geboortedatum>` zijn, met een datumwaarde (formaat `JJJJ-MM-DD`) |
 
-Een valide XML-document volgens dit XML-Schema kan er als volgt uitzien:
+Een volgens dit XML-Schema correct XML-document kan er als volgt uitzien:
 
 ```xml
 <persoon>
@@ -118,8 +118,7 @@ Dit betekent zoveel als
 1. het element `<achternaam>` komt vóór het element `<voornaam>`. Het schema eist echter een volgorde waarbij `<achternaam>` na het element `<voornaam>` maar ook vóór het element `<geboortedatum>` staat.
 2. Het element `<geboortedatum>` heeft de waarde `"15 maart 1985"`. Het schema eist echter een waarde die voldoet aan het datatype`xs:date` wat betekent dat een formaat als `JJJJ-MM-DD` moet worden gebruikt.
 
-> **Let op!** We gaven eerder al aan dat XML case-sensitive is. Definieer je in je XML-Schema dus als volgt een element `<xs:element name="voornaam" type="xs:string"/>` dan kan je in je XML-bestand niet het element `<Voornaam>` gebruiken.
-Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` ook een element `<Voornaam>` kan definiëren. Doe dat echter met uiterste terughoudendheid. Voor een computer is het verschil heel duidelijk maar voor een mens die het XML-Bestand leest is dat heel wat minder het geval.
+> **Let op!** We gaven eerder al aan dat XML case-sensitive is. Definieer je in je XML-Schema dus als volgt een element `<xs:element name="voornaam" type="xs:string"/>` dan kan je in je XML-bestand niet het element `<Voornaam>` gebruiken. Tenminste niet als je wil dat het aan een XML-schema voldoet. Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` ook een element `<Voornaam>` kan definiëren. Doe dat echter met uiterste terughoudendheid. Voor een computer is het verschil heel duidelijk maar voor een mens die het XML-Bestand moet interpreteren is dat heel wat minder het geval.
 
 ### Welgevormd vs. valide
 
@@ -128,7 +127,7 @@ In het onderdeel '5.1 XML syntax en structuur' hebben we de welgevormdheid van e
 | Begrip | Betekenis | Gecontroleerd door |
 |---|---|---|
 | **Welgevormd** (well-formed) | Het document voldoet aan de XML-syntaxregels (zie 5.1) | Elke XML-Parser |
-| **Valide** | Het document voldoet aan de XML-syntaxregels en aan een specifiek schema (XSD) | Een XML-Parser met het bijbehorende schema |
+| **Valide** | Het document voldoet aan de XML-syntaxregels en aan een specifiek schema (XSD) | Een XML-Parser met het bijbehorende XML-schema |
 
 Een document moet **eerst** welgevormd zijn voordat het gevalideerd kan worden. De volgende beslisboom is dus van toepassing:
 
@@ -197,7 +196,7 @@ Dit zegt: *"Er mag een element `<voornaam>` bestaan, en de inhoud moet tekst zij
 | `name` | De naam van het element in het met het XML-schema gekoppelde XML-bestand | `name="voornaam"` |
 | `type` | Het datatype van de inhoud | `type="xs:string"` |
 
-Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-bestand mag beginnen.
+Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-bestand mag beginnen. Dat mogen er meer dan één zijn.
 
 ### Ingebouwde datatypen
 
@@ -240,6 +239,7 @@ In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het
 
 ### Oefening 1
 
+[Naar de oefening 1](../oefening-4-5.3).
 
 ### Simpel vs. complex
 
