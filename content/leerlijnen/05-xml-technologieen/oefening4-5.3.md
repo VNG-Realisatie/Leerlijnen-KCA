@@ -14,17 +14,19 @@ We gaan in het onderliggende cursusonderdeel toewerken naar een XML-Schema dat g
 Maak daarvoor in een XML-Schema de volgende elementen aan met daarachter tussen haakjes het datatype.
 * orderbon (string);
 * betaalbevestiging (boolean);
-* factuur (integer).
+* factuur (integer);
+* voorletters (string);
+* postcode (string).
+* ordernummer (string);
 
 **Opdracht**
-* Open 'Altova XMLSpy 2024 Enterprise XML Editor'.;
-* Open een nieuw document via “File - New...” (of op Ctrl-N);
+* Open in 'Altova XMLSpy' een nieuw document via “File - New...” (of met Ctrl-N);
 * Kies “xsd   XML Schema v1.0” en klik op “OK”;
 * De editing modus staat nu op “Schema”, wijzig deze naar “Text”;
 * Zoals je ziet is er een eerste `xs:element` aangemaakt met daarbinnen een `xs:annotation`. Die laatste kan gebruikt worden om de diverse XML-Schema onderdelen van documentatie te voorzien. Binnen deze cursus zullen we er verder geen aandacht aan besteden;
 * Wijzig het `xs:element` zoals in de intro van deze oefening bij 'orderbon' staat aangegeven en voeg ook de twee andere `xs:element` elementen toe;
-* Bewaar het bestand ergens als “Procesdocumentatie.xml”;
+* Bewaar het bestand ergens als “Procesdocumentatie1.xml” en meteen ook als “Procesdocumentatie2.xml”;
 * Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
-* Als alles goed is krijg je nu het menu “Generate sample XML file” met daarin in het veld “Please select root” de drie zojuist door je aangemaakte elementen. Selecteer er 1 en klik op “OK”. Er wordt vervolgens een XML-bestand gegenereerd dat voldoet aan het schema;
-* Als je wil kan je dit voor alle drie de elementen doen. De gegenereerde bestanden hoeven niet bewaard te worden.
+* Als alles goed is krijg je nu het menu “Generate sample XML file” met daarin in het veld “Please select root” de zes zojuist door je aangemaakte elementen. Selecteer er 1 en klik op “OK”. Er wordt vervolgens een XML-bestand gegenereerd dat voldoet aan het schema;
+* Als je wil kan je dit voor alle zes de elementen doen. De gegenereerde bestanden hoeven niet bewaard te worden.
 
