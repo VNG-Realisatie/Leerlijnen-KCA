@@ -22,7 +22,7 @@ Maak daarvoor in een XML-Schema de volgende elementen aan met daarachter tussen 
 **Opdracht**
 * Open in 'Altova XMLSpy' een nieuw document via “File - New...” (of met Ctrl-N);
 * Kies “xsd   XML Schema v1.0” en klik op “OK”;
-* De editing modus staat nu op “Schema”, wijzig deze naar “Text”;
+* Wijzig zo nodig de editing modus naar “Text”;
 * Zoals je ziet is er een eerste `xs:element` aangemaakt met daarbinnen een `xs:annotation`. Die laatste kan gebruikt worden om de diverse XML-Schema onderdelen van documentatie te voorzien. Binnen deze cursus zullen we er verder geen aandacht aan besteden;
 * Wijzig het `xs:element` zoals in de intro van deze oefening bij 'orderbon' staat aangegeven en voeg ook de twee andere `xs:element` elementen toe;
 * Bewaar het bestand ergens als “Procesdocumentatie1.xml” en meteen ook als “Procesdocumentatie2.xml”;

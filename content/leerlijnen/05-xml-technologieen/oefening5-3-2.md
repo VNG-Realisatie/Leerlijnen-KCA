@@ -13,10 +13,12 @@ In de voorgaande oefening hebben we de elementen `<voorletters>`, `<postcode>` e
 
 **Opdracht**
 * Ga naar het XML-Schema 'procesdocument2.xsd' dat je in de voorgaande oefening hebt vervaardigd of open het opnieuw in 'Altova XMLSpy';
-* Als de editing modus op “Schema” staat, wijzig deze dan naar “Text”;
-* 
+* Wijzig zo nodig de editing modus naar “Text”;
+* In de definitie van element `<voorletters>` moet een restriction op basis van `xs:string` worden gedefinieerd waarin de regular expression "([A-Z]{1}\.)+" wordt gebruikt.
+* Hetzelfde geldt voor de definitie van het element `<postcode>` alleen gebruiken we daar de regular expression "[0-9]{4}[A-Z]{2}".
+* Tenslotte moet ook in de definitie van element `<ordernummer>` een restriction worden gedefinieerd. Daarin beperken we echter de lengte tot 13.
 * Bewaar het bestand en bewaar het daarna ook meteen “Procesdocumentatie3.xml”;
 * Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
-* Als alles goed is krijg je nu het menu “Generate sample XML file” met daarin in het veld “Please select root” de drie zojuist door je aangemaakte elementen. Selecteer er 1 en klik op “OK”. Er wordt vervolgens een XML-bestand gegenereerd dat voldoet aan het schema;
-* Als je wil kan je dit voor alle drie de elementen doen. De gegenereerde bestanden hoeven niet bewaard te worden.
+* Kies in het menu “Generate sample XML file” een van de drie zojuist aangepaste elementen en klik op “OK”. Check het resultaat en speel wat met de waardes;
+* Doe dit ook voor andere twee aangepaste elementen. De gegenereerde bestanden hoeven niet bewaard te worden.
 
