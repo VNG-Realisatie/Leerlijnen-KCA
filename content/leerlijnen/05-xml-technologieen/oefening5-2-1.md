@@ -17,6 +17,7 @@ Je krijgt nu een sneak preview in een StUF bericht. Het is een goed voorbeeld va
 
 **Opdracht**
 * Open het bestand 'ZakLk01.xml' met 'Altova XMLSpy 2024 Enterprise XML Editor';
+* Wijzig zo nodig de editing modus naar “Text”;
 * Definieer op het root element de volgende namespaces met een door jezelf gekozen prefix:
   1. 'http://www.egem.nl/StUF/StUF0301'
   2. 'http://www.w3.org/2001/XMLSchema-instance'

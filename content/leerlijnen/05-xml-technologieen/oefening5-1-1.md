@@ -25,8 +25,8 @@ gebruiken om een XML-bestand te creëren.
 * Klik vervolgens achter het invoerveld op het map icoontje voor “Browse file” en selecteer het bestand “Visitekaartje.xsd” waar je dat eerder hebt opgeslagen;
 * Klik op “Open” en vervolgens op “OK”;
 * XMLSPY heeft nu een XML-bestand voor je aangemaakt met de minimaal benodigde set elementen en deze geopend in “Text view”. 
-Dat laatste kun je zien aan de balk onder het document waarmee je de editing/viewing modus kunt kiezen, zie hieronder:
-<img width="220" style="display: block; margin-top: 0; margin-bottom: 0;" alt="XMLSpy-modi" src="/Leerlijnen-KCA/images/XML-Spy-modi.jpg" />
+Dat laatste kun je zien aan de balk onder het document waarin je de editing/viewing modus kunt kiezen, zie hieronder:
+<img width="540" style="display: block; margin-top: 0; margin-bottom: 0;" alt="XMLSpy-modi" src="/Leerlijnen-KCA/images/XML-Spy-modi.jpg" />
 Alle verplichte elementen zijn aanwezig. Zij bevatten alleen nog geen inhoud.<br>Voorzie de elementen van inhoud en kijk of 
 je ook nog enkele niet verplichte elementen aan het bestand kunt toevoegen.<br>Valideer daarvoor regelmatig het bestand door te klikken op het groene <img width="22" style="display: block; margin-top: 0; margin-bottom: 0;" alt="Validate" src="/Leerlijnen-KCA/images/validate.jpg" />
 icoontje en corrigeer indien nodig de fouten. Je kunt ook valideren via het menu “XML – Validate XML” of m.b.v. “F8”.<br>Eventueel kan je via “DTD\Schema – Go to 
