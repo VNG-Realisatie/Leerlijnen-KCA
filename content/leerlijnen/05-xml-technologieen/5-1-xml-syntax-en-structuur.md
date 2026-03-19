@@ -253,11 +253,11 @@ Merk op hoe de attributen hier meerdere rollen vervullen:
 ### Oefening 5.1.1
 Download en installeer eerst '[Altova XMLSpy 2024 Enterprise XML Editor - Release 2](https://www.altova.com/xmlspy-xml-editor/download)'. Gebruik de 'free, fully- functional, 30-day trial' of vraag de beheerder van de KCA specifieke software (Robert Melskens) om de Licentie gegevens.
 
-[Naar de oefening 1](../oefening-1-5.1).
+[Naar de oefening](../oefening-5-1-1).
 
 ### Oefening 5.1.2
 
-[Naar de oefening 2](../oefening-2-5.1).
+[Naar de oefening](../oefening-5-1-2).
 
 ### Vergelijking met HTML
 

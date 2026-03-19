@@ -172,4 +172,4 @@ Dit is een fundamenteel verschil tussen XML-elementen en XML-attributen:
 
 ### Oefening 5.2.1
 
-[Naar de oefening](../oefening-3-5.2).
+[Naar de oefening](../oefening-5-2-1).

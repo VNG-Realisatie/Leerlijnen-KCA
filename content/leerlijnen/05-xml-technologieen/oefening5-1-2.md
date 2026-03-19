@@ -1,5 +1,5 @@
 ---
-title: "Oefening 2 5.1"
+title: "Oefening 5-1-2"
 date: 2026-03-13
 weight: 3.2
 leerlijn: 5
