@@ -7,7 +7,7 @@ paragraaf: "5.2.1"
 oefendoel: "Oefen met het ordenen van een XML bestand in namespaces."
 ---
 
-## Oefening: StUF Zaken
+## Oefening 5.2.1: StUF Zaken
 
 Je krijgt nu een sneak preview in een StUF bericht. Het is een goed voorbeeld van het toepassen van namespaces en we kijken dus nog niet naar de semantiek achter het bericht. 
 

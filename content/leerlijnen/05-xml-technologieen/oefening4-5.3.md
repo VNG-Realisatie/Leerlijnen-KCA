@@ -7,7 +7,7 @@ paragraaf: "5.3.1"
 oefendoel: "Oefen het vervaardigen van een XML-Schema met 3 root elementen."
 ---
 
-## Oefening 1: Een eenvoudig XML-SChema
+## Oefening 5.3.1: Een eenvoudig XML-SChema
 
 We gaan in het onderliggende cursusonderdeel toewerken naar een XML-Schema dat geschikt is voor drie verschillende typen documenten, een orderbon, een betaalbevestiging en een factuur.
 

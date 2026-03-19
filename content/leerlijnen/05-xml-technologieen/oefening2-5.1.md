@@ -7,7 +7,7 @@ paragraaf: "5.1.2"
 oefendoel: "Oefen met het toevoegen van attributen aan een XML bestand."
 ---
 
-## Oefening 2: Luxe visitekaartje
+## Oefening 5.1.2: Luxe visitekaartje
 
 Het bedrijf heeft besloten voor specifieke functies ook privé informatie op een visitekaartje toe te staan. Het gaat om het adres, het e-Mailadres, het telefoonnummer en het mobielenummer. Het XML-schema is daartoe aangepast.
 
