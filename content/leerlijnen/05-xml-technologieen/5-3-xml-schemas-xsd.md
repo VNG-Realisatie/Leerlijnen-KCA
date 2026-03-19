@@ -237,7 +237,7 @@ In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het
 
 > **Let op:** Het kiezen van het juiste datatype is belangrijk. Als je `xs:string` gebruikt voor een geboortedatum, accepteert het schema elke tekst — ook "gisteren" of "binnenkort". Met `xs:date` dwing je het formaat `JJJJ-MM-DD` af.
 
-### Oefening 1
+### Oefening 5.3.1
 
 [Naar de oefening](../oefening-5-3-1).
 
@@ -323,7 +323,7 @@ Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoo
 
 > **StUF-context:** In StUF-schema's worden restricties veelvuldig gebruikt. BSN's moeten precies 9 cijfers zijn, postcodes hebben een vast patroon, en geslachtsaanduidingen komen uit een vaste lijst.
 
-### Oefening 2
+### Oefening 5.3.2
 
 [Naar de oefening](../oefening-5-3-2).
 
