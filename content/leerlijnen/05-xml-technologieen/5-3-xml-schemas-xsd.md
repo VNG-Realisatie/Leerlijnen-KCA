@@ -239,7 +239,7 @@ In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het
 
 ### Oefening 1
 
-[Naar de oefening 1](../oefening-4-5.3).
+[Naar de oefening 5.3.1](../oefening-4-5.3).
 
 ### Simpel vs. complex
 
@@ -325,7 +325,7 @@ Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoo
 
 ### Oefening 2
 
-[Naar de oefening 2](../oefening-5-5.3).
+[Naar de oefening 5.3.2](../oefening-5-5.3).
 
 ### Complexe typen: elementen met structuur
 

@@ -170,6 +170,6 @@ Dit is een fundamenteel verschil tussen XML-elementen en XML-attributen:
 * **Elementen**: Als er een "default namespace" is gedefinieerd (bijv. xmlns="http://example.com"), dan vallen onbeprefixte elementen wel onder die namespace.
 * **Attributen**: Een default namespace declaration (xmlns="...") is niet van toepassing op attributen zonder een prefix.
 
-### Oefening
+### Oefening 5.2.1
 
 [Naar de oefening](../oefening-3-5.2).

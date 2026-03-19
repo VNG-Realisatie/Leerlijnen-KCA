@@ -250,12 +250,12 @@ Merk op hoe de attributen hier meerdere rollen vervullen:
 * **Classificatie**: `weertype="zwaar-bewolkt"` geeft het type weer aan
 * **Eenheden**: `eenheid="Celsius"`, `eenheid="m/sec"` — metagegevens over hoe de waarde gelezen moet worden
 
-### Oefening 1
+### Oefening 5.1.1
 Download en installeer eerst '[Altova XMLSpy 2024 Enterprise XML Editor - Release 2](https://www.altova.com/xmlspy-xml-editor/download)'. Gebruik de 'free, fully- functional, 30-day trial' of vraag de beheerder van de KCA specifieke software (Robert Melskens) om de Licentie gegevens.
 
 [Naar de oefening 1](../oefening-1-5.1).
 
-### Oefening 2
+### Oefening 5.1.2
 
 [Naar de oefening 2](../oefening-2-5.1).
 
