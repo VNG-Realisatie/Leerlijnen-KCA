@@ -17,7 +17,7 @@ In de voorgaande oefening hebben we de elementen `<voorletters>`, `<postcode>` e
 * In de definitie van element `<voorletters>` moet een restriction op basis van `xs:string` worden gedefinieerd waarin de regular expression "([A-Z]{1}\.)+" wordt gebruikt.
 * Hetzelfde geldt voor de definitie van het element `<postcode>` alleen gebruiken we daar de regular expression "[0-9]{4}[A-Z]{2}".
 * Tenslotte moet ook in de definitie van element `<ordernummer>` een restriction worden gedefinieerd. Daarin beperken we echter de lengte tot 13.
-* Bewaar het bestand en bewaar het daarna ook meteen als “Procesdocumentatie3.xml”;
+* Bewaar het bestand en bewaar het daarna ook meteen als “Procesdocumentatie3.xsd”;
 * Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
 * Kies in het menu “Generate sample XML file” een van de drie zojuist aangepaste elementen en klik op “OK”. Check het resultaat en speel wat met de waardes;
 * Doe dit ook voor andere twee aangepaste elementen. De gegenereerde bestanden hoeven niet bewaard te worden.
