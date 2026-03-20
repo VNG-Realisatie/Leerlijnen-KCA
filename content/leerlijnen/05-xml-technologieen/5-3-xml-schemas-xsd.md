@@ -391,7 +391,8 @@ Het volgende valt hier op:
 
 XML-Schema kent drie compositors die beschrijven hoe kind-elementen zich tot elkaar verhouden. We benoemen ze hieronder en illustreren ze met een voorbeeld:
 
-**`<xs:sequence>`** — de elementen moeten in de gedefinieerde volgorde worden geplaatst.
+#### xs:sequence
+De elementen moeten in de gedefinieerde volgorde worden geplaatst.
 
 ```xml
 <xs:complexType name="PersoonType">
@@ -405,7 +406,8 @@ XML-Schema kent drie compositors die beschrijven hoe kind-elementen zich tot elk
 
 > **StUF-context:** StUF-schema's gebruiken vrijwel uitsluitend `xs:sequence`. De volgorde van elementen in StUF-berichten is altijd vast.
 
-**`<xs:choice>`** — er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we zien dat er mechanismes zijn om meerdere keren een keuze te maken.
+#### xs:choice
+Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we zien dat er mechanismes zijn waarmee we deze keuze meerdere keren achter elkaar kunnen maken.
 
 ```xml
 <xs:complexType name="ContactType">
@@ -417,7 +419,8 @@ XML-Schema kent drie compositors die beschrijven hoe kind-elementen zich tot elk
 </xs:complexType>
 ```
 
-**`<xs:all>`** — alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven.
+#### xs:all
+Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven.
 
 ```xml
 <xs:complexType name="AdresType">
