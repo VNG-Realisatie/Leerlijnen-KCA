@@ -9,7 +9,11 @@ oefendoel: "Oefen het beperken van het waardetype van een element."
 
 ## Oefening 5.3.3: Definiëren van complexere structuren
 
-In de voorgaande oefening hebben we de elementen `<voorletters>`, `<postcode>` en `<ordernummer>` gedefinieerd. In deze oefening gaan we het waardedomein daarvan beperken. Het element `<voorletters>` mag alleen maar bestaan uit een of meer combinaties van een hoofdletter en een punt (.). Het `<postcode>` element mag alleen waardes bevatten die starten met 4 cijfers direct gevolgd door 2 hoofdletters. En het `<ordernummer>` element mag niet langer dan 13 lang zijn.
+In deze oefening gaan de elementen `<orderbon>`, `<factuur>` en `<betaalbevestiging>` flink op de schop. De elementen `<voorletters>`, `<postcode>` en `<ordernummer>` zullen onderdeel gaan uitmaken van de nieuwe structuur.
+Hieronder zie je het informatiemodel dat asl basis dient voor deze nieuwe structuur.
+
+<img width="932" alt="IM Procesdocumenten" src="/Leerlijnen-KCA/bestanden/oefeningen-5-3/Procesdocumenten.jpg" />
+
 
 **Opdracht**
 * Ga naar het XML-Schema 'procesdocument2.xsd' dat je in de voorgaande oefening hebt vervaardigd of open het opnieuw in 'Altova XMLSpy';
