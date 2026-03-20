@@ -1,5 +1,5 @@
 ---
-title: "5.3 XML Schema's (XSD)"
+title: "5.3 XML-Schema's (XSD)"
 date: 2026-03-04
 weight: 5
 leerlijn: 5
@@ -7,9 +7,9 @@ paragraaf: "5.3"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 5.3 XML Schema's (XSD)
+## 5.3 XML-Schema's (XSD)
 
-Kan XML Schema's (XSD's) lezen, begrijpen en opstellen.
+Kan XML-Schema's (XSD's) lezen, begrijpen en opstellen.
 
 ---
 
@@ -41,19 +41,21 @@ Maar systeem B verwacht:
 
 Beide documenten zijn **welgevormd** XML. Maar ze zijn niet compatibel: de structuur verschilt (wel of geen `<naam>`-omhulsel) en het datumformaat is anders. Hoe spreek je af welke structuur en welke waarden toegestaan zijn? Hoe controleer je dat automatisch?
 
-### De oplossing: een schema
+### De oplossing: een XML-Schema
 
-Een **schema** is een formele beschrijving van de toegestane structuur en inhoud van een XML-document. Het is als een *blauwdruk* of *contract*: het legt vast welke elementen er mogen zijn, in welke volgorde, hoe vaak, en welk type waarde ze mogen bevatten.
+Een **XML-Schema** is een formele beschrijving van de toegestane structuur en inhoud van een XML-document. Het is als een *blauwdruk* of *contract*: het legt vast welke elementen er mogen zijn, in welke volgorde, hoe vaak, en welk type waarde ze mogen bevatten.
 
-Met een schema kun je automatisch controleren of een XML-document geldig is — dit heet **validatie**. Als een document niet voldoet aan het schema, wordt het afgekeurd met een foutmelding die precies aangeeft wat er mis is.
+Met een XML-Schema kun je automatisch controleren of een XML-document geldig is — dit heet **validatie**. Als een document niet voldoet aan het schema, wordt het afgekeurd met een foutmelding die precies aangeeft wat er mis is.
 
 ### Wat is XSD precies?
 
-**XSD** staat voor **XML Schema Definition**. Het is een taal om schema's mee te schrijven — en het bijzondere is: **een XSD-bestand is zelf ook XML**. Je gebruikt dus XML om te beschrijven hoe andere XML-documenten eruit moeten zien.
+**XSD** staat voor **XML-Schema Definition**. Als we het dus over een XSD-bestand of XSD-Schema hebben dan bedoelen we dus gewoon ook een XML-Schema. 
+
+XML-Schema is een taal om schema's mee te schrijven — en het bijzondere is: **een XSD-bestand is zelf ook XML**. Je gebruikt dus XML om te beschrijven hoe andere XML-documenten eruit moeten zien. Het is zelfs zo dat een XML-Schema ook weer aan een XML-Schema moet voldoen.
 
 | Eigenschap | Uitleg |
 |---|---|
-| **Voluit** | XML Schema Definition |
+| **Voluit** | XML-Schema Definition |
 | **Bestandsextensie** | `.xsd` |
 | **Formaat** | XML (een XSD is zelf een geldig XML-document) |
 | **Doel** | Formeel beschrijven welke structuur en waarden een XML-document mag hebben |
@@ -62,7 +64,7 @@ Met een schema kun je automatisch controleren of een XML-document geldig is — 
 
 ### Een eerste voorbeeld
 
-Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<achternaam>` en een `<geboortedatum>` moet bevatten:
+Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<achternaam>` en een `<geboortedatum>` moet bevatten. Dan zou je dat als volgt kunnen doen:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -83,7 +85,7 @@ Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<ach
 
 | Regel | Betekenis |
 |---|---|
-| `<xs:schema xmlns:xs="...">` | Het root-element van elk XSD-bestand; de prefix `xs` verwijst naar de XML Schema-namespace |
+| `<xs:schema xmlns:xs="...">` | Het root-element van elk XSD-bestand; de prefix `xs` verwijst naar de XML-Schema-namespace |
 | `<xs:element name="persoon">` | Op root niveau moet een element `<persoon>` bestaan |
 | `<xs:complexType>` | Het element `<persoon>` heeft een complexe opbouw (het bevat kind-elementen en/of attributen) |
 | `<xs:sequence>` | De kind-elementen moeten in de opgegeven volgorde voorkomen |
@@ -100,7 +102,7 @@ Een volgens dit XML-Schema correct XML-document kan er als volgt uitzien:
 </persoon>
 ```
 
-Hieronder ook een voorbeeld van een XML-document waarin, volgens het XML-Schema, drie fouten staan:
+Hieronder ook een voorbeeld van een XML-document waarin, volgens het XML-Schema, twee fouten staan:
 
 ```xml
 <persoon>
@@ -118,7 +120,7 @@ Dit betekent zoveel als
 1. het element `<achternaam>` komt vóór het element `<voornaam>`. Het schema eist echter een volgorde waarbij `<achternaam>` na het element `<voornaam>` maar ook vóór het element `<geboortedatum>` staat.
 2. Het element `<geboortedatum>` heeft de waarde `"15 maart 1985"`. Het schema eist echter een waarde die voldoet aan het datatype`xs:date` wat betekent dat een formaat als `JJJJ-MM-DD` moet worden gebruikt.
 
-> **Let op!** We gaven eerder al aan dat XML case-sensitive is. Definieer je in je XML-Schema dus als volgt een element `<xs:element name="voornaam" type="xs:string"/>` dan kan je in je XML-bestand niet het element `<Voornaam>` gebruiken. Tenminste niet als je wil dat het aan een XML-schema voldoet. Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` ook een element `<Voornaam>` kan definiëren. Doe dat echter met uiterste terughoudendheid. Voor een computer is het verschil heel duidelijk maar voor een mens die het XML-Bestand moet interpreteren is dat heel wat minder het geval.
+> **Let op!** We gaven eerder al aan dat XML case-sensitive is. Definieer je in je XML-Schema dus als volgt een element `<xs:element name="voornaam" type="xs:string"/>` dan kan je in je XML-bestand niet het element `<Voornaam>` gebruiken. Tenminste niet als je wil dat het aan een XML-Schema voldoet. Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` ook een element `<Voornaam>` kan definiëren. Doe dat echter met uiterste terughoudendheid. Voor een computer is het verschil heel duidelijk maar voor een mens die het XML-Bestand moet interpreteren is dat heel wat minder het geval.
 
 ### Welgevormd vs. valide
 
@@ -127,7 +129,7 @@ In het onderdeel '5.1 XML syntax en structuur' hebben we de welgevormdheid van e
 | Begrip | Betekenis | Gecontroleerd door |
 |---|---|---|
 | **Welgevormd** (well-formed) | Het document voldoet aan de XML-syntaxregels (zie 5.1) | Elke XML-Parser |
-| **Valide** | Het document voldoet aan de XML-syntaxregels en aan een specifiek schema (XSD) | Een XML-Parser met het bijbehorende XML-schema |
+| **Valide** | Het document voldoet aan de XML-syntaxregels en aan een specifiek schema (XSD) | Een XML-Parser met het bijbehorende XML-Schema |
 
 Een document moet **eerst** welgevormd zijn voordat het gevalideerd kan worden. De volgende beslisboom is dus van toepassing:
 
@@ -163,7 +165,7 @@ StUF-berichten worden gedefinieerd door een set XSD-schema's:
 
 ### De structuur van een XSD-bestand
 
-Elk XSD-bestand is zelf een XML-document en kan zelf ook weer tegen een XML-schema (ook wel een meta-schema genaamd) gevalideerd worden. Het root-element is altijd `<xs:schema>`:
+Elk XSD-bestand is zelf een XML-document en kan zelf, zoals al eerder opgemerkt, ook weer tegen een XML-Schema (ook wel een meta-schema genaamd) gevalideerd worden. Het root-element is altijd `<xs:schema>`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,13 +179,13 @@ Elk XSD-bestand is zelf een XML-document en kan zelf ook weer tegen een XML-sche
 | Onderdeel | Betekenis |
 |---|---|
 | `<xs:schema>` | Het root-element van elk XSD-bestand |
-| `xmlns:xs="http://www.w3.org/2001/XMLSchema"` | De namespace-declaratie die de prefix `xs` koppelt aan de XML Schema-namespace |
+| `xmlns:xs="http://www.w3.org/2001/XMLSchema"` | De namespace-declaratie die de prefix `xs` koppelt aan de XML-Schema-namespace |
 
-De prefix `xs` is conventie — je kunt ook `xsd` kiezen. In de praktijk zie je zowel `xs:` als `xsd:`. Soms zelfs beide in een set van XML-schema's
+De prefix `xs` is conventie — je kunt ook `xsd` kiezen. In de praktijk zie je zowel `xs:` als `xsd:`. Soms zelfs beide in een set van XML-Schema's.
 
 ### Elementen definiëren met `xs:element`
 
-De meest fundamentele bouwsteen van XSD:
+De meest fundamentele bouwsteen van XSD is het element om een element mee te definiëren:
 
 ```xml
 <xs:element name="voornaam" type="xs:string"/>
@@ -193,14 +195,14 @@ Dit zegt: *"Er moet een element `<voornaam>` bestaan, en de inhoud moet tekst zi
 
 | Attribuut | Betekenis | Voorbeeld |
 |---|---|---|
-| `name` | De naam van het element in het met het XML-schema gekoppelde XML-bestand | `name="voornaam"` |
+| `name` | De naam van het element in het met het XML-Schema gekoppelde XML-bestand | `name="voornaam"` |
 | `type` | Het datatype van de inhoud | `type="xs:string"` |
 
-Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-bestand mag beginnen. Dat mogen er meer dan één zijn.
+Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-bestand mag beginnen. Dat mogen er meer dan één zijn zodat je bij het aanmaken van een XML-Bestand op basis van dat schema kunt kiezen welke je root element is.
 
 ### Ingebouwde datatypen
 
-In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het datatype van het `<voornaam>` element gedefinieerd. In dit geval het `xs:string` datatype, tekst dus. Dit is niet het enige datatype dat je kunt definiëren. Het W3C heeft naast de XML-schema standaard nl. een uitgebreide set **ingebouwde datatypen** gedefinieerd. Een parser die XSD‑validatie ondersteunt, moet dus ook o.a. de volgende datatypes kennen:
+In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het datatype van het `<voornaam>` element gedefinieerd. In dit geval het `xs:string` datatype, tekst dus. Dit is niet het enige datatype dat je kunt definiëren. Het W3C heeft naast de XML-Schema standaard nl. een uitgebreide set van **ingebouwde datatypen** gedefinieerd. Een parser die XSD‑validatie ondersteunt, moet dus ook o.a. de volgende datatypes kennen:
 
 **Teksttypen:**
 
@@ -329,10 +331,10 @@ Definieert dat het element `<Postcode>` uit 4 cijfers bestaat gevolgd door 2 hoo
 
 ### Complexe typen: elementen met structuur
 
-In de praktijk bevatten de meeste elementen **kind-elementen** en/of **attributen**. Hiervoor heb je een `<xs:complexType>` nodig.
+In de praktijk bevatten de meeste elementen **kind-elementen** en/of **attributen**. Om dat te kunnen definiëren heb je een `<xs:complexType>` nodig.
 
-Hier een voorbeeld:
-
+Hieronder enkele voorbeelden:
+* Een element met één of meer kind-elementen:
 ```xml
 <xs:element name="persoon">
   <xs:complexType>
@@ -343,9 +345,7 @@ Hier een voorbeeld:
   </xs:complexType>
 </xs:element>
 ```
-
-Een element kan echter ook tegelijkertijd kind-elementen en attributen bevatten. Hieronder een voorbeeld:
-
+* Een element met kind-elementen en attributen:
 ```xml
 <xs:element name="kostprijs">
   <xs:complexType>
@@ -358,11 +358,7 @@ Een element kan echter ook tegelijkertijd kind-elementen en attributen bevatten.
   </xs:complexType>
 </xs:element>
 ```
-
-<!--Een element kan als inhoud ook alleen een waarde bevatten en een attribuut. Dat ziet er als volgt uit:
-
-Een element met tekst én een attribuut:
-
+* Een element met een waarde en een attribuut:
 ```xml
 <xs:element name="bedrag">
   <xs:complexType>
@@ -374,14 +370,68 @@ Een element met tekst én een attribuut:
   </xs:complexType>
 </xs:element>
 ```
-
+* Een element met alleen een attribuut:
+```xml
+<xs:element name="klantRef">
+  <xs:complexType>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+</xs:element>
+```
 Het volgende XML fragment voldoet daaraan:
 ```xml
 <bedrag valuta="EUR">1500.00</bedrag>
 ```
--->
+
+Het volgende valt hier op:
+* Voor het toekennen van kind-elementen is een `<xs:sequence>` nodig. Dit element is een van de drie te gebruiken **compositors**. In de volgende paragraaf gaan we hier iets dieper op in;
+* De definitie van een attribuut vindt direct plaats binnen een `<xs:complexType>` element behalve als het element zelf alleen tekstuele content (xs:sring, xs:integer, etc...) kan bevatten. In dat geval wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element.
+
+### Compositors: de volgorde van kind-elementen
+
+XML-Schema kent drie compositors die beschrijven hoe kind-elementen zich tot elkaar verhouden. We benoemen ze hieronder en illustreren ze met een voorbeeld:
+
+**`<xs:sequence>`** — de elementen moeten in de gedefinieerde volgorde worden geplaatst.
+
+```xml
+<xs:complexType name="PersoonType">
+  <xs:sequence>
+    <xs:element name="voornaam" type="xs:string"/>
+    <xs:element name="achternaam" type="xs:string"/>
+    <xs:element name="geboortedatum" type="xs:date"/>
+  </xs:sequence>
+</xs:complexType>
+```
+
+> **StUF-context:** StUF-schema's gebruiken vrijwel uitsluitend `xs:sequence`. De volgorde van elementen in StUF-berichten is altijd vast.
+
+**`<xs:choice>`** — er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we zien dat er mechanismes zijn om meerdere keren een keuze te maken.
+
+```xml
+<xs:complexType name="ContactType">
+  <xs:choice>
+    <xs:element name="email" type="xs:string"/>
+    <xs:element name="telefoon" type="xs:string"/>
+    <xs:element name="postadres" type="xs:string"/>
+  </xs:choice>
+</xs:complexType>
+```
+
+**`<xs:all>`** — alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven.
+
+```xml
+<xs:complexType name="AdresType">
+  <xs:all>
+    <xs:element name="straat" type="xs:string"/>
+    <xs:element name="huisnummer" type="xs:positiveInteger"/>
+    <xs:element name="postcode" type="xs:string"/>
+  </xs:all>
+</xs:complexType>
+```
+
 ### Oefening 3
 
+[Naar de oefening](../oefening-5-3-3).
 
 ### Lokaal vs globaal
 
@@ -426,56 +476,6 @@ In het XML-document:
 
 ---
 
-### Compositors: de volgorde van kind-elementen
-
-XSD kent drie compositors die beschrijven hoe kind-elementen zich tot elkaar verhouden:
-
-**`xs:sequence`** — vaste volgorde (veruit het meest gebruikt):
-
-```xml
-<xs:complexType name="PersoonType">
-  <xs:sequence>
-    <xs:element name="voornaam" type="xs:string"/>
-    <xs:element name="achternaam" type="xs:string"/>
-    <xs:element name="geboortedatum" type="xs:date"/>
-  </xs:sequence>
-</xs:complexType>
-```
-
-> **StUF-context:** StUF-schema's gebruiken vrijwel uitsluitend `xs:sequence`. De volgorde van elementen in StUF-berichten is altijd vast.
-
-**`xs:choice`** — precies één kiezen:
-
-```xml
-<xs:complexType name="ContactType">
-  <xs:choice>
-    <xs:element name="email" type="xs:string"/>
-    <xs:element name="telefoon" type="xs:string"/>
-    <xs:element name="postadres" type="xs:string"/>
-  </xs:choice>
-</xs:complexType>
-```
-
-**`xs:all`** — willekeurige volgorde (alle elementen moeten aanwezig zijn, maar de volgorde maakt niet uit):
-
-```xml
-<xs:complexType name="AdresType">
-  <xs:all>
-    <xs:element name="straat" type="xs:string"/>
-    <xs:element name="huisnummer" type="xs:positiveInteger"/>
-    <xs:element name="postcode" type="xs:string"/>
-  </xs:all>
-</xs:complexType>
-```
-
-**Overzicht:**
-
-| Compositor | Volgorde | Keuze | Gebruik |
-|---|---|---|---|
-| `xs:sequence` | Vast | Alle elementen | Veruit het meest gebruikt (ook in StUF) |
-| `xs:choice` | n.v.t. | Precies één | Wanneer er varianten zijn |
-| `xs:all` | Vrij | Alle elementen | Wanneer volgorde niet uitmaakt (zelden in StUF) |
-
 ### Kardinaliteit: `minOccurs` en `maxOccurs`
 
 **Kardinaliteit** bepaalt hoe vaak een element mag (of moet) voorkomen:
@@ -511,6 +511,10 @@ Voorbeeld:
 ```
 
 > **StUF-context:** In StUF-schema's zijn veel elementen optioneel (`minOccurs="0"`) omdat niet elk bericht alle gegevens bevat. Het begrijpen van `minOccurs` en `maxOccurs` is essentieel voor het lezen van StUF-schema's.
+
+
+HIER IETS ZEGGEN OVER COMPOSITORS EN Kardinaliteit
+Bij xs:all mag de maxOccurs bijv. niet hoger zijn dan 1. 
 
 ### Attributen definiëren in XSD
 
@@ -942,7 +946,7 @@ In dit ene voorbeeld komen alle behandelde concepten samen: simpele typen met re
 
 | Concept | Uitleg |
 |---|---|
-| **XSD** | XML Schema Definition — beschrijft de toegestane structuur van XML in XML-formaat |
+| **XSD** | XML-Schema Definition — beschrijft de toegestane structuur van XML in XML-formaat |
 | **Welgevormd vs. geldig** | Welgevormd = syntax OK; geldig = voldoet aan schema |
 | **Ingebouwde datatypen** | `xs:string`, `xs:integer`, `xs:date`, `xs:boolean`, etc. |
 | **Restricties (facets)** | `pattern`, `enumeration`, `minLength`, `maxInclusive`, etc. |
@@ -956,3 +960,9 @@ In dit ene voorbeeld komen alle behandelde concepten samen: simpele typen met re
 | **`xsi:schemaLocation`** | Koppelt namespace aan schema-bestand in XML |
 
 > **Kernpunt:** XSD is een taal (zelf ook XML) waarmee je exact vastlegt hoe een XML-document eruit moet zien. StUF is volledig gedefinieerd in XSD-schema's — het begrijpen van XSD is daarom essentieel voor het werken met StUF. De belangrijkste concepten zijn: datatypen met restricties, compositors voor structuur, kardinaliteit voor optionaliteit, en modulaire schema-opzet met include/import en type-afleiding.
+
+### Tot slot
+
+Zoals gezegd is XML-Schema een standaard van het W3C. Een volledige specificatie van de standaard vind je dan ook op hun site:
+* [W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures](https://www.w3.org/TR/xmlschema11-1/)
+* [W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes](https://www.w3.org/TR/xmlschema11-2/)

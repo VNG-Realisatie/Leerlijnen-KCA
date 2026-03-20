@@ -105,7 +105,7 @@ Elk XML-document begint (optioneel, maar sterk aanbevolen) met een **XML-declara
 | `version="1.0"` | De gebruikte XML-versie (vrijwel altijd 1.0) |
 | `encoding="UTF-8"` | De tekencodering — bepaalt welke letters/tekens het document kan bevatten |
 
-De declaratie staat altijd op de **allereerste regel** en vóór het root-element.
+De declaratie staat altijd op de **allereerste regel** en vóór het root-element. Dat is het enige element in een XML-bestand dat alle andere elementen (kind-elementen) bevat.
 
 ### Elementen: de bouwstenen van XML
 
