@@ -12,8 +12,8 @@ oefendoel: "Oefen met het ordenen van een XML bestand in namespaces."
 Je krijgt nu een sneak preview in een StUF bericht. Het is een goed voorbeeld van het toepassen van namespaces en we kijken dus nog niet naar de semantiek achter het bericht. 
 
 **Benodigde files**
-* Download [ZakLk01.zip](/Leerlijnen-KCA/bestanden/oefening-5.2/ZakLk01.zip) en plaats de inhoud (ZakLk01.xml) op een locatie waar jij er makkelijk bij kunt.
-* Download [Zkn0310-schema.zip](/Leerlijnen-KCA/bestanden/oefening-5.2/Zkn0310-schema.zip) en plaats de inhoud (een aantal XML-Schema bestanden) op een locatie waar jij er makkelijk bij kunt.
+* Download [ZakLk01.zip](/Leerlijnen-KCA/bestanden/oefeningen-5.2/ZakLk01.zip) en plaats de inhoud (ZakLk01.xml) op een locatie waar jij er makkelijk bij kunt.
+* Download [Zkn0310-schema.zip](/Leerlijnen-KCA/bestanden/oefeningen-5.2/Zkn0310-schema.zip) en plaats de inhoud (een aantal XML-Schema bestanden) op een locatie waar jij er makkelijk bij kunt.
 
 **Opdracht**
 * Open het bestand 'ZakLk01.xml' met 'Altova XMLSpy 2024 Enterprise XML Editor';
