@@ -335,53 +335,53 @@ In de praktijk bevatten de meeste elementen **kind-elementen** en/of **attribute
 
 Hieronder enkele voorbeelden:
 * Een element met één of meer kind-elementen:
-```xml
-<xs:element name="persoon">
-  <xs:complexType>
-    <xs:sequence>
-      <xs:element name="voornaam" type="xs:string"/>
-      <xs:element name="achternaam" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-</xs:element>
-```
+  ```xml
+  <xs:element name="persoon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="voornaam" type="xs:string"/>
+        <xs:element name="achternaam" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  ```
 * Een element met kind-elementen en attributen:
-```xml
-<xs:element name="kostprijs">
-  <xs:complexType>
-    <xs:sequence>
-	  <xs:element name="btw" type="xs:positiveInteger"/>
-	  <xs:element name="prijs" type="xs:nonNegativeInteger"/>
-      <xs:element name="totaal" type="xs:nonNegativeInteger"/>
-    </xs:sequence>
-    <xs:attribute name="valuta" type="xs:string"/>
-  </xs:complexType>
-</xs:element>
-```
+  ```xml
+  <xs:element name="kostprijs">
+    <xs:complexType>
+      <xs:sequence>
+	    <xs:element name="btw" type="xs:positiveInteger"/>
+	    <xs:element name="prijs" type="xs:nonNegativeInteger"/>
+        <xs:element name="totaal" type="xs:nonNegativeInteger"/>
+      </xs:sequence>
+      <xs:attribute name="valuta" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  ```
 * Een element met een waarde en een attribuut:
-```xml
-<xs:element name="bedrag">
-  <xs:complexType>
-    <xs:simpleContent>
-      <xs:extension base="xs:decimal">
-        <xs:attribute name="valuta" type="xs:string"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-</xs:element>
-```
+  ```xml
+  <xs:element name="bedrag">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="valuta" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  ```
 * Een element met alleen een attribuut:
-```xml
-<xs:element name="klantRef">
-  <xs:complexType>
-    <xs:attribute name="id" type="xs:string"/>
-  </xs:complexType>
-</xs:element>
-```
-Het volgende XML fragment voldoet daaraan:
-```xml
-<bedrag valuta="EUR">1500.00</bedrag>
-```
+  ```xml
+  <xs:element name="klantRef">
+    <xs:complexType>
+      <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  ```
+  Het volgende XML fragment voldoet daaraan:
+  ```xml
+  <bedrag valuta="EUR">1500.00</bedrag>
+  ```
 
 Het volgende valt hier op:
 * Voor het toekennen van kind-elementen is een `<xs:sequence>` nodig. Dit element is een van de drie te gebruiken **compositors**. In de volgende paragraaf gaan we hier iets dieper op in;
