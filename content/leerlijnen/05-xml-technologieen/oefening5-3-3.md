@@ -25,7 +25,7 @@ Bewaar gedurende de onderstaande oefeining zelf regelmatig het bestand.
 * Wijzig zo nodig de editing modus naar “Text”;
 
 ***Orderbon***
-* We starten met de orderbon. Verwijder het 'type' attribuut op dit element en creëer een structuur waarin je in een sequence de elementdefinities voor de elementen `<klantgegevens>`, `<ordergegevens>` en `<leveringsgegevens>` plaatst;
+* We starten met de orderbon. Verwijder het 'type' attribuut in deze elementdefinitie en creëer een structuur waarin je in een sequence de elementdefinities voor de elementen `<klantgegevens>`, `<ordergegevens>` en `<leveringsgegevens>` plaatst;
 * Binnen `<klantgegevens>` doe je hetzelfde t.b.v. de elementen `<naam>` en `<adres>`;
 * Binnen `<naam>` doe je wederom hetzelfde. Het element `<voorletters>` dat nu nog direct onder het element `<xs:schema>` staat moet je naar hier verplaatsen. Daarachter definieer je de elementdefinities voor de elementen `<tussenvoegsel>` en `<achternaam>`. De beide laatste elementen mag je als datatype 'xs:string' geven;
 * Binnen `<adres>` doe je hetzelfde. Daar doe je hetzelfde met `<postcode>` wat je in `<naam>` met `<voorletters>` hebt gedaan;
@@ -36,13 +36,21 @@ Bewaar gedurende de onderstaande oefeining zelf regelmatig het bestand.
 * Kies in het menu “Generate sample XML file” het element `<orderbon>` en klik op “OK”. Check het resultaat en speel wat met de structuur. Het gegenereerde bestand hoeft niet bewaard te worden;
 
 ***Factuur***
+* Verwijder het 'type' attribuut in de elementdefinitie van `<factuur>` en creëer een structuur waarin je in een sequence de elementdefinities voor de elementen `<klantgegevens>`, `<ordergegevens>` plaatst;
+* Binnen de elementdefinitie voor `<klantgegevens>` kopieer je de structuur die je in `<orderbon>` ook hebt gecreëerd voor `<klantgegevens>`;
+* In de elementdefinitie `<ordergegevens>` kopieer je de structuur die je in `<orderbon>` ook hebt gecreëerd voor `<ordergegevens>`;
+* Breidt de structuur binnen de elementdefinitie voor `<artikel>` vervolgens uit met `<stuksprijs>`. Deze krijgt als datatype 'xs:decimal';
+* Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
+* Kies in het menu “Generate sample XML file” het element `<factuur>` en klik op “OK”. Check het resultaat en speel wat met de structuur. Het gegenereerde bestand hoeft niet bewaard te worden;
 
 
 ***Betaalbevestiging***
-
-
-* Bewaar het bestand en bewaar het daarna ook meteen als “Procesdocumentatie4.xsd”;
+* Verwijder het 'type' attribuut in de elementdefinitie van `<betaalbevestiging>` en creëer een structuur waarin je in een sequence de elementdefinities voor de elementen `<klantgegevens>`, `<ordergegevens>` plaatst;
+* Binnen de elementdefinitie voor `<klantgegevens>` kopieer je de structuur die je in `<orderbon>` en `<factuur>` ook hebt gecreëerd voor `<klantgegevens>`;
+* In de elementdefinitie `<ordergegevens>` kopieer je de structuur die je in `<factuur>` ook hebt gecreëerd voor `<ordergegevens>`;
+* Voorzie de structuur van de elementdefinitie van `<betaalbevestiging>` van het attribuut 'betaald' en geef dat het datatype 'xs:boolean';
 * Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
-* Kies in het menu “Generate sample XML file” een van de drie zojuist aangepaste elementen en klik op “OK”. Check het resultaat en speel wat met de structuur en waardes;
-* Doe dit ook voor de andere twee root elementen. De gegenereerde bestanden hoeven niet bewaard te worden.
+* Kies in het menu “Generate sample XML file” het element `<betaalbevestiging>` en klik op “OK”. Check het resultaat en speel wat met de structuur. Het gegenereerde bestand hoeft niet bewaard te worden;
 
+
+* Bewaar het bestand en bewaar het daarna ook meteen als “Procesdocumentatie4.xsd”.
