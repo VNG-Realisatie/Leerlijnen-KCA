@@ -460,6 +460,8 @@ Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
 
 ### Oefening 4
 
+[Naar de oefening](../oefening-5-3-4).
+
 
 ### Nillable: expliciet "geen waarde"
 
