@@ -27,7 +27,7 @@ Bewaar gedurende de onderstaande oefeining wedrom zelf regelmatig het bestand.
 * Wijzig de editing modus naar “Schema” en klik op 'orderbon';
 * Je ziet nu het schema in een grafische structuur waarin je de verschillende XML-Schema componenten open en dicht kunt klikken door op de plusjes of minnetjes achter de elementnamen te klikken. Klik 'klantgegevens' open;
 * Je ziet nu een geel vlak met linksbovenin de naam 'Klant'. Dit gele vlak vertegenwoordigd de 'complexType' op het hoogste niveau dat we zojuist hebben vervaardigd;
-* Via de knop <img width="24" style="display: block; margin-top: 0; margin-bottom: 0;" alt="Validate" src="/Leerlijnen-KCA/bestanden/oefeningen-5.3/Root-schemaview.jpg" /> linksboven kun je weer terug naar de vorige view. Bekijk ook even de grafische structuur voor 'factuur' en 'betaalbevestiging';
+* Via de knop <img width="24" style="display: block; margin-top: 0; margin-bottom: 0;" alt="ToRootView" src="/Leerlijnen-KCA/bestanden/oefeningen-5-3/Root-schemaview.jpg"/> linksboven kun je weer terug naar de vorige view. Bekijk ook even de grafische structuur voor 'factuur' en 'betaalbevestiging';
 * Wijzig de editing modus weer naar “Text”; 
 
 ***Extension***
