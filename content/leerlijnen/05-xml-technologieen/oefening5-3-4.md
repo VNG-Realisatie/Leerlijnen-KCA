@@ -52,6 +52,5 @@ Bewaar gedurende de onderstaande oefeining zelf regelmatig het bestand.
 * Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
 * Kies in het menu “Generate sample XML file” het element `<betaalbevestiging>` en klik op “OK”. Check het resultaat en speel wat met de structuur. Het gegenereerde bestand hoeft niet bewaard te worden;
 
-***Puntjes op de i***
-* VERWIJDER TENSLOTTE DE ELEMENTDEFINITIES VAN DE ELEMENTEN `<voorletters>`, `<postcode>` en `<ordernummer>`.
+
 * Bewaar het bestand en bewaar het daarna ook meteen als “Procesdocumentatie4.xsd”.

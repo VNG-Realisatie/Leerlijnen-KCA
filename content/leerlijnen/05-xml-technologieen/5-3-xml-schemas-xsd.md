@@ -438,9 +438,9 @@ Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen ec
 
 ### Lokaal vs globaal
 
-Tot nu toe heeft het wijzigen van de simpele en complexe types lokaal plaats gevonden. Daarmee bedoelen we dat deze binnen het `<xs:element>` element heeft plaatsevonden. Wat echter als we dezelfde typering ook op een ander `<xs:element>` willen toepassen? Tweemaal dezelfde typering lokaal aanbrengen is vanuit beheers-oogpunt niet handig. Dit kan leiden tot fouten of onzorgvuldigheden. In dit geval is het handiger het type globaal te definiëren en er vanuit de elementen naar te verwijzen.
+Tot nu toe heeft het wijzigen van de simpele en complexe types steeds lokaal plaats gevonden. Daarmee bedoelen we dat deze binnen het `<xs:element>` element heeft plaatsgevonden. In oefening 3 heb je echter vast wel opgemerkt dat het schema niet heel efficient in elkaar zit. Verschillende onderdelen hebben we tijdens het vervaardigen van het XML-Schema gekopieerd naar andere elementdefinities, bijv. de klantgegevens. Als we nu een wijziging aan moeten brengen in die klantgegevens dan moeten we dat op 3 plaatsen doen. Dit kan leiden tot fouten of onzorgvuldigheden. Je zal vast bedacht hebben dat dat beter moet kunnen en ja, gelukkig biedt XML-Schema daar voorzieningen voor. In dit geval is het handiger het type globaal te definiëren en er vanuit de elementen naar te verwijzen.
 
-Daartoe definieer je direct binnen het `<xs:schema>` element een `<xs:simpleType>` danwel `<xs:complexType>` met daarin een `name` attribuut. Het `<xs:element>` element kijgt i.p.v. een `<xs:simpleType>` danwel `<xs:complexType>` een `type` attribuut met als waarde een verwijzing naar dat `<xs:simpleType>` danwel `<xs:complexType>` element.
+Daartoe definieer je direct binnen het `<xs:schema>` element een `<xs:simpleType>` danwel `<xs:complexType>` met daarin een `name` attribuut. Het `<xs:element>` element waarvan je wil dat het dit moet gaan gebruiken i.p.v. een `<xs:simpleType>` danwel `<xs:complexType>` een `type` attribuut met als waarde een verwijzing naar dat `<xs:simpleType>` danwel `<xs:complexType>` element.
 
 Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
 
