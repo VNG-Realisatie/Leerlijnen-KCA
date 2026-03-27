@@ -1,7 +1,7 @@
 ---
 title: "Model Driven Development"
 date: 2026-03-27
-weight: 11
+weight: 12
 leerlijn_nummer: 12
 icon: "✨"
 beschrijving: "Vaardigheden voor het genereren van Open API Specifications op basis van UML."
