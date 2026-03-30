@@ -569,9 +569,7 @@ Voorbeeld:
 De kardinaliteit van attributen wordt in een XML-Schema op een afwijkende wijze gedefinieerd, met het XML-Schema attribuut `use`. Een attribuut kan echter nooit meer dan één keer op een element gespecificeerd worden.
 Het volgende is dus **niet** toegestaan in een XML-bestand:
 
-```
-	<afbeeldingen href="images/afbeelding1.jpg" href="images/afbeelding2.jpg"/>
-```
+`<afbeeldingen href="images/afbeelding1.jpg" href="images/afbeelding2.jpg"/>`
 
 Om die reden zijn alleen de in de eerste kolom van de volgende tabel gedefinieerde waarden toegestaan op het `use` attribuut.
 
