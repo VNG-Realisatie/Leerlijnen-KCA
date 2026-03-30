@@ -358,18 +358,6 @@ Hieronder enkele voorbeelden:
     </xs:complexType>
   </xs:element>
   ```
-* Een element met een waarde en een attribuut:
-  ```xml
-  <xs:element name="bedrag">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:decimal">
-          <xs:attribute name="valuta" type="xs:string"/>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  ```
 * Een element met alleen een attribuut:
   ```xml
   <xs:element name="klantRef">
@@ -582,7 +570,7 @@ Om die reden zijn alleen de in de eerste kolom van de volgende tabel gedefinieer
 
 **Bij compositors**
 Op compositors kan op dezelfde wijze als op `<xs:element>` elementen kardinaliteiten worden gedefinieerd.
-Binnen een `<xs:all>` compositors mogen de attributen `minOccurs` en `maxOccurs` op het `<xs:element>` alleen geen waarde hebben die hoger is dan 1. 
+Binnen een `<xs:all>` compositor mogen de attributen `minOccurs` en `maxOccurs` op het `<xs:element>` echter geen waarde hebben die hoger is dan 1. 
 
 ### Oefening 5.3.5
 
@@ -608,9 +596,24 @@ en in een XML-document kan je dat vervolgens als volgt gebruiken:
 
 ### Type-afleiding: extension en restriction
 
-Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type baseren op een bestaand type, vergelijkbaar met overerving in objectgeoriënteerd programmeren.
+Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type baseren op een bestaand type, vergelijkbaar met overerving in objectgeoriënteerd programmeren. 
+We zagen al eerder hoe je simpele types kon restricten. Ook complexe Types kun je restricten. We kijken echter eerst hoe je zowel simpele als complexe types kunt extenden.
 
-**`xs:extension`** — een type uitbreiden:
+Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en /of attribuut aan een simpleType
+
+* Een element met een waarde en een attribuut:
+  ```xml
+  <xs:element name="bedrag">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="valuta" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  ```
+
 
 ```xml
 <!-- Basistype -->
@@ -680,6 +683,10 @@ MedewerkerType       (afgeleid = extends PersoonType)
 |---|---|---|
 | `xs:extension` | Voegt elementen/attributen toe | Basistype → **ruimer** |
 | `xs:restriction` | Beperkt of verwijdert optionele delen | Basistype → **strikter** |
+
+### Oefening 5.3.6
+
+[Naar de oefening](../oefening-5-3-6).
 
 ### Groepen: `xs:group` en `xs:attributeGroup`
 
