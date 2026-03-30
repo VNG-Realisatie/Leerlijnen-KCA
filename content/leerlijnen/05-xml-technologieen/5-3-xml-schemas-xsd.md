@@ -391,7 +391,7 @@ Het volgende valt hier op:
 
 XML-Schema kent drie compositors die beschrijven hoe kind-elementen zich tot elkaar verhouden. We benoemen ze hieronder en illustreren ze met een voorbeeld:
 
-#### xs:sequence
+**xs:sequence**
 De elementen moeten in de gedefinieerde volgorde worden geplaatst.
 
 ```xml
@@ -406,7 +406,7 @@ De elementen moeten in de gedefinieerde volgorde worden geplaatst.
 
 > **StUF-context:** StUF-schema's gebruiken vrijwel uitsluitend `xs:sequence`. De volgorde van elementen in StUF-berichten is altijd vast.
 
-#### xs:choice
+**xs:choice**
 Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we zien dat er mechanismes zijn waarmee we deze keuze meerdere keren achter elkaar kunnen maken.
 
 ```xml
@@ -419,7 +419,7 @@ Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we
 </xs:complexType>
 ```
 
-#### xs:all
+**xs:all**
 Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven.
 
 ```xml
@@ -429,6 +429,24 @@ Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen ec
     <xs:element name="huisnummer" type="xs:positiveInteger"/>
     <xs:element name="postcode" type="xs:string"/>
   </xs:all>
+</xs:complexType>
+```
+
+Het is toegestaan compositors in elkaar op te nemen. Het volgende is dus correct:
+
+```xml
+<xs:complexType name="AdresType">
+  <xs:choice>
+    <xs:sequence>
+      <xs:element name="postbusnummer" type="xs:positiveInteger"/>
+      <xs:element name="postcode" type="xs:string"/>
+    </xs:sequence>
+    <xs:sequence>
+      <xs:element name="straat" type="xs:string"/>
+      <xs:element name="huisnummer" type="xs:positiveInteger"/>
+      <xs:element name="postcode" type="xs:string"/>
+    </xs:sequence>
+   </xs:choice>
 </xs:complexType>
 ```
 
@@ -486,6 +504,8 @@ Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
 <xs:element name="contactpersoon" type="PersoonType"/>
 ```
 
+> **StUF-context:** StUF-schema's werken we voornamelijk met **globale definities**. De typen voor personen, adressen, zaken worden centraal gedefinieerd en vervolgens hergebruikt in meerdere berichtdefinities.
+
 > **Let op!** Tot nu toe hebben we steeds XML-Schema fragmenten gecreëerd die niet aan een namespace zijn gekoppeld. Later zulen we zien dat je in een XML-Schema aan kunt geven op welke namespace dat XML-Schema betrekking heeft. Dat heeft direct gevolgen voor de wijze waarop je in een `type` attribuut verwijst naar een globaal gedefinieerde `<xs:simpleType>` danwel `<xs:complexType>`.
 
 ### Geneste vs. globale definities
@@ -502,10 +522,9 @@ Er kunnen verschillende redenen zijn om globale of juist lokale definities te ge
 
 [Naar de oefening](../oefening-5-3-4).
 
-
 ### Kardinaliteit
 
-De **kardinaliteit** van een element of attribuut zegt iets over hoe vaak dat mag (of moet) voorkomen.
+De **kardinaliteit** van een element of attribuut zegt iets over hoe vaak dat element of attribuut mag (of moet) voorkomen.
 
 **Bij elementen**
 
@@ -547,14 +566,14 @@ Voorbeeld:
 
 **Bij attributen**
 
-De kardinaliteit van attributen wordt in een XML-Schema gedefinieerd met het XML-Schema attribuut `use`. Een attribuut kan echter nooit meer dan één keer op een element gespecificeerd worden.
+De kardinaliteit van attributen wordt in een XML-Schema op een afwijkende wijze gedefinieerd, met het XML-Schema attribuut `use`. Een attribuut kan echter nooit meer dan één keer op een element gespecificeerd worden.
 Het volgende is dus **niet** toegestaan in een XML-bestand:
 
 ```
 	<afbeeldingen href="images/afbeelding1.jpg" href="images/afbeelding2.jpg"/>
 ```
 
-Om die reden zijn alleen in de eerste kolom van de volgende tabel gedefinieerde waarden toegestaan op het `use` attribuut.
+Om die reden zijn alleen de in de eerste kolom van de volgende tabel gedefinieerde waarden toegestaan op het `use` attribuut.
 
 | `use`-waarde | Betekenis |
 |---|---|
@@ -563,10 +582,13 @@ Om die reden zijn alleen in de eerste kolom van de volgende tabel gedefinieerde 
 | `prohibited` | Het attribuut mag niet voorkomen (gebruikt bij overerving) |
 
 
-HIER IETS ZEGGEN OVER COMPOSITORS EN Kardinaliteit
-Bij xs:all mag de maxOccurs bijv. niet hoger zijn dan 1. 
+**Bij compositors**
+Op compositors kan op dezelfde wijze als op `<xs:element>` elementen kardinaliteiten worden gedefinieerd.
+Binnen een `<xs:all>` compositors mogen de attributen `minOccurs` en `maxOccurs` op het `<xs:element>` alleen geen waarde hebben die hoger is dan 1. 
 
-> **StUF-context:** StUF-schema's werken voornamelijk met **globale definities**. De typen voor personen, adressen, zaken worden centraal gedefinieerd en vervolgens hergebruikt in meerdere berichtdefinities.
+### Oefening 5.3.5
+
+[Naar de oefening](../oefening-5-3-5).
 
 ### Nillable: expliciet "geen waarde"
 
@@ -585,59 +607,6 @@ en in een XML-document kan je dat vervolgens als volgt gebruiken:
 > **LET OP!** De namespace declaratie `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"` moet dan wel in het XML-document aanwezig zijn.
 
 > **StUF-context:** Het `nillable`-mechanisme wordt in StUF gebruikt om aan te geven dat een gegeven bewust niet gevuld is. Een leeg element kan "nog niet ingevuld" betekenen, terwijl `xsi:nil="true"` betekent "er is vastgesteld dat er geen waarde is."
-
-### Schema's opsplitsen: `xs:include` en `xs:import`
-
-Een groot schema in één bestand wordt al snel onoverzichtelijk. XSD biedt twee mechanismen om schema's over meerdere bestanden te verdelen.
-
-**`xs:include`** — bestanden samenvoegen (zelfde namespace):
-
-```xml
-<!-- persoon.xsd -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.example.nl/schema">
-
-  <xs:include schemaLocation="typen-basis.xsd"/>
-
-  <xs:complexType name="PersoonType">
-    <xs:sequence>
-      <xs:element name="naam" type="xs:string"/>
-      <xs:element name="adres" type="tns:AdresType"/>  <!-- Uit typen-basis.xsd -->
-    </xs:sequence>
-  </xs:complexType>
-
-</xs:schema>
-```
-
-**`xs:import`** — schema's uit een andere namespace:
-
-```xml
-<!-- persoon.xsd (namespace: http://www.example.nl/persoon) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.example.nl/persoon"
-           xmlns:adr="http://www.example.nl/adres">
-
-  <xs:import namespace="http://www.example.nl/adres"
-             schemaLocation="adres.xsd"/>
-
-  <xs:complexType name="PersoonType">
-    <xs:sequence>
-      <xs:element name="naam" type="xs:string"/>
-      <xs:element name="adres" type="adr:AdresType"/>  <!-- Uit adres.xsd -->
-    </xs:sequence>
-  </xs:complexType>
-
-</xs:schema>
-```
-
-| Kenmerk | `xs:include` | `xs:import` |
-|---|---|---|
-| Namespace | Zelfde of geen | Andere |
-| Attribuut `namespace` | Niet nodig | Verplicht |
-| Analogie | Bestanden samenvoegen | Bibliotheek importeren |
-| Gebruik | Opknippen van groot schema | Hergebruik van extern schema |
-
-> **StUF-context:** StUF-schema's zijn zeer modulair. Het basisschema `stuf0302.xsd` definieert fundamentele StUF-typen, en domeinschema's importeren deze om hun eigen berichttypes te definiëren. Je zult tientallen `import`- en `include`-regels tegenkomen.
 
 ### Type-afleiding: extension en restriction
 
@@ -714,37 +683,6 @@ MedewerkerType       (afgeleid = extends PersoonType)
 | `xs:extension` | Voegt elementen/attributen toe | Basistype → **ruimer** |
 | `xs:restriction` | Beperkt of verwijdert optionele delen | Basistype → **strikter** |
 
-### Abstracte typen en substitutiegroepen
-
-Een type kan gemarkeerd worden als `abstract` — het mag **niet direct** in XML-documenten gebruikt worden:
-
-```xml
-<xs:complexType name="VoertuigType" abstract="true">
-  <xs:sequence>
-    <xs:element name="kenteken" type="xs:string"/>
-  </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="AutoType">
-  <xs:complexContent>
-    <xs:extension base="VoertuigType">
-      <xs:sequence>
-        <xs:element name="aantalDeuren" type="xs:integer"/>
-      </xs:sequence>
-    </xs:extension>
-  </xs:complexContent>
-</xs:complexType>
-```
-
-In XML moet je met `xsi:type` aangeven welk concreet type je bedoelt:
-
-```xml
-<voertuig xsi:type="AutoType">
-  <kenteken>AB-123-CD</kenteken>
-  <aantalDeuren>5</aantalDeuren>
-</voertuig>
-```
-
 ### Groepen: `xs:group` en `xs:attributeGroup`
 
 **`xs:group`** — herbruikbare elementgroep:
@@ -784,6 +722,59 @@ In XML moet je met `xsi:type` aangeven welk concreet type je bedoelt:
 ```
 
 > **StUF-context:** `xs:attributeGroup` wordt in StUF-schema's veelvuldig gebruikt. De basismetadata-attributen die bij elk StUF-element horen (zoals `mutatiesoort`, `noValue`) worden als `attributeGroup` gedefinieerd en overal hergebruikt.
+
+### Schema's opsplitsen: `xs:include` en `xs:import`
+
+Een groot schema in één bestand wordt al snel onoverzichtelijk. XSD biedt twee mechanismen om schema's over meerdere bestanden te verdelen.
+
+**`xs:include`** — bestanden samenvoegen (zelfde namespace):
+
+```xml
+<!-- persoon.xsd -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.nl/schema">
+
+  <xs:include schemaLocation="typen-basis.xsd"/>
+
+  <xs:complexType name="PersoonType">
+    <xs:sequence>
+      <xs:element name="naam" type="xs:string"/>
+      <xs:element name="adres" type="tns:AdresType"/>  <!-- Uit typen-basis.xsd -->
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+```
+
+**`xs:import`** — schema's uit een andere namespace:
+
+```xml
+<!-- persoon.xsd (namespace: http://www.example.nl/persoon) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.nl/persoon"
+           xmlns:adr="http://www.example.nl/adres">
+
+  <xs:import namespace="http://www.example.nl/adres"
+             schemaLocation="adres.xsd"/>
+
+  <xs:complexType name="PersoonType">
+    <xs:sequence>
+      <xs:element name="naam" type="xs:string"/>
+      <xs:element name="adres" type="adr:AdresType"/>  <!-- Uit adres.xsd -->
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+```
+
+| Kenmerk | `xs:include` | `xs:import` |
+|---|---|---|
+| Namespace | Zelfde of geen | Andere |
+| Attribuut `namespace` | Niet nodig | Verplicht |
+| Analogie | Bestanden samenvoegen | Bibliotheek importeren |
+| Gebruik | Opknippen van groot schema | Hergebruik van extern schema |
+
+> **StUF-context:** StUF-schema's zijn zeer modulair. Het basisschema `stuf0302.xsd` definieert fundamentele StUF-typen, en domeinschema's importeren deze om hun eigen berichttypes te definiëren. Je zult tientallen `import`- en `include`-regels tegenkomen.
 
 ### Modulaire schema-architectuur
 
