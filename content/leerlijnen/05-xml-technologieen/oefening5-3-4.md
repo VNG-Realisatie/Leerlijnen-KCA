@@ -28,7 +28,7 @@ Bewaar gedurende de onderstaande oefeining wedrom zelf regelmatig het bestand.
 * Je ziet nu het schema in een grafische structuur waarin je de verschillende XML-Schema componenten open en dicht kunt klikken door op de plusjes of minnetjes achter de elementnamen te klikken. Klik 'klantgegevens' open;
 * Je ziet nu een geel vlak met linksbovenin de naam 'Klant'. Dit gele vlak vertegenwoordigd de 'complexType' op het hoogste niveau dat we zojuist hebben vervaardigd;
 * Via de knop <img width="24" style="display: block; margin-top: 0; margin-bottom: 0;" alt="ToRootView" src="/Leerlijnen-KCA/bestanden/oefeningen-5-3/Root-schemaview.jpg"/> linksboven kun je weer terug naar de vorige view. Bekijk ook even de grafische structuur voor 'factuur' en 'betaalbevestiging';
-* Wijzig de editing modus weer naar “Text”; 
+* Wijzig de editing modus weer naar “Text”. 
 
 ***Extension***
 * Kijk nu of je dezelfde techniek los kunt laten op de elementen `<naam>`, `<adres>`, `<ordergegevens>`, `<artikel>` en `<leveringsgegevens>` maar vervang de inhoud van de elementen `<ordergegevens>` en `<artikel>` binnen `<factuur>` nog niet. 
@@ -39,7 +39,7 @@ Dat laatste element ziet er daar nl. iets anders uit dan op de andere plaatsen. 
 * Plaats daarbinnen weer een `<xs:extension>` element met als `base` attribuutwaarde 'Artikel';
 * Knip nu het `<xs:sequence>` element uit het complexType 'ArtikelMetPrijs' en plaats dat binnen het zojuist vervaardigde '<xs:extension>` element;
 * Verwijder tenslotte de elementdefinities van de elementen `<artikelnummer>`, `<productnaam>` en `<omschrijving>`;
-* Bewaar het bestand en bekijk de root elementen weer in Schema view;
+* Bewaar het bestand en bekijk de root elementen weer in Schema view.
 
 ***SimpleType***
 * Op `<xs:simpleType>` elementen kun je dezelfde techniek toepassen. Doe dat op de elementen `<voorletters>`, `<postcode>`, `<ordernummer>` en het attribuut `afleverstatus`;
