@@ -64,7 +64,7 @@ XML-Schema is een taal om schema's mee te schrijven — en het bijzondere is: **
 
 ### Een eerste voorbeeld
 
-Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<achternaam>` en een `<geboortedatum>` moet bevatten. Dan zou je dat als volgt kunnen doen:
+Stel, je wil vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<achternaam>` en een `<geboortedatum>` moet bevatten. Dan zou je dat als volgt kunnen doen:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -247,7 +247,7 @@ In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het
 
 Een element kan van een complex of simpel type zijn. Elementen van het **simpele** type bevatten alleen een waarde (tekst, getal, datum) maar geen kind-elementen en attributen. Elementen van het **complexe** type kunnen naast een waarde wel kind-elementen en/of attributen bevatten. 
 
-In de volgende paragrafen bouwen we voort op dit inzicht door het beperken van simpele en complexe types of het uitbreiden van complexe types m.b.v. een `<xs:simpleType>` of een `<xs:complexType>`.
+In volgende paragrafen bouwen we voort op dit inzicht door het beperken van simpele en complexe types of het uitbreiden van complexe types m.b.v. een `<xs:simpleType>` of een `<xs:complexType>`.
 
 ### Simpele typen met restricties
 
@@ -373,7 +373,7 @@ Hieronder enkele voorbeelden:
 
 Het volgende valt hier op:
 * Voor het toekennen van kind-elementen is een `<xs:sequence>` nodig. Dit element is een van de drie te gebruiken **compositors**. In de volgende paragraaf gaan we hier iets dieper op in;
-* De definitie van een attribuut vindt direct plaats binnen een `<xs:complexType>` element behalve als het element zelf alleen tekstuele content (xs:sring, xs:integer, etc...) kan bevatten. In dat geval wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element.
+* De definitie van een attribuut vindt direct plaats binnen een `<xs:complexType>` element.
 
 ### Compositors: de volgorde van kind-elementen
 
@@ -502,9 +502,9 @@ Er kunnen verschillende redenen zijn om globale of juist lokale definities te ge
 
 | Gebruik **globaal** wanneer... | Gebruik **lokaal** wanneer... |
 |---|---|
-| Het type op meerdere plekken gebruikt wordt | Het type maar op één plek gebruikt wordt |
-| Andere schema's ernaar moeten kunnen verwijzen | Het type specifiek is voor dit ene element |
-| Je een duidelijk overzicht wilt van alle typen | Je het schema compact wilt houden |
+| Het type op meerdere plekken gebruikt wordt of de verwachting is dat dit gaat gebeuren. | Het type maar op één plek gebruikt wordt. |
+| Andere schema's ernaar moeten kunnen verwijzen. | Het type specifiek is voor dit ene element. |
+| Je een duidelijk overzicht wil van alle typen. | Je het schema compact wil houden. |
 
 ### Oefening 5.3.4
 
@@ -601,7 +601,8 @@ We zagen al eerder hoe je simpele types kon restricten. Ook complexe Types kun j
 
 Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en /of attribuut aan een simpleType
 
-* Een element met een waarde en een attribuut:
+In de paragraaf 'Complexe typen: elementen met structuur' trokken we al de conclusie dat de definitie van een attribuut direct plaatsvindt binnen een `<xs:complexType>`. Er is echter een uitzondering daarop, als het element zelf alleen tekstuele content (xs:sring, xs:integer, etc...) kan bevatten wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element. In het voorbeeld hieronder illustrereren we dat:
+
   ```xml
   <xs:element name="bedrag">
     <xs:complexType>
@@ -613,7 +614,7 @@ Een **`xs:extension`** is een uitbreiding van een type en levert altijd een comp
     </xs:complexType>
   </xs:element>
   ```
-
+??????????????????????????????????????????
 
 ```xml
 <!-- Basistype -->
