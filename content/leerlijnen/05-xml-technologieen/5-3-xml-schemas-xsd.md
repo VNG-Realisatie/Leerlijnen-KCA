@@ -432,7 +432,37 @@ Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen ec
 </xs:complexType>
 ```
 
-### Oefening 3
+### Attributen definiëren in XSD
+
+Zoals je in een van de voorgaande paragrafen al in de voorbeelden zag definieer je attributen m.b.v. `<xs:attribute>`, **na** de compositor:
+
+```xml
+<xs:complexType name="AdresType">
+  <xs:sequence>
+    <xs:element name="straat" type="xs:string"/>
+    <xs:element name="huisnummer" type="xs:positiveInteger"/>
+  </xs:sequence>
+  <xs:attribute name="type" type="xs:string"/>
+</xs:complexType>
+```
+
+Net als elementen kan je attributen met een eigen restrictie-type definiëren. Zoals bij hieronder met een enumeration:
+
+```xml
+<xs:simpleType name="MutatiesoortType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="T"/>
+    <xs:enumeration value="W"/>
+    <xs:enumeration value="V"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:attribute name="mutatiesoort" type="MutatiesoortType"/>
+```
+
+> **StUF-context:** Het attribuut `mutatiesoort` is een van de meest kenmerkende attributen in StUF-berichten. Het geeft aan wat voor soort wijziging het bericht vertegenwoordigd (Toevoeging, Wijziging, Verwijdering, etc.).
+
+### Oefening 5.3.3
 
 [Naar de oefening](../oefening-5-3-3).
 
@@ -458,37 +488,35 @@ Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
 
 > **Let op!** Tot nu toe hebben we steeds XML-Schema fragmenten gecreëerd die niet aan een namespace zijn gekoppeld. Later zulen we zien dat je in een XML-Schema aan kunt geven op welke namespace dat XML-Schema betrekking heeft. Dat heeft direct gevolgen voor de wijze waarop je in een `type` attribuut verwijst naar een globaal gedefinieerde `<xs:simpleType>` danwel `<xs:complexType>`.
 
-### Oefening 4
+### Geneste vs. globale definities
+
+Er kunnen verschillende redenen zijn om globale of juist lokale definities te gebruiken. Hieronder enkele veel voorkomende redenen:
+
+| Gebruik **globaal** wanneer... | Gebruik **lokaal** wanneer... |
+|---|---|
+| Het type op meerdere plekken gebruikt wordt | Het type maar op één plek gebruikt wordt |
+| Andere schema's ernaar moeten kunnen verwijzen | Het type specifiek is voor dit ene element |
+| Je een duidelijk overzicht wilt van alle typen | Je het schema compact wilt houden |
+
+### Oefening 5.3.4
 
 [Naar de oefening](../oefening-5-3-4).
 
 
-### Nillable: expliciet "geen waarde"
+### Kardinaliteit
 
-Soms moet een element aanwezig zijn, maar hoeft het geen waarde te hebben. In XSD:
+De **kardinaliteit** van een element of attribuut zegt iets over hoe vaak dat mag (of moet) voorkomen.
 
-```xml
-<xs:element name="overlijdensdatum" type="xs:date" nillable="true"/>
-```
+**Bij elementen**
 
-In het XML-document:
+Bij elementen gebruiken we daar de XML-Schema attributen `minOccurs` en `maxOccurs` voor.
 
-```xml
-<overlijdensdatum xsi:nil="true"/>
-```
+| Attribuut | Betekenis | Mogelijke waarden | Standaard |
+|---|---|---|---|
+| `minOccurs` | Minimaal aantal keer | Geheel getal groter of gelijk aan 0 | `1` |
+| `maxOccurs` | Maximaal aantal keer | Geheel getal groter of gelijk aan 1 of de waarde 'unbounded'  | `1` |
 
-> **StUF-context:** Het `nillable`-mechanisme wordt in StUF gebruikt om aan te geven dat een gegeven bewust niet gevuld is. Een leeg element kan "nog niet ingevuld" betekenen, terwijl `xsi:nil="true"` betekent "er is vastgesteld dat er geen waarde is."
-
----
-
-### Kardinaliteit: `minOccurs` en `maxOccurs`
-
-**Kardinaliteit** bepaalt hoe vaak een element mag (of moet) voorkomen:
-
-| Attribuut | Betekenis | Standaard |
-|---|---|---|
-| `minOccurs` | Minimaal aantal keer | `1` |
-| `maxOccurs` | Maximaal aantal keer | `1` |
+De waarde in de kollom 'Standaard' geldt als het betreffende attribuut niet is gedefinieerd. Een `<xs:element>` dat geen attribuut `minOccurs` heeft is dus standaard verplicht.
 
 Veelgebruikte combinaties:
 
@@ -517,23 +545,16 @@ Voorbeeld:
 
 > **StUF-context:** In StUF-schema's zijn veel elementen optioneel (`minOccurs="0"`) omdat niet elk bericht alle gegevens bevat. Het begrijpen van `minOccurs` en `maxOccurs` is essentieel voor het lezen van StUF-schema's.
 
+**Bij attributen**
 
-HIER IETS ZEGGEN OVER COMPOSITORS EN Kardinaliteit
-Bij xs:all mag de maxOccurs bijv. niet hoger zijn dan 1. 
+De kardinaliteit van attributen wordt in een XML-Schema gedefinieerd met het XML-Schema attribuut `use`. Een attribuut kan echter nooit meer dan één keer op een element gespecificeerd worden.
+Het volgende is dus **niet** toegestaan in een XML-bestand:
 
-### Attributen definiëren in XSD
-
-Attributen definieer je met `<xs:attribute>`, **na** de compositor:
-
-```xml
-<xs:complexType name="AdresType">
-  <xs:sequence>
-    <xs:element name="straat" type="xs:string"/>
-    <xs:element name="huisnummer" type="xs:positiveInteger"/>
-  </xs:sequence>
-  <xs:attribute name="type" type="xs:string" use="required"/>
-</xs:complexType>
 ```
+	<afbeeldingen href="images/afbeelding1.jpg" href="images/afbeelding2.jpg"/>
+```
+
+Om die reden zijn alleen in de eerste kolom van de volgende tabel gedefinieerde waarden toegestaan op het `use` attribuut.
 
 | `use`-waarde | Betekenis |
 |---|---|
@@ -541,33 +562,29 @@ Attributen definieer je met `<xs:attribute>`, **na** de compositor:
 | `required` | Het attribuut is verplicht |
 | `prohibited` | Het attribuut mag niet voorkomen (gebruikt bij overerving) |
 
-Attributen met een eigen restrictie-type:
 
-```xml
-<xs:simpleType name="MutatiesoortType">
-  <xs:restriction base="xs:string">
-    <xs:enumeration value="T"/>
-    <xs:enumeration value="W"/>
-    <xs:enumeration value="V"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<xs:attribute name="mutatiesoort" type="MutatiesoortType"/>
-```
-
-> **StUF-context:** Het attribuut `mutatiesoort` is een van de meest kenmerkende attributen in StUF-berichten. Het geeft aan wat voor soort wijziging het bericht bevat (Toevoeging, Wijziging, Verwijdering, etc.).
-
-### Geneste vs. globale definities
-
-| Gebruik **globaal** wanneer... | Gebruik **lokaal** wanneer... |
-|---|---|
-| Het type op meerdere plekken gebruikt wordt | Het type maar op één plek gebruikt wordt |
-| Andere schema's ernaar moeten kunnen verwijzen | Het type specifiek is voor dit ene element |
-| Je een duidelijk overzicht wilt van alle typen | Je het schema compact wilt houden |
+HIER IETS ZEGGEN OVER COMPOSITORS EN Kardinaliteit
+Bij xs:all mag de maxOccurs bijv. niet hoger zijn dan 1. 
 
 > **StUF-context:** StUF-schema's werken voornamelijk met **globale definities**. De typen voor personen, adressen, zaken worden centraal gedefinieerd en vervolgens hergebruikt in meerdere berichtdefinities.
 
----
+### Nillable: expliciet "geen waarde"
+
+Soms moet een element aanwezig zijn, maar hoeft het geen waarde te hebben. In een XML-Schema wordt dat als volgt gedefinieerd:
+
+```xml
+<xs:element name="overlijdensdatum" type="xs:date" nillable="true"/>
+```
+
+en in een XML-document kan je dat vervolgens als volgt gebruiken:
+
+```xml
+<overlijdensdatum xsi:nil="true"/>
+```
+
+> **LET OP!** De namespace declaratie `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"` moet dan wel in het XML-document aanwezig zijn.
+
+> **StUF-context:** Het `nillable`-mechanisme wordt in StUF gebruikt om aan te geven dat een gegeven bewust niet gevuld is. Een leeg element kan "nog niet ingevuld" betekenen, terwijl `xsi:nil="true"` betekent "er is vastgesteld dat er geen waarde is."
 
 ### Schema's opsplitsen: `xs:include` en `xs:import`
 
