@@ -4,7 +4,7 @@ date: 2026-03-04
 weight: 5
 leerlijn: 5
 paragraaf: "5.3"
-leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen.
+leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen."
 ---
 
 ## 5.3 XML-Schema's (XSD)
