@@ -4,14 +4,12 @@ date: 2026-03-04
 weight: 5
 leerlijn: 5
 paragraaf: "5.3"
-leerdoel: "Leerdoel nog toe te voegen"
+leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen.
 ---
 
 ## 5.3 XML-Schema's (XSD)
 
-Kan XML-Schema's (XSD's) lezen, begrijpen en opstellen.
-
----
+Deze cursus heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema.
 
 ### Het probleem: XML is te vrij
 
@@ -408,7 +406,7 @@ Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we
 ```
 
 **xs:all**
-Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven.
+Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven. **<-- Klopt dit wel. Is het niet zo dat ze allemaal aanwezig moeten zijn maar dat de volgorde niet van belang is?**
 
 ```xml
 <xs:complexType name="AdresType">
@@ -597,24 +595,56 @@ en in een XML-document kan je dat vervolgens als volgt gebruiken:
 ### Type-afleiding: extension en restriction
 
 Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type baseren op een bestaand type, vergelijkbaar met overerving in objectgeoriënteerd programmeren. 
-We zagen al eerder hoe je simpele types kon restricten. Ook complexe Types kun je restricten. We kijken echter eerst hoe je zowel simpele als complexe types kunt extenden.
 
-Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en /of attribuut aan een simpleType
+We zagen al eerder hoe je simpele types kon restricten (beperken) maar ook complexe types kun je restricten. Daarbij geldt dat restricten altijd moet binnen de in het originele type gedefinieerde grenzen. Alleen een element dat optioneel is mag verwijderd worden. Een element met een `minOccurs` van 'n>0' en een `maxOccurs` van 'm>n' of 'unbounded' mag een `minOccurs` van '>n' en een `maxOccurs` van '<m' aannemen. Wel geldt `minOccurs` <= `maxOccurs` en `maxOccurs` >= `minOccurs`.
 
-In de paragraaf 'Complexe typen: elementen met structuur' trokken we al de conclusie dat de definitie van een attribuut direct plaatsvindt binnen een `<xs:complexType>`. Er is echter een uitzondering daarop, als het element zelf alleen tekstuele content (xs:sring, xs:integer, etc...) kan bevatten wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element. In het voorbeeld hieronder illustrereren we dat:
+Hieronder een voorbeeld:
 
-  ```xml
-  <xs:element name="bedrag">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:decimal">
-          <xs:attribute name="valuta" type="xs:string"/>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  ```
-??????????????????????????????????????????
+```xml
+<!-- Basistype: alles optioneel -->
+<xs:complexType name="PersoonType">
+  <xs:sequence>
+    <xs:element name="naam" type="xs:string"/>
+    <xs:element name="geboortedatum" type="xs:date" minOccurs="0"/>
+    <xs:element name="adres" type="xs:string" minOccurs="0"/>
+	<xs:element name="opleiding" type="xs:string"  minOccurs="1" maxOccurs="unbounded"/>
+  </xs:sequence>
+</xs:complexType>
+
+<!-- Restrictietype: naam en geboortedatum verplicht, geen adres -->
+<xs:complexType name="KernPersoonType">
+  <xs:complexContent>
+    <xs:restriction base="PersoonType">
+      <xs:sequence>
+        <xs:element name="naam" type="xs:string"/>
+        <xs:element name="geboortedatum" type="xs:date"/>
+	    <xs:element name="opleiding" type="xs:string"  minOccurs="2" maxOccurs="30"/>
+      </xs:sequence>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+```
+
+> **StUF-context:** StUF maakt intensief gebruik van `xs:restriction`. Het basistype bevat alle denkbare elementen (vaak optioneel), en per berichttype wordt een restriction gemaakt die alleen de relevante elementen overhoudt. Dit is het zogenaamde **"Russische poppetjes-model"** (matryoshka-model) van StUF.
+
+Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en/of attribuut aan een bestaand type toegevoegd.
+
+In de paragraaf 'Complexe typen: elementen met structuur' trokken we al de conclusie dat de definitie van een attribuut direct plaatsvindt binnen een `<xs:complexType>`. Er is echter een uitzondering daarop, als de `base` van een `<xs:extension>` element zelf van het simpele type is en dus alleen tekstuele content (xs:string, xs:integer, etc...) kan bevatten wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element. In het voorbeeld hieronder illustrereren we dat:
+
+```xml
+<xs:element name="bedrag">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="valuta" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+```
+Het spreekt voor zich dat hetzelfde geldt als het `<xs:complexType>` als globale definitie wordt gedefinieerd.
+
+Voor het extenden van een globaal `<xs:complexType>` gebruiken we een `<xs:complexContent>` element. Zie hieronder een voorbeeld:
 
 ```xml
 <!-- Basistype -->
@@ -638,7 +668,7 @@ In de paragraaf 'Complexe typen: elementen met structuur' trokken we al de concl
 </xs:complexType>
 ```
 
-`MedewerkerType` bevat nu alle elementen van `PersoonType` **plus** de extra elementen:
+`MedewerkerType` bevat nu alle elementen van `PersoonType` **plus** de extra elementen, dus:
 
 ```text
 PersoonType          (basistype)
@@ -653,37 +683,10 @@ MedewerkerType       (afgeleid = extends PersoonType)
   └── afdeling        ← toegevoegd
 ```
 
-**`xs:restriction`** — een type beperken:
-
-```xml
-<!-- Basistype: alles optioneel -->
-<xs:complexType name="PersoonType">
-  <xs:sequence>
-    <xs:element name="naam" type="xs:string"/>
-    <xs:element name="geboortedatum" type="xs:date" minOccurs="0"/>
-    <xs:element name="adres" type="xs:string" minOccurs="0"/>
-  </xs:sequence>
-</xs:complexType>
-
-<!-- Restrictietype: naam en geboortedatum verplicht, geen adres -->
-<xs:complexType name="KernPersoonType">
-  <xs:complexContent>
-    <xs:restriction base="PersoonType">
-      <xs:sequence>
-        <xs:element name="naam" type="xs:string"/>
-        <xs:element name="geboortedatum" type="xs:date"/>
-      </xs:sequence>
-    </xs:restriction>
-  </xs:complexContent>
-</xs:complexType>
-```
-
-> **StUF-context:** StUF maakt intensief gebruik van `xs:restriction`. Het basistype bevat alle denkbare elementen (vaak optioneel), en per berichttype wordt een restriction gemaakt die alleen de relevante elementen overhoudt. Dit is het zogenaamde **"Russische poppetjes-model"** (matryoshka-model) van StUF.
-
 | Techniek | Wat doet het? | Richting |
 |---|---|---|
 | `xs:extension` | Voegt elementen/attributen toe | Basistype → **ruimer** |
-| `xs:restriction` | Beperkt of verwijdert optionele delen | Basistype → **strikter** |
+| `xs:restriction` | Beperkt of verwijdert binnen de in het originel complexType of simpleType gedefinieerde grenzen | Basistype → **strikter** |
 
 ### Oefening 5.3.6
 
