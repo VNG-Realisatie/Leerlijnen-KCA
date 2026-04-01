@@ -9,7 +9,7 @@ leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen."
 
 ## 5.3 XML-Schema's (XSD)
 
-Deze cursus heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema.
+Deze cursus heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema. Daarnaast is de content van deze cursus niet normatief.
 
 ### Het probleem: XML is te vrij
 
@@ -378,6 +378,7 @@ Het volgende valt hier op:
 XML-Schema kent drie compositors die beschrijven hoe kind-elementen zich tot elkaar verhouden. We benoemen ze hieronder en illustreren ze met een voorbeeld:
 
 **xs:sequence**
+
 De elementen moeten in de gedefinieerde volgorde worden geplaatst.
 
 ```xml
@@ -393,6 +394,7 @@ De elementen moeten in de gedefinieerde volgorde worden geplaatst.
 > **StUF-context:** StUF-schema's gebruiken vrijwel uitsluitend `xs:sequence`. De volgorde van elementen in StUF-berichten is altijd vast.
 
 **xs:choice**
+
 Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we zien dat er mechanismes zijn waarmee we deze keuze meerdere keren achter elkaar kunnen maken.
 
 ```xml
@@ -406,7 +408,8 @@ Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we
 ```
 
 **xs:all**
-Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven. **<-- Klopt dit wel. Is het niet zo dat ze allemaal aanwezig moeten zijn maar dat de volgorde niet van belang is?**
+
+Alle elementen mogen in een willekeurige volgorde worden geplaatst, ze kunnen echter maar één keer geplaatst worden.
 
 ```xml
 <xs:complexType name="AdresType">
@@ -492,7 +495,8 @@ Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
 
 > **StUF-context:** StUF-schema's werken we voornamelijk met **globale definities**. De typen voor personen, adressen, zaken worden centraal gedefinieerd en vervolgens hergebruikt in meerdere berichtdefinities.
 
-> **Let op!** Tot nu toe hebben we steeds XML-Schema fragmenten gecreëerd die niet aan een namespace zijn gekoppeld. Later zulen we zien dat je in een XML-Schema aan kunt geven op welke namespace dat XML-Schema betrekking heeft. Dat heeft direct gevolgen voor de wijze waarop je in een `type` attribuut verwijst naar een globaal gedefinieerde `<xs:simpleType>` danwel `<xs:complexType>`.
+> [!NOTE] 
+> Tot nu toe hebben we steeds XML-Schema fragmenten gecreëerd die niet aan een namespace zijn gekoppeld. Later zulen we zien dat je in een XML-Schema aan kunt geven op welke namespace dat XML-Schema betrekking heeft. Dat heeft direct gevolgen voor de wijze waarop je in een `type` attribuut verwijst naar een globaal gedefinieerde `<xs:simpleType>` danwel `<xs:complexType>`.
 
 ### Geneste vs. globale definities
 
@@ -567,6 +571,7 @@ Om die reden zijn alleen de in de eerste kolom van de volgende tabel gedefinieer
 
 
 **Bij compositors**
+
 Op compositors kan op dezelfde wijze als op `<xs:element>` elementen kardinaliteiten worden gedefinieerd.
 Binnen een `<xs:all>` compositor mogen de attributen `minOccurs` en `maxOccurs` op het `<xs:element>` echter geen waarde hebben die hoger is dan 1. 
 
@@ -592,7 +597,9 @@ en in een XML-document kan je dat vervolgens als volgt gebruiken:
 
 > **StUF-context:** Het `nillable`-mechanisme wordt in StUF gebruikt om aan te geven dat een gegeven bewust niet gevuld is. Een leeg element kan "nog niet ingevuld" betekenen, terwijl `xsi:nil="true"` betekent "er is vastgesteld dat er geen waarde is."
 
-### Type-afleiding: extension en restriction
+### Type-afleiding: Restriction en Extension
+
+**Restriction**
 
 Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type baseren op een bestaand type, vergelijkbaar met overerving in objectgeoriënteerd programmeren. 
 
@@ -626,6 +633,8 @@ Hieronder een voorbeeld:
 ```
 
 > **StUF-context:** StUF maakt intensief gebruik van `xs:restriction`. Het basistype bevat alle denkbare elementen (vaak optioneel), en per berichttype wordt een restriction gemaakt die alleen de relevante elementen overhoudt. Dit is het zogenaamde **"Russische poppetjes-model"** (matryoshka-model) van StUF.
+
+**Extension**
 
 Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en/of attribuut aan een bestaand type toegevoegd.
 
