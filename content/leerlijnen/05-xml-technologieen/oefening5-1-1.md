@@ -1,5 +1,5 @@
 ---
-title: "Oefening 1 5.1"
+title: "Oefening 5-1-1"
 date: 2026-03-13
 weight: 3.1
 leerlijn: 5
@@ -7,7 +7,7 @@ paragraaf: "5.1.1"
 oefendoel: "Oefen de creatie van een XML bestand, het op basis van een schema toevoegen van elementen en het creëren van een welgevormd XML bestand."
 ---
 
-## Oefening 1: Visitekaartje
+## Oefening 5.1.1: Visitekaartje
 
 Teneinde de input voor visitekaartjes automatisch te kunnen verwerken, heeft de verantwoordelijke
 afdeling van een groot IT-bedrijf een web-pagina gebouwd. Daarin worden de gegevens ingebracht die op een visitekaartje
@@ -16,7 +16,7 @@ gestuurd, dat uiteindelijk de visitekaartjes produceert. Het XML-schema waarin d
 gebruiken om een XML-bestand te creëren.
 
 **Benodigde files**
-* Download [Visitekaartje.zip](/Leerlijnen-KCA/bestanden/oefening-5.1/Visitekaartje.zip) en plaats de inhoud (Visitekaartje.xsd) op een locatie waar jij er makkelijk bij kunt.
+* Download [Visitekaartje.zip](/Leerlijnen-KCA/bestanden/oefeningen-5.1/Visitekaartje.zip) en plaats de inhoud (Visitekaartje.xsd) op een locatie waar jij er makkelijk bij kunt.
 
 **Opdracht**
 * Open 'Altova XMLSpy 2024 Enterprise XML Editor'.;
@@ -25,8 +25,10 @@ gebruiken om een XML-bestand te creëren.
 * Klik vervolgens achter het invoerveld op het map icoontje voor “Browse file” en selecteer het bestand “Visitekaartje.xsd” waar je dat eerder hebt opgeslagen;
 * Klik op “Open” en vervolgens op “OK”;
 * XMLSPY heeft nu een XML-bestand voor je aangemaakt met de minimaal benodigde set elementen en deze geopend in “Text view”. 
+Dat laatste kun je zien aan de balk onder het document waarin je de editing/viewing modus kunt kiezen, zie hieronder:<br/><br/>
+<img width="540" style="display: block; margin-top: 0; margin-bottom: 0;" alt="XMLSpy-modi" src="/Leerlijnen-KCA/images/XML-Spy-modi.jpg"/><br/>
 Alle verplichte elementen zijn aanwezig. Zij bevatten alleen nog geen inhoud.<br>Voorzie de elementen van inhoud en kijk of 
-je ook nog enkele niet verplichte elementen aan het bestand kunt toevoegen.<br>Valideer daarvoor regelmatig het bestand door te klikken op het groene <img width="22" style="display: block; margin-top: 0; margin-bottom: 0;" alt="Validate" src="/Leerlijnen-KCA/images/validate.jpg" /> 
+je ook nog enkele niet verplichte elementen aan het bestand kunt toevoegen.<br>Valideer daarvoor regelmatig het bestand door te klikken op het groene <img width="22" style="display: block; margin-top: 0; margin-bottom: 0;" alt="Validate" src="/Leerlijnen-KCA/images/validate.jpg" />
 icoontje en corrigeer indien nodig de fouten. Je kunt ook valideren via het menu “XML – Validate XML” of m.b.v. “F8”.<br>Eventueel kan je via “DTD\Schema – Go to 
 Schema” de mogelijke structuur bekijken;
 * Bewaar het bestand ergens als “Visitekaartje.xml”;

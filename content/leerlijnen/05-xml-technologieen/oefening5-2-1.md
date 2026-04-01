@@ -1,5 +1,5 @@
 ---
-title: "Oefening 3 5.2"
+title: "Oefening 5-2-1"
 date: 2026-03-14
 weight: 3.2
 leerlijn: 5
@@ -7,16 +7,17 @@ paragraaf: "5.2.1"
 oefendoel: "Oefen met het ordenen van een XML bestand in namespaces."
 ---
 
-## Oefening: StUF Zaken
+## Oefening 5.2.1: StUF Zaken
 
 Je krijgt nu een sneak preview in een StUF bericht. Het is een goed voorbeeld van het toepassen van namespaces en we kijken dus nog niet naar de semantiek achter het bericht. 
 
 **Benodigde files**
-* Download [ZakLk01.zip](/Leerlijnen-KCA/bestanden/oefening-5.2/ZakLk01.zip) en plaats de inhoud (ZakLk01.xml) op een locatie waar jij er makkelijk bij kunt.
-* Download [Zkn0310-schema.zip](/Leerlijnen-KCA/bestanden/oefening-5.2/Zkn0310-schema.zip) en plaats de inhoud (een aantal XML-Schema bestanden) op een locatie waar jij er makkelijk bij kunt.
+* Download [ZakLk01.zip](/Leerlijnen-KCA/bestanden/oefeningen-5.2/ZakLk01.zip) en plaats de inhoud (ZakLk01.xml) op een locatie waar jij er makkelijk bij kunt.
+* Download [Zkn0310-schema.zip](/Leerlijnen-KCA/bestanden/oefeningen-5.2/Zkn0310-schema.zip) en plaats de inhoud (een aantal XML-Schema bestanden) op een locatie waar jij er makkelijk bij kunt.
 
 **Opdracht**
 * Open het bestand 'ZakLk01.xml' met 'Altova XMLSpy 2024 Enterprise XML Editor';
+* Wijzig zo nodig de editing modus naar “Text”;
 * Definieer op het root element de volgende namespaces met een door jezelf gekozen prefix:
   1. 'http://www.egem.nl/StUF/StUF0301'
   2. 'http://www.w3.org/2001/XMLSchema-instance'

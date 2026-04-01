@@ -1,5 +1,5 @@
 ---
-title: "Oefening 2 5.1"
+title: "Oefening 5-1-2"
 date: 2026-03-13
 weight: 3.2
 leerlijn: 5
@@ -7,12 +7,12 @@ paragraaf: "5.1.2"
 oefendoel: "Oefen met het toevoegen van attributen aan een XML bestand."
 ---
 
-## Oefening 2: Luxe visitekaartje
+## Oefening 5.1.2: Luxe visitekaartje
 
 Het bedrijf heeft besloten voor specifieke functies ook privé informatie op een visitekaartje toe te staan. Het gaat om het adres, het e-Mailadres, het telefoonnummer en het mobielenummer. Het XML-schema is daartoe aangepast.
 
 **Benodigde files**
-* Download [Visitekaartje-luxe.zip](/Leerlijnen-KCA/bestanden/oefening-5.1/Visitekaartje-luxe.zip) en plaats de inhoud (Visitekaartje-luxe.xsd) op een locatie waar jij er makkelijk bij kunt.
+* Download [Visitekaartje-luxe.zip](/Leerlijnen-KCA/bestanden/oefeningen-5.1/Visitekaartje-luxe.zip) en plaats de inhoud (Visitekaartje-luxe.xsd) op een locatie waar jij er makkelijk bij kunt.
 
 **Opdracht**
 * Open 'Altova XMLSpy 2024 Enterprise XML Editor'.;

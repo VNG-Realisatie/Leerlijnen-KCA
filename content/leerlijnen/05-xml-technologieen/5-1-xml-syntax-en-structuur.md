@@ -105,7 +105,7 @@ Elk XML-document begint (optioneel, maar sterk aanbevolen) met een **XML-declara
 | `version="1.0"` | De gebruikte XML-versie (vrijwel altijd 1.0) |
 | `encoding="UTF-8"` | De tekencodering — bepaalt welke letters/tekens het document kan bevatten |
 
-De declaratie staat altijd op de **allereerste regel** en vóór het root-element.
+De declaratie staat altijd op de **allereerste regel** en vóór het root-element. Dat is het enige element in een XML-bestand dat alle andere elementen (kind-elementen) bevat.
 
 ### Elementen: de bouwstenen van XML
 
@@ -250,6 +250,15 @@ Merk op hoe de attributen hier meerdere rollen vervullen:
 * **Classificatie**: `weertype="zwaar-bewolkt"` geeft het type weer aan
 * **Eenheden**: `eenheid="Celsius"`, `eenheid="m/sec"` — metagegevens over hoe de waarde gelezen moet worden
 
+### Oefening 5.1.1
+Download en installeer eerst '[Altova XMLSpy 2024 Enterprise XML Editor - Release 2](https://www.altova.com/xmlspy-xml-editor/download)'. Gebruik de 'free, fully- functional, 30-day trial' of vraag de beheerder van de KCA specifieke software (Robert Melskens) om de Licentie gegevens.
+
+[Naar de oefening](../oefening-5-1-1).
+
+### Oefening 5.1.2
+
+[Naar de oefening](../oefening-5-1-2).
+
 ### Vergelijking met HTML
 
 | | HTML | XML |
@@ -293,12 +302,3 @@ Om met XML te werken gebruik je doorgaans drie soorten tools:
 | **XML-Schema editor** | Tool om XML-documenten (en schema's en stylesheets) te creëren en te bewerken. Heeft vaak een parser en XSLT-processor ingebouwd. Voorbeeld: Altova XMLSpy, Oxygen XML Developer. |
 
 > In de gemeente komt je XML tegen in koppelvlakbeschrijvingen (StUF/WSDL), in configuratiebestanden, en in berichtuitwisseling tussen systemen.
-
-### Oefening 1
-Download en installeer eerst '[Altova XMLSpy 2024 Enterprise XML Editor - Release 2](https://www.altova.com/xmlspy-xml-editor/download)'. Gebruik de 'free, fully- functional, 30-day trial' of vraag de beheerder van de KCA specifieke software (Robert Melskens) om de Licentie gegevens.
-
-[Naar de oefening 1](../oefening-1-5.1).
-
-### Oefening 2
-
-[Naar de oefening 2](../oefening-2-5.1).
