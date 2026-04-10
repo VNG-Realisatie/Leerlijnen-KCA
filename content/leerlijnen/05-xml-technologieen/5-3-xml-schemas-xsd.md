@@ -631,7 +631,7 @@ Hieronder een voorbeeld:
 </xs:complexType>
 ```
 
-Restrictions kunnen betrekking hebben op meerdere niveaus van complexTypes/simpleTypes en op al die niveua's moeten de restrictions binnen de in de originele types gedefinieerde grenzen blijven. In het volgende voorbeeld hebben we het complexType 'Order2' gecreëerd op basis van het 'Order' complexType.
+Restrictions kunnen betrekking hebben op meerdere niveaus van complexTypes/simpleTypes en op al die niveau's moeten de restrictions binnen de in de originele types gedefinieerde grenzen blijven. In het volgende voorbeeld hebben we het complexType 'Order2' gecreëerd op basis van het 'Order' complexType.
 
 ```xml
 <xs:complexType name="Order">
@@ -665,13 +665,13 @@ Zoals je ziet hebben we het aantal keer dat het element `<artikel>` voor mag kom
 	</xs:restriction>
 </xs:simpleType>
 ```
-De waarde '12' voor het facet 'maxLength' valt netjes binnen de grenzen die het simpleType waarop 'Ordernummer10' gebaseerd is, 'Ordernummer'.
+De waarde '12' voor het facet 'maxLength' valt weer netjes binnen de grenzen die het simpleType waarop 'Ordernummer10' gebaseerd is, 'Ordernummer'.
 
 > **StUF-context:** StUF maakt intensief gebruik van `xs:restriction`. Het basistype bevat alle denkbare elementen (vaak optioneel), en per berichttype wordt een restriction gemaakt die alleen de relevante elementen overhoudt. Dit is het zogenaamde **"Russische poppetjes-model"** (matryoshka-model) van StUF.
 
 **Extension**
 
-Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en/of attribuut aan een bestaand type toegevoegd.
+Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en/of 'attribuut' aan een bestaand type toegevoegd.
 
 In de paragraaf 'Complexe typen: elementen met structuur' trokken we al de conclusie dat de definitie van een attribuut direct plaatsvindt binnen een `<xs:complexType>`. Er is echter een uitzondering daarop, als de `base` van een `<xs:extension>` element zelf van het simpele type is en dus alleen tekstuele content (xs:string, xs:integer, etc...) kan bevatten wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element. In het voorbeeld hieronder illustrereren we dat:
 
@@ -738,6 +738,8 @@ MedewerkerType       (afgeleid = extends PersoonType)
 
 ### Groepen: `xs:group` en `xs:attributeGroup`
 
+**xs:group**
+
 Een **`xs:group`** is een herbruikbare groep van elementen. Komt een groep van elementen in een specifieke compositor constructie vaker voor in je XML-Schema dan kan het handig zijn deze in een globale `xs:group` definitie te plaatsen.
 Hieronder een voorbeeld van een `xs:group`.
 
@@ -758,7 +760,7 @@ Hieronder een voorbeeld van een `xs:group`.
 </xs:complexType>
 ```
 
-Het verschil met een `xs:complexType` is dat je voor het kunnen gebruiken van een complexType een element moet aanmaken. Zou ik i.p.v. de `xs:group` in het bovenstaande XML-Schema fragment een `xs:complexType` willen gebruiken dan zou ik de volgende constructie krijgen:
+Het verschil met een `xs:complexType` is dat je voor het kunnen gebruiken van een complexType een element moet aanmaken. Zou ik i.p.v. de `xs:group` in het bovenstaande XML-Schema fragment een `xs:complexType` gebruiken dan zou ik de volgende constructie krijgen:
 
 ```xml
 <xs:complexType name="NaamGroep">
@@ -778,6 +780,8 @@ Het verschil met een `xs:complexType` is dat je voor het kunnen gebruiken van ee
 ```
 
 Zoals je ziet moet ik hier het element 'naam' introduceren waarin de elementen 'voornaam', 'tussenvoegsel' en 'achternaam' kunnen worden opgenomen terwijl met een `xs:group` constructie dat extra elementniveau achterwege kan blijven.
+
+**xs:attributeGroup**
 
 Een **`xs:attributeGroup`** is een herbruikbare groep van attributen. Hieronder een voorbeeld.
 
@@ -800,7 +804,7 @@ Een **`xs:attributeGroup`** is een herbruikbare groep van attributen. Hieronder 
 
 ### Namespaces in XML-Schema
 
-In sectie 5.2 leerde je wat XML-namespaces zijn. Hier zie je hoe namespaces werken **aan de XML-Schema-kant**, hoe je een namespace-identifier aan een XML-Schema koppelt en daarmee definieert tot welke unieke naamruimte de elementen en typen in dat XML-Schema behoren. Ook laten we zien hoe je deze vervolgens kunt gebruiken in een XML-document.
+In sectie 5.2 leerde je wat XML-namespaces zijn. Hier zie je hoe namespaces werken **aan de XML-Schema-kant**, hoe je een namespace-identifier aan een XML-Schema koppelt en daarmee definieert tot welke unieke naamruimte (namespace)  de elementen en typen in dat XML-Schema behoren. Ook laten we zien hoe je deze vervolgens kunt gebruiken in een XML-document.
 
 Het koppelen van een namespace-identifier aan de XML-Schema definitie gaat m.b.v. de **`targetNamespace`** attribute. Hieronder een voorbeeld:
 
@@ -837,8 +841,8 @@ Met meerdere schema's kan dat er als volgt uitzien (met regelnummers die natuurl
 
 ```xml
 1. <bericht xmlns="http://www.example.nl/bericht"
-2.         xmlns:per="http://www.example.nl/persoon"
-3.         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+2.         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+3.         xmlns:per="http://www.example.nl/persoon"
 4.         xsi:schemaLocation="
 5.           http://www.example.nl/bericht  bericht.xsd
 6.           http://www.example.nl/persoon  persoon.xsd">
@@ -846,8 +850,12 @@ Met meerdere schema's kan dat er als volgt uitzien (met regelnummers die natuurl
 8. </bericht>
 ```
 
-Zoals je ziet heeft het attribuut `xsi:schemaLocation` de namespace-prefix 'xsi', om die reden is in regel 3 de namespace behorende bij die prefix gedefinieerd. Dat is nodig om de validator te vertellen dat hij het attribuut `xsi:schemaLocation` moet interpreteren als de definitie van de bij het XML-document behorende XML-Schema's.
-In regel 5 en 6 zie je elk een paar strings gevormd door de namespace-identifier en de locatie van het XML-Schema. Uit de locatie blijkt dat het XML-document in dezelfde folder staat als de XML-Schema's. De locatie mag, als dat nodig is, overigens ook een relatieve en een absolute uri bevatten. In regel 1 zie je dat er in het XML-document voor is gekozen om de namespace van het XML-Schema 'bericht.xsd' als de default namespace te zien. De elementen uit dat XML-Schema hoeven dus geen namespace-prefix te krijgen. In regel 2 zie je dat de elementen elementen uit het XML-Schema 'persoon.xsd' van de prefix 'per' moeten worden voorzien.
+| Regel | Uitleg |
+| --- | --- |
+| 1 | In het XML-document is er voor gekozen om de namespace van het XML-Schema 'bericht.xsd' als de default namespace te zien. De elementen uit dat XML-Schema hoeven dus geen namespace-prefix te krijgen. |
+| 2 | Zoals je ziet heeft het attribuut `xsi:schemaLocation` in regel 4 de namespace-prefix 'xsi', om die reden is in regel 2 de namespace behorende bij die prefix gedefinieerd. Dat is nodig om de validator te vertellen dat hij het attribuut `xsi:schemaLocation` moet interpreteren als de definitie van de bij het XML-document behorende XML-Schema's. |
+| 3 | De elementen uit het XML-Schema 'persoon.xsd' moeten van de prefix 'per' worden voorzien. |
+| 5 en 6 | In deze beide regels zie je een paar strings gevormd door de namespace-identifier en de locatie van het XML-Schema. Uit de locatie blijkt dat het XML-document in dezelfde folder staat als de XML-Schema's. De locatie mag, als dat nodig is, overigens ook een relatieve en een absolute uri bevatten. |
 
 > **Let op:** `xsi:schemaLocation` is een **hint** voor de validator, geen verplichting. De validator mág een ander schema gebruiken, bijv. een die softwarematig wordt gekoppeld.
 
@@ -860,7 +868,7 @@ We zagen in het eerste voorbeeld over het koppelen van een XML-Schema aan een XM
 
 > **StUF-context:** StUF-schema's gebruiken `elementFormDefault="qualified"`. In de praktijk wordt soms de default namespace gebruikt om niet alle elementen van een prefix te hoeven voorzien.
 
-### Schema's opsplitsen: `xs:include` en `xs:import`
+### XML-Schema's opsplitsen: `xs:include` en `xs:import`
 
 Een groot schema in één bestand wordt al snel onoverzichtelijk. Daarnaast kan het met het oog op herbruikbaarheid handig zijn bepaalde constructies bij elkaar in een XML-Schema bestand te plaatsen, bijv. alle simpleTypes bij elkaar. XML-Schema biedt twee mechanismen om schema's over meerdere bestanden te verdelen.
 
