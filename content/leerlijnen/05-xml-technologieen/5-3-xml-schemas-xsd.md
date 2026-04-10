@@ -862,9 +862,9 @@ We zagen in het eerste voorbeeld over het koppelen van een XML-Schema aan een XM
 
 ### Schema's opsplitsen: `xs:include` en `xs:import`
 
-Een groot schema in één bestand wordt al snel onoverzichtelijk daarnaast kan het met het oog op herbruikbaarheid handig zijn bepaalde constructies bij elkaar in een XML-Schema bestand te plaatsen, bijv. alle simpleTypes bij elkaar. XML-Schema biedt twee mechanismen om schema's over meerdere bestanden te verdelen.
+Een groot schema in één bestand wordt al snel onoverzichtelijk. Daarnaast kan het met het oog op herbruikbaarheid handig zijn bepaalde constructies bij elkaar in een XML-Schema bestand te plaatsen, bijv. alle simpleTypes bij elkaar. XML-Schema biedt twee mechanismen om schema's over meerdere bestanden te verdelen.
 
-**`xs:include`** — bestanden samenvoegen (zelfde namespace):
+M.b.v. het XML-Schema element **`xs:include`** kan worden aangegeven dat een ander bestand moet worden samengevoegd met het XML-Schema bestand waar de `xs:include` in staat. Voorwaarde voor het gebruik van dit element is wel dat de targetNamespaces van beide XML-Schema bestanden gelijk is:
 
 ```xml
 <!-- persoon.xsd -->
@@ -883,7 +883,9 @@ Een groot schema in één bestand wordt al snel onoverzichtelijk daarnaast kan h
 </xs:schema>
 ```
 
-**`xs:import`** — schema's uit een andere namespace:
+Je mag net zoveel `xs:include` elementen opnemen als nodig is.
+
+M.b.v. het XML-Schema element **`xs:import`** kan worden aangegeven dat een ander bestand moet worden geïmporteerd in het XML-Schema bestand waar de `xs:import` in staat. Hier geldt echter dat de targetNamespaces van beide XML-Schema bestanden **NIET** gelijk mag zijn.
 
 ```xml
 <!-- persoon.xsd (namespace: http://www.example.nl/persoon) -->
@@ -904,14 +906,20 @@ Een groot schema in één bestand wordt al snel onoverzichtelijk daarnaast kan h
 </xs:schema>
 ```
 
+Zowel het `xs:include` als het `xs:import` element hebben een `schemaLocation` attribuut (dat een relatieve en een absolute uri mag bevatten) maar het `xs:import` element heeft ook nog een `namespace` attribute dat gelijk moet zijn aan het `targetNamespace` attribuut van het geïmporteerde XML-Schema.
+
 | Kenmerk | `xs:include` | `xs:import` |
 |---|---|---|
-| Namespace | Zelfde of geen | Andere |
-| Attribuut `namespace` | Niet nodig | Verplicht |
+| Namespace | Zelfde of geen* | Andere |
+| Attribuut `namespace` | N.v.t. | Verplicht |
 | Analogie | Bestanden samenvoegen | Bibliotheek importeren |
 | Gebruik | Opknippen van groot schema | Hergebruik van extern schema |
 
-> **StUF-context:** StUF-schema's zijn zeer modulair. Het basisschema `stuf0302.xsd` definieert fundamentele StUF-typen, en domeinschema's importeren deze om hun eigen berichttypes te definiëren. Je zult tientallen `import`- en `include`-regels tegenkomen.
+* Indien een XML-Schema zonder targetNamespace wordt geïnclude worden de globaal gedefinieerde elementen onderdeel van de namespace van het XML-Schema dat include. De lokaal gedefinieerde elementen blijven echter buiten een namespace.
+
+XML-Schema's die worden geïncludeerd of geïmporteerd in andere XML-Schema's worden ook weer geïncludeerd of geïmporteerd als die andere XML-Schema's weer ergens anders worden geïncludeerd of geïmporteerd.
+
+> **StUF-context:** StUF-schema's zijn zeer modulair. Het basisschema `stuf0301.xsd` definieert fundamentele StUF-typen, en domeinschema's importeren deze om hun eigen berichttypes te definiëren. Je zult tientallen `import`- en `include`-regels tegenkomen.
 
 ### Modulaire schema-architectuur
 
@@ -938,17 +946,36 @@ berichten.xsd
 In StUF concreet:
 
 ```text
-stuf0302.xsd                 ← Basis StUF-types en attributen
+bg0310_msg_mutatie.xsd                                                           ← Berichtstructuren voor mutatieberichten
     │
-    ├── import ──→ bg0310_stuf_simpleTypes.xsd
-    ├── import ──→ bg0310_ent_basis.xsd      ← Entiteittypen (persoon, adres, etc.)
-    │                 │
-    │                 └── import ──→ gml.xsd  ← Geometrie
+    ├─ include ─→ bg0310_ent_mutatie.xsd                                         ← Specifieke mutatie entiteittypen
+    │               │
+    │               ├─ include ─→ ../entiteiten/bg0310_ent_basis.xsd             ← Entiteittypen (persoon, adres, etc.)
+	│               │               │
+    │               │               ├─ include ─→ bg0310_simpleTypes.xsd         ← Specifieke bg0310 simpleTypes
+    │               │               │               │
+    │               │               │               ├─ import ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd
+    │               │               │               │              │
+    │               │               │               │              └─ include  ─→ ../../0301/stuf0301.xsd
+    │               │               │               │
+    │               │               │               └─ import ─→ .../../gml-3.1.1.2/gml/3.1.1/base/gml.xsd
+    │               │               │                              │
+    │               │               │                              └─ ... dieper gelegen XML-Schema's voor Geometrie
+ 	│               │               │
+    │               │               └─ import  ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd
+    │               │                               │
+    │               │                               └─ include ─→ ../../0301/stuf0301.xsd
+    │               │
+    │               └─ import  ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd      ← Specifieke voor bg0310 benodigde stuf0301 simpleTypes
+    │                                               │
+    │                                               └─ include ─→ ../../0301/stuf0301.xsd
     │
-    └── bg0310_msg_vraagAntwoord.xsd         ← Berichtstructuren
+    └─ import  ─→ bg0310_msg_stuf_mutatie.xsd                                    ← Specifieke voor bg0310 mutaties benodigde stuf0301 simpleTypes
+                    │
+                    └─ include ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd      ← Specifieke voor bg0310 benodigde stuf0301 simpleTypes
+                                    │
+                                    └─ include  ─→ ../../0301/stuf0301.xsd       ← Basis stuf0301 elementen en complexTypes	
 ```
-
----
 
 ### Compleet voorbeeld: alles samen
 
