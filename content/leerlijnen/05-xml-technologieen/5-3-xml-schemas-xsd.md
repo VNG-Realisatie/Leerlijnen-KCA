@@ -923,7 +923,7 @@ Zowel het `xs:include` als het `xs:import` element hebben een `schemaLocation` a
 | Analogie | Bestanden samenvoegen | Bibliotheek importeren |
 | Gebruik | Opknippen van groot schema | Hergebruik van extern schema |
 
-* Indien een XML-Schema zonder targetNamespace wordt geïnclude worden de globaal gedefinieerde elementen onderdeel van de namespace van het XML-Schema dat include. De lokaal gedefinieerde elementen blijven echter buiten een namespace.
+*&nbsp;_Indien een XML-Schema zonder targetNamespace wordt geïnclude worden de globaal gedefinieerde elementen onderdeel van de namespace van het XML-Schema dat include. De lokaal gedefinieerde elementen blijven echter buiten een namespace._
 
 XML-Schema's die worden geïncludeerd of geïmporteerd in andere XML-Schema's worden ook weer geïncludeerd of geïmporteerd als die andere XML-Schema's weer ergens anders worden geïncludeerd of geïmporteerd.
 

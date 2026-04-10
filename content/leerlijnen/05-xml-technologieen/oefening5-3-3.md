@@ -29,8 +29,9 @@ Bewaar gedurende de onderstaande oefeining zelf regelmatig het bestand.
 * Binnen `<klantgegevens>` doe je hetzelfde t.b.v. de elementen `<naam>` en `<adres>`;
 * Binnen `<naam>` doe je wederom hetzelfde. Het element `<voorletters>` dat nu nog direct onder het element `<xs:schema>` staat moet je naar hier verplaatsen. Daarachter definieer je de elementdefinities voor de elementen `<tussenvoegsel>` en `<achternaam>`. De beide laatste elementen mag je als datatype 'xs:string' geven;
 * Binnen `<adres>` doe je hetzelfde. Daar doe je hetzelfde met `<postcode>` wat je in `<naam>` met `<voorletters>` hebt gedaan;
+* Definieer op `<klantgegevens>` ook nog het attribute `klantType` met als mogelijke waarden 'Goud', 'Zilver' en 'Normaal';
 * In `<ordergegevens>` plaats je in een sequence de al in het schema voorkomende elementdefinitie van elementen `<ordernummer>` en creëer je een elementdefinitie voor het element `<artikel>`.;
-* In artikel creëer je wederom in een sequence de elementdefinities voor `<artikelnummer>`, `<productnaam>`, `<omschrijving>` en `<aantal>`. Deze krijgen allen het datatype 'xs:string' behalve de laatste, die krijgt het datatype 'xs:positiveInteger';
+* In `<artikel>` creëer je wederom in een sequence de elementdefinities voor `<artikelnummer>`, `<productnaam>`, `<omschrijving>` en `<aantal>`. Deze krijgen allen het datatype 'xs:string' behalve de laatste, die krijgt het datatype 'xs:positiveInteger'. Het element `<omschrijving>` maak je optioneel;
 * Tenslotte `<leveringsgegevens>`. Maak daarin een sequence met de elementdefinities voor `<leverdatum>` en `<adres>`. De eerste krijgt als datatype 'xs:date'. Kopieer voor de tweede de structuur zoals je die eerder binnen de elementdefinitie van `<klantgegevens>` hebt gecreëerd. In een van de volgende oefeningen gaan we dit efficienter modelleren. Definieer op `<leveringsgegevens>` ook nog het attribute `afleverstatus` met de enumeratiewaarden 'afgeleverd', 'verzonden"' en 'in-behandeling';
 * Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
 * Kies in het menu “Generate sample XML file” het element `<orderbon>` en klik op “OK”. Check het resultaat en speel wat met de structuur. Het gegenereerde bestand hoeft niet bewaard te worden.
@@ -46,6 +47,7 @@ Bewaar gedurende de onderstaande oefeining zelf regelmatig het bestand.
 
 ***Betaalbevestiging***
 * Verwijder het `type` attribuut in de elementdefinitie van `<betaalbevestiging>` en creëer een structuur waarin je in een sequence de elementdefinities voor de elementen `<klantgegevens>`, `<ordergegevens>` plaatst;
+* Definieer op `<betaalbevestiging>` ook nog het attribute `betaalstatus` met het type `xs:boolean`;
 * Binnen de elementdefinitie voor `<klantgegevens>` kopieer je de structuur die je in `<orderbon>` en `<factuur>` ook hebt gecreëerd voor `<klantgegevens>`;
 * In de elementdefinitie `<ordergegevens>` kopieer je de structuur die je in `<factuur>` ook hebt gecreëerd voor `<ordergegevens>`;
 * Voorzie de structuur van de elementdefinitie van `<betaalbevestiging>` van het attribuut `betaald` en geef dat het datatype 'xs:boolean';
