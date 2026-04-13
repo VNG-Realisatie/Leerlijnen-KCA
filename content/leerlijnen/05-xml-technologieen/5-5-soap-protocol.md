@@ -246,7 +246,6 @@ Het laatste element, `<service>`, definieert waar de service daadwerkelijk te be
 * `binding` koppelt de service aan de eerder beschreven SOAP‑binding.
 * `soap:address` bevat de URL van de endpoint.
 
-
 **Overzicht van de onderlinge samenhang**<br/>
 | WSDL‑onderdeel | Doel | Relatie met andere onderdelen | 
 | --- | --- | --- |
