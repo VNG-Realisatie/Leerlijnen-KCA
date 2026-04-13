@@ -33,6 +33,7 @@ Bewaar gedurende de onderstaande oefeining wederom zelf regelmatig het bestand.
 6. Ga naar “DTD/Schema - Generate Sample XML/JSON/YAML File...”;
 7. Kies in het menu “Generate sample XML file” het element `<orderbon>` en klik op “OK”;
 8. Check of je de bovenaan deze opdracht beschreven wijzigingen inderdaad hebt weten te realiseren en check ook of er niet tegelijkertijd ongewenste neveneffecten zijn opgetreden. Corrigeer zonodig het XML-Schema waar nodig en check dat vervolgens ook weer. Het gegenereerde bestand hoeft niet bewaard te worden;
-9. Herhaal de stappen 6 t/m 8 voor de andere documenten ('betaalbevestiging' en 'factuur').
+9. Herhaal de stappen 6 t/m 8 voor de andere documenten ('betaalbevestiging' en 'factuur');
+10. Bewaar het bestand ook meteen als “Procesdocumentatie7.xsd”.
 
 

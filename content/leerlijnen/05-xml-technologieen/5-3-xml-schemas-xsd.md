@@ -866,6 +866,10 @@ We zagen in het eerste voorbeeld over het koppelen van een XML-Schema aan een XM
 | `unqualified` (standaard) | Lokale elementen hebben **geen** prefix in XML |
 | `qualified` | Lokale elementen **moeten** in de namespace staan |
 
+### Oefening 5.3.7
+
+[Naar de oefening](../oefening-5-3-7).
+
 > **StUF-context:** StUF-schema's gebruiken `elementFormDefault="qualified"`. In de praktijk wordt soms de default namespace gebruikt om niet alle elementen van een prefix te hoeven voorzien.
 
 ### XML-Schema's opsplitsen: `xs:include` en `xs:import`
