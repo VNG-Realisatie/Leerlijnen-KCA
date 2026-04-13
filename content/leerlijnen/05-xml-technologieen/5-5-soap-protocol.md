@@ -21,16 +21,13 @@ Centraal in SOAP staat het gebruik van XML (eXtensible Markup Language) als beri
 
 Een SOAP‑bericht bestaat uit een XML‑document met een specifieke structuur die uit drie hoofdonderdelen bestaat: de envelop, de header en de body.
 
-**De SOAP Envelope**
-
+**De SOAP Envelope**<br/>
 Dit is het hoofdelement dat het gehele bericht omvat. De envelop definieert de begin- en eindstructuur van een SOAP‑bericht en bepaalt dat het document een SOAP‑bericht betreft. Het bevat ook namespace-identifiers die aangeven welke XML‑onderdelen tot welke standaarden behoren.
 
-**De SOAP Header**
-
+**De SOAP Header**<br/>
 De header is optioneel en bevat meta‑informatie, zoals authenticatiegegevens, transactiedetails, routing‑informatie of beveiligingsparameters. In complexe omgevingen speelt de header een belangrijke rol omdat verschillende tussenliggende systemen (zoals gateways, load balancers of message brokers) deze informatie kunnen gebruiken zonder de eigenlijke boodschap te wijzigen.
 
-**De SOAP Body**
-
+**De SOAP Body**<br/>
 De body bevat de daadwerkelijke inhoud: het verzoek of de respons. Binnen de body worden één of meerdere XML‑elementen opgenomen die exact beschrijven welke actie een client wil uitvoeren of welk antwoord een server teruggeeft. Een belangrijk element binnen de body is de mogelijke foutmelding, de zogenaamde Fault. Dit onderdeel wordt gebruikt om gestructureerde foutinformatie te communiceren.
 Hierdoor biedt SOAP een uniforme manier om zowel succesvolle als mislukte interacties te behandelen.
 
@@ -72,39 +69,32 @@ WS‑Security werkt voornamelijk via de SOAP‑header, waar beveiligingsgegevens
 
 SOAP heeft zich jarenlang bewezen in complexe bedrijfsomgevingen. Belangrijke voordelen zijn:
 
-**Platform- en programmeertaalonafhankelijk**
+**Platform- en programmeertaalonafhankelijk**<br/>
 Doordat SOAP volledig op XML is gebaseerd, kan het gebruikt worden tussen uiteenlopende systemen, zoals Java, .NET, PHP, Python, mainframes en zelfs oudere legacy‑systemen.
 
-**Sterke standaardisatie**
-
+**Sterke standaardisatie**<br/>
 Via WSDL, WS‑Security, WS‑AtomicTransaction en andere specificaties biedt SOAP een zeer voorspelbare en formele manier om systemen te integreren.
 
-**Betrouwbaarheid en transacties**
-
+**Betrouwbaarheid en transacties**<br/>
 SOAP ondersteunt mechanismen voor gegarandeerde aflevering en transactiebeheer. Hierdoor kunnen meerdere services samen één consistente operatie vormen, wat waardevol is in bijvoorbeeld financiële boekingssystemen.
 
-**Beveiliging op enterprise‑niveau**
-
+**Beveiliging op enterprise‑niveau**<br/>
 De combinatie van encryptie, digitale handtekeningen en token‑based authenticatie is robuuster dan wat bij veel REST‑implementaties standaard wordt gebruikt.
 
 ### Nadelen van SOAP
 
 Ondanks zijn sterke punten heeft SOAP ook beperkingen:
 
-**Complexiteit**
-
+**Complexiteit**<br/>
 SOAP‑berichten zijn omvangrijker en moeilijker leesbaar dan moderne alternatieven zoals JSON‑gebaseerde API’s. Dit maakt het minder geschikt voor snelle web‑applicaties of mobiele toepassingen.
 
-**Performance**
-
+**Performance**<br/>
 XML is zwaarder dan JSON, en de totale berichtstructuur van SOAP leidt tot grotere berichten. Hierdoor nemen netwerkbelasting en parsing‑tijd toe.
 
-**Moeilijk te debuggen**
-
+**Moeilijk te debuggen**<br/>
 De uitgebreide structuur en het strikte protocol kunnen foutopsporing bemoeilijken. Tools zijn vaak noodzakelijk om berichten te analyseren.
 
-**Minder flexibel**
-
+**Minder flexibel**<br/>
 In tegenstelling tot REST, dat vaak gebruikmaakt van HTTP‑methoden en URI‑structuren, werkt SOAP vrijwel altijd via een gestandaardiseerd POST‑mechanisme. Hierdoor is het minder eenvoudig om op natuurlijke wijze te werken met webconcepten zoals caching of resource‑representatie.
 
 ### Toepassingen en praktische inzet
@@ -121,15 +111,14 @@ SOAP wordt vandaag vooral gebruikt in:
 In deze sectoren zijn stabiliteit, contractuele afspraken en beveiliging belangrijker dan de flexibiliteit die REST biedt. Veel grote organisaties hebben duizenden toepassingen die SOAP gebruiken voor interne communicatie. Ook moderne integratietools blijven ondersteuning bieden voor SOAP vanwege de continue vraag vanuit enterprise‑markten.
 Daarnaast bestaan er talloze commerciële SaaS‑systemen die nog altijd SOAP‑API’s aanbieden, omdat deze al jarenlang bij klanten in gebruik zijn en kritiek bedrijfsproces ondersteunen.
 
-### Uitleg over SOAP 1.1 WSDL en de relaties binnen het document
+### WSDL: de relaties binnen het document
 
-Aangezien StUF de SOAP 1.1 Standaard gebruikt duiken we hieronder juist iets dieper in die versie van de standaard.
+Aangezien StUF de SOAP 1.1 Standaard gebruikt duiken we hieronder alleen iets dieper in die versie van de standaard.
 
 Een WSDL‑bestand (Web Services Description Language) is een XML‑document dat de interface van een SOAP‑webservice formeel beschrijft. Het fungeert als een contract tussen een service‑aanbieder en service‑consument. De beschrijving is volledig machine‑leesbaar, zodat ontwikkeltools automatisch proxy‑klassen, clients en stub‑implementaties kunnen genereren.
 Een SOAP 1.1 WSDL volgt een strikt gedefinieerde structuur. De kracht van WSDL ligt in de scheiding tussen de abstracte beschrijving van een dienst (welke operaties zijn beschikbaar en welke berichten worden uitgewisseld) en de concrete beschrijving (waar is de service bereikbaar en welk protocol en transportbinding worden gebruikt). Hieronder worden alle onderdelen besproken, inclusief hoe zij onderling samenhangen en hoe XML‑Schema’s het geheel structureren.
 
-**De hoofdstructuur van een WSDL 1.1‑document**
-
+**De hoofdstructuur van een WSDL 1.1‑document**<br/>
 Elk WSDL‑document begint met een `<definitions>`‑element. Dit fungeert als container voor alle andere onderdelen:
 
 ```xml
@@ -152,8 +141,7 @@ Binnen dit element kunnen de volgende onderdelen voorkomen:
 
 Deze onderdelen vormen samen zowel de logische definitie van de service (abstract niveau) als de concrete implementatie (technisch niveau).
 
-**`types`: Relatie met XML‑Schema (XSD)**
-
+**Relatie met XML‑Schema (XSD): `types`**<br/>
 Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen definiëren die worden gebruikt door de berichten van de webservice. Dit kan inline XSD zijn, maar meestal worden externe schema’s geïmporteerd:
 
 ```xml
@@ -165,19 +153,16 @@ Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen
 </types>
 ```
 
-***Waarom XSD?***
-
+***Waarom XSD?***<br/>
 * XML‑Schema’s beschrijven de structuur van de gegevens: elementen, attributen, complex types, enumeraties, restricties, etc.;
 * Zowel client als server kunnen hiermee de berichten valideren;
 * Het WSDL‑bestand zelf blijft overzichtelijk door gebruik van externe schema’s.
 
-***Relaties met de rest van de WSDL:***
-
+***Relaties met de rest van de WSDL:***<br/>
 * Het `<message>`-element verwijst naar part‑elementen die op hun beurt verwijzen naar XSD‑typen;
-* Het `<portType>` en `<binding>-element beschrijven slechts het gedrag (operaties, richtingen), maar `**typen komen altijd uit XSD**.
+* Het `<portType>` en `<binding>-element beschrijven slechts het gedrag (operaties, richtingen), maar typen komen altijd uit XSD.
 
-**`message`: Beschrijving van de gegevensstructuren in berichten**
-
+**Beschrijving van de gegevensstructuren in berichten: `message`**<br/>
 Een `<message>`-element in WSDL vertegenwoordigt een bericht dat wordt verstuurd of ontvangen. Het wordt opgebouwd uit één of meerdere `<part>`‑elementen.
 
 Voorbeeld:
@@ -195,8 +180,7 @@ Voorbeeld:
 * Een part verwijst rechtstreeks naar een type uit het XSD‑schema (via `element` of `type`);
 * Binnen SOAP 1.1 is het gebruik van element de standaard, zodat het bericht overeenkomt met een XML‑element uit de schema’s.
 
-**`portType`: De abstracte interface**
-
+**De abstracte interface: `portType`**<br/>
 Het `portType`‑element definieert de operaties die een webservice aanbiedt, zonder details over transport of binding.
 
 ```xml
@@ -207,20 +191,17 @@ Het `portType`‑element definieert de operaties die een webservice aanbiedt, zo
 </operation></portType>
 ```
 
-***Kenmerken:***
-
+***Kenmerken:***<br/>
 * De operaties vormen de *abstracte contractlaag*.
 * Elke operatie definieert een input en output‑message.
 * Eventuele foutberichten worden via een fault‑element beschreven.
 
-***Relaties:***
-
+***Relaties:***<br/>
 * Verwijst naar `message` elementen.
 * Wordt zelf weer gebruikt in de `binding` en `service`.
 
 
-**`binding`: Koppelt abstracte operaties aan concrete protocollen**
-
+**Koppeling abstracte operaties aan concrete protocollen: `binding`**<br/>
 Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden uitgevoerd via een protocol. Voor SOAP 1.1 betekent dit:
 
 ```xml
@@ -241,20 +222,17 @@ Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden
 </binding>
 ```
 
-***Belangrijk:***
-
+***Belangrijk:***<br/>
 * `type` verwijst naar het `portType`.
 * SOAP 1.1 vereist een `soap:binding`.
 * De `style` is meestal document/literal (WS‑I standaard).
 * Elke operatie krijgt een soapAction, belangrijk voor routing binnen SOAP 1.1.
 
-***Relaties:***
-
+***Relaties:***<br/>
 * Abstracte operaties → concrete SOAP‑operaties.
 * SOAP 1.1 specificaties bepalen hoe berichten via HTTP worden verstuurd.
 
-**`service`: Eindpuntinformatie**
-
+**Eindpuntinformatie: `service`**<br/>
 Het laatste element, `<service>`, definieert waar de service daadwerkelijk te bereiken is:
 
 ```xml
@@ -264,14 +242,12 @@ Het laatste element, `<service>`, definieert waar de service daadwerkelijk te be
     </port></service>
 ```
 
-***Belangrijk:***
-
+***Belangrijk:***<br/>
 * `binding` koppelt de service aan de eerder beschreven SOAP‑binding.
 * `soap:address` bevat de URL van de endpoint.
 
 
-**Overzicht van de onderlinge samenhang**
-
+**Overzicht van de onderlinge samenhang**<br/>
 | WSDL‑onderdeel | Doel | Relatie met andere onderdelen | 
 | --- | --- | --- |
 | types | Definieert XML‑typen (via XSD) | Gebruikt door `message` | 
@@ -283,8 +259,7 @@ Het laatste element, `<service>`, definieert waar de service daadwerkelijk te be
 In essentie kun je het zien als lagen:
 **DATA (XSD) → BERICHTEN (message) → OPERATIES (portType) → PROTOCOL/TECHNIEK (binding) → LOCATIE (service)**
 
-**Hoe het XML‑Schema het WSDL‑contract versterkt**
-
+**Hoe het XML‑Schema het WSDL‑contract versterkt**<br/>
 Het XSD is cruciaal omdat het:
 
 * alle datastandaarden afdwingt (types, structuren, enumeraties).
@@ -294,8 +269,7 @@ Het XSD is cruciaal omdat het:
 
 In de praktijk staat ongeveer 70–80% van de functionele inhoud van een SOAP‑service in de XSD’s, niet in de WSDL zelf.
 
-**Samenvatting**
-
+**Samenvatting**<br/>
 Een SOAP 1.1 WSDL bestaat uit een hiërarchisch model:
 
 1. **types** – definieert XSD‑typen
