@@ -24,9 +24,6 @@ Binnen factuur blijft alles zoals het was.
 
 Bewaar gedurende de onderstaande oefeining wederom zelf regelmatig het bestand.
 
-### Onderstaande nog aanpassen!!!
-
-
 **Opdracht**
 1. Ga naar het XML-Schema 'Procesdocumentatie6.xsd' dat je in de voorgaande oefening hebt vervaardigd of open het opnieuw in 'Altova XMLSpy';
 2. Om zonodig deze opdracht opnieuw te kunnen doen is het wellicht verstandig het bestand nog even onder een andere naam te bewaren;
