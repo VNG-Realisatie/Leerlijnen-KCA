@@ -132,7 +132,6 @@ Elk WSDL‑document begint met een `<definitions>`‑element. Dit fungeert als c
 ```
 
 Binnen dit element kunnen de volgende onderdelen voorkomen:
-
 * types;
 * message;
 * portType;
@@ -153,14 +152,14 @@ Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen
 </types>
 ```
 
-***Waarom XSD?***<br/>
+*Waarom XSD?*<br/>
 * XML‑Schema’s beschrijven de structuur van de gegevens: elementen, attributen, complex types, enumeraties, restricties, etc.;
 * Zowel client als server kunnen hiermee de berichten valideren;
 * Het WSDL‑bestand zelf blijft overzichtelijk door gebruik van externe schema’s.
 
-***Relaties met de rest van de WSDL:***<br/>
-* Het `<message>`-element verwijst naar part‑elementen die op hun beurt verwijzen naar XSD‑typen;
-* Het `<portType>` en `<binding>-element beschrijven slechts het gedrag (operaties, richtingen), maar typen komen altijd uit XSD.
+*Relaties met de rest van de WSDL:*<br/>
+* Het `<message>`-element verwijst naar `<part>`‑elementen die op hun beurt verwijzen naar XSD‑typen;
+* Het `<portType>` en `<binding>`-element beschrijven slechts het gedrag (operaties, richtingen), maar typen komen altijd uit XSD.
 
 **Beschrijving van de gegevensstructuren in berichten: `message`**<br/>
 Een `<message>`-element in WSDL vertegenwoordigt een bericht dat wordt verstuurd of ontvangen. Het wordt opgebouwd uit één of meerdere `<part>`‑elementen.
@@ -176,7 +175,7 @@ Voorbeeld:
 </message>
 ```
 
-***Belangrijk:***
+*Belangrijk:*
 * Een part verwijst rechtstreeks naar een type uit het XSD‑schema (via `element` of `type`);
 * Binnen SOAP 1.1 is het gebruik van element de standaard, zodat het bericht overeenkomt met een XML‑element uit de schema’s.
 
@@ -191,12 +190,12 @@ Het `portType`‑element definieert de operaties die een webservice aanbiedt, zo
 </operation></portType>
 ```
 
-***Kenmerken:***<br/>
+*Kenmerken:*<br/>
 * De operaties vormen de *abstracte contractlaag*.
 * Elke operatie definieert een input en output‑message.
 * Eventuele foutberichten worden via een fault‑element beschreven.
 
-***Relaties:***<br/>
+*Relaties:*<br/>
 * Verwijst naar `message` elementen.
 * Wordt zelf weer gebruikt in de `binding` en `service`.
 
@@ -222,13 +221,13 @@ Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden
 </binding>
 ```
 
-***Belangrijk:***<br/>
+*Belangrijk:*<br/>
 * `type` verwijst naar het `portType`.
 * SOAP 1.1 vereist een `soap:binding`.
 * De `style` is meestal document/literal (WS‑I standaard).
 * Elke operatie krijgt een soapAction, belangrijk voor routing binnen SOAP 1.1.
 
-***Relaties:***<br/>
+*Relaties:*<br/>
 * Abstracte operaties → concrete SOAP‑operaties.
 * SOAP 1.1 specificaties bepalen hoe berichten via HTTP worden verstuurd.
 
@@ -242,7 +241,7 @@ Het laatste element, `<service>`, definieert waar de service daadwerkelijk te be
     </port></service>
 ```
 
-***Belangrijk:***<br/>
+*Belangrijk:*<br/>
 * `binding` koppelt de service aan de eerder beschreven SOAP‑binding.
 * `soap:address` bevat de URL van de endpoint.
 
