@@ -43,7 +43,7 @@ Beide documenten zijn **welgevormd** XML. Maar ze zijn niet compatibel: de struc
 
 Een **XML-Schema** is een formele beschrijving van de toegestane structuur en inhoud van een XML-document. Het is als een *blauwdruk* of *contract*: het legt vast welke elementen er mogen zijn, in welke volgorde, hoe vaak, en welk type waarde ze mogen bevatten.
 
-Met een XML-Schema kun je automatisch controleren of een XML-document geldig is — dit heet **validatie**. Als een document niet voldoet aan het schema, wordt het afgekeurd met een foutmelding die precies aangeeft wat er mis is.
+Met een XML-Schema kun je automatisch controleren of een XML-document valide is — dit heet **validatie**. Als een document niet voldoet aan het schema, wordt het afgekeurd met een foutmelding die precies aangeeft wat er mis is.
 
 ### Wat is XSD precies?
 
@@ -55,7 +55,7 @@ XML-Schema is een taal om schema's mee te schrijven — en het bijzondere is: **
 |---|---|
 | **Voluit** | XML-Schema Definition |
 | **Bestandsextensie** | `.xsd` |
-| **Formaat** | XML (een XSD is zelf een geldig XML-document) |
+| **Formaat** | XML (een XSD is zelf een valide XML-document) |
 | **Doel** | Formeel beschrijven welke structuur en waarden een XML-document mag hebben |
 | **Toepassing** | Validatie: automatisch controleren of een XML-document aan de regels voldoet |
 | **Beheerder** | W3C (World Wide Web Consortium), dezelfde organisatie achter XML zelf |
@@ -133,7 +133,7 @@ Een document moet **eerst** welgevormd zijn voordat het gevalideerd kan worden. 
 
 ```text
 Stap 1: Is het welgevormd?  → Nee  → Afgekeurd (syntaxfout)
-                            → Ja   → Stap 2: Is het geldig volgens het schema?
+                            → Ja   → Stap 2: Is het valide volgens het schema?
                                               → Nee  → Afgekeurd (validatiefout)
                                               → Ja   → Geaccepteerd ✓
 ```
@@ -985,103 +985,27 @@ bg0310_msg_mutatie.xsd                                                          
                                     └─ include  ─→ ../../0301/stuf0301.xsd       ← Basis stuf0301 elementen en complexTypes	
 ```
 
-### Compleet voorbeeld: alles samen
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-  <!-- Simpele typen met restricties -->
-  <xs:simpleType name="BSN">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9]{9}"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="Postcode">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9]{4}[A-Z]{2}"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="Geslacht">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="M"/>
-      <xs:enumeration value="V"/>
-      <xs:enumeration value="O"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <!-- Complexe typen -->
-  <xs:complexType name="AdresType">
-    <xs:sequence>
-      <xs:element name="straat" type="xs:string"/>
-      <xs:element name="huisnummer" type="xs:positiveInteger"/>
-      <xs:element name="huisletter" type="xs:string" minOccurs="0"/>
-      <xs:element name="postcode" type="Postcode"/>
-      <xs:element name="woonplaats" type="xs:string"/>
-    </xs:sequence>
-    <xs:attribute name="type" type="xs:string" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="PersoonType">
-    <xs:sequence>
-      <xs:element name="voornaam" type="xs:string" maxOccurs="unbounded"/>
-      <xs:element name="tussenvoegsel" type="xs:string" minOccurs="0"/>
-      <xs:element name="achternaam" type="xs:string"/>
-      <xs:element name="geslacht" type="Geslacht"/>
-      <xs:element name="geboortedatum" type="xs:date"/>
-      <xs:element name="overlijdensdatum" type="xs:date" nillable="true" minOccurs="0"/>
-      <xs:element name="adres" type="AdresType" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-    <xs:attribute name="bsn" type="BSN" use="required"/>
-  </xs:complexType>
-
-  <!-- Root-element -->
-  <xs:element name="persoon" type="PersoonType"/>
-
-</xs:schema>
-```
-
-Een geldig XML-document:
-
-```xml
-<persoon bsn="123456789">
-  <voornaam>Jan</voornaam>
-  <voornaam>Pieter</voornaam>
-  <tussenvoegsel>de</tussenvoegsel>
-  <achternaam>Vries</achternaam>
-  <geslacht>M</geslacht>
-  <geboortedatum>1985-03-15</geboortedatum>
-  <overlijdensdatum xsi:nil="true"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-  <adres type="woonadres">
-    <straat>Kerkstraat</straat>
-    <huisnummer>12</huisnummer>
-    <postcode>3511AB</postcode>
-    <woonplaats>Utrecht</woonplaats>
-  </adres>
-</persoon>
-```
-
-In dit ene voorbeeld komen alle behandelde concepten samen: simpele typen met restricties (BSN, Postcode, Geslacht), complexe typen (AdresType, PersoonType), kardinaliteit (`minOccurs`, `maxOccurs`), verplichte attributen (`use="required"`), nillable elementen, en de boomstructuur van geneste elementen.
-
 ### Samenvatting
 
 | Concept | Uitleg |
 |---|---|
 | **XSD** | XML-Schema Definition — beschrijft de toegestane structuur van XML in XML-formaat |
 | **Welgevormd vs. geldig** | Welgevormd = syntax OK; geldig = voldoet aan schema |
-| **Ingebouwde datatypen** | `xs:string`, `xs:integer`, `xs:date`, `xs:boolean`, etc. |
-| **Restricties (facets)** | `pattern`, `enumeration`, `minLength`, `maxInclusive`, etc. |
-| **Compositors** | `xs:sequence` (volgorde), `xs:choice` (keuze), `xs:all` (vrij) |
-| **Kardinaliteit** | `minOccurs` / `maxOccurs` — hoe vaak een element mag voorkomen |
-| **`xs:include` / `xs:import`** | Schema's samenvoegen (zelfde ns) / importeren (andere ns) |
+| **Elementen definiëren** | M.b.v. `xs:element name="[elementnaam]" type="[simple- of complexType]"/>` |
+| **Ingebouwde datatypen** | xs:string, xs:integer, xs:date, xs:boolean, etc. |
+| **Restricties (facets)** | pattern, enumeration, minLength, maxInclusive, etc. |
+| **Simple- vs ComplexType** | Structuren zonder en structuren met elementen en/of attributen. |
+| **Compositors** | xs:sequence (volgorde), xs:choice (keuze), xs:all (vrij) |
+| **Attributen definiëren** | M.b.v. `xs:attribute name="[attribuutnaam]" type="[simpleType]"/>` |
+| **Globale vs lokale definities** | Herbruikbare danwel niet herbruikbare componenten |
+| **Kardinaliteit** | minOccurs / maxOccurs — hoe vaak een element mag voorkomen |
 | **Extension / restriction** | Type uitbreiden of beperken (overerving) |
-| **`xs:group` / `xs:attributeGroup`** | Herbruikbare groepen elementen of attributen |
-| **`targetNamespace`** | Namespace waaraan het schema zijn definities toekent |
-| **`elementFormDefault`** | Bepaalt of lokale elementen gekwalificeerd moeten zijn |
-| **`xsi:schemaLocation`** | Koppelt namespace aan schema-bestand in XML |
+| **xs:group / xs:attributeGroup** | Herbruikbare groepen elementen of attributen |
+| **targetNamespace** | Namespace waaraan het schema zijn definities toekent |
+| **xsi:schemaLocation** | Koppelt namespace aan schema-bestand in XML |
+| **elementFormDefault** | Bepaalt of lokale elementen gekwalificeerd moeten zijn |
+| **xs:include / xs:import** | Schema’s samenvoegen (zelfde ns) / importeren (andere ns) |
+
 
 > **Kernpunt:** XSD is een taal (zelf ook XML) waarmee je exact vastlegt hoe een XML-document eruit moet zien. StUF is volledig gedefinieerd in XSD-schema's — het begrijpen van XSD is daarom essentieel voor het werken met StUF. De belangrijkste concepten zijn: datatypen met restricties, compositors voor structuur, kardinaliteit voor optionaliteit, en modulaire schema-opzet met include/import en type-afleiding.
 
