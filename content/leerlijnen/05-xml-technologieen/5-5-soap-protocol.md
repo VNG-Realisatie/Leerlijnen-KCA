@@ -122,13 +122,14 @@ Een SOAP 1.1 WSDL volgt een strikt gedefinieerde structuur. De kracht van WSDL l
 Elk WSDL‑document begint met een `<definitions>`‑element. Dit fungeert als container voor alle andere onderdelen:
 
 ```xml
-<definitions 
-    name="VoorbeeldService"
-    targetNamespace="http://voorbeeld.nl/service"
-    xmlns:tns="http://voorbeeld.nl/service"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-    xmlns="http://schemas.xmlsoap.org/wsdl/">
+<definitions name="StUF-BG0310"
+             targetNamespace="http://www.egem.nl/StUF/sector/bg/0310"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 xmlns:BG="http://www.egem.nl/StUF/sector/bg/0310"
+			 xmlns:StUF="http://www.egem.nl/StUF/StUF0301" 
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+			 xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" 
+			 xmlns:xs="http://www.w3.org/2001/XMLSchema">
 ```
 
 Binnen dit element kunnen de volgende onderdelen voorkomen:
@@ -145,10 +146,9 @@ Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen
 
 ```xml
 <types>
-    <xsd:schema targetNamespace="http://voorbeeld.nl/schemas">
-	    <xsd:import namespace="http://voorbeeld.nl/common"
-	                schemaLocation="common.xsd" />
-    </xsd:schema>
+	<xs:schema>
+		<xs:import namespace="http://www.egem.nl/StUF/sector/bg/0310" schemaLocation="bg0310_msg_mutatie.xsd"/>
+	</xs:schema>
 </types>
 ```
 
@@ -167,11 +167,11 @@ Een `<message>`-element in WSDL vertegenwoordigt een bericht dat wordt verstuurd
 Voorbeeld:
 
 ```xml
-<message name="GetKlantRequest">
-    <part name="parameters" element="tns:GetKlantRequest" />
+<message name="acdLk01">
+	<part name="body" element="BG:acdLk01"/>
 </message>
-<message name="GetKlantResponse">
-    <part name="resultaat" element="tns:GetKlantResponse" />
+<message name="acdSa01">
+	<part name="body" element="BG:acdSa01"/>
 </message>
 ```
 
@@ -183,11 +183,13 @@ Voorbeeld:
 Het `portType`‑element definieert de operaties die een webservice aanbiedt, zonder details over transport of binding.
 
 ```xml
-<portType name="KlantServicePortType">
-    <operation name="GetKlant">
-	<input message="tns:GetKlantRequest" />
-	<output message="tns:GetKlantResponse" />
-</operation></portType>
+<portType name="OntvangAsynchroon">
+	<operation name="acdLk01">
+		<input message="BG:acdLk01"/>
+		<output message="StUF:Bv03"/>
+		<fault name="fout" message="StUF:Fo03"/>
+	</operation>
+</portType>
 ```
 
 *Kenmerken:*<br/>
@@ -204,20 +206,19 @@ Het `portType`‑element definieert de operaties die een webservice aanbiedt, zo
 Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden uitgevoerd via een protocol. Voor SOAP 1.1 betekent dit:
 
 ```xml
-<binding name="KlantServiceSoapBinding" type="tns:KlantServicePortType">
-    <soap:binding
-	    style="document"
-	    transport="http://schemas.xmlsoap.org/soap/http"/>
-
-    <operation name="GetKlant">
-	    <soap:operation soapAction="http://voorbeeld.nl/GetKlant"/>
-	    <input>
-		    <soap:body use="literal" />
+<binding name="SOAPOntvangAsynchroon" type="BG:OntvangAsynchroon">
+	<operation name="acdLk01">
+		<soap:operation soapAction="http://www.egem.nl/StUF/sector/bg/0310/acdLk01"/>
+		<input>
+			<soap:body use="literal"/>
 		</input>
-	    <output>
-		    <soap:body use="literal" />
+		<output>
+			<soap:body use="literal"/>
 		</output>
-    </operation>
+		<fault name="fout">
+			<soap:fault name="fout" use="literal"/>
+		</fault>
+	</operation>
 </binding>
 ```
 
@@ -235,10 +236,11 @@ Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden
 Het laatste element, `<service>`, definieert waar de service daadwerkelijk te bereiken is:
 
 ```xml
-<service name="KlantService">
-    <port name="KlantServicePort" binding="tns:KlantServiceSoapBinding">
-	    <soap:address location="https://api.voorbeeld.nl/KlantService"/>
-    </port></service>
+<service name="OntvangAsynchroon">
+	<port name="OntvangAsynchroon" binding="BG:SOAPOntvangAsynchroon">
+		<soap:address location="http://example.com/OntvangAsynchroon"/>
+	</port>
+</service>
 ```
 
 *Belangrijk:*<br/>
