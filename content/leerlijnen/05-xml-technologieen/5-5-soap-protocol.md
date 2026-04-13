@@ -118,8 +118,7 @@ Aangezien StUF de SOAP 1.1 Standaard gebruikt duiken we hieronder alleen iets di
 Een WSDL‑bestand (Web Services Description Language) is een XML‑document dat de interface van een SOAP‑webservice formeel beschrijft. Het fungeert als een contract tussen een service‑aanbieder en service‑consument. De beschrijving is volledig machine‑leesbaar, zodat ontwikkeltools automatisch proxy‑klassen, clients en stub‑implementaties kunnen genereren.
 Een SOAP 1.1 WSDL volgt een strikt gedefinieerde structuur. De kracht van WSDL ligt in de scheiding tussen de abstracte beschrijving van een dienst (welke operaties zijn beschikbaar en welke berichten worden uitgewisseld) en de concrete beschrijving (waar is de service bereikbaar en welk protocol en transportbinding worden gebruikt). Hieronder worden alle onderdelen besproken, inclusief hoe zij onderling samenhangen en hoe XML‑Schema’s het geheel structureren.
 
-#### De hoofdstructuur van een WSDL 1.1‑document
-
+**De hoofdstructuur van een WSDL 1.1‑document**<br/>
 Elk WSDL‑document begint met een `<definitions>`‑element. Dit fungeert als container voor alle andere onderdelen:
 
 ```xml
@@ -142,8 +141,7 @@ Binnen dit element kunnen de volgende onderdelen voorkomen:
 
 Deze onderdelen vormen samen zowel de logische definitie van de service (abstract niveau) als de concrete implementatie (technisch niveau).
 
-#### Relatie met XML‑Schema (XSD): `types`
-
+**Relatie met XML‑Schema (XSD): `types`**<br/>
 Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen definiëren die worden gebruikt door de berichten van de webservice. Dit kan inline XSD zijn, maar meestal worden externe schema’s geïmporteerd:
 
 ```xml
@@ -164,8 +162,7 @@ Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen
 * Het `<message>`-element verwijst naar part‑elementen die op hun beurt verwijzen naar XSD‑typen;
 * Het `<portType>` en `<binding>-element beschrijven slechts het gedrag (operaties, richtingen), maar typen komen altijd uit XSD.
 
-#### Beschrijving van de gegevensstructuren in berichten: `message`
-
+**Beschrijving van de gegevensstructuren in berichten: `message`**<br/>
 Een `<message>`-element in WSDL vertegenwoordigt een bericht dat wordt verstuurd of ontvangen. Het wordt opgebouwd uit één of meerdere `<part>`‑elementen.
 
 Voorbeeld:
@@ -183,8 +180,7 @@ Voorbeeld:
 * Een part verwijst rechtstreeks naar een type uit het XSD‑schema (via `element` of `type`);
 * Binnen SOAP 1.1 is het gebruik van element de standaard, zodat het bericht overeenkomt met een XML‑element uit de schema’s.
 
-#### De abstracte interface: `portType`
-
+**De abstracte interface: `portType`**<br/>
 Het `portType`‑element definieert de operaties die een webservice aanbiedt, zonder details over transport of binding.
 
 ```xml
@@ -205,8 +201,7 @@ Het `portType`‑element definieert de operaties die een webservice aanbiedt, zo
 * Wordt zelf weer gebruikt in de `binding` en `service`.
 
 
-#### Koppeling abstracte operaties aan concrete protocollen: `binding`
-
+**Koppeling abstracte operaties aan concrete protocollen: `binding`**<br/>
 Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden uitgevoerd via een protocol. Voor SOAP 1.1 betekent dit:
 
 ```xml
@@ -237,8 +232,7 @@ Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden
 * Abstracte operaties → concrete SOAP‑operaties.
 * SOAP 1.1 specificaties bepalen hoe berichten via HTTP worden verstuurd.
 
-#### Eindpuntinformatie: `service`
-
+**Eindpuntinformatie: `service`**<br/>
 Het laatste element, `<service>`, definieert waar de service daadwerkelijk te bereiken is:
 
 ```xml
@@ -252,8 +246,8 @@ Het laatste element, `<service>`, definieert waar de service daadwerkelijk te be
 * `binding` koppelt de service aan de eerder beschreven SOAP‑binding.
 * `soap:address` bevat de URL van de endpoint.
 
-#### Overzicht van de onderlinge samenhang
 
+**Overzicht van de onderlinge samenhang**<br/>
 | WSDL‑onderdeel | Doel | Relatie met andere onderdelen | 
 | --- | --- | --- |
 | types | Definieert XML‑typen (via XSD) | Gebruikt door `message` | 
@@ -265,8 +259,7 @@ Het laatste element, `<service>`, definieert waar de service daadwerkelijk te be
 In essentie kun je het zien als lagen:
 **DATA (XSD) → BERICHTEN (message) → OPERATIES (portType) → PROTOCOL/TECHNIEK (binding) → LOCATIE (service)**
 
-#### Hoe het XML‑Schema het WSDL‑contract versterkt
-
+**Hoe het XML‑Schema het WSDL‑contract versterkt**<br/>
 Het XSD is cruciaal omdat het:
 
 * alle datastandaarden afdwingt (types, structuren, enumeraties).
@@ -276,8 +269,7 @@ Het XSD is cruciaal omdat het:
 
 In de praktijk staat ongeveer 70–80% van de functionele inhoud van een SOAP‑service in de XSD’s, niet in de WSDL zelf.
 
-#### Samenvatting
-
+**Samenvatting**<br/>
 Een SOAP 1.1 WSDL bestaat uit een hiërarchisch model:
 
 1. **types** – definieert XSD‑typen
