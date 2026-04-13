@@ -207,6 +207,7 @@ Het `binding`‑element beschrijft hoe de operaties uit `portType` moeten worden
 
 ```xml
 <binding name="SOAPOntvangAsynchroon" type="BG:OntvangAsynchroon">
+	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 	<operation name="acdLk01">
 		<soap:operation soapAction="http://www.egem.nl/StUF/sector/bg/0310/acdLk01"/>
 		<input>
