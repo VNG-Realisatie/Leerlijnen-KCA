@@ -18,13 +18,14 @@ XML (eXtensible Markup Language) en JSON (JavaScript Object Notation) zijn beide
 ### Ontstaansgeschiedenis en doelstelling
 
 **XML**<br/>
-XML werd eind jaren ’90 ontwikkeld door het World Wide Web Consortium (W3C). Het doel was een **flexibel, uitbreidbaar en zelfbeschrijvend formaat** te creëren voor het uitwisselen van gegevens tussen uiteenlopende systemen, ongeacht platform of programmeertaal. XML is afgeleid van SGML en is ontworpen met nadruk op documentstructuur, validatie en formele specificaties.
+XML (zie [5.1 XML syntax en structuur](5.1-xml-syntax-en-structuur)) werd eind jaren ’90 ontwikkeld door het World Wide Web Consortium (W3C). Het doel was een **flexibel, uitbreidbaar en zelfbeschrijvend formaat** te creëren voor het uitwisselen van gegevens tussen uiteenlopende systemen, ongeacht platform of programmeertaal. XML is afgeleid van SGML en is ontworpen met nadruk op documentstructuur, validatie en formele specificaties.
 
 **JSON**<br/>
 JSON ontstond begin jaren 2000 en is gebaseerd op de objectnotatie van JavaScript. Het doel van JSON is om een **lichtgewicht en eenvoudig te verwerken formaat** te bieden voor gegevensuitwisseling, vooral in webomgevingen. JSON is specifiek gericht op datatransport en niet op documentbeschrijving.
 
 **Belangrijk verschil**<br/>
-XML is document- en structuurgericht; JSON is data- en objectgericht.
+* XML is document- en structuurgericht; 
+* JSON is data- en objectgericht.
 
 ### Structuur en syntaxis
 
@@ -40,15 +41,15 @@ XML maakt gebruik van tags met openings- en sluitingselementen:
 
 *Kenmerken:*
 
-* Expliciete begin- en eindtags
-* Hiërarchische boomstructuur
-* Ondersteunt attributen
-* Hoofdlettergevoelig
+* Expliciete begin- en eindtags;
+* Hiërarchische boomstructuur;
+* Ondersteunt attributen;
+* Hoofdlettergevoelig.
 
 **JSON-structuur**<br/>
+JSON gebruikt sleutel-waardeparen en geneste objecten:
 
 ```json
-JSON gebruikt sleutel-waardeparen en geneste objecten:
 JSON{
   "persoon": {
     "naam": "Jan",
@@ -59,10 +60,11 @@ JSON{
 
 *Kenmerken:*
 
-* Compacte notatie
-* Gebaseerd op objecten en arrays
-* Minder tekens nodig
-* Ook hoofdlettergevoelig
+* Compacte notatie;
+* Gebaseerd op objecten en arrays;
+* Minder tekens nodig;
+* Ook hoofdlettergevoelig;
+* Betekenisvolle witruimtes.
 
 **Conclusie**<br/>
 JSON is aanzienlijk compacter en eenvoudiger, terwijl XML explicieter en formeler is.
@@ -70,14 +72,14 @@ JSON is aanzienlijk compacter en eenvoudiger, terwijl XML explicieter en formele
 ### Leesbaarheid en gebruiksgemak
 
 **XML**<br/>
-* Goed leesbaar voor mensen bij complexe documenten
-* Veel extra tekens maken het minder overzichtelijk
-* Geschikt voor documenten met rijke semantiek
+* Goed leesbaar voor mensen, ook bij complexe documenten;
+* Veel extra tekens maken het minder overzichtelijk;
+* Geschikt voor documenten met rijke semantiek.
 
 **JSON**<br/>
-* Zeer goed leesbaar voor programmeurs
-* Minder “ruis” door compacte structuur
-* Sluit direct aan bij datastructuren in moderne programmeertalen
+* Zeer goed leesbaar voor programmeurs;
+* Minder “ruis” door compacte structuur;
+* Sluit direct aan bij datastructuren in moderne programmeertalen.
 
 **Verschil**<br/>
 * JSON is gebruiksvriendelijker voor data‑uitwisseling; 
@@ -86,7 +88,7 @@ JSON is aanzienlijk compacter en eenvoudiger, terwijl XML explicieter en formele
 ### Datatypes en inhoud
 
 **XML**<br/>
-XML kent geen ingebouwde datatypes. Alles wordt standaard geïnterpreteerd als tekst. Datatypes kunnen wel worden afgedwongen via XML Schema (XSD).
+XML kent geen ingebouwde datatypes. Alles wordt standaard geïnterpreteerd als tekst. Datatypes kunnen wel worden afgedwongen via XML Schema.
 
 Voorbeeld:
 
@@ -94,17 +96,17 @@ Voorbeeld:
 <leeftijd>30</leeftijd>
 ```
 
-(Interpretatie van “30” is contextafhankelijk)
+Standaard wordt '30' hier als een string geïnterpreteerd echter als een XML-Schema aan het XML-document wordt gekoppeld kan het geïnterpreteerd worden als een integer of ander waardetype. 
 
 **JSON**<br/>
 JSON ondersteunt standaarddatatypes:
 
-* string
-* number
-* boolean
-* null
-* object
-* array
+* string;
+* number;
+* boolean;
+* null;
+* object;
+* array.
 
 Voorbeeld:<br/>
 
@@ -113,42 +115,44 @@ Voorbeeld:<br/>
 ```
 
 **Gevolg**<br/>
-JSON vereist minder aanvullende definities en is eenvoudiger te parseren.
+JSON vereist minder aanvullende definities en is eenvoudiger te parsen.
 
 ### Validatie en schema’s
 
 **XML**<br/>
 XML biedt uitgebreide validatiemogelijkheden:
 
-* DTD (Document Type Definition)
-* XSD (XML Schema Definition)
+* DTD (Document Type Definition);
+* XSD (XML Schema Definition).
 
-Hiermee kan zeer nauwkeurig worden vastgelegd:
+Hiermee kan o.a. zeer nauwkeurig worden vastgelegd:
 
-* welke elementen verplicht zijn
-* welke volgorde is toegestaan
-* welke datatypes geldig zijn
+* welke elementen verplicht zijn;
+* welke volgorde is toegestaan;
+* welke datatypes geldig zijn.
 
 **JSON**<br/>
 JSON ondersteunt JSON Schema, maar:
 
-* dit is minder streng en minder wijdverbreid
-* validatie is meestal optioneel
+* dit is minder streng en minder wijdverbreid;
+* validatie is meestal optioneel.
 
 **Verschil**<br/>
 XML is duidelijk sterker op het gebied van formele validatie en contracten.
 
 ### Prestaties en efficiëntie
 
+Uitgaande van dezelfde datastructuur geldt voor beide formaten:
+
 **XML**<br/>
-* Groter bestand door uitgebreide tags
-* Meer bandbreedte nodig
-* Trager te parsen
+* Groter bestand door uitgebreide tags;
+* Meer bandbreedte nodig;
+* Trager te parsen.
 
 **JSON**<br/>
-* Kleiner bestand (compact)
-* Minder netwerkbelasting
-* Sneller te lezen en verwerken
+* Kleiner bestand (compact);
+* Minder netwerkbelasting;
+* Sneller te lezen en verwerken.
 
 **Praktisch gevolg**<br/>
 JSON is beter geschikt voor moderne web‑API’s en mobiele toepassingen.
@@ -158,30 +162,30 @@ JSON is beter geschikt voor moderne web‑API’s en mobiele toepassingen.
 **XML**<br/>
 XML wordt vaak gebruikt voor:
 
-* Configuratiebestanden
-* Documentopmaak (bijv. Office Open XML)
-* Enterprise‑systemen
-* SOAP‑webservices
+* Configuratiebestanden;
+* Documentopmaak (bijv. Office Open XML);
+* Enterprise‑systemen;
+* SOAP‑webservices.
 
 **JSON**<br/>
 JSON wordt vaak gebruikt voor:
 
-* REST‑API’s
-* Web‑ en mobiele applicaties
-* Microservices
-* Real‑time data-uitwisseling
+* REST‑API’s;
+* Web‑ en mobiele applicaties;
+* Microservices;
+* Real‑time data-uitwisseling.
 
 
 ### Uitbreidbaarheid en flexibiliteit
 
 **XML**<br/>
-* Zeer flexibel door namespaces
-* Minder kans op naamconflicten
-* Geschikt voor complexe, langdurige standaarden
+* Zeer flexibel door namespaces;
+* Minder kans op naamconflicten;
+* Geschikt voor complexe, langdurige standaarden.
 
 **JSON**<br/>
-* Minder formele uitbreidingsmechanismen
-* Flexibel in structuur, maar minder strikt
+* Minder formele uitbreidingsmechanismen;
+* Flexibel in structuur, maar minder strikt.
 
 **Verschil**<br/>
 * XML excelleert in grootschalige, formele standaarden; 
