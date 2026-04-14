@@ -50,7 +50,7 @@ XML maakt gebruik van tags met openings- en sluitingselementen:
 JSON gebruikt sleutel-waardeparen en geneste objecten:
 
 ```json
-JSON{
+{
   "persoon": {
     "naam": "Jan",
     "leeftijd": 30
