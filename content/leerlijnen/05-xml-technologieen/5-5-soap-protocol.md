@@ -141,8 +141,8 @@ Binnen dit element kunnen de volgende onderdelen voorkomen:
 
 Deze onderdelen vormen samen zowel de logische definitie van de service (abstract niveau) als de concrete implementatie (technisch niveau).
 
-**Relatie met XML‑Schema (XSD): `types`**<br/>
-Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen definiëren die worden gebruikt door de berichten van de webservice. Dit kan inline XSD zijn, maar meestal worden externe schema’s geïmporteerd:
+**Relatie met XML‑Schema: `types`**<br/>
+Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen definiëren die worden gebruikt door de berichten van de webservice. Dit kan inline XML-Schema zijn, maar meestal worden externe schema’s geïmporteerd:
 
 ```xml
 <types>
@@ -152,14 +152,14 @@ Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen
 </types>
 ```
 
-*Waarom XSD?*<br/>
+*Waarom XML-Schema?*<br/>
 * XML‑Schema’s beschrijven de structuur van de gegevens: elementen, attributen, complex types, enumeraties, restricties, etc.;
 * Zowel client als server kunnen hiermee de berichten valideren;
 * Het WSDL‑bestand zelf blijft overzichtelijk door gebruik van externe schema’s.
 
 *Relaties met de rest van de WSDL:*<br/>
-* Elk `<message>`-element bevat `<part>`‑elementen die op hun beurt verwijzen naar XSD‑typen in het `<types>`-element;
-* Het `<portType>` en `<binding>`-element beschrijven slechts het gedrag (operaties, richtingen), maar typen komen altijd uit XSD.
+* Elk `<message>`-element bevat `<part>`‑elementen die op hun beurt verwijzen naar de typen in het XML-Schema binnen het `<types>`-element;
+* Het `<portType>` en `<binding>`-element beschrijven slechts het gedrag (operaties, richtingen), maar typen komen altijd uit het XML-Schema.
 
 **Beschrijving van de gegevensstructuren in berichten: `message`**<br/>
 Een `<message>`-element in WSDL vertegenwoordigt een bericht dat wordt verstuurd of ontvangen. Het wordt opgebouwd uit één of meerdere `<part>`‑elementen.
@@ -176,8 +176,8 @@ Voorbeeld:
 ```
 
 *Belangrijk:*
-* Een part verwijst rechtstreeks naar een type uit het XSD‑schema (via `element` of `type`);
-* Binnen SOAP 1.1 is het gebruik van element de standaard, zodat het bericht overeenkomt met een XML‑element uit de schema’s.
+* Een part verwijst rechtstreeks naar een type in het XML‑Schema (via `element` of `type`);
+* Binnen SOAP 1.1 is het gebruik van element de standaard, zodat het bericht overeenkomt met een XML‑element uit de XML-Schema’s.
 
 **De abstracte interface: `portType`**<br/>
 Het `portType`‑element definieert de operaties die een webservice aanbiedt, zonder details over transport of binding.
@@ -251,37 +251,37 @@ Het laatste element, `<service>`, definieert waar de service daadwerkelijk te be
 **Overzicht van de onderlinge samenhang**<br/>
 | WSDL‑onderdeel | Doel | Relatie met andere onderdelen | 
 | --- | --- | --- |
-| types | Definieert XML‑typen (via XSD) | Gebruikt door `message` | 
+| types | Definieert XML‑typen (via het XML-Schema) | Gebruikt door `message` | 
 | message | Definieert de structuur van input, output, fault | Gebruikt door `portType` | 
 | portType | Abstracte operaties | Gebruikt door `binding` | 
-|binding | Concrete SOAP‑implementatie van operaties | Gebruikt door `service` | 
+| binding | Concrete SOAP‑implementatie van operaties | Gebruikt door `service` | 
 | service | Endpointinformatie | Verwijst naar `binding` | 
 
 In essentie kun je het zien als lagen:
-**DATA (XSD) → BERICHTEN (message) → OPERATIES (portType) → PROTOCOL/TECHNIEK (binding) → LOCATIE (service)**
+**DATA (XML-Schema) → BERICHTEN (message) → OPERATIES (portType) → PROTOCOL/TECHNIEK (binding) → LOCATIE (service)**
 
 **Hoe het XML‑Schema het WSDL‑contract versterkt**<br/>
-Het XSD is cruciaal omdat het:
+Het XML-Schema is cruciaal omdat het:
 
 * alle datastandaarden afdwingt (types, structuren, enumeraties).
 * interoperabiliteit garandeert doordat elke client dezelfde datadefinities gebruikt.
 * validatie mogelijk maakt van SOAP‑berichten.
 * ontkoppeling biedt: de service‑definitie verandert niet als alleen datatypen worden uitgebreid.
 
-In de praktijk staat ongeveer 70–80% van de functionele inhoud van een SOAP‑service in de XSD’s, niet in de WSDL zelf.
+In de praktijk staat ongeveer 70–80% van de functionele inhoud van een SOAP‑service in het XML-Schema, niet in de WSDL zelf.
 
 **Samenvatting**<br/>
 Een SOAP 1.1 WSDL bestaat uit een hiërarchisch model:
 
-1. **types** – definieert XSD‑typen
-2. **message** – maakt berichten met verwijzing naar XSD
-3. **portType** – definieert abstracte operaties
-4. **binding** – legt SOAP‑protocolregels vast
-5. **service** – geeft endpointinformatie
+1. **types** – definieert de XML-Schema‑typen;
+2. **message** – maakt berichten met verwijzing naar types in het XML-Schema;
+3. **portType** – definieert abstracte operaties;
+4. **binding** – legt SOAP‑protocolregels vast;
+5. **service** – geeft endpointinformatie.
 
 Die als volgt met elkaar gerelateerd zijn:
 
-<img width="660" alt="soap-relaties" src="/Leerlijnen-KCA/images/Soap-relaties.jpg" /> 
+<img width="860" alt="soap-relaties" src="/Leerlijnen-KCA/images/Soap-relaties.jpg" /> 
 
 De centraliteit van XML‑Schema zorgt voor strakke, formele en valideerbare berichtenuitwisseling.
 
