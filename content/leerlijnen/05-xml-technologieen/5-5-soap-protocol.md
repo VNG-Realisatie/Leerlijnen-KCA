@@ -111,7 +111,7 @@ SOAP wordt vandaag vooral gebruikt in:
 In deze sectoren zijn stabiliteit, contractuele afspraken en beveiliging belangrijker dan de flexibiliteit die REST biedt. Veel grote organisaties hebben duizenden toepassingen die SOAP gebruiken voor interne communicatie. Ook moderne integratietools blijven ondersteuning bieden voor SOAP vanwege de continue vraag vanuit enterprise‑markten.
 Daarnaast bestaan er talloze commerciële SaaS‑systemen die nog altijd SOAP‑API’s aanbieden, omdat deze al jarenlang bij klanten in gebruik zijn en kritiek bedrijfsproces ondersteunen.
 
-### WSDL: de relaties binnen het document
+### De structuur van een WSDL
 
 Aangezien StUF de SOAP 1.1 Standaard gebruikt duiken we hieronder alleen iets dieper in die versie van de standaard.
 
@@ -158,7 +158,7 @@ Het `<types>`‑element bevat of verwijst naar XML‑Schema’s die de datatypen
 * Het WSDL‑bestand zelf blijft overzichtelijk door gebruik van externe schema’s.
 
 *Relaties met de rest van de WSDL:*<br/>
-* Het `<message>`-element verwijst naar `<part>`‑elementen die op hun beurt verwijzen naar XSD‑typen;
+* Elk `<message>`-element bevat `<part>`‑elementen die op hun beurt verwijzen naar XSD‑typen in het `<types>`-element;
 * Het `<portType>` en `<binding>`-element beschrijven slechts het gedrag (operaties, richtingen), maar typen komen altijd uit XSD.
 
 **Beschrijving van de gegevensstructuren in berichten: `message`**<br/>
@@ -278,6 +278,10 @@ Een SOAP 1.1 WSDL bestaat uit een hiërarchisch model:
 3. **portType** – definieert abstracte operaties
 4. **binding** – legt SOAP‑protocolregels vast
 5. **service** – geeft endpointinformatie
+
+Die als volgt met elkaar gerelateerd zijn:
+
+<img width="660" alt="soap-relaties" src="/Leerlijnen-KCA/images/Soap-relaties.jpg" /> 
 
 De centraliteit van XML‑Schema zorgt voor strakke, formele en valideerbare berichtenuitwisseling.
 
