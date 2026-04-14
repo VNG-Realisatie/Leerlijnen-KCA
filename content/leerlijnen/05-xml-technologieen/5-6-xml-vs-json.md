@@ -63,8 +63,7 @@ JSON gebruikt sleutel-waardeparen en geneste objecten:
 * Compacte notatie;
 * Gebaseerd op objecten en arrays;
 * Minder tekens nodig;
-* Ook hoofdlettergevoelig;
-* Witruimtes hebben betekenis en zijn bepalend voor de structuur.
+* Ook hoofdlettergevoelig.
 
 **Conclusie**<br/>
 JSON is aanzienlijk compacter en eenvoudiger, terwijl XML explicieter en formeler is.
