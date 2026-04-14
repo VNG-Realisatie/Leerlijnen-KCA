@@ -4,14 +4,12 @@ date: 2026-03-04
 weight: 5
 leerlijn: 5
 paragraaf: "5.3"
-leerdoel: "Leerdoel nog toe te voegen"
+leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen."
 ---
 
 ## 5.3 XML-Schema's (XSD)
 
-Kan XML-Schema's (XSD's) lezen, begrijpen en opstellen.
-
----
+Deze cursus heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema. Daarnaast is de content van deze cursus niet normatief.
 
 ### Het probleem: XML is te vrij
 
@@ -45,7 +43,7 @@ Beide documenten zijn **welgevormd** XML. Maar ze zijn niet compatibel: de struc
 
 Een **XML-Schema** is een formele beschrijving van de toegestane structuur en inhoud van een XML-document. Het is als een *blauwdruk* of *contract*: het legt vast welke elementen er mogen zijn, in welke volgorde, hoe vaak, en welk type waarde ze mogen bevatten.
 
-Met een XML-Schema kun je automatisch controleren of een XML-document geldig is — dit heet **validatie**. Als een document niet voldoet aan het schema, wordt het afgekeurd met een foutmelding die precies aangeeft wat er mis is.
+Met een XML-Schema kun je automatisch controleren of een XML-document valide is — dit heet **validatie**. Als een document niet voldoet aan het schema, wordt het afgekeurd met een foutmelding die precies aangeeft wat er mis is.
 
 ### Wat is XSD precies?
 
@@ -57,14 +55,14 @@ XML-Schema is een taal om schema's mee te schrijven — en het bijzondere is: **
 |---|---|
 | **Voluit** | XML-Schema Definition |
 | **Bestandsextensie** | `.xsd` |
-| **Formaat** | XML (een XSD is zelf een geldig XML-document) |
+| **Formaat** | XML (een XSD is zelf een valide XML-document) |
 | **Doel** | Formeel beschrijven welke structuur en waarden een XML-document mag hebben |
 | **Toepassing** | Validatie: automatisch controleren of een XML-document aan de regels voldoet |
 | **Beheerder** | W3C (World Wide Web Consortium), dezelfde organisatie achter XML zelf |
 
 ### Een eerste voorbeeld
 
-Stel, je wilt vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<achternaam>` en een `<geboortedatum>` moet bevatten. Dan zou je dat als volgt kunnen doen:
+Stel, je wil vastleggen dat een `<persoon>` precies een `<voornaam>`, een `<achternaam>` en een `<geboortedatum>` moet bevatten. Dan zou je dat als volgt kunnen doen:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -120,11 +118,11 @@ Dit betekent zoveel als
 1. het element `<achternaam>` komt vóór het element `<voornaam>`. Het schema eist echter een volgorde waarbij `<achternaam>` na het element `<voornaam>` maar ook vóór het element `<geboortedatum>` staat.
 2. Het element `<geboortedatum>` heeft de waarde `"15 maart 1985"`. Het schema eist echter een waarde die voldoet aan het datatype`xs:date` wat betekent dat een formaat als `JJJJ-MM-DD` moet worden gebruikt.
 
-> **Let op!** We gaven eerder al aan dat XML case-sensitive is. Definieer je in je XML-Schema dus als volgt een element `<xs:element name="voornaam" type="xs:string"/>` dan kan je in je XML-bestand niet het element `<Voornaam>` gebruiken. Tenminste niet als je wil dat het aan een XML-Schema voldoet. Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` ook een element `<Voornaam>` kan definiëren. Doe dat echter met uiterste terughoudendheid. Voor een computer is het verschil heel duidelijk maar voor een mens die het XML-Bestand moet interpreteren is dat heel wat minder het geval.
+> **Let op!** We gaven eerder al aan dat XML case-sensitive is. Definieer je in je XML-Schema dus als volgt een element `<xs:element name="voornaam" type="xs:string"/>` dan kan je in je XML-document niet het element `<Voornaam>` gebruiken. Tenminste niet als je wil dat het aan een XML-Schema voldoet. Dit betekent echter ook dat je in je XML-Schema naast het element `<voornaam>` ook een element `<Voornaam>` kan definiëren. Doe dat echter met uiterste terughoudendheid. Voor een computer is het verschil heel duidelijk maar voor een mens die het XML-document moet interpreteren is dat heel wat minder het geval.
 
 ### Welgevormd vs. valide
 
-In het onderdeel '5.1 XML syntax en structuur' hebben we de welgevormdheid van een XML-bestand behandelt. Daarbij gaven we aan dat een XML-bestand daarnaast ook nog valide kan zijn. Dat is een cruciaal onderscheid:
+In het onderdeel '5.1 XML syntax en structuur' hebben we de welgevormdheid van een XML-document behandelt. Daarbij gaven we aan dat een XML-document daarnaast ook nog valide kan zijn. Dat is een cruciaal onderscheid:
 
 | Begrip | Betekenis | Gecontroleerd door |
 |---|---|---|
@@ -135,7 +133,7 @@ Een document moet **eerst** welgevormd zijn voordat het gevalideerd kan worden. 
 
 ```text
 Stap 1: Is het welgevormd?  → Nee  → Afgekeurd (syntaxfout)
-                            → Ja   → Stap 2: Is het geldig volgens het schema?
+                            → Ja   → Stap 2: Is het valide volgens het schema?
                                               → Nee  → Afgekeurd (validatiefout)
                                               → Ja   → Geaccepteerd ✓
 ```
@@ -195,10 +193,10 @@ Dit zegt: *"Er moet een element `<voornaam>` bestaan, en de inhoud moet tekst zi
 
 | Attribuut | Betekenis | Voorbeeld |
 |---|---|---|
-| `name` | De naam van het element in het met het XML-Schema gekoppelde XML-bestand | `name="voornaam"` |
+| `name` | De naam van het element in het met het XML-Schema gekoppelde XML-document | `name="voornaam"` |
 | `type` | Het datatype van de inhoud | `type="xs:string"` |
 
-Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-bestand mag beginnen. Dat mogen er meer dan één zijn zodat je bij het aanmaken van een XML-Bestand op basis van dat schema kunt kiezen welke je root element is.
+Een `<xs:element ...>` element direct onder het `<xs:schema>` element definieert een root element, een element waarmee een XML-document mag beginnen. Dat mogen er meer dan één zijn zodat je bij het aanmaken van een XML-document op basis van dat schema kunt kiezen welke je root element is.
 
 ### Ingebouwde datatypen
 
@@ -247,7 +245,7 @@ In het voorbeeld in de voorgaande paragraaf werd m.b.v. het `type` attribuut het
 
 Een element kan van een complex of simpel type zijn. Elementen van het **simpele** type bevatten alleen een waarde (tekst, getal, datum) maar geen kind-elementen en attributen. Elementen van het **complexe** type kunnen naast een waarde wel kind-elementen en/of attributen bevatten. 
 
-In de volgende paragrafen bouwen we voort op dit inzicht door het beperken van simpele en complexe types of het uitbreiden van complexe types m.b.v. een `<xs:simpleType>` of een `<xs:complexType>`.
+In volgende paragrafen bouwen we voort op dit inzicht door het beperken van simpele en complexe types of het uitbreiden van complexe types m.b.v. een `<xs:simpleType>` of een `<xs:complexType>`.
 
 ### Simpele typen met restricties
 
@@ -358,18 +356,6 @@ Hieronder enkele voorbeelden:
     </xs:complexType>
   </xs:element>
   ```
-* Een element met een waarde en een attribuut:
-  ```xml
-  <xs:element name="bedrag">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:decimal">
-          <xs:attribute name="valuta" type="xs:string"/>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  ```
 * Een element met alleen een attribuut:
   ```xml
   <xs:element name="klantRef">
@@ -385,13 +371,14 @@ Hieronder enkele voorbeelden:
 
 Het volgende valt hier op:
 * Voor het toekennen van kind-elementen is een `<xs:sequence>` nodig. Dit element is een van de drie te gebruiken **compositors**. In de volgende paragraaf gaan we hier iets dieper op in;
-* De definitie van een attribuut vindt direct plaats binnen een `<xs:complexType>` element behalve als het element zelf alleen tekstuele content (xs:sring, xs:integer, etc...) kan bevatten. In dat geval wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element.
+* De definitie van een attribuut vindt direct plaats binnen een `<xs:complexType>` element.
 
 ### Compositors: de volgorde van kind-elementen
 
 XML-Schema kent drie compositors die beschrijven hoe kind-elementen zich tot elkaar verhouden. We benoemen ze hieronder en illustreren ze met een voorbeeld:
 
-#### xs:sequence
+**xs:sequence**
+
 De elementen moeten in de gedefinieerde volgorde worden geplaatst.
 
 ```xml
@@ -406,7 +393,8 @@ De elementen moeten in de gedefinieerde volgorde worden geplaatst.
 
 > **StUF-context:** StUF-schema's gebruiken vrijwel uitsluitend `xs:sequence`. De volgorde van elementen in StUF-berichten is altijd vast.
 
-#### xs:choice
+**xs:choice**
+
 Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we zien dat er mechanismes zijn waarmee we deze keuze meerdere keren achter elkaar kunnen maken.
 
 ```xml
@@ -419,8 +407,9 @@ Er moet een keuze uit de gedefinieerde elementen worden gemaakt. Later zullen we
 </xs:complexType>
 ```
 
-#### xs:all
-Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen echter maar één keer geplaatst worden maar mogen ook achterwege blijven.
+**xs:all**
+
+Alle elementen mogen in een willekeurige volgorde worden geplaatst, ze kunnen echter maar één keer geplaatst worden.
 
 ```xml
 <xs:complexType name="AdresType">
@@ -432,7 +421,55 @@ Alle elementen mogen in een willekeurige volgorde worden geplaatst. Ze kunnen ec
 </xs:complexType>
 ```
 
-### Oefening 3
+Het is toegestaan compositors in elkaar op te nemen. Het volgende is dus correct:
+
+```xml
+<xs:complexType name="AdresType">
+  <xs:choice>
+    <xs:sequence>
+      <xs:element name="postbusnummer" type="xs:positiveInteger"/>
+      <xs:element name="postcode" type="xs:string"/>
+    </xs:sequence>
+    <xs:sequence>
+      <xs:element name="straat" type="xs:string"/>
+      <xs:element name="huisnummer" type="xs:positiveInteger"/>
+      <xs:element name="postcode" type="xs:string"/>
+    </xs:sequence>
+   </xs:choice>
+</xs:complexType>
+```
+
+### Attributen definiëren in XSD
+
+Zoals je in een van de voorgaande paragrafen al in de voorbeelden zag definieer je attributen m.b.v. `<xs:attribute>`, **na** de compositor:
+
+```xml
+<xs:complexType name="AdresType">
+  <xs:sequence>
+    <xs:element name="straat" type="xs:string"/>
+    <xs:element name="huisnummer" type="xs:positiveInteger"/>
+  </xs:sequence>
+  <xs:attribute name="type" type="xs:string"/>
+</xs:complexType>
+```
+
+Net als elementen kan je attributen met een eigen restrictie-type definiëren. Zoals bij hieronder met een enumeration:
+
+```xml
+<xs:simpleType name="MutatiesoortType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="T"/>
+    <xs:enumeration value="W"/>
+    <xs:enumeration value="V"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:attribute name="mutatiesoort" type="MutatiesoortType"/>
+```
+
+> **StUF-context:** Het attribuut `mutatiesoort` is een van de meest kenmerkende attributen in StUF-berichten. Het geeft aan wat voor soort wijziging het bericht vertegenwoordigd (Toevoeging, Wijziging, Verwijdering, etc.).
+
+### Oefening 5.3.3
 
 [Naar de oefening](../oefening-5-3-3).
 
@@ -456,39 +493,38 @@ Hieronder een voorbeeld met een globaal gedefinieerde `<xs:complexType.`:
 <xs:element name="contactpersoon" type="PersoonType"/>
 ```
 
+> **StUF-context:** StUF-schema's werken we voornamelijk met **globale definities**. De typen voor personen, adressen, zaken worden centraal gedefinieerd en vervolgens hergebruikt in meerdere berichtdefinities.
+
 > **Let op!** Tot nu toe hebben we steeds XML-Schema fragmenten gecreëerd die niet aan een namespace zijn gekoppeld. Later zulen we zien dat je in een XML-Schema aan kunt geven op welke namespace dat XML-Schema betrekking heeft. Dat heeft direct gevolgen voor de wijze waarop je in een `type` attribuut verwijst naar een globaal gedefinieerde `<xs:simpleType>` danwel `<xs:complexType>`.
 
-### Oefening 4
+### Geneste vs. globale definities
+
+Er kunnen verschillende redenen zijn om globale of juist lokale definities te gebruiken. Hieronder enkele veel voorkomende redenen:
+
+| Gebruik **globaal** wanneer... | Gebruik **lokaal** wanneer... |
+|---|---|
+| Het type op meerdere plekken gebruikt wordt of de verwachting is dat dit gaat gebeuren. | Het type maar op één plek gebruikt wordt. |
+| Andere schema's ernaar moeten kunnen verwijzen. | Het type specifiek is voor dit ene element. |
+| Je een duidelijk overzicht wil van alle typen. | Je het schema compact wil houden. |
+
+### Oefening 5.3.4
 
 [Naar de oefening](../oefening-5-3-4).
 
+### Kardinaliteit
 
-### Nillable: expliciet "geen waarde"
+De **kardinaliteit** van een element of attribuut zegt iets over hoe vaak dat element of attribuut mag (of moet) voorkomen.
 
-Soms moet een element aanwezig zijn, maar hoeft het geen waarde te hebben. In XSD:
+**Bij elementen**
 
-```xml
-<xs:element name="overlijdensdatum" type="xs:date" nillable="true"/>
-```
+Bij elementen gebruiken we daar de XML-Schema attributen `minOccurs` en `maxOccurs` voor.
 
-In het XML-document:
+| Attribuut | Betekenis | Mogelijke waarden | Standaard |
+|---|---|---|---|
+| `minOccurs` | Minimaal aantal keer | Geheel getal groter of gelijk aan 0 | `1` |
+| `maxOccurs` | Maximaal aantal keer | Geheel getal groter of gelijk aan 1 of de waarde 'unbounded'  | `1` |
 
-```xml
-<overlijdensdatum xsi:nil="true"/>
-```
-
-> **StUF-context:** Het `nillable`-mechanisme wordt in StUF gebruikt om aan te geven dat een gegeven bewust niet gevuld is. Een leeg element kan "nog niet ingevuld" betekenen, terwijl `xsi:nil="true"` betekent "er is vastgesteld dat er geen waarde is."
-
----
-
-### Kardinaliteit: `minOccurs` en `maxOccurs`
-
-**Kardinaliteit** bepaalt hoe vaak een element mag (of moet) voorkomen:
-
-| Attribuut | Betekenis | Standaard |
-|---|---|---|
-| `minOccurs` | Minimaal aantal keer | `1` |
-| `maxOccurs` | Maximaal aantal keer | `1` |
+De waarde in de kollom 'Standaard' geldt als het betreffende attribuut niet is gedefinieerd. Een `<xs:element>` dat geen attribuut `minOccurs` heeft is dus standaard verplicht.
 
 Veelgebruikte combinaties:
 
@@ -517,23 +553,14 @@ Voorbeeld:
 
 > **StUF-context:** In StUF-schema's zijn veel elementen optioneel (`minOccurs="0"`) omdat niet elk bericht alle gegevens bevat. Het begrijpen van `minOccurs` en `maxOccurs` is essentieel voor het lezen van StUF-schema's.
 
+**Bij attributen**
 
-HIER IETS ZEGGEN OVER COMPOSITORS EN Kardinaliteit
-Bij xs:all mag de maxOccurs bijv. niet hoger zijn dan 1. 
+De kardinaliteit van attributen wordt in een XML-Schema op een afwijkende wijze gedefinieerd, met het XML-Schema attribuut `use`. Een attribuut kan echter nooit meer dan één keer op een element gespecificeerd worden.
+Het volgende is dus **niet** toegestaan in een XML-document:
 
-### Attributen definiëren in XSD
+`<afbeeldingen href="images/afbeelding1.jpg" href="images/afbeelding2.jpg"/>`
 
-Attributen definieer je met `<xs:attribute>`, **na** de compositor:
-
-```xml
-<xs:complexType name="AdresType">
-  <xs:sequence>
-    <xs:element name="straat" type="xs:string"/>
-    <xs:element name="huisnummer" type="xs:positiveInteger"/>
-  </xs:sequence>
-  <xs:attribute name="type" type="xs:string" use="required"/>
-</xs:complexType>
-```
+Om die reden zijn alleen de in de eerste kolom van de volgende tabel gedefinieerde waarden toegestaan op het `use` attribuut.
 
 | `use`-waarde | Betekenis |
 |---|---|
@@ -541,92 +568,127 @@ Attributen definieer je met `<xs:attribute>`, **na** de compositor:
 | `required` | Het attribuut is verplicht |
 | `prohibited` | Het attribuut mag niet voorkomen (gebruikt bij overerving) |
 
-Attributen met een eigen restrictie-type:
+
+**Bij compositors**
+
+Op compositors kan op dezelfde wijze als op `<xs:element>` elementen kardinaliteiten worden gedefinieerd.
+Binnen een `<xs:all>` compositor mogen de attributen `minOccurs` en `maxOccurs` op het `<xs:element>` echter geen waarde hebben die hoger is dan 1. 
+
+### Oefening 5.3.5
+
+[Naar de oefening](../oefening-5-3-5).
+
+### Nillable: expliciet "geen waarde"
+
+Soms moet een element aanwezig zijn, maar hoeft het geen waarde te hebben. In een XML-Schema wordt dat als volgt gedefinieerd:
 
 ```xml
-<xs:simpleType name="MutatiesoortType">
-  <xs:restriction base="xs:string">
-    <xs:enumeration value="T"/>
-    <xs:enumeration value="W"/>
-    <xs:enumeration value="V"/>
-  </xs:restriction>
+<xs:element name="overlijdensdatum" type="xs:date" nillable="true"/>
+```
+
+en in een XML-document kan je dat vervolgens als volgt gebruiken:
+
+```xml
+<overlijdensdatum xsi:nil="true"/>
+```
+
+> **LET OP!** De namespace declaratie `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"` moet dan wel in het XML-document aanwezig zijn.
+
+> **StUF-context:** Het `nillable`-mechanisme wordt in StUF gebruikt om aan te geven dat een gegeven bewust niet gevuld is. Een leeg element kan "nog niet ingevuld" betekenen, terwijl `xsi:nil="true"` betekent "er is vastgesteld dat er geen waarde is."
+
+### Type-afleiding: Restriction en Extension
+
+**Restriction**
+
+Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type baseren op een bestaand type, vergelijkbaar met overerving in objectgeoriënteerd programmeren. 
+
+We zagen al eerder hoe je simpele types kon restricten (beperken) maar ook complexe types kun je restricten. Daarbij geldt dat restricten altijd moet binnen de in het originele type gedefinieerde grenzen. Alleen een element dat optioneel is mag verwijderd worden. Een element met een `minOccurs` van 'n>0' en een `maxOccurs` van 'm>n' of 'unbounded' mag een `minOccurs` van '>n' en een `maxOccurs` van '<m' aannemen. Wel geldt `minOccurs` <= `maxOccurs` en `maxOccurs` >= `minOccurs`.
+
+Hieronder een voorbeeld:
+
+```xml
+<!-- Basistype: alles optioneel -->
+<xs:complexType name="PersoonType">
+  <xs:sequence>
+    <xs:element name="naam" type="xs:string"/>
+    <xs:element name="geboortedatum" type="xs:date" minOccurs="0"/>
+    <xs:element name="adres" type="xs:string" minOccurs="0"/>
+	<xs:element name="opleiding" type="xs:string"  minOccurs="1" maxOccurs="unbounded"/>
+  </xs:sequence>
+</xs:complexType>
+
+<!-- Restrictietype: naam en geboortedatum verplicht, geen adres -->
+<xs:complexType name="KernPersoonType">
+  <xs:complexContent>
+    <xs:restriction base="PersoonType">
+      <xs:sequence>
+        <xs:element name="naam" type="xs:string"/>
+        <xs:element name="geboortedatum" type="xs:date"/>
+	    <xs:element name="opleiding" type="xs:string"  minOccurs="2" maxOccurs="30"/>
+      </xs:sequence>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+```
+
+Restrictions kunnen betrekking hebben op meerdere niveaus van complexTypes/simpleTypes en op al die niveau's moeten de restrictions binnen de in de originele types gedefinieerde grenzen blijven. In het volgende voorbeeld hebben we het complexType 'Order2' gecreëerd op basis van het 'Order' complexType.
+
+```xml
+<xs:complexType name="Order">
+	<xs:sequence>
+		<xs:element name="ordernummer" type="Ordernummer"/>
+		<xs:element name="artikel" type="Artikel" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Order2">
+	<xs:complexContent>
+		<xs:restriction base="pd:Order">
+			<xs:sequence>
+				<xs:element name="ordernummer" type="Ordernummer10"/>
+				<xs:element name="artikel" type="Artikel" maxOccurs="30"/>
+			</xs:sequence>
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+```
+Zoals je ziet hebben we het aantal keer dat het element `<artikel>` voor mag komen beperkt tot 30. Het element `<ordernummer>` in 'Order2' heeft echter ook een andere typering dan in 'Order'. Hieronder de simpleTypes voor beide elementen:
+
+```xml
+<xs:simpleType name="Ordernummer" xml:base="xs:string">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="13"/>
+	</xs:restriction>
 </xs:simpleType>
-
-<xs:attribute name="mutatiesoort" type="MutatiesoortType"/>
+<xs:simpleType name="Ordernummer10" xml:base="xs:string">
+	<xs:restriction base="Ordernummer">
+		<xs:maxLength value="12"/>
+	</xs:restriction>
+</xs:simpleType>
 ```
+De waarde '12' voor het facet 'maxLength' valt weer netjes binnen de grenzen die het simpleType waarop 'Ordernummer10' gebaseerd is, 'Ordernummer'.
 
-> **StUF-context:** Het attribuut `mutatiesoort` is een van de meest kenmerkende attributen in StUF-berichten. Het geeft aan wat voor soort wijziging het bericht bevat (Toevoeging, Wijziging, Verwijdering, etc.).
+> **StUF-context:** StUF maakt intensief gebruik van `xs:restriction`. Het basistype bevat alle denkbare elementen (vaak optioneel), en per berichttype wordt een restriction gemaakt die alleen de relevante elementen overhoudt. Dit is het zogenaamde **"Russische poppetjes-model"** (matryoshka-model) van StUF.
 
-### Geneste vs. globale definities
+**Extension**
 
-| Gebruik **globaal** wanneer... | Gebruik **lokaal** wanneer... |
-|---|---|
-| Het type op meerdere plekken gebruikt wordt | Het type maar op één plek gebruikt wordt |
-| Andere schema's ernaar moeten kunnen verwijzen | Het type specifiek is voor dit ene element |
-| Je een duidelijk overzicht wilt van alle typen | Je het schema compact wilt houden |
+Een **`xs:extension`** is een uitbreiding van een type en levert altijd een complex type op. Bij een extension wordt er nl. middels een `<xs:element>` en/of `<xs:attribute>` element een 'element' en/of 'attribuut' aan een bestaand type toegevoegd.
 
-> **StUF-context:** StUF-schema's werken voornamelijk met **globale definities**. De typen voor personen, adressen, zaken worden centraal gedefinieerd en vervolgens hergebruikt in meerdere berichtdefinities.
-
----
-
-### Schema's opsplitsen: `xs:include` en `xs:import`
-
-Een groot schema in één bestand wordt al snel onoverzichtelijk. XSD biedt twee mechanismen om schema's over meerdere bestanden te verdelen.
-
-**`xs:include`** — bestanden samenvoegen (zelfde namespace):
+In de paragraaf 'Complexe typen: elementen met structuur' trokken we al de conclusie dat de definitie van een attribuut direct plaatsvindt binnen een `<xs:complexType>`. Er is echter een uitzondering daarop, als de `base` van een `<xs:extension>` element zelf van het simpele type is en dus alleen tekstuele content (xs:string, xs:integer, etc...) kan bevatten wordt een `<xs:simpleContent>` element geplaatst in het `<xs:complexType>` element. In het voorbeeld hieronder illustrereren we dat:
 
 ```xml
-<!-- persoon.xsd -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.example.nl/schema">
-
-  <xs:include schemaLocation="typen-basis.xsd"/>
-
-  <xs:complexType name="PersoonType">
-    <xs:sequence>
-      <xs:element name="naam" type="xs:string"/>
-      <xs:element name="adres" type="tns:AdresType"/>  <!-- Uit typen-basis.xsd -->
-    </xs:sequence>
+<xs:element name="bedrag">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="valuta" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
-
-</xs:schema>
+</xs:element>
 ```
+Het spreekt voor zich dat hetzelfde geldt als het `<xs:complexType>` als globale definitie wordt gedefinieerd.
 
-**`xs:import`** — schema's uit een andere namespace:
-
-```xml
-<!-- persoon.xsd (namespace: http://www.example.nl/persoon) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.example.nl/persoon"
-           xmlns:adr="http://www.example.nl/adres">
-
-  <xs:import namespace="http://www.example.nl/adres"
-             schemaLocation="adres.xsd"/>
-
-  <xs:complexType name="PersoonType">
-    <xs:sequence>
-      <xs:element name="naam" type="xs:string"/>
-      <xs:element name="adres" type="adr:AdresType"/>  <!-- Uit adres.xsd -->
-    </xs:sequence>
-  </xs:complexType>
-
-</xs:schema>
-```
-
-| Kenmerk | `xs:include` | `xs:import` |
-|---|---|---|
-| Namespace | Zelfde of geen | Andere |
-| Attribuut `namespace` | Niet nodig | Verplicht |
-| Analogie | Bestanden samenvoegen | Bibliotheek importeren |
-| Gebruik | Opknippen van groot schema | Hergebruik van extern schema |
-
-> **StUF-context:** StUF-schema's zijn zeer modulair. Het basisschema `stuf0302.xsd` definieert fundamentele StUF-typen, en domeinschema's importeren deze om hun eigen berichttypes te definiëren. Je zult tientallen `import`- en `include`-regels tegenkomen.
-
-### Type-afleiding: extension en restriction
-
-Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type baseren op een bestaand type, vergelijkbaar met overerving in objectgeoriënteerd programmeren.
-
-**`xs:extension`** — een type uitbreiden:
+Voor het extenden van een globaal `<xs:complexType>` gebruiken we een `<xs:complexContent>` element. Zie hieronder een voorbeeld:
 
 ```xml
 <!-- Basistype -->
@@ -650,7 +712,7 @@ Een van de krachtigste features van XSD is **type-afleiding**: een nieuw type ba
 </xs:complexType>
 ```
 
-`MedewerkerType` bevat nu alle elementen van `PersoonType` **plus** de extra elementen:
+`MedewerkerType` bevat nu alle elementen van `PersoonType` **plus** de extra elementen, dus:
 
 ```text
 PersoonType          (basistype)
@@ -665,72 +727,21 @@ MedewerkerType       (afgeleid = extends PersoonType)
   └── afdeling        ← toegevoegd
 ```
 
-**`xs:restriction`** — een type beperken:
-
-```xml
-<!-- Basistype: alles optioneel -->
-<xs:complexType name="PersoonType">
-  <xs:sequence>
-    <xs:element name="naam" type="xs:string"/>
-    <xs:element name="geboortedatum" type="xs:date" minOccurs="0"/>
-    <xs:element name="adres" type="xs:string" minOccurs="0"/>
-  </xs:sequence>
-</xs:complexType>
-
-<!-- Restrictietype: naam en geboortedatum verplicht, geen adres -->
-<xs:complexType name="KernPersoonType">
-  <xs:complexContent>
-    <xs:restriction base="PersoonType">
-      <xs:sequence>
-        <xs:element name="naam" type="xs:string"/>
-        <xs:element name="geboortedatum" type="xs:date"/>
-      </xs:sequence>
-    </xs:restriction>
-  </xs:complexContent>
-</xs:complexType>
-```
-
-> **StUF-context:** StUF maakt intensief gebruik van `xs:restriction`. Het basistype bevat alle denkbare elementen (vaak optioneel), en per berichttype wordt een restriction gemaakt die alleen de relevante elementen overhoudt. Dit is het zogenaamde **"Russische poppetjes-model"** (matryoshka-model) van StUF.
-
 | Techniek | Wat doet het? | Richting |
 |---|---|---|
 | `xs:extension` | Voegt elementen/attributen toe | Basistype → **ruimer** |
-| `xs:restriction` | Beperkt of verwijdert optionele delen | Basistype → **strikter** |
+| `xs:restriction` | Beperkt of verwijdert binnen de in het originel complexType of simpleType gedefinieerde grenzen | Basistype → **strikter** |
 
-### Abstracte typen en substitutiegroepen
+### Oefening 5.3.6
 
-Een type kan gemarkeerd worden als `abstract` — het mag **niet direct** in XML-documenten gebruikt worden:
-
-```xml
-<xs:complexType name="VoertuigType" abstract="true">
-  <xs:sequence>
-    <xs:element name="kenteken" type="xs:string"/>
-  </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="AutoType">
-  <xs:complexContent>
-    <xs:extension base="VoertuigType">
-      <xs:sequence>
-        <xs:element name="aantalDeuren" type="xs:integer"/>
-      </xs:sequence>
-    </xs:extension>
-  </xs:complexContent>
-</xs:complexType>
-```
-
-In XML moet je met `xsi:type` aangeven welk concreet type je bedoelt:
-
-```xml
-<voertuig xsi:type="AutoType">
-  <kenteken>AB-123-CD</kenteken>
-  <aantalDeuren>5</aantalDeuren>
-</voertuig>
-```
+[Naar de oefening](../oefening-5-3-6).
 
 ### Groepen: `xs:group` en `xs:attributeGroup`
 
-**`xs:group`** — herbruikbare elementgroep:
+**xs:group**
+
+Een **`xs:group`** is een herbruikbare groep van elementen. Komt een groep van elementen in een specifieke compositor constructie vaker voor in je XML-Schema dan kan het handig zijn deze in een globale `xs:group` definitie te plaatsen.
+Hieronder een voorbeeld van een `xs:group`.
 
 ```xml
 <xs:group name="NaamGroep">
@@ -749,7 +760,30 @@ In XML moet je met `xsi:type` aangeven welk concreet type je bedoelt:
 </xs:complexType>
 ```
 
-**`xs:attributeGroup`** — herbruikbare attribuutgroep:
+Het verschil met een `xs:complexType` is dat je voor het kunnen gebruiken van een complexType een element moet aanmaken. Zou ik i.p.v. de `xs:group` in het bovenstaande XML-Schema fragment een `xs:complexType` gebruiken dan zou ik de volgende constructie krijgen:
+
+```xml
+<xs:complexType name="NaamGroep">
+  <xs:sequence>
+    <xs:element name="voornaam" type="xs:string"/>
+    <xs:element name="tussenvoegsel" type="xs:string" minOccurs="0"/>
+    <xs:element name="achternaam" type="xs:string"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PersoonType">
+  <xs:sequence>
+    <xs:element name="naam" type="NaamGroep"/>
+    <xs:element name="geboortedatum" type="xs:date"/>
+  </xs:sequence>
+</xs:complexType>
+```
+
+Zoals je ziet moet ik hier het element 'naam' introduceren waarin de elementen 'voornaam', 'tussenvoegsel' en 'achternaam' kunnen worden opgenomen terwijl met een `xs:group` constructie dat extra elementniveau achterwege kan blijven.
+
+**xs:attributeGroup**
+
+Een **`xs:attributeGroup`** is een herbruikbare groep van attributen. Hieronder een voorbeeld.
 
 ```xml
 <xs:attributeGroup name="StUFMetadata">
@@ -767,6 +801,137 @@ In XML moet je met `xsi:type` aangeven welk concreet type je bedoelt:
 ```
 
 > **StUF-context:** `xs:attributeGroup` wordt in StUF-schema's veelvuldig gebruikt. De basismetadata-attributen die bij elk StUF-element horen (zoals `mutatiesoort`, `noValue`) worden als `attributeGroup` gedefinieerd en overal hergebruikt.
+
+### Namespaces in XML-Schema
+
+In sectie 5.2 leerde je wat XML-namespaces zijn. Hier zie je hoe namespaces werken **aan de XML-Schema-kant**, hoe je een namespace-identifier aan een XML-Schema koppelt en daarmee definieert tot welke unieke naamruimte (namespace)  de elementen en typen in dat XML-Schema behoren. Ook laten we zien hoe je deze vervolgens kunt gebruiken in een XML-document.
+
+Het koppelen van een namespace-identifier aan de XML-Schema definitie gaat m.b.v. de **`targetNamespace`** attribute. Hieronder een voorbeeld:
+
+```xml
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.nl/persoon"
+           xmlns:per="http://www.example.nl/persoon">
+
+  <xs:element name="persoon" type="per:PersoonType"/>
+
+  <xs:complexType name="PersoonType">
+    <xs:sequence>
+      <xs:element name="naam" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+```
+
+Alle globale definities in dit XML-Schema (`persoon`, `PersoonType`) behoren tot de `targetNamespace`. Zoals je ziet heeft het attribute `xmlns:per` dezelfde waarde als het attribute `targetNamespace`.  Dat zorgt er voor dat je, als je verwijst naar de globale definities, de prefix `per` nodig hebt om duidelijk te maken dat je de globale definities uit het onderliggende XML-Schema bedoelt. Een voorbeeld zie je in de definitie van het element 'persoon': `type="per:PersoonType"`. 
+
+**XML-Schema koppelen aan een XML-document:**
+
+Het koppelen van een XML-Schema aan een XML-document gebeurd met het attribute `xsi:schemaLocation`. De waarde van dit attribuut bestaat uit paren van 2 strings. Elk paar bestaat uit de namespace-identifier en de locatie van het XML-Schema gescheiden door een spatie. Hieronder een voorbeeld:
+
+```xml
+<per:persoon xmlns:per="http://www.example.nl/persoon"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.example.nl/persoon persoon.xsd">
+  <per:naam>Jan</per:naam>
+</per:persoon>
+```
+
+Met meerdere schema's kan dat er als volgt uitzien (met regelnummers die natuurlijk niet bij het XML-Schema horen):
+
+```xml
+1. <bericht xmlns="http://www.example.nl/bericht"
+2.         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+3.         xmlns:per="http://www.example.nl/persoon"
+4.         xsi:schemaLocation="
+5.           http://www.example.nl/bericht  bericht.xsd
+6.           http://www.example.nl/persoon  persoon.xsd">
+7.  <!-- ... -->
+8. </bericht>
+```
+
+| Regel | Uitleg |
+| --- | --- |
+| 1 | In het XML-document is er voor gekozen om de namespace van het XML-Schema 'bericht.xsd' als de default namespace te zien. De elementen uit dat XML-Schema hoeven dus geen namespace-prefix te krijgen. |
+| 2 | Zoals je ziet heeft het attribuut `xsi:schemaLocation` in regel 4 de namespace-prefix 'xsi', om die reden is in regel 2 de namespace behorende bij die prefix gedefinieerd. Dat is nodig om de validator te vertellen dat hij het attribuut `xsi:schemaLocation` moet interpreteren als de definitie van de bij het XML-document behorende XML-Schema's. |
+| 3 | De elementen uit het XML-Schema 'persoon.xsd' moeten van de prefix 'per' worden voorzien. |
+| 5 en 6 | In deze beide regels zie je een paar strings gevormd door de namespace-identifier en de locatie van het XML-Schema. Uit de locatie blijkt dat het XML-document in dezelfde folder staat als de XML-Schema's. De locatie mag, als dat nodig is, overigens ook een relatieve en een absolute uri bevatten. |
+
+> **Let op:** `xsi:schemaLocation` is een **hint** voor de validator, geen verplichting. De validator mág een ander schema gebruiken, bijv. een die softwarematig wordt gekoppeld.
+
+We zagen in het eerste voorbeeld over het koppelen van een XML-Schema aan een XML-document hierboven al dat zowel het element 'persoon' als het element 'naam' de prefix 'per' kreeg. Met het attribuut **`elementFormDefault`** kunnen we dat gedrag beïnvloeden. Geven we dat attribuut de waarde `unqualified` dan mag de prefix 'per' bij het element 'naam' achterwege blijven.
+
+| Waarde | Betekenis |
+|---|---|
+| `unqualified` (standaard) | Lokale elementen hebben **geen** prefix in XML |
+| `qualified` | Lokale elementen **moeten** in de namespace staan |
+
+### Oefening 5.3.7
+
+[Naar de oefening](../oefening-5-3-7).
+
+> **StUF-context:** StUF-schema's gebruiken `elementFormDefault="qualified"`. In de praktijk wordt soms de default namespace gebruikt om niet alle elementen van een prefix te hoeven voorzien.
+
+### XML-Schema's opsplitsen: `xs:include` en `xs:import`
+
+Een groot schema in één bestand wordt al snel onoverzichtelijk. Daarnaast kan het met het oog op herbruikbaarheid handig zijn bepaalde constructies bij elkaar in een XML-Schema bestand te plaatsen, bijv. alle simpleTypes bij elkaar. XML-Schema biedt twee mechanismen om schema's over meerdere bestanden te verdelen.
+
+M.b.v. het XML-Schema element **`xs:include`** kan worden aangegeven dat een ander bestand moet worden samengevoegd met het XML-Schema bestand waar de `xs:include` in staat. Voorwaarde voor het gebruik van dit element is wel dat de targetNamespaces van beide XML-Schema bestanden gelijk is:
+
+```xml
+<!-- persoon.xsd -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.nl/schema">
+
+  <xs:include schemaLocation="typen-basis.xsd"/>
+
+  <xs:complexType name="PersoonType">
+    <xs:sequence>
+      <xs:element name="naam" type="xs:string"/>
+      <xs:element name="adres" type="tns:AdresType"/>  <!-- Uit typen-basis.xsd -->
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+```
+
+Je mag net zoveel `xs:include` elementen opnemen als nodig is.
+
+M.b.v. het XML-Schema element **`xs:import`** kan worden aangegeven dat een ander bestand moet worden geïmporteerd in het XML-Schema bestand waar de `xs:import` in staat. Hier geldt echter dat de targetNamespaces van beide XML-Schema bestanden **NIET** gelijk mag zijn.
+
+```xml
+<!-- persoon.xsd (namespace: http://www.example.nl/persoon) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.nl/persoon"
+           xmlns:adr="http://www.example.nl/adres">
+
+  <xs:import namespace="http://www.example.nl/adres"
+             schemaLocation="adres.xsd"/>
+
+  <xs:complexType name="PersoonType">
+    <xs:sequence>
+      <xs:element name="naam" type="xs:string"/>
+      <xs:element name="adres" type="adr:AdresType"/>  <!-- Uit adres.xsd -->
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+```
+
+Zowel het `xs:include` als het `xs:import` element hebben een `schemaLocation` attribuut (dat een relatieve en een absolute uri mag bevatten) maar het `xs:import` element heeft ook nog een `namespace` attribute dat gelijk moet zijn aan het `targetNamespace` attribuut van het geïmporteerde XML-Schema.
+
+| Kenmerk | `xs:include` | `xs:import` |
+|---|---|---|
+| Namespace | Zelfde of geen* | Andere |
+| Attribuut `namespace` | N.v.t. | Verplicht |
+| Analogie | Bestanden samenvoegen | Bibliotheek importeren |
+| Gebruik | Opknippen van groot schema | Hergebruik van extern schema |
+
+*&nbsp;_Indien een XML-Schema zonder targetNamespace wordt geïnclude worden de globaal gedefinieerde elementen onderdeel van de namespace van het XML-Schema dat include. De lokaal gedefinieerde elementen blijven echter buiten een namespace._
+
+XML-Schema's die worden geïncludeerd of geïmporteerd in andere XML-Schema's worden ook weer geïncludeerd of geïmporteerd als die andere XML-Schema's weer ergens anders worden geïncludeerd of geïmporteerd.
+
+> **StUF-context:** StUF-schema's zijn zeer modulair. Het basisschema `stuf0301.xsd` definieert fundamentele StUF-typen, en domeinschema's importeren deze om hun eigen berichttypes te definiëren. Je zult tientallen `import`- en `include`-regels tegenkomen.
 
 ### Modulaire schema-architectuur
 
@@ -793,159 +958,36 @@ berichten.xsd
 In StUF concreet:
 
 ```text
-stuf0302.xsd                 ← Basis StUF-types en attributen
+bg0310_msg_mutatie.xsd                                                           ← Berichtstructuren voor mutatieberichten
     │
-    ├── import ──→ bg0310_stuf_simpleTypes.xsd
-    ├── import ──→ bg0310_ent_basis.xsd      ← Entiteittypen (persoon, adres, etc.)
-    │                 │
-    │                 └── import ──→ gml.xsd  ← Geometrie
+    ├─ include ─→ bg0310_ent_mutatie.xsd                                         ← Specifieke mutatie entiteittypen
+    │               │
+    │               ├─ include ─→ ../entiteiten/bg0310_ent_basis.xsd             ← Entiteittypen (persoon, adres, etc.)
+	│               │               │
+    │               │               ├─ include ─→ bg0310_simpleTypes.xsd         ← Specifieke bg0310 simpleTypes
+    │               │               │               │
+    │               │               │               ├─ import ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd
+    │               │               │               │              │
+    │               │               │               │              └─ include  ─→ ../../0301/stuf0301.xsd
+    │               │               │               │
+    │               │               │               └─ import ─→ .../../gml-3.1.1.2/gml/3.1.1/base/gml.xsd
+    │               │               │                              │
+    │               │               │                              └─ ... dieper gelegen XML-Schema's voor Geometrie
+ 	│               │               │
+    │               │               └─ import  ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd
+    │               │                               │
+    │               │                               └─ include ─→ ../../0301/stuf0301.xsd
+    │               │
+    │               └─ import  ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd      ← Specifieke voor bg0310 benodigde stuf0301 simpleTypes
+    │                                               │
+    │                                               └─ include ─→ ../../0301/stuf0301.xsd
     │
-    └── bg0310_msg_vraagAntwoord.xsd         ← Berichtstructuren
+    └─ import  ─→ bg0310_msg_stuf_mutatie.xsd                                    ← Specifieke voor bg0310 mutaties benodigde stuf0301 simpleTypes
+                    │
+                    └─ include ─→ ../entiteiten/bg0310_stuf_simpleTypes.xsd      ← Specifieke voor bg0310 benodigde stuf0301 simpleTypes
+                                    │
+                                    └─ include  ─→ ../../0301/stuf0301.xsd       ← Basis stuf0301 elementen en complexTypes	
 ```
-
----
-
-### Namespaces in XSD
-
-In sectie 5.2 leer je wat XML-namespaces zijn. Hier zie je hoe namespaces werken **aan de schema-kant**.
-
-**`targetNamespace`** — de namespace van je schema:
-
-```xml
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.example.nl/persoon"
-           xmlns:per="http://www.example.nl/persoon">
-
-  <xs:element name="persoon" type="per:PersoonType"/>
-
-  <xs:complexType name="PersoonType">
-    <xs:sequence>
-      <xs:element name="naam" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-</xs:schema>
-```
-
-Alle globale definities (`persoon`, `PersoonType`) behoren tot de `targetNamespace`. Als je ernaar verwijst, heb je de prefix nodig: `type="per:PersoonType"`.
-
-**`elementFormDefault`** — bepaalt of lokale elementen een namespace-prefix nodig hebben:
-
-| Waarde | Betekenis |
-|---|---|
-| `unqualified` (standaard) | Lokale elementen hebben **geen** prefix in XML |
-| `qualified` | Lokale elementen **moeten** in de namespace staan |
-
-> **StUF-context:** StUF-schema's gebruiken `elementFormDefault="qualified"`. In de praktijk wordt vaak de default namespace gebruikt zodat niet alle elementen een prefix nodig hebben.
-
-**Schema koppelen aan een XML-document:**
-
-Met `xsi:schemaLocation` (paren van namespace + bestandslocatie):
-
-```xml
-<persoon xmlns="http://www.example.nl/persoon"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.example.nl/persoon persoon.xsd">
-  <naam>Jan</naam>
-</persoon>
-```
-
-Met meerdere schema's:
-
-```xml
-<bericht xmlns="http://www.example.nl/bericht"
-         xmlns:per="http://www.example.nl/persoon"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="
-           http://www.example.nl/bericht  bericht.xsd
-           http://www.example.nl/persoon  persoon.xsd">
-  <!-- ... -->
-</bericht>
-```
-
-> **Let op:** `xsi:schemaLocation` is een **hint** voor de validator, geen verplichting. De validator mág een ander schema gebruiken.
-
----
-
-### Compleet voorbeeld: alles samen
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-  <!-- Simpele typen met restricties -->
-  <xs:simpleType name="BSN">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9]{9}"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="Postcode">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9]{4}[A-Z]{2}"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="Geslacht">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="M"/>
-      <xs:enumeration value="V"/>
-      <xs:enumeration value="O"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <!-- Complexe typen -->
-  <xs:complexType name="AdresType">
-    <xs:sequence>
-      <xs:element name="straat" type="xs:string"/>
-      <xs:element name="huisnummer" type="xs:positiveInteger"/>
-      <xs:element name="huisletter" type="xs:string" minOccurs="0"/>
-      <xs:element name="postcode" type="Postcode"/>
-      <xs:element name="woonplaats" type="xs:string"/>
-    </xs:sequence>
-    <xs:attribute name="type" type="xs:string" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="PersoonType">
-    <xs:sequence>
-      <xs:element name="voornaam" type="xs:string" maxOccurs="unbounded"/>
-      <xs:element name="tussenvoegsel" type="xs:string" minOccurs="0"/>
-      <xs:element name="achternaam" type="xs:string"/>
-      <xs:element name="geslacht" type="Geslacht"/>
-      <xs:element name="geboortedatum" type="xs:date"/>
-      <xs:element name="overlijdensdatum" type="xs:date" nillable="true" minOccurs="0"/>
-      <xs:element name="adres" type="AdresType" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-    <xs:attribute name="bsn" type="BSN" use="required"/>
-  </xs:complexType>
-
-  <!-- Root-element -->
-  <xs:element name="persoon" type="PersoonType"/>
-
-</xs:schema>
-```
-
-Een geldig XML-document:
-
-```xml
-<persoon bsn="123456789">
-  <voornaam>Jan</voornaam>
-  <voornaam>Pieter</voornaam>
-  <tussenvoegsel>de</tussenvoegsel>
-  <achternaam>Vries</achternaam>
-  <geslacht>M</geslacht>
-  <geboortedatum>1985-03-15</geboortedatum>
-  <overlijdensdatum xsi:nil="true"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-  <adres type="woonadres">
-    <straat>Kerkstraat</straat>
-    <huisnummer>12</huisnummer>
-    <postcode>3511AB</postcode>
-    <woonplaats>Utrecht</woonplaats>
-  </adres>
-</persoon>
-```
-
-In dit ene voorbeeld komen alle behandelde concepten samen: simpele typen met restricties (BSN, Postcode, Geslacht), complexe typen (AdresType, PersoonType), kardinaliteit (`minOccurs`, `maxOccurs`), verplichte attributen (`use="required"`), nillable elementen, en de boomstructuur van geneste elementen.
 
 ### Samenvatting
 
@@ -953,16 +995,21 @@ In dit ene voorbeeld komen alle behandelde concepten samen: simpele typen met re
 |---|---|
 | **XSD** | XML-Schema Definition — beschrijft de toegestane structuur van XML in XML-formaat |
 | **Welgevormd vs. geldig** | Welgevormd = syntax OK; geldig = voldoet aan schema |
-| **Ingebouwde datatypen** | `xs:string`, `xs:integer`, `xs:date`, `xs:boolean`, etc. |
-| **Restricties (facets)** | `pattern`, `enumeration`, `minLength`, `maxInclusive`, etc. |
-| **Compositors** | `xs:sequence` (volgorde), `xs:choice` (keuze), `xs:all` (vrij) |
-| **Kardinaliteit** | `minOccurs` / `maxOccurs` — hoe vaak een element mag voorkomen |
-| **`xs:include` / `xs:import`** | Schema's samenvoegen (zelfde ns) / importeren (andere ns) |
+| **Elementen definiëren** | M.b.v. `xs:element name="[elementnaam]" type="[simple- of complexType]"/>` |
+| **Ingebouwde datatypen** | xs:string, xs:integer, xs:date, xs:boolean, etc. |
+| **Restricties (facets)** | pattern, enumeration, minLength, maxInclusive, etc. |
+| **Simple- vs ComplexType** | Structuren zonder en structuren met elementen en/of attributen. |
+| **Compositors** | xs:sequence (volgorde), xs:choice (keuze), xs:all (vrij) |
+| **Attributen definiëren** | M.b.v. `xs:attribute name="[attribuutnaam]" type="[simpleType]"/>` |
+| **Globale vs lokale definities** | Herbruikbare danwel niet herbruikbare componenten |
+| **Kardinaliteit** | minOccurs / maxOccurs — hoe vaak een element mag voorkomen |
 | **Extension / restriction** | Type uitbreiden of beperken (overerving) |
-| **`xs:group` / `xs:attributeGroup`** | Herbruikbare groepen elementen of attributen |
-| **`targetNamespace`** | Namespace waaraan het schema zijn definities toekent |
-| **`elementFormDefault`** | Bepaalt of lokale elementen gekwalificeerd moeten zijn |
-| **`xsi:schemaLocation`** | Koppelt namespace aan schema-bestand in XML |
+| **xs:group / xs:attributeGroup** | Herbruikbare groepen elementen of attributen |
+| **targetNamespace** | Namespace waaraan het schema zijn definities toekent |
+| **xsi:schemaLocation** | Koppelt namespace aan schema-bestand in XML |
+| **elementFormDefault** | Bepaalt of lokale elementen gekwalificeerd moeten zijn |
+| **xs:include / xs:import** | Schema’s samenvoegen (zelfde ns) / importeren (andere ns) |
+
 
 > **Kernpunt:** XSD is een taal (zelf ook XML) waarmee je exact vastlegt hoe een XML-document eruit moet zien. StUF is volledig gedefinieerd in XSD-schema's — het begrijpen van XSD is daarom essentieel voor het werken met StUF. De belangrijkste concepten zijn: datatypen met restricties, compositors voor structuur, kardinaliteit voor optionaliteit, en modulaire schema-opzet met include/import en type-afleiding.
 
