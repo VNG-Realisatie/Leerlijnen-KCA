@@ -196,10 +196,13 @@ JSON wordt vaak gebruikt voor:
 | --- | --- | --- |
 | Leesbaarheid | Minder compact | Zeer compact |
 | Datatypes | Geen standaardtypes | Ingebouwde types |
+| Attributen | Ja | Nee |
 | Validatie | Zeer uitgebreid | Beperkt |
-| Bestandsgrootte | Groot | Klein |
+| Bestandsgrootte* | Groot | Klein |
 | Parsing | Trager | Sneller |
 | Toepassing | Documenten & enterprise | Web & API’s |
+
+&#42; Bij gelijke datastructuren.
 
 ### Conclusie
 
