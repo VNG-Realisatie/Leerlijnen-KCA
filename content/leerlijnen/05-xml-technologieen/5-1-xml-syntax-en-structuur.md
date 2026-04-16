@@ -138,6 +138,9 @@ De declaratie staat altijd op de **allereerste regel** en vóór het root-elemen
 
 **Elementen met kind-elementen** — nesting:
 
+Elementen moeten altijd correct genest zijn. Hieronder eerst een correct en daarna een foutief voorbeeld
+
+
 ```xml
 <adres>
   <straat>Kerkstraat</straat>
@@ -148,6 +151,18 @@ De declaratie staat altijd op de **allereerste regel** en vóór het root-elemen
 ```
 
 De elementen `<straat>`, `<huisnummer>` etc. zijn **kind-elementen** (child elements) van `<adres>`. Het element `<adres>` is het **ouder-element** (parent element). Zo ontstaat een **boomstructuur**.
+
+```xml
+<adres>
+  <straat>Kerkstraat</straat>
+  <huisnummer>12</huisnummer>
+  <postcode>3511AB</postcode>
+  <woonplaats>Utrecht
+  </adres>
+</woonplaats>
+```
+
+De eindtag van het element `<woonplaats>` staat na de eindtag van het element `<adres>` terwijl het daarbinnen moet staan.
 
 **Lege elementen** — een element zonder inhoud:
 
@@ -302,3 +317,21 @@ Om met XML te werken gebruik je doorgaans drie soorten tools:
 | **XML-Schema editor** | Tool om XML-documenten (en schema's en stylesheets) te creëren en te bewerken. Heeft vaak een parser en XSLT-processor ingebouwd. Voorbeeld: Altova XMLSpy, Oxygen XML Developer. |
 
 > In de gemeente komt je XML tegen in koppelvlakbeschrijvingen (StUF/WSDL), in configuratiebestanden, en in berichtuitwisseling tussen systemen.
+
+### Speciale tekens en character entity references
+
+Sommige tekens hebben een speciale betekenis in XML, daarvoor moeten escape karakters worden gebruikt. Hieronder een lijstje:
+
+| Teken | Probleem | Oplossing |
+|---|---|---|
+| `<` | Begin van een tag | `&lt;` |
+| `>` | Einde van een tag | `&gt;` |
+| `&` | Begin van een entity | `&amp;` |
+| `"` | Conflicteert met attribuutwaarden | `&quot;` |
+| `'` | Conflicteert met attribuutwaarden | `&apos;` |
+
+Voorbeeld:
+
+```xml
+<opmerking>Temperatuur is &lt; 0 graden</opmerking>
+```
