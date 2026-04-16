@@ -138,8 +138,7 @@ De declaratie staat altijd op de **allereerste regel** en vóór het root-elemen
 
 **Elementen met kind-elementen** — nesting:
 
-Elementen moeten altijd correct genest zijn. Hieronder eerst een correct en daarna een foutief voorbeeld
-
+Elementen moeten altijd correct genest zijn. Hieronder een correct voorbeeld:
 
 ```xml
 <adres>
@@ -151,6 +150,8 @@ Elementen moeten altijd correct genest zijn. Hieronder eerst een correct en daar
 ```
 
 De elementen `<straat>`, `<huisnummer>` etc. zijn **kind-elementen** (child elements) van `<adres>`. Het element `<adres>` is het **ouder-element** (parent element). Zo ontstaat een **boomstructuur**.
+
+Het volgende voorbeeld is incorrect:
 
 ```xml
 <adres>
