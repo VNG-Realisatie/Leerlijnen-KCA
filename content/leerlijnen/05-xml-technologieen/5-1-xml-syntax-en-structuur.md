@@ -335,5 +335,3 @@ Voorbeeld:
 ```xml
 <opmerking>Temperatuur is &lt; 0 graden</opmerking>
 ```
-
-In een aantal gevallen is het niet mogelijk speciale karakters te gebruiken, bijv. in het geval van een &eactute;. Ook in die gevallen gebruiken we character entities. [Hier](https://dev.w3.org/html5/spec-LC/named-character-references.html) vind je een lijst met in bijv. HTML 5 te gebruiken charcater entities.
