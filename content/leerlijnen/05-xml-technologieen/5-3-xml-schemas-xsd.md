@@ -866,6 +866,16 @@ We zagen in het eerste voorbeeld over het koppelen van een XML-Schema aan een XM
 | `unqualified` (standaard) | Lokale elementen hebben **geen** prefix in XML |
 | `qualified` | Lokale elementen **moeten** in de namespace staan |
 
+**XML-Schema m.b.v. XML-Spy koppelen aan een XML-document:**
+
+De in de voorgaande paragraaf beschreven koppeling kan m.b.v. een XML-Editor worden aangebracht. Als voorbeeld beschrijven we hier hoe je dat doet in XML-Spy.
+
+* Ga in XML-Spy naar het menu-item 'DTD/Schema';
+* Selecteer 'Assign Schema';
+* Kies 'Assign Schema/DTD file';
+* Selecteer via het map-icoontje achter het invul veld het gewenste XML-Schema en klik op 'Open';
+* Klik op 'OK'.
+
 ### Oefening 5.3.7
 
 [Naar de oefening](../oefening-5-3-7).
