@@ -11,10 +11,15 @@ leerdoel: "Heeft kennis van JSON Schema's."
 ## 5.7 JSON Schema's
 
 Heeft kennis van JSON Schema's.
+Doel van deze cursus is het behandelen van de meest essentiële constructies in JSON Schema. Deze workshop pretendeert dus niet volledig noch normatief te zijn.
+
 
 ### Basisstructuur van een JSON Schema
 
-Een JSON Schema is zelf ook een JSON‑document.
+Bij de behandeling van [XML-Schema](5-3-xml-schemas-xsd.md) zagen we al dat zo'n schema zelf ook een XML-document is. Voor een JSON Schema geldt dat het zelf ook een JSON‑document is.
+
+In [sectie 5.6 XML vs. JSON](5-6-xml-vs-json) zagen we hoe je in vergelijking met XML gegevens structureert in JSON. Ook daar kan je, net als in XML, spreken over *welgevormdheid* op basis van opgelegde syntaxregels.
+Hieronder zie je een minimale versie van een JSON Schema.
 
 ```json
 {
@@ -23,30 +28,34 @@ Een JSON Schema is zelf ook een JSON‑document.
 }
 ```
 
-Belangrijkste top-level velden
+De belangrijkste velden op top-level niveau zijn:
 
 | Veld | Betekenis |
 | --- | --- |
 | $schema | Welke versie van JSON Schema |
-| $idU | nieke identifier (optioneel maar aanbevolen) |
+| $id | Unieke identifier (optioneel maar aanbevolen) |
 | type | Verwacht JSON-type |
 | properties | Beschrijving van objectvelden |
 | required | Verplichte velden |
 | additionalProperties | Zijn extra velden toegestaan? |
 
+In de JSON Schema voorbeelden binnen de onderstaande paragrafen tonen we steeds slechts de betreffende JSON Schema fragmenten. Deze fragmenten zijn op zichzelf geen valide JSON Schema, daarvoor moeten ze minimaal de `$schema` property bevatten.
+
 ### Het type-keyword
 
-JSON Schema kent deze basistypes:
+JSON Schema kent een aantal basistypes, hieronder een lijstje met daarachter de uitleg:
 
-* object
-* array
-* string
-* number
-* integer
-* boolean
-* null
+| Type | Soort type | Uitleg |
+| --- | --- | --- |
+| string | Primitive Type (Enkelvoudige waarde) | Een reeks Unicode-tekens, bijvoorbeeld "hallo" of "2026-05-01". |
+| number | Primitive Type (Enkelvoudige waarde) | Elk numeriek getal, inclusief drijvende-kommagetallen (floating point), zoals 42, 3.14 of -1.5. |
+| integer | Primitive Type (Enkelvoudige waarde) | Een geheel getal zonder decimalen, bijvoorbeeld 10 of -5.
+| boolean | Primitive Type (Enkelvoudige waarde) | Een logische waarde, ofwel true of false. |
+| null | Primitive Type (Enkelvoudige waarde) | De waarde null, gebruikt om de afwezigheid van een waarde aan te geven. |
+| object | Samengestelde Types (Stucturen) | Een ongeordende set van key/value-paren (een JSON-object), bijvoorbeeld {"naam": "Jan", "leeftijd": 30}. |
+| array | Samengestelde Types (Stucturen) | Een geordende lijst van waarden, bijvoorbeeld ["appel", "banaan", "kers"]. |
 
-**Voorbeelden**
+Hieronder enkele voorbeelden:
 
 ```json
 {
@@ -60,11 +69,11 @@ JSON Schema kent deze basistypes:
 }
 ```
 
-➡️ Staat meerdere types toe (bijv. optionele waarde).
+In het laatste voorbeeld zie dat meerdere types worden toegestaan (hier geldt bijv. een optionele waarde).
 
 ### Objecten valideren: properties en required
 
-Eenvoudig object
+Laten we eens een eenvoudig JSON object modelleren.
 
 ```json
 {
@@ -80,7 +89,7 @@ Eenvoudig object
 }
 ```
 
-✅ Geldig:
+Een JSON-document volgens dit schema kan er als volgt uitzien:
 
 ```json
 {
@@ -89,7 +98,14 @@ Eenvoudig object
 }
 ```
 
-⚠️ Ook geldig:
+Maar ook het volgende en het daaropvolgende is geldig:
+
+```json
+{
+  "age": 42 
+  "name": "Robert",
+}
+```
 
 ```json
 {
@@ -97,9 +113,12 @@ Eenvoudig object
 }
 ```
 
-Waarom? age is niet verplicht.
+In vergelijking met XML-Schema en het resulterende XML-document valt het volgende op:
+* In JSON Schema definiëren we geen root property. De root wordt gevormd door de alles omringende '{' en '}' delimiters;
+* JSON Schema definieert geen volgorde;
+* In JSON Schema zijn properties standaard optioneel.
 
-Verplichte velden (required)
+Het definiëren van verplichte velden (required) gebeurd met de `required` property. Hieronder een voorbeeld:
 
 ```json
 {
@@ -116,7 +135,9 @@ Verplichte velden (required)
 }
 ```
   
-❌ Ongeldig:
+In de `required` property wordt dus heel specifiek aangegeven welke properties verplicht voor moeten komen.
+
+Het volgende JSON-fragment is dus volgens het bovenstaande JSON Schema ongeldig:
 
 ```json
 {

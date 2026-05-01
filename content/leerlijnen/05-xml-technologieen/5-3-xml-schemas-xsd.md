@@ -13,7 +13,7 @@ Deze workshop heeft als doel het behandelen van de meest essentiële constructie
 
 ### Het probleem: XML is te vrij
 
-In sectie 5.1 heb je geleerd hoe je met XML gegevens structureert. Maar XML zelf legt alleen syntaxregels op — *welgevormdheid*. Het zegt niets over **welke** elementen en attributen zijn toegestaan, in welke volgorde ze mogen voorkomen of welke waarden geldig zijn.
+In [sectie 5.1 XML syntax en structuur](5-1-xml-syntax-en-structuur) heb je geleerd hoe je met XML gegevens structureert. Maar XML zelf legt alleen syntaxregels op — *welgevormdheid*. Het zegt niets over **welke** elementen en attributen zijn toegestaan, in welke volgorde ze mogen voorkomen of welke waarden geldig zijn.
 
 Stel: twee gemeentelijke systemen wisselen persoonsgegevens uit via XML. Systeem A stuurt:
 
@@ -180,6 +180,8 @@ Elk XSD-bestand is zelf een XML-document en kan zelf, zoals al eerder opgemerkt,
 | `xmlns:xs="http://www.w3.org/2001/XMLSchema"` | De namespace-declaratie die de prefix `xs` koppelt aan de XML-Schema-namespace |
 
 De prefix `xs` is conventie — je kunt ook `xsd` kiezen. In de praktijk zie je zowel `xs:` als `xsd:`. Soms zelfs beide in een set van XML-Schema's.
+
+In de XML-Schema voorbeelden binnen de onderstaande paragrafen tonen we steeds slechts de betreffende XML-Schema fragmenten. Deze fragmenten zijn op zichzelf geen valide XML-Schema, daarvoor moeten ze minimaal in bovenstaand voorbeeld worden geplaatst.
 
 ### Elementen definiëren met `xs:element`
 
