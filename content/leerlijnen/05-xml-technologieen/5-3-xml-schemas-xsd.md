@@ -9,7 +9,7 @@ leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen."
 
 ## 5.3 XML-Schema's (XSD)
 
-Deze cursus heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema. Daarnaast is de content van deze cursus niet normatief.
+Deze workshop heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema. Daarnaast is de content van deze cursus niet normatief.
 
 ### Het probleem: XML is te vrij
 
@@ -865,6 +865,16 @@ We zagen in het eerste voorbeeld over het koppelen van een XML-Schema aan een XM
 |---|---|
 | `unqualified` (standaard) | Lokale elementen hebben **geen** prefix in XML |
 | `qualified` | Lokale elementen **moeten** in de namespace staan |
+
+**XML-Schema m.b.v. XML-Spy koppelen aan een XML-document:**
+
+De in de voorgaande paragraaf beschreven koppeling kan m.b.v. een XML-Editor worden aangebracht. Als voorbeeld beschrijven we hier hoe je dat doet in XML-Spy.
+
+* Ga in XML-Spy naar het menu-item 'DTD/Schema';
+* Selecteer 'Assign Schema';
+* Kies 'Assign Schema/DTD file';
+* Selecteer via het map-icoontje achter het invul veld het gewenste XML-Schema en klik op 'Open';
+* Klik op 'OK'.
 
 ### Oefening 5.3.7
 
