@@ -43,17 +43,17 @@ In de JSON Schema voorbeelden binnen de onderstaande paragrafen tonen we steeds 
 
 ### Het type-keyword
 
-JSON Schema kent een aantal basistypes, hieronder een lijstje met daarachter de uitleg:
+JSON Schema kent een aantal basistypes, primitieve en samengestelde types. Primitieve bevatten slechts een enkelvoudige waarde, samengestelde types bevatten structuren. hieronder een lijstje met daarachter de uitleg:
 
 | Type | Soort type | Uitleg |
 | --- | --- | --- |
-| string | Primitive Type (Enkelvoudige waarde) | Een reeks Unicode-tekens, bijvoorbeeld "hallo" of "2026-05-01". |
-| number | Primitive Type (Enkelvoudige waarde) | Elk numeriek getal, inclusief drijvende-kommagetallen (floating point), zoals 42, 3.14 of -1.5. |
-| integer | Primitive Type (Enkelvoudige waarde) | Een geheel getal zonder decimalen, bijvoorbeeld 10 of -5.
-| boolean | Primitive Type (Enkelvoudige waarde) | Een logische waarde, ofwel true of false. |
-| null | Primitive Type (Enkelvoudige waarde) | De waarde null, gebruikt om de afwezigheid van een waarde aan te geven. |
-| object | Samengestelde Types (Stucturen) | Een ongeordende set van key/value-paren (een JSON-object), bijvoorbeeld {"naam": "Jan", "leeftijd": 30}. |
-| array | Samengestelde Types (Stucturen) | Een geordende lijst van waarden, bijvoorbeeld ["appel", "banaan", "kers"]. |
+| string | Primitief Type | Een reeks Unicode-tekens, bijvoorbeeld `"hallo"` of `"2026-05-01"`. |
+| number | Primitief Type | Elk numeriek getal, inclusief drijvende-kommagetallen (floating point), zoals `42`, `3.14` of `-1.5`. |
+| integer | Primitief Type | Een geheel getal zonder decimalen, bijvoorbeeld `10` of `-5`.
+| boolean | Primitief Type | Een logische waarde, ofwel `true` of `false`. |
+| null | Primitief Type | De waarde null, gebruikt om de afwezigheid van een waarde aan te geven. |
+| object | Samengesteld Type | Een ongeordende set van key/value-paren (een JSON-object), bijvoorbeeld `{"naam": "Jan", "leeftijd": 30}`. |
+| array | Samengesteld Type | Een geordende lijst van waarden, bijvoorbeeld `["appel", "banaan", "kers"]`. |
 
 Hieronder enkele voorbeelden:
 
@@ -145,9 +145,23 @@ Het volgende JSON-fragment is dus volgens het bovenstaande JSON Schema ongeldig:
 }
 ```
 
-### Strings: lengte, patronen en formats
+### Primitieve waarden begrenzen
 
-Lengtebeperkingen
+Net zoals we bij XML-Schema de mogelijk te gebruiken waarden kunnen beperken met facets kunnen we dat in JSON Schema ook. Hieronder hebben we er enkele opgesomd:
+
+| facet | toepasbaar op | uitleg |
+| --- | --- | --- |
+| maxLength | String | Beperkt de maximale lengte tot het de aangegeven lengte. Waarde is altijd een niet negatief nummer. |
+| minLength | String | Beperkt de minimale lengte tot het de aangegeven lengte. Waarde is altijd een niet negatief nummer. |
+| pattern | String | Bevat een reguliere expressie waaraan de waarde moet voldoen. |
+| maximum | Number, Integer | De maximale waarde die een nummerieke property kan aannemen. |
+| exclusiveMaximum | Number, Integer | De bovengrens vanaf waar de waarde ongeldig is voor een nummerieke property. De waarde zelf mag dus niet gebruikt worden. |
+| minimum | Number, Integer | De minimale waarde die een nummerieke property kan aannemen |
+| exclusiveMinimum | Number, Integer | De ondergrens vanaf waar de waarde geldig is voor een nummerieke property. De waarde zelf mag dus niet gebruikt worden. |
+| multipleOf | Number, Integer | Nummerieke waarden kunnen beperkt worden tot een veelvoud van een gegeven nummer. Dit mag elk positief nummeriek getal aannemen, ook floating point getallen. |
+
+
+Hieronder geven we enkele voorbeelden. Om te beginnen met `maxLength` en `minLength`. 
 
 ```json
 {
@@ -157,7 +171,7 @@ Lengtebeperkingen
 }
 ```
 
-Regex met pattern
+Een pattern met een reguliere expressie:
 
 ```json
 {
@@ -166,38 +180,8 @@ Regex met pattern
 }
 ```
 
-✅ Geldig:
+We gaan hier niet dieper op reguliere expressies in.
 
-```json
-"AB12"
-```
-
-❌ Ongeldig:
-
-```json
-"ab12"
-```
-
-format
-JSON Schema kent bekende formats:
-
-```json
-{
-  "type": "string",
-  "format": "email"
-}
-```
-
-Andere veelgebruikte formats:
-
-date
-date-time
-uri
-uuid
-
-⚠️ Let op: format is optioneel afdwingbaar afhankelijk van de validator.
-
-### Getallen: grenzen en veelvouden
 
 ```json
 {
@@ -208,17 +192,36 @@ uuid
 }
 ```
 
-✅ Geldig:
+Een geldig JSON fragment volgens dit schema is:
 
 ```json
 25
 ```
 
-❌ Ongeldig:
+25 is immers een veelvoud van 5. Het volgende is dus ongeldig:
 
 ```json
 23
 ```
+
+Primitieve waarden kunnen ook nog met de property `format` begrensd worden. Dit is een semantische aanduiding die wordt gebruikt om een string te valideren of te annoteren als een specifiek type data, zoals datums, e-mailadressen of URI's. 
+Het biedt betekenis bovenop het basistype (string), maar werkt standaard vaak als documentatie (annotatie) in plaats van strikte validatie. Hieronder een voorbeeld met het format `email`:
+
+```json
+{
+  "type": "string",
+  "format": "email"
+}
+```
+
+Andere veelgebruikte formats zijn:
+
+* date
+* date-time
+* uri
+* uuid
+
+⚠️ Let op: format is optioneel afdwingbaar afhankelijk van de validator.
 
 ### Arrays: items, minItems, uniqueItems
 
