@@ -9,7 +9,7 @@ leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen."
 
 ## 5.3 XML-Schema's (XSD)
 
-Deze cursus heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema. Daarnaast is de content van deze cursus niet normatief.
+Deze workshop heeft als doel het behandelen van de meest essentiële constructies in XML-Schema. Deze cursus pretendeert dus niet volledig te zijn. Voor een diepere behandeling van het onderwerp verwijzen we naar de over dit onderwerp verschenen boeken over XML-Schema. Daarnaast is de content van deze cursus niet normatief.
 
 ### Het probleem: XML is te vrij
 
