@@ -49,7 +49,7 @@ JSON Schema kent een aantal basistypes, primitieve en samengestelde types. Primi
 | --- | --- | --- |
 | string | Primitief Type | Een reeks Unicode-tekens, bijvoorbeeld `"hallo"` of `"2026-05-01"`. |
 | number | Primitief Type | Elk numeriek getal, inclusief drijvende-kommagetallen (floating point), zoals `42`, `3.14` of `-1.5`. |
-| integer | Primitief Type | Een geheel getal zonder decimalen, bijvoorbeeld `10` of `-5`.
+| integer | Primitief Type | Een geheel getal zonder decimalen, bijvoorbeeld `10` of `-5`. |
 | boolean | Primitief Type | Een logische waarde, ofwel `true` of `false`. |
 | null | Primitief Type | De waarde null, gebruikt om de afwezigheid van een waarde aan te geven. |
 | object | Samengesteld Type | Een ongeordende set van key/value-paren (een JSON-object), bijvoorbeeld `{"naam": "Jan", "leeftijd": 30}`. |
