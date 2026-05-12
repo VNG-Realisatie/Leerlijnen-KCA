@@ -13,6 +13,6 @@ leerdoel: "Heeft kennis van JSON Schema's."
 Heeft kennis van JSON Schema's.
 Doel van deze cursus is het behandelen van de meest essentiële constructies in JSON Schema. Deze workshop pretendeert dus niet volledig noch normatief te zijn.
 
-Doorloop minimaal het "Get Started"](https://json-schema.org/learn) onderdeel van de "https://json-schema.org" site en voltooi de oefeningen onder ['Tour of JSON Schema'](https://tour.json-schema.org/).
+Doorloop minimaal het ["Get Started"](https://json-schema.org/learn) onderdeel van de [json-schema.org](https://json-schema.org) site en voltooi de oefeningen onder ['Tour of JSON Schema'](https://tour.json-schema.org/).
 
 ### Extra aandachtsgebieden
