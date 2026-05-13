@@ -4,6 +4,7 @@ date: 2026-03-04
 weight: 4
 leerlijn: 7
 paragraaf: "7.3"
+parent: "RSGB-informatiemodel"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

@@ -4,6 +4,7 @@ date: 2026-03-04
 weight: 6
 leerlijn: 3
 paragraaf: "3.5"
+parent: "Informatiemodellering"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

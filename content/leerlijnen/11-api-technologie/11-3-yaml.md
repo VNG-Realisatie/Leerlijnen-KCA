@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 4
 leerlijn: 11
 paragraaf: "11.3"
+parent: "API-technologie en moderne koppelvlakken"
 leerdoel: "Heeft kennis van YAML."
 ---
 

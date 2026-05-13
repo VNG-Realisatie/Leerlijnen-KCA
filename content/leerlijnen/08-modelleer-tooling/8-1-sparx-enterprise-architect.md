@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 2
 leerlijn: 8
 paragraaf: "8.1"
+parent: "Modelleer-tooling"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

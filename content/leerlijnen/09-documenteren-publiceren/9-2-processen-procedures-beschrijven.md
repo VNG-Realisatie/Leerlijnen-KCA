@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 3
 leerlijn: 9
 paragraaf: "9.2"
+parent: "Documenteren en publiceren"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

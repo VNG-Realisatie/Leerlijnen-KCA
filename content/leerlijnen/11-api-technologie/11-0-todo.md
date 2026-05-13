@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 1
 leerlijn: 11
 paragraaf: "11.0"
+parent: "API-technologie en moderne koppelvlakken"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

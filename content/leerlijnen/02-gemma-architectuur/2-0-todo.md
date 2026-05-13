@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 1
 leerlijn: 2
 paragraaf: "2.0"
+parent: "GEMMA-architectuur"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

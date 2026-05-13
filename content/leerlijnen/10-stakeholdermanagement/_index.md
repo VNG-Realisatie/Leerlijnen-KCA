@@ -5,7 +5,7 @@ weight: 10
 leerlijn_nummer: 10
 icon: "🤝"
 beschrijving: "Schakelen met diverse stakeholders en kennis effectief overbrengen op alle niveaus."
-aantal_onderdelen: 7
+aantal_onderdelen: 8
 ---
 
 <div class="back-link-wrapper">

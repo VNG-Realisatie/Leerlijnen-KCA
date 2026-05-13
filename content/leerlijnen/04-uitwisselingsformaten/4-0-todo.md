@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 1
 leerlijn: 4
 paragraaf: "4.0"
+parent: "Uitwisselingsformaten en -protocollen"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

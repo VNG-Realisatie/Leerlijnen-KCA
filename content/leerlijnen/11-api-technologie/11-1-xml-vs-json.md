@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 2
 leerlijn: 11
 paragraaf: "11.1"
+parent: "API-technologie en moderne koppelvlakken"
 leerdoel: "Kent het verschil tussen XML en JSON als uitwisselingsformaten."
 ---
 

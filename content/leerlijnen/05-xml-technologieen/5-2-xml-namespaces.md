@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 3
 leerlijn: 5
 paragraaf: "5.2"
+parent: "XSD, XML en gerelateerde technologieën"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

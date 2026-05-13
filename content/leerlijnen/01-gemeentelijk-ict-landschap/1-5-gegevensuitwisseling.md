@@ -4,6 +4,7 @@ date: 2026-03-04
 weight: 6
 leerlijn: 1
 paragraaf: "1.5"
+parent: "Gemeentelijk ICT-landschap"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

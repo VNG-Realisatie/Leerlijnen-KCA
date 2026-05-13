@@ -5,7 +5,7 @@ weight: 2
 leerlijn_nummer: 2
 icon: "🏗️"
 beschrijving: "Ken de GEMMA-referentiearchitectuur en de bredere context van gemeentelijke standaarden."
-aantal_onderdelen: 3
+aantal_onderdelen: 4
 ---
 
 <div class="leerlijn-header">

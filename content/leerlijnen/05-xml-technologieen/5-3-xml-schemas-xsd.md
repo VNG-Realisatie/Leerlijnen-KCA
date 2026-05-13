@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 4
 leerlijn: 5
 paragraaf: "5.3"
+parent: "XSD, XML en gerelateerde technologieën"
 leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen."
 ---
 

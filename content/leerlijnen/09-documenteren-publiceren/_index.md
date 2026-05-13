@@ -5,7 +5,7 @@ weight: 9
 leerlijn_nummer: 9
 icon: "📝"
 beschrijving: "Processen, procedures en technische specificaties documenteren en publiceren."
-aantal_onderdelen: 4
+aantal_onderdelen: 5
 ---
 
 <div class="back-link-wrapper">

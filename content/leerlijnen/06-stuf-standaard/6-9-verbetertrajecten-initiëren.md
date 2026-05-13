@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 10
 leerlijn: 6
 paragraaf: "6.9"
+parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

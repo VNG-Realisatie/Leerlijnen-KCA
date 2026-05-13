@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 1
 leerlijn: 10
 paragraaf: "10.0"
+parent: "Stakeholdermanagement en communicatie"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

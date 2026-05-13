@@ -4,6 +4,7 @@ date: 2026-05-13
 weight: 5
 leerlijn: 5
 paragraaf: "5.4"
+parent: "XSD, XML en gerelateerde technologieën"
 leerdoel: "Weet hoe in XML-Spy een schema aan een XML-bestand te koppelen."
 ---
 

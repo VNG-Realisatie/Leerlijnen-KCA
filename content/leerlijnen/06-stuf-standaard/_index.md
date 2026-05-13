@@ -5,7 +5,7 @@ weight: 6
 leerlijn_nummer: 6
 icon: "📨"
 beschrijving: "Grondige kennis van de StUF-standaard: toepassen, beheren en doorontwikkelen."
-aantal_onderdelen: 9
+aantal_onderdelen: 10
 ---
 
 <div class="back-link-wrapper">
