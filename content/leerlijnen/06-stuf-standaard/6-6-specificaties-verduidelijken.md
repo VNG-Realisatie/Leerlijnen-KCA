@@ -1,7 +1,7 @@
 ---
 title: "6.6 Specificaties verduidelijken"
 date: 2026-03-04
-weight: 6
+weight: 7
 leerlijn: 6
 paragraaf: "6.6"
 leerdoel: "Leerdoel nog toe te voegen"

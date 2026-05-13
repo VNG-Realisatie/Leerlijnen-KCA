@@ -1,7 +1,7 @@
 ---
 title: "6.4 StUF-berichten ontwerpen"
 date: 2026-03-04
-weight: 4
+weight: 5
 leerlijn: 6
 paragraaf: "6.4"
 leerdoel: "Leerdoel nog toe te voegen"

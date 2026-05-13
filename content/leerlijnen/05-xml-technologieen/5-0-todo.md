@@ -7,7 +7,7 @@ paragraaf: "5.0"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor XML-technologien
+## 5.0 Todo-lijst voor XML-technologien
 
 
 | Nr | Wie | Wat    | 

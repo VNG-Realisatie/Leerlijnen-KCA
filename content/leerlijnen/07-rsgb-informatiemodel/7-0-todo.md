@@ -7,7 +7,7 @@ paragraaf: "7.0"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor RSGB-informatiemodel
+## 7.0 Todo-lijst voor RSGB-informatiemodel
 
 
 | Nr | Wie | Wat    | 

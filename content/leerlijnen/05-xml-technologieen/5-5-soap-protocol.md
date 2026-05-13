@@ -1,7 +1,7 @@
 ---
 title: "5.5 SOAP-protocol"
 date: 2026-03-04
-weight: 7
+weight: 6
 leerlijn: 5
 paragraaf: "5.5"
 leerdoel: "Begrijpt SOAP als protocol voor gegevensuitwisseling op basis van XML."

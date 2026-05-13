@@ -1,7 +1,7 @@
 ---
 title: "6.2 Versies van de StUF-standaard"
 date: 2026-03-04
-weight: 2
+weight: 3
 leerlijn: 6
 paragraaf: "6.2"
 leerdoel: "Leerdoel nog toe te voegen"

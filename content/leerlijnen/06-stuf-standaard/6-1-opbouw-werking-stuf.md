@@ -1,7 +1,7 @@
 ---
 title: "6.1 Opbouw en werking van StUF"
 date: 2026-03-04
-weight: 1
+weight: 2
 leerlijn: 6
 paragraaf: "6.1"
 leerdoel: "Leerdoel nog toe te voegen"

@@ -1,7 +1,7 @@
 ---
 title: "8.3 Imvertor"
 date: 2026-03-04
-weight: 3
+weight: 4
 leerlijn: 8
 paragraaf: "8.3"
 leerdoel: "Leerdoel nog toe te voegen"

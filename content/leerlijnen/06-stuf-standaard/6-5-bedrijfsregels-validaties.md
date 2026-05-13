@@ -1,7 +1,7 @@
 ---
 title: "6.5 Bedrijfsregels en validaties"
 date: 2026-03-04
-weight: 5
+weight: 6
 leerlijn: 6
 paragraaf: "6.5"
 leerdoel: "Leerdoel nog toe te voegen"

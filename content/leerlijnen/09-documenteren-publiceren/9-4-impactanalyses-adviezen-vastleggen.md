@@ -1,7 +1,7 @@
 ---
 title: "9.4 Impactanalyses en adviezen vastleggen"
 date: 2026-03-04
-weight: 4
+weight: 5
 leerlijn: 9
 paragraaf: "9.4"
 leerdoel: "Leerdoel nog toe te voegen"

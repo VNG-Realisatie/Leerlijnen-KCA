@@ -7,7 +7,7 @@ paragraaf: "6.0"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor StUF-standaard
+## 6.0 Todo-lijst voor StUF-standaard
 
 
 | Nr | Wie | Wat    | 

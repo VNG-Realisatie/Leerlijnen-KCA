@@ -1,7 +1,7 @@
 ---
 title: "5.3 XML-Schema's (XSD)"
 date: 2026-03-04
-weight: 5
+weight: 4
 leerlijn: 5
 paragraaf: "5.3"
 leerdoel: "De cursist kan XML-Schema's (XSD's) lezen, begrijpen en opstellen."

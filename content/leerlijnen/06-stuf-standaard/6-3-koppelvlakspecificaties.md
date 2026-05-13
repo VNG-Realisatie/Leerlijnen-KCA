@@ -1,7 +1,7 @@
 ---
 title: "6.3 Koppelvlakspecificaties"
 date: 2026-03-04
-weight: 3
+weight: 4
 leerlijn: 6
 paragraaf: "6.3"
 leerdoel: "Leerdoel nog toe te voegen"

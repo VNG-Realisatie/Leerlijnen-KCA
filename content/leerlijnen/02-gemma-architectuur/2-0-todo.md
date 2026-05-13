@@ -7,7 +7,7 @@ paragraaf: "2.0"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor Gemma Architectuur
+## 2.0 Todo-lijst voor Gemma Architectuur
 
 
 | Nr | Wie | Wat    | 

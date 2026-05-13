@@ -1,7 +1,7 @@
 ---
 title: "6.8 Implementatie-scenario's opstellen"
 date: 2026-03-04
-weight: 8
+weight: 9
 leerlijn: 6
 paragraaf: "6.8"
 leerdoel: "Leerdoel nog toe te voegen"

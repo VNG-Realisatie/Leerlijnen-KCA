@@ -1,7 +1,7 @@
 ---
 title: "6.9 Verbetertrajecten initiëren"
 date: 2026-03-04
-weight: 9
+weight: 10
 leerlijn: 6
 paragraaf: "6.9"
 leerdoel: "Leerdoel nog toe te voegen"

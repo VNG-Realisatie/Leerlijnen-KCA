@@ -7,7 +7,7 @@ paragraaf: "3.0"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor Informatiemodellering
+## 3.0 Todo-lijst voor Informatiemodellering
 
 
 | Nr | Wie | Wat    | 

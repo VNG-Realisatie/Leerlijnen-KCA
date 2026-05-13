@@ -7,7 +7,7 @@ paragraaf: "4.0"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor Uitwisselformaten
+## 4.0 Todo-lijst voor Uitwisselformaten
 
 
 | Nr | Wie | Wat    | 
