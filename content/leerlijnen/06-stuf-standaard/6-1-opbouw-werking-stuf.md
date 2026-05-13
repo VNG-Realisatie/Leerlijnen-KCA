@@ -1,6 +1,6 @@
 ---
 title: "6.1 Opbouw en werking van StUF"
-date: 2026-03-04
+date: 2026-05-13
 weight: 2
 leerlijn: 6
 paragraaf: "6.1"

@@ -1,6 +1,6 @@
 ---
 title: "9.4 Impactanalyses en adviezen vastleggen"
-date: 2026-03-04
+date: 2026-05-13
 weight: 5
 leerlijn: 9
 paragraaf: "9.4"

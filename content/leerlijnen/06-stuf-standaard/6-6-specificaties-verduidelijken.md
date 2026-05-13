@@ -1,6 +1,6 @@
 ---
 title: "6.6 Specificaties verduidelijken"
-date: 2026-03-04
+date: 2026-05-13
 weight: 7
 leerlijn: 6
 paragraaf: "6.6"

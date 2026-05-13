@@ -1,7 +1,9 @@
 ---
 title: "10.7 Stakeholders ondersteunen"
-date: 2026-03-04
-weight: 7
+date: 2026-05-13
+weight: 8
+leerlijn: 10
+paragraaf: "10.7"
 parent: "Stakeholdermanagement en communicatie"
 leerdoel: "Leerdoel nog toe te voegen"
 ---

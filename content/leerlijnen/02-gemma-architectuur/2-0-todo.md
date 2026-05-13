@@ -1,6 +1,6 @@
 ---
 title: "2.0 Todo voor Gemma Architectuur"
-date: 2026-03-04
+date: 2026-05-13
 weight: 1
 leerlijn: 2
 paragraaf: "2.0"

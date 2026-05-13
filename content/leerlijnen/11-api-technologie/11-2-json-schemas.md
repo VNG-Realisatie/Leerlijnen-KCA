@@ -1,7 +1,7 @@
 ---
 title: "11.2 JSON Schema's"
 date: 2026-05-13
-weight: 2
+weight: 3
 leerlijn: 11
 paragraaf: "11.2"
 leerdoel: "Heeft kennis van JSON Schema's."

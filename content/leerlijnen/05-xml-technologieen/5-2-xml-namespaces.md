@@ -1,6 +1,6 @@
 ---
 title: "5.2 XML-namespaces"
-date: 2026-03-12
+date: 2026-05-13
 weight: 3
 leerlijn: 5
 paragraaf: "5.2"

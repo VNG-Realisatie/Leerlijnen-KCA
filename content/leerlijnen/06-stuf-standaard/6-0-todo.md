@@ -1,6 +1,6 @@
 ---
 title: "6.0 Todo voor StUF-standaard"
-date: 2026-03-04
+date: 2026-05-13
 weight: 1
 leerlijn: 6
 paragraaf: "6.0"

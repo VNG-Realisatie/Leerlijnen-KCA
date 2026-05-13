@@ -1,13 +1,13 @@
 ---
-title: "3.0 Todo voor Informatiemodellering"
+title: "12.0 Todo voor Model Driven Development"
 date: 2026-05-13
 weight: 1
-leerlijn: 3
-paragraaf: "3.0"
+leerlijn: 12
+paragraaf: "12.0"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 3.0 Todo-lijst voor Informatiemodellering
+## 12.0 Todo-lijst voor Model Driven Development
 
 
 | Nr | Wie | Wat    | 

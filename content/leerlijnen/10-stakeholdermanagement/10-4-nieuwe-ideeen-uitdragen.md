@@ -1,7 +1,9 @@
 ---
 title: "10.4 Nieuwe ideeën uitdragen"
-date: 2026-03-04
-weight: 4
+date: 2026-05-13
+weight: 5
+leerlijn: 10
+paragraaf: "10.4"
 parent: "Stakeholdermanagement en communicatie"
 leerdoel: "Leerdoel nog toe te voegen"
 ---

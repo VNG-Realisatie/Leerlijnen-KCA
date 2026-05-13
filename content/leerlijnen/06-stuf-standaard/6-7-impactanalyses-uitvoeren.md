@@ -1,6 +1,6 @@
 ---
 title: "6.7 Impactanalyses uitvoeren"
-date: 2026-03-04
+date: 2026-05-13
 weight: 8
 leerlijn: 6
 paragraaf: "6.7"

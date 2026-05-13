@@ -1,6 +1,6 @@
 ---
 title: "8.2 XML-spy"
-date: 2026-03-04
+date: 2026-05-13
 weight: 3
 leerlijn: 8
 paragraaf: "8.2"

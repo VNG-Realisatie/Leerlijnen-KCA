@@ -1,7 +1,7 @@
 ---
 title: "11.5 API-types: REST, RPC en GraphQL"
 date: 2026-05-13
-weight: 5
+weight: 6
 leerlijn: 11
 paragraaf: "11.5" 
 leerdoel: "Leerdoel nog toe te voegen"

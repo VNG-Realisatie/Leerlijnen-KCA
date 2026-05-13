@@ -1,7 +1,7 @@
 ---
 title: "11.1 XML vs. JSON"
 date: 2026-05-13
-weight: 1
+weight: 2
 leerlijn: 11
 paragraaf: "11.1"
 leerdoel: "Kent het verschil tussen XML en JSON als uitwisselingsformaten."

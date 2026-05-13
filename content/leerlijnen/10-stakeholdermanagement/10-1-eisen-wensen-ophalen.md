@@ -1,7 +1,9 @@
 ---
 title: "10.1 Eisen en wensen ophalen"
-date: 2026-03-04
-weight: 1
+date: 2026-05-13
+weight: 2
+leerlijn: 10
+paragraaf: "10.1"
 parent: "Stakeholdermanagement en communicatie"
 leerdoel: "Leerdoel nog toe te voegen"
 ---

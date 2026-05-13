@@ -1,6 +1,6 @@
 ---
 title: "8.0 Todo voor modelleer-tooling"
-date: 2026-03-04
+date: 2026-05-13
 weight: 1
 leerlijn: 8
 paragraaf: "8.0"

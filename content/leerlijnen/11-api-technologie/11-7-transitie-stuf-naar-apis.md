@@ -1,7 +1,7 @@
 ---
 title: "11.7 Transitie StUF naar API's"
 date: 2026-05-13
-weight: 7
+weight: 8
 leerlijn: 11
 paragraaf: "11.7"
 leerdoel: "Leerdoel nog toe te voegen"

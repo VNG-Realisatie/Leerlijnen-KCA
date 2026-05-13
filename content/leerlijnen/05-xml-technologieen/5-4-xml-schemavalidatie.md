@@ -1,6 +1,6 @@
 ---
 title: "5.4 XML-schemavalidatie"
-date: 2026-03-16
+date: 2026-05-13
 weight: 5
 leerlijn: 5
 paragraaf: "5.4"

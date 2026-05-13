@@ -1,6 +1,6 @@
 ---
 title: "7.0 Todo voor RSGB-informatiemodel"
-date: 2026-03-04
+date: 2026-05-13
 weight: 1
 leerlijn: 7
 paragraaf: "7.0"

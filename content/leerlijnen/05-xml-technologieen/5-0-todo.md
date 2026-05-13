@@ -1,6 +1,6 @@
 ---
 title: "5.0 Todo voor XML-technologien"
-date: 2026-03-04
+date: 2026-05-13
 weight: 1
 leerlijn: 5
 paragraaf: "5.0"

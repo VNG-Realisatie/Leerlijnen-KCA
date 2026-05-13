@@ -1,6 +1,6 @@
 ---
 title: "5.3 XML-Schema's (XSD)"
-date: 2026-03-04
+date: 2026-05-13
 weight: 4
 leerlijn: 5
 paragraaf: "5.3"

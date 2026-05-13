@@ -1,7 +1,7 @@
 ---
 title: "11.0 Todo voor API-technologie"
 date: 2026-05-13
-weight: 0
+weight: 1
 leerlijn: 11
 paragraaf: "11.0"
 leerdoel: "Leerdoel nog toe te voegen"

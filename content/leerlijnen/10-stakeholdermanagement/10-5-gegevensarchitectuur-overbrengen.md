@@ -1,7 +1,9 @@
 ---
 title: "10.5 Gegevensarchitectuur overbrengen"
-date: 2026-03-04
-weight: 5
+date: 2026-05-13
+weight: 6
+leerlijn: 10
+paragraaf: "10.5"
 parent: "Stakeholdermanagement en communicatie"
 leerdoel: "Leerdoel nog toe te voegen"
 ---

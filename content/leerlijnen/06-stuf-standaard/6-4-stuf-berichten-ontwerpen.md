@@ -1,6 +1,6 @@
 ---
 title: "6.4 StUF-berichten ontwerpen"
-date: 2026-03-04
+date: 2026-05-13
 weight: 5
 leerlijn: 6
 paragraaf: "6.4"

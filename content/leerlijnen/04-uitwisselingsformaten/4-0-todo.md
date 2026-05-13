@@ -1,6 +1,6 @@
 ---
 title: "4.0 Todo voor Uitwisselformaten"
-date: 2026-03-04
+date: 2026-05-13
 weight: 1
 leerlijn: 4
 paragraaf: "4.0"
