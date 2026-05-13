@@ -1,9 +1,9 @@
 ---
-title: "Oefening 5-1-2"
+title: "Oefening 5-1-B"
 date: 2026-03-13
-weight: 3.2
+weight: 2.B
 leerlijn: 5
-paragraaf: "5.1.2"
+paragraaf: "5.1.B"
 oefendoel: "Oefen met het toevoegen van attributen aan een XML bestand."
 ---
 
