@@ -1,12 +1,12 @@
 ---
-title: "11.6 Visie op de toekomst"
-date: 2026-03-04
-weight: 6
+title: "11.9 Visie op de toekomst"
+date: 2026-05-13
+weight: 9
 leerlijn: 11
-paragraaf: "11.6"
+paragraaf: "11.9"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 11.6 Visie op de toekomst
+## 11.9 Visie op de toekomst
 
 Heeft een visie op de toekomst van de gemeentelijke informatievoorziening.

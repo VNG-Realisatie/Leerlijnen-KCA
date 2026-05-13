@@ -1,14 +1,14 @@
 ---
-title: "5.7 JSON Schema's"
-date: 2026-03-04
-weight: 9
-leerlijn: 5
-paragraaf: "5.7"
+title: "11.2 JSON Schema's"
+date: 2026-05-13
+weight: 2
+leerlijn: 11
+paragraaf: "11.2"
 leerdoel: "Heeft kennis van JSON Schema's."
 ---
 
 
-## 5.7 JSON Schema's
+## 11.2 JSON Schema's
 
 Heeft kennis van JSON Schema's.
 Doel van deze cursus is het behandelen van de meest essentiële constructies in JSON Schema. Deze workshop pretendeert dus niet volledig noch normatief te zijn.
