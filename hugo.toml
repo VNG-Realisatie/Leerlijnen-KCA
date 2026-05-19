@@ -12,6 +12,7 @@ theme = "PaperMod"
   ShowCodeCopyButtons = true
   defaultTheme = "light"
   disableThemeToggle = true
+  mainSections = ["leerlijnen"]
 
   [params.label]
     text = "Leerlijnen KCA"
