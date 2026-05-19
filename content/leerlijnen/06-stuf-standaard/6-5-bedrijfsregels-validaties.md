@@ -1,7 +1,7 @@
 ---
 title: "6.5 Bedrijfsregels en validaties"
 date: 2026-05-13
-weight: 6
+weight: 65
 leerlijn: 6
 paragraaf: "6.5"
 parent: "StUF-standaard"

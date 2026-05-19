@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-3-5"
 date: 2026-03-30
-weight: 3.1
 leerlijn: 5
 paragraaf: "5.3.5"
 oefendoel: "Krijg gevoel voor kardinaliteit."

@@ -1,7 +1,7 @@
 ---
 title: "3.5 Informatiemodellen analyseren en wijzigen"
 date: 2026-03-04
-weight: 6
+weight: 35
 leerlijn: 3
 paragraaf: "3.5"
 parent: "Informatiemodellering"

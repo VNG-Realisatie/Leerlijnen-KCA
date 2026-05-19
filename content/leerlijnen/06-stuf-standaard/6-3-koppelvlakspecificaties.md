@@ -1,7 +1,7 @@
 ---
 title: "6.3 Koppelvlakspecificaties"
 date: 2026-05-13
-weight: 4
+weight: 63
 leerlijn: 6
 paragraaf: "6.3"
 parent: "StUF-standaard"

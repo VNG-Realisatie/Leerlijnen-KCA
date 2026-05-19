@@ -1,7 +1,7 @@
 ---
 title: "5.4 XML-schemavalidatie"
 date: 2026-05-13
-weight: 5
+weight: 54
 leerlijn: 5
 paragraaf: "5.4"
 parent: "XSD, XML en gerelateerde technologieën"

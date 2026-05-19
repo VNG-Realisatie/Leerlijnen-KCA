@@ -1,7 +1,7 @@
 ---
 title: "6.9 Verbetertrajecten initiëren"
 date: 2026-05-13
-weight: 10
+weight: 69
 leerlijn: 6
 paragraaf: "6.9"
 parent: "StUF-standaard"

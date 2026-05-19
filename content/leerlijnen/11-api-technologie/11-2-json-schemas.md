@@ -1,7 +1,7 @@
 ---
 title: "11.2 JSON Schema's"
 date: 2026-05-13
-weight: 3
+weight: 112
 leerlijn: 11
 paragraaf: "11.2"
 parent: "API-technologie en moderne koppelvlakken"

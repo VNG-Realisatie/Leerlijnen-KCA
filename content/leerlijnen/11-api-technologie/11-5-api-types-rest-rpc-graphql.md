@@ -1,7 +1,7 @@
 ---
 title: "11.5 API-types: REST, RPC en GraphQL"
 date: 2026-05-13
-weight: 6
+weight: 115
 leerlijn: 11
 paragraaf: "11.5" 
 parent: "API-technologie en moderne koppelvlakken"

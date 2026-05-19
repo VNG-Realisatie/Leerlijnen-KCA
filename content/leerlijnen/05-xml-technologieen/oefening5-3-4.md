@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-3-4"
 date: 2026-03-23
-weight: 3.1
 leerlijn: 5
 paragraaf: "5.3.4"
 oefendoel: "Oefen het creëren en gebruiken van globale types."

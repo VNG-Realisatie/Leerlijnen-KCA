@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-3-7"
 date: 2026-04-13
-weight: 3.1
 leerlijn: 5
 paragraaf: "5.3.7"
 oefendoel: "Oefen het werken met namespaces."

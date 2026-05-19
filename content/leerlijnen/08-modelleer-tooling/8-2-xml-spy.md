@@ -1,7 +1,7 @@
 ---
 title: "8.2 XML-spy"
 date: 2026-05-13
-weight: 3
+weight: 82
 leerlijn: 8
 paragraaf: "8.2"
 parent: "Modelleer-tooling"

@@ -1,7 +1,7 @@
 ---
 title: "11.8 Balans oud en nieuw"
 date: 2026-05-13
-weight: 9
+weight: 118
 leerlijn: 11
 paragraaf: "11.8"
 parent: "API-technologie en moderne koppelvlakken"

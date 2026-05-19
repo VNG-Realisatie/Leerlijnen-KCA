@@ -1,7 +1,7 @@
 ---
 title: "5.5 SOAP-protocol"
 date: 2026-05-13
-weight: 6
+weight: 55
 leerlijn: 5
 paragraaf: "5.5"
 parent: "XSD, XML en gerelateerde technologieën"

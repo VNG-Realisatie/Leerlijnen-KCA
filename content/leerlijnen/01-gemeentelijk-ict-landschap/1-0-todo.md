@@ -1,7 +1,7 @@
 ---
 title: "1.0 Todo voor gemeentelijk ICT-landschap"
 date: 2026-03-04
-weight: 1
+weight: 10
 leerlijn: 1
 paragraaf: "1.0"
 parent: "Gemeentelijk ICT-landschap"

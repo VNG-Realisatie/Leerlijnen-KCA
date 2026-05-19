@@ -1,7 +1,7 @@
 ---
 title: "7.5 RSGB onderhouden en doorontwikkelen"
 date: 2026-03-04
-weight: 6
+weight: 75
 leerlijn: 7
 paragraaf: "7.5"
 parent: "RSGB-informatiemodel"

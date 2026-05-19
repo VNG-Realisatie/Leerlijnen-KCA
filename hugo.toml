@@ -11,7 +11,7 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   defaultTheme = "light"
-  disableThemeToggle = true
+  disableThemeToggle = trueen"]
 
   [params.label]
     text = "Leerlijnen KCA"

@@ -1,7 +1,7 @@
 ---
 title: "8.0 Todo voor modelleer-tooling"
 date: 2026-05-13
-weight: 1
+weight: 80
 leerlijn: 8
 paragraaf: "8.0"
 parent: "Modelleer-tooling"

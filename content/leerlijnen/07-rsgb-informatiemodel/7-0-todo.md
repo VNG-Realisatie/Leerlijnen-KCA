@@ -1,7 +1,7 @@
 ---
 title: "7.0 Todo voor RSGB-informatiemodel"
 date: 2026-05-13
-weight: 1
+weight: 70
 leerlijn: 7
 paragraaf: "7.0"
 parent: "RSGB-informatiemodel"

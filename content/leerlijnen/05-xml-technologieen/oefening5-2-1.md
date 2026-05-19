@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-2-1"
 date: 2026-03-14
-weight: 3.2
 leerlijn: 5
 paragraaf: "5.2.1"
 oefendoel: "Oefen met het ordenen van een XML bestand in namespaces."

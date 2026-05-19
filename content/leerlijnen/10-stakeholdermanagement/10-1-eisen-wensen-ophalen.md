@@ -1,7 +1,7 @@
 ---
 title: "10.1 Eisen en wensen ophalen"
 date: 2026-05-13
-weight: 2
+weight: 101
 leerlijn: 10
 paragraaf: "10.1"
 parent: "Stakeholdermanagement en communicatie"

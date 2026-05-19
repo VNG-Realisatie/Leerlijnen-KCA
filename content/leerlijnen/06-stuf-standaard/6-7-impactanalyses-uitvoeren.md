@@ -1,7 +1,7 @@
 ---
 title: "6.7 Impactanalyses uitvoeren"
 date: 2026-05-13
-weight: 8
+weight: 67
 leerlijn: 6
 paragraaf: "6.7"
 parent: "StUF-standaard"

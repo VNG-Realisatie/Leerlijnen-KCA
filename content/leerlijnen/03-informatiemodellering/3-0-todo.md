@@ -1,7 +1,7 @@
 ---
 title: "3.0 Todo voor Informatiemodellering"
 date: 2026-05-13
-weight: 1
+weight: 30
 leerlijn: 3
 paragraaf: "3.0"
 parent: "Informatiemodellering"
