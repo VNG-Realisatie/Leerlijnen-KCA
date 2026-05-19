@@ -8,7 +8,6 @@ parent: "Gemeentelijk ICT-landschap"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-
 ## 1.1 Overzicht van gemeentelijke applicatielandschappen
 
 Begrijpt de rol van StUF in het gemeentelijke applicatielandschap.
