@@ -1,14 +1,13 @@
 ---
-title: "1.3 Stelsel van Basisregistraties"
+title: "1.3 Informatiestromen binnen gemeenten"
 date: 2026-03-04
 weight: 13
 leerlijn: 1
 paragraaf: "1.3"
-parent: "Gemeentelijk ICT-landschap"
-leerdoel: "Leerdoel nog toe te voegen"
+leerdoel: "Op hoofdlijnen inzicht krijgen in de rol van informatiestromen, gegevensuitwisseling en koppelvlakspecificaties binnen de gemeente en in de ketens waarin de gemeenten een rol spelen."
 ---
 
 
-## 1.3 Stelsel van Basisregistraties
+## 1.3 Informatiestromen binnen gemeenten
 
-Kent de relatie met het Stelsel van Basisregistraties (o.a. BRP).
+Begrijpt de informatiestromen binnen gemeenten en tussen gemeenten en keten-/netwerkpartners.
