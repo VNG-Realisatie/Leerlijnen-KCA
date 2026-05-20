@@ -1,16 +1,10 @@
 ---
 title: "1.4 Relevante ontwikkelingen"
 date: 2026-03-04
-weight: 16
+weight: 7
 leerlijn: 1
-<<<<<<< HEAD:content/leerlijnen/01-gemeentelijk-ict-landschap/1-6-common-ground.md
-paragraaf: "1.6"
-parent: "Gemeentelijk ICT-landschap"
-leerdoel: "Begrijpen wat de visie Common Ground inhoudt en wat dat betekent voor het applicatie-landschap van gemeenten. Het verwerven van inzicht hoe de werkzaamheden die bij de gegevensarchitect en informatieanalist horen zich verhouden tot de viesie Common Ground.  "
-=======
 paragraaf: "1.4"
 leerdoel: "Begrijpen welke relevante (toekomst-) ontwikkelingen er zijn en waarom die relevant zijn voor Kenniscentrum Architectuur"
->>>>>>> upstream/main:content/leerlijnen/01-gemeentelijk-ict-landschap/1-4-ontwikkelingen.md
 ---
 
 
