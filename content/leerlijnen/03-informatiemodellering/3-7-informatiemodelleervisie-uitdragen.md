@@ -1,9 +1,10 @@
 ---
 title: "3.7 Informatiemodelleervisie uitdragen"
 date: 2026-03-04
-weight: 8
+weight: 37
 leerlijn: 3
 paragraaf: "3.7"
+parent: "Informatiemodellering"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

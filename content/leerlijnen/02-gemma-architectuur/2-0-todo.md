@@ -1,13 +1,14 @@
 ---
 title: "2.0 Todo voor Gemma Architectuur"
-date: 2026-03-04
-weight: 1
+date: 2026-05-13
+weight: 20
 leerlijn: 2
 paragraaf: "2.0"
+parent: "GEMMA-architectuur"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor Gemma Architectuur
+## 2.0 Todo-lijst voor Gemma Architectuur
 
 
 | Nr | Wie | Wat    | 

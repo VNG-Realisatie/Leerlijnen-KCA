@@ -1,13 +1,14 @@
 ---
 title: "6.0 Todo voor StUF-standaard"
-date: 2026-03-04
-weight: 1
+date: 2026-05-13
+weight: 60
 leerlijn: 6
 paragraaf: "6.0"
+parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor StUF-standaard
+## 6.0 Todo-lijst voor StUF-standaard
 
 
 | Nr | Wie | Wat    | 

@@ -1,9 +1,10 @@
 ---
 title: "9.2 Processen en procedures beschrijven"
-date: 2026-03-04
-weight: 2
+date: 2026-05-13
+weight: 92
 leerlijn: 9
 paragraaf: "9.2"
+parent: "Documenteren en publiceren"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

@@ -1,9 +1,10 @@
 ---
 title: "2.3 Bijdragen aan GEMMA"
 date: 2026-03-04
-weight: 4
+weight: 23
 leerlijn: 2
 paragraaf: "2.3"
+parent: "GEMMA-architectuur"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

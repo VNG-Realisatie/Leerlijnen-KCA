@@ -5,7 +5,7 @@ weight: 8
 leerlijn_nummer: 8
 icon: "🛠️"
 beschrijving: "Ervaring met visuele modelleertooling voor het beheren van informatiemodellen en specificaties."
-aantal_onderdelen: 3
+aantal_onderdelen: 4
 ---
 
 <div class="back-link-wrapper">

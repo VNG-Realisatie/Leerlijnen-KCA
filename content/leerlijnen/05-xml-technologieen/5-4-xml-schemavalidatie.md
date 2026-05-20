@@ -1,22 +1,22 @@
 ---
 title: "5.4 XML-schemavalidatie"
-date: 2026-03-04
-weight: 6
+date: 2026-05-13
+weight: 54
 leerlijn: 5
 paragraaf: "5.4"
-leerdoel: "Leerdoel nog toe te voegen"
+parent: "XSD, XML en gerelateerde technologieën"
+leerdoel: "Weet hoe in XML-Spy een schema aan een XML-bestand te koppelen."
 ---
 
-<div class="back-link-wrapper">
-  <a href="{{< relref "../05-xml-technologieen" >}}" class="back-link">Terug naar leerlijn 5</a>
-</div>
-
 ## 5.4 XML-schemavalidatie
+
+[Terug naar leerlijn 5](../xsd-xml-en-gerelateerde-technologieën).
 
 Begrijpt XML-schemavalidatie en kan documenten valideren tegen schema's.
 
 ### Welgevormdheid: de basisregels
 
+In het voorgaande onderdeel ([5.3 XML-Schema’s (XSD)](../5.3-xml-schemas-xsd/)) heb je al kunnen ervaren hoe je op basis van een XML-Schema een XML-Bestand kunt genereren. Daarbij werd dat XML-bestand tegelijkertijd gekoppeld aan het XML-Schema. Hier leggen we uit hoe je een bestaand XML-document kunt koppelen aan een XML-Schema. 
 Een XML-document dat aan alle syntaxregels voldoet, heet **welgevormd** (Engels: *well-formed*). Een document dat niet welgevormd is, wordt door elke XML-verwerker geweigerd — er is geen "beetje goed".
 
 **Regel 1: Precies één root-element**

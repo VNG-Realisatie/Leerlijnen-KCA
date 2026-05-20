@@ -1,9 +1,10 @@
 ---
 title: "6.6 Specificaties verduidelijken"
-date: 2026-03-04
-weight: 6
+date: 2026-05-13
+weight: 66
 leerlijn: 6
 paragraaf: "6.6"
+parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
