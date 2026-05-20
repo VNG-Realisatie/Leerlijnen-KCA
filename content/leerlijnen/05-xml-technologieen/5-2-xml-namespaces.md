@@ -1,9 +1,10 @@
 ---
 title: "5.2 XML-namespaces"
-date: 2026-03-12
-weight: 4
+date: 2026-05-13
+weight: 52
 leerlijn: 5
 paragraaf: "5.2"
+parent: "XSD, XML en gerelateerde technologieën"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

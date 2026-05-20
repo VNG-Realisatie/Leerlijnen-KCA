@@ -1,9 +1,10 @@
 ---
 title: "7.4 Impactanalyse op RSGB-elementen"
 date: 2026-03-04
-weight: 5
+weight: 74
 leerlijn: 7
 paragraaf: "7.4"
+parent: "RSGB-informatiemodel"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

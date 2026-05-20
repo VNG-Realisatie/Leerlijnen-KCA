@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-3-6"
 date: 2026-03-23
-weight: 3.1
 leerlijn: 5
 paragraaf: "5.3.6"
 oefendoel: "Oefen het werken met extensions en restrictions."

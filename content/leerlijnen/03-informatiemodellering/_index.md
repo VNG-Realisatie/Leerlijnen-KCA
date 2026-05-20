@@ -5,7 +5,7 @@ weight: 3
 leerlijn_nummer: 3
 icon: "📐"
 beschrijving: "Stel conceptuele en logische informatiemodellen op, lees en beheer ze conform het MIM."
-aantal_onderdelen: 9
+aantal_onderdelen: 10
 ---
 
 <div class="back-link-wrapper">

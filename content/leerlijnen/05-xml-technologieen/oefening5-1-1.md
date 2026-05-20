@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-1-1"
 date: 2026-03-13
-weight: 3.1
 leerlijn: 5
 paragraaf: "5.1.1"
 oefendoel: "Oefen de creatie van een XML bestand, het op basis van een schema toevoegen van elementen en het creëren van een welgevormd XML bestand."

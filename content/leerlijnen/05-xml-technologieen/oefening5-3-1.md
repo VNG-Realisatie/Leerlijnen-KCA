@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-3-1"
 date: 2026-03-17
-weight: 3.1
 leerlijn: 5
 paragraaf: "5.3.1"
 oefendoel: "Oefen het vervaardigen van een XML-Schema met 3 root elementen."

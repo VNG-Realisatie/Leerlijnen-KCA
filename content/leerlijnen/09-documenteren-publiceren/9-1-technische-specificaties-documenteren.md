@@ -1,9 +1,10 @@
 ---
 title: "9.1 Technische specificaties documenteren"
-date: 2026-03-04
-weight: 1
+date: 2026-05-13
+weight: 91
 leerlijn: 9
 paragraaf: "9.1"
+parent: "Documenteren en publiceren"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

@@ -1,9 +1,10 @@
 ---
 title: "3.6 Nieuwe informatiemodellen structureren"
 date: 2026-03-04
-weight: 7
+weight: 36
 leerlijn: 3
 paragraaf: "3.6"
+parent: "Informatiemodellering"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

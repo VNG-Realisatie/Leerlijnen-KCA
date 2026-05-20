@@ -5,7 +5,7 @@ weight: 1
 leerlijn_nummer: 1
 icon: "🏛️"
 beschrijving: "Begrijp het gemeentelijke ICT-landschap en de rol van StUF en gegevensuitwisseling daarin."
-aantal_onderdelen: 6
+aantal_onderdelen: 7
 ---
 
 <div class="leerlijn-header">

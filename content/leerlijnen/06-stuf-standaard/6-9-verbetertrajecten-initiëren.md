@@ -1,9 +1,10 @@
 ---
 title: "6.9 Verbetertrajecten initiëren"
-date: 2026-03-04
-weight: 9
+date: 2026-05-13
+weight: 69
 leerlijn: 6
 paragraaf: "6.9"
+parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

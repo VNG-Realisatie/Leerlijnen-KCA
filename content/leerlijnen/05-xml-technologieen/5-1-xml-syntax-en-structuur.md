@@ -1,9 +1,10 @@
 ---
 title: "5.1 XML syntax en structuur"
 date: 2026-03-12
-weight: 2
+weight: 51
 leerlijn: 5
 paragraaf: "5.1"
+parent: "XSD, XML en gerelateerde technologieën"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

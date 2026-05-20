@@ -5,7 +5,7 @@ weight: 11
 leerlijn_nummer: 11
 icon: "🌐"
 beschrijving: "Kennis van API-designprincipes en adviseren over de transitie van StUF naar moderne API's."
-aantal_onderdelen: 6
+aantal_onderdelen: 10
 ---
 
 <div class="back-link-wrapper">

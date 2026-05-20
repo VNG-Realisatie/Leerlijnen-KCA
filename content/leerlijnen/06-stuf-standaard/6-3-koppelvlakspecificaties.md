@@ -1,9 +1,10 @@
 ---
 title: "6.3 Koppelvlakspecificaties"
-date: 2026-03-04
-weight: 3
+date: 2026-05-13
+weight: 63
 leerlijn: 6
 paragraaf: "6.3"
+parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

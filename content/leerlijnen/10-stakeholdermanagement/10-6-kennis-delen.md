@@ -1,7 +1,9 @@
 ---
 title: "10.6 Kennis delen"
-date: 2026-03-04
-weight: 6
+date: 2026-05-13
+weight: 106
+leerlijn: 10
+paragraaf: "10.6"
 parent: "Stakeholdermanagement en communicatie"
 leerdoel: "Leerdoel nog toe te voegen"
 ---

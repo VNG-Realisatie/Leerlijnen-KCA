@@ -5,7 +5,7 @@ weight: 7
 leerlijn_nummer: 7
 icon: "🗄️"
 beschrijving: "Grondige kennis van het RSGB-informatiemodel en zijn verschillende versies."
-aantal_onderdelen: 5
+aantal_onderdelen: 6
 ---
 
 <div class="back-link-wrapper">

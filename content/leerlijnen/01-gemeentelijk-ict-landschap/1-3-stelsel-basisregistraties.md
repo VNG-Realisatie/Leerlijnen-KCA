@@ -1,9 +1,10 @@
 ---
 title: "1.3 Stelsel van Basisregistraties"
 date: 2026-03-04
-weight: 4
+weight: 13
 leerlijn: 1
 paragraaf: "1.3"
+parent: "Gemeentelijk ICT-landschap"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

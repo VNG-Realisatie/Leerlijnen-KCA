@@ -1,13 +1,14 @@
 ---
 title: "3.0 Todo voor Informatiemodellering"
-date: 2026-03-04
-weight: 1
+date: 2026-05-13
+weight: 30
 leerlijn: 3
 paragraaf: "3.0"
+parent: "Informatiemodellering"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 1.0 Todo-lijst voor Informatiemodellering
+## 3.0 Todo-lijst voor Informatiemodellering
 
 
 | Nr | Wie | Wat    | 

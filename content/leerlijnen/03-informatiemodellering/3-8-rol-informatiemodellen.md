@@ -1,9 +1,10 @@
 ---
 title: "3.8 Rol van informatiemodellen"
 date: 2026-03-04
-weight: 9
+weight: 38
 leerlijn: 3
 paragraaf: "3.8"
+parent: "Informatiemodellering"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

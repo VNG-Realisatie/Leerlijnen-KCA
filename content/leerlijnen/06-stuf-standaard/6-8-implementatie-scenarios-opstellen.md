@@ -1,9 +1,10 @@
 ---
 title: "6.8 Implementatie-scenario's opstellen"
-date: 2026-03-04
-weight: 8
+date: 2026-05-13
+weight: 68
 leerlijn: 6
 paragraaf: "6.8"
+parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

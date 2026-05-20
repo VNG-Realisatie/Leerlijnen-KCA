@@ -1,9 +1,10 @@
 ---
 title: "1.6 Visie Common Ground"
 date: 2026-03-04
-weight: 7
+weight: 16
 leerlijn: 1
 paragraaf: "1.6"
+parent: "Gemeentelijk ICT-landschap"
 leerdoel: "Begrijpen wat de visie Common Ground inhoudt en wat dat betekent voor het applicatie-landschap van gemeenten. Het verwerven van inzicht hoe de werkzaamheden die bij de gegevensarchitect en informatieanalist horen zich verhouden tot de viesie Common Ground.  "
 ---
 

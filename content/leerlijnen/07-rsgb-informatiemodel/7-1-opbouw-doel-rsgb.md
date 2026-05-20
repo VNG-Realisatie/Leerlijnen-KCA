@@ -1,9 +1,10 @@
 ---
 title: "7.1 Opbouw en doel van het RSGB"
 date: 2026-03-04
-weight: 2
+weight: 71
 leerlijn: 7
 paragraaf: "7.1"
+parent: "RSGB-informatiemodel"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

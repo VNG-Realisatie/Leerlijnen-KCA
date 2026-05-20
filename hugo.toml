@@ -4,7 +4,7 @@ title = "Leerlijnen KCA"
 theme = "PaperMod"
 
 [params]
-  description = "Leerlijnen voor de Informatieanalist en Gegevensarchitect – Van XML tot StUF en verder"
+  description = "Leerlijnen voor de Informatiemodeleur en Gegevensarchitect – Van XML tot StUF en verder"
   ShowBreadCrumbs = true
   ShowReadingTime = false
   ShowShareButtons = false
@@ -20,7 +20,7 @@ theme = "PaperMod"
 
   [params.homeInfoParams]
     Title = "Leerlijnen KCA"
-    Content = "Leerlijnen voor de Informatieanalist en Gegevensarchitect bij VNG Realisatie"
+    Content = "Leerlijnen voor de Informatiemodeleur en Gegevensarchitect bij VNG Realisatie"
 
   [params.cover]
     image = "images/vng-nassaulaan.jpg"

@@ -1,13 +1,14 @@
 ---
-title: "5.6 XML vs. JSON"
-date: 2026-04-14
-weight: 8
-leerlijn: 5
-paragraaf: "5.6"
+title: "11.1 XML vs. JSON"
+date: 2026-05-13
+weight: 111
+leerlijn: 11
+paragraaf: "11.1"
+parent: "API-technologie en moderne koppelvlakken"
 leerdoel: "Kent het verschil tussen XML en JSON als uitwisselingsformaten."
 ---
 
-### 5.6 XML vs. JSON
+### 11.1 XML vs. JSON
 
 Kent het verschil tussen XML en JSON als uitwisselingsformaten.
 

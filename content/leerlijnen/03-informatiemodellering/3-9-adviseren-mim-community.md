@@ -1,9 +1,10 @@
 ---
 title: "3.9 Adviseren aan MIM-community"
 date: 2026-03-04
-weight: 10
+weight: 39
 leerlijn: 3
 paragraaf: "3.9"
+parent: "Informatiemodellering"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

@@ -1,9 +1,10 @@
 ---
 title: "6.1 Opbouw en werking van StUF"
-date: 2026-03-04
-weight: 1
+date: 2026-05-13
+weight: 61
 leerlijn: 6
 paragraaf: "6.1"
+parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 

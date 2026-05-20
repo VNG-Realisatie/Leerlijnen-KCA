@@ -5,7 +5,7 @@ weight: 4
 leerlijn_nummer: 4
 icon: "🔄"
 beschrijving: "Ervaring met gangbare uitwisselingsformaten (XML, JSON) en protocollen (SOAP, HTTP)."
-aantal_onderdelen: 5
+aantal_onderdelen: 6
 ---
 
 <div class="back-link-wrapper">

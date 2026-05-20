@@ -4,9 +4,9 @@ date: 2026-03-04
 weight: 2
 leerlijn: 1
 paragraaf: "1.1"
+parent: "Gemeentelijk ICT-landschap"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
-
 
 ## 1.1 Overzicht van gemeentelijke applicatielandschappen
 
