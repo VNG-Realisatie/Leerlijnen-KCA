@@ -105,79 +105,25 @@ Een gegevensmagazijn voorziet in mogelijkheden voor
 
 Hieronder staat het een geabstraheerd overzicht van de componenten die in het gemeentelijk applicatie landschap relevant zijn. 
 
-![Samenhang in beeld](gegevensmagazijn_en_servicebus.png)
-
-
+![Samenhang in beeld](/images/gegevensmagazijn_en_servicebus.png)
 
 ---
 
-
 ### Wat is de rol van KenniscentrumArchtiectuur in deze context
 
-Het Kenniscentrum Architectuur van de VNG (Vereniging van Nederlandse Gemeenten) heeft grofweg de rol om gemeenten te ondersteunen bij het ontwerpen, harmoniseren en toepassen van informatie- en enterprise-architectuur in het gemeentelijk IT- en gegevenslandschap.
+Het Kenniscentrum Architectuur van de VNG (Vereniging van Nederlandse Gemeenten) heeft de rol om gemeenschappelijke architectuurkaders voor VNG-projecten en -programma’s te ontwikkelen en uit te dragen, zodat VNG-werk bijdraagt aan een wendbare en effectieve gemeentelijke informatiehuishouding. 
 
-Hier is een compacte schets, toegespitst op jouw onderwerpen:
+Dat doet het door te kiezen voor het opbouwen, onderhouden en leveren van diepgaande architectuurexpertise op de niet-domeinspecifieke aspecten van de gemeentelijke informatievoorziening. 
 
-1. Basisregistraties
+KCA onderzoekt en beproeft innovatieve technieken en methoden om toekomstbestendig te ontwerpen en adviseren hieromtrent. 
 
-Het Kenniscentrum Architectuur (KCA) helpt gemeenten om basisregistraties (zoals BRP, BAG, BGT, WOZ, etc.) consistent en herbruikbaar in te zetten binnen het gemeentelijk landschap.
+Daarbij worden vooral andere partijen ondersteund bij ontwikkelen en beheren van specifieke standaarden.
 
-Definieert architectuurprincipes voor gebruik van basisregistraties
-Bewaakt samenhang tussen landelijke stelselafspraken en gemeentelijke implementatie
-Stimuleert “eenmalige opslag, meervoudig gebruik”
-Zorgt dat gemeenten aansluiten op het Stelsel van Basisregistraties via generieke patronen
+Op hoofdlijnen zijn kan je voor de volgende onderwerpen bij KCA terecht: 
 
-Kort gezegd: vertalen van landelijke registratie-afspraken naar toepasbare gemeentelijke architectuurkeuzes.
+-   Kennis over architectuur (met name Archimate, Modellering, API’s, registers, interactiepatronen)
+-   Kaders: GEMMA referentiearchitectuur en Dienstverlening Doelarchitectuur = DIDO (bewaken van het ontwerp)
+-   Platform voor alle architecturen: GEMMA online
+-   Standaarden: StUF, RSGB, RGBZ, imZTC
 
-2. Gemeentelijk applicatielandschap
-
-Het KCA ondersteunt bij het inrichten van een gestandaardiseerd en beheersbaar applicatielandschap.
-
-Referentiearchitecturen voor gemeentelijke domeinen (sociaal, fysiek, dienstverlening)
-Richtlijnen voor modulair en koppelbaar applicatielandschap
-Sturing op “common components” (bijv. zaakgericht werken, DMS, API-gateways)
-Verminderen van vendor lock-in en legacy-verkokeringKun je in 
-
-Kern: van losse applicaties naar samenhangende domeinarchitectuur.
-
-3. Gegevenspersistentie
-
-Het KCA geeft richting aan hoe en waar gegevens duurzaam worden opgeslagen en beheerd.
-
-Principes voor “system of record” vs “system of engagement”
-Scheiding tussen registratie, verwerking en presentatie
-Bevorderen van bronregistraties en authentieke gegevensbronnen
-Sturing op datakwaliteit, herkomst en lifecycle
-
-Kern: duidelijk maken welke systemen leidend zijn voor welke data en hoe lang die betrouwbaar beschikbaar blijft.
-
-4. Gegevensuitwisseling
-
-Een belangrijk speerpunt is het standaardiseren van hoe gegevens tussen systemen en organisaties worden uitgewisseld.
-
-Bevorderen van API-first en gestandaardiseerde koppelvlakken
-Gebruik van landelijke standaarden (zoals NLX, Stelselcatalogus, Common Ground principes)
-Architectuurpatronen voor event-driven en service-based integratie
-Verminderen van point-to-point koppelingen
-
-Kern: van starre koppelingen naar gestandaardiseerde, herbruikbare gegevensuitwisseling.
-
-Overkoepelende rol
-
-In één zin:
-
-Het Kenniscentrum Architectuur van de VNG ontwikkelt en bewaakt de referentiearchitectuur en principes waarmee gemeenten hun informatievoorziening rond basisregistraties, applicaties, dataopslag en gegevensuitwisseling consistent, schaalbaar en toekomstvast kunnen inrichten.
-
-### Wat betekent dit voor de informatie-analist?
-
-Als informatie-analist werk je niet aan de binnenkant van een pakket — dat doen de leveranciers. Jouw rol is om te begrijpen **hoe gegevens stromen** en **hoe systemen gekoppeld zijn**. Concreet betekent dit:
-
-| Vraagstuk | Jouw rol |
-|---|---|
-| Twee systemen moeten gegevens uitwisselen | Je stelt de **koppelvlakspecificatie** op: welke gegevens, in welk formaat, via welk protocol |
-| Een nieuw pakket wordt aangeschaft | Je analyseert welke koppelingen nodig zijn en welke standaarden het pakket ondersteunt |
-| Gegevenskwaliteit is slecht | Je traceert in welk bronsysteem het fout gaat en hoe de fout zich via de servicebus verspreidt |
-| Beleid wil een nieuw rapport | Je bepaalt welke bronsystemen de benodigde data leveren en hoe het gegevensmagazijn gevoed moet worden |
-| Een leverancier gaat stoppen met StUF-ondersteuning | Je analyseert de impact op alle gekoppelde systemen en stelt een migratieplan op |
-
-Het gemeentelijk ICT-landschap is complex, maar heeft een herkenbare structuur: **pakketten** als bronnen, **servicebussen** voor actuele uitwisseling, en **gegevensmagazijnen** voor analyse en rapportage. Door die structuur te begrijpen, kun je als informatie-analist weloverwogen adviseren — ongeacht welke specifieke pakketten een gemeente gebruikt.
+*(Bron: [Will-E](https://will-e.vng.nl/informatie/kenniscentrum-architectuur))*
