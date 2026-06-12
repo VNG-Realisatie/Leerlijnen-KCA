@@ -1,7 +1,7 @@
 ---
-title: "1.4 Relevante ontwikkelingen"
+title: "1.3 Relevante ontwikkelingen"
 date: 2026-06-09
-weight: 12
+weight: 13
 leerlijn: 1
 paragraaf: "1.3"
 leerdoel: "Inzicht krijgen in de relevante ontwikkelingen waarom die relevant zijn voor Kenniscentrum Architectuur"
@@ -32,7 +32,7 @@ Niet alle onderwerpen die onderdeel uitmaken van de IBDS raken direct aan het we
 
 ### 1.3.3 Nederlandse DigitaliseringsStrategie
 
-De NDS is één van de pijlers van het kabinetsbeleid op digitalisering. De NDS vormt samen met de Strategie Digitale Economie en de Nederlandse Cybersecurity Strategie (NLCS) [6] het fundament van het digitaliseringsbeleid van het kabinet [7]. Het kabinetsbeleid kent de volgende uitgangspunten:
+De NDS is één van de pijlers van het kabinetsbeleid op digitalisering. De NDS vormt samen met de Strategie Digitale Economie en de Nederlandse Cybersecurity Strategie (NLCS) het fundament van het digitaliseringsbeleid van het kabinet. Het kabinetsbeleid kent de volgende uitgangspunten:
 
 -   Nederland moet de kansen die digitalisering biedt, pakken. Met de NDS moeten we vernieuwen en blijven investeren in ons digitaal fundament. Dit om grote maatschappelijke opgaven te laten slagen, in bijvoorbeeld de zorg, ruimtelijke ordening en arbeidsmarkt.
 -   Nederland focust (samen met de EU) op de eigen strategische autonomie, ook in de digitale wereld. Dat betekent niet dat we alles zelf gaan doen, maar wel dat we onze kritieke processen en gegevens beter onder controle krijgen.
@@ -41,13 +41,13 @@ De NDS is één van de pijlers van het kabinetsbeleid op digitalisering. De NDS 
 
 *(Bron: [www.digitaleoverheid.nl](https://www.digitaleoverheid.nl/nederlandse-digitaliseringsstrategie-nds/))*
 
-### 1.3.4. Doorontwikkeling naar het Federatief Datastelsel (FDS) 
+### 1.3.4 Doorontwikkeling naar het Federatief Datastelsel (FDS)
 
-Voor de uitwerking van "prioriteit 2 - Data" van de Nederlandse DigitaliseringsStrategie (NDS) wordt het stelsel van basisregistraties wordt de komende jaren doorontwikkeld naar het **Federatief Datastelsel (FDS)**. Dit gebeurt binnen het programma Realisatie Interbestuurlijke Datastrategie (IBDS). Het FDS bouwt voort op de fundamenten van het huidige stelsel, maar richt zich op een breder data-ecosysteem waarbij gegevens makkelijker bij de bron opgehaald en gecombineerd gebruikt kunnen worden — ook buiten de overheid en voor andere doelen dan waarvoor de gegevens oorspronkelijk zijn verzameld.
+Voor de uitwerking van "prioriteit 2 - Data" van de Nederlandse DigitaliseringsStrategie (NDS) wordt het stelsel van basisregistraties de komende jaren doorontwikkeld naar het **Federatief Datastelsel (FDS)**. Dit gebeurt binnen het programma Realisatie Interbestuurlijke Datastrategie (IBDS). Het FDS bouwt voort op de fundamenten van het huidige stelsel, maar richt zich op een breder data-ecosysteem waarbij gegevens makkelijker bij de bron opgehaald en gecombineerd gebruikt kunnen worden — ook buiten de overheid en voor andere doelen dan waarvoor de gegevens oorspronkelijk zijn verzameld.
 
 Meer informatie over het Federatief Datastelsel: *(Bron: [federatief.datastelsel.nl](https://federatief.datastelsel.nl/))*
 
-### 1.3.5 Omnichannel / Mijnservices
+### 1.3.5 Omnichannel / MijnServices
 
 **Omnichannel**
 

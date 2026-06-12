@@ -30,11 +30,11 @@ Bij het stelsel zijn drie hoofdrollen te onderscheiden:
 - **Verstrekkers**: organisaties die de gegevens beschikbaar stellen aan afnemers
 - **Afnemers**: overheidsorganisaties die de gegevens gebruiken in hun processen
 
-Per basisregistratie is er één (categorie van) organistatie(s) bronhouder. Bv. het kadaster is bronhouder voor de basisregistratie kadaster, maar voor de basisregistratie Personen zijn alle 342 gemeenten gezamenlijk bronhouder. 
+Per basisregistratie is er één (categorie van) organisatie(s) als bronhouder. Bijv. het Kadaster is bronhouder voor de Basisregistratie Kadaster, maar voor de Basisregistratie Personen zijn alle 342 gemeenten gezamenlijk bronhouder.
 
 De minister van Binnenlandse Zaken en Koninkrijksrelaties heeft de regie over het stelsel als geheel.
 
-### 1.2.2 Wat is een basisregistratie.
+### 1.2.2 Wat is een basisregistratie
 
 
 Een **basisregistratie** is een door de rijksoverheid aangewezen registratie met authentieke gegevens die overheidsorganisaties verplicht moeten gebruiken. 
@@ -157,7 +157,7 @@ Zonder landelijke voorzieningen zou iedere afnemer afzonderlijk gegevens moeten 
 
 Dat zou leiden tot hogere kosten, meer fouten en minder efficiëntie.
 
-Samengevat bied een landelijke voorziening van een basisregistratie: 
+Samengevat biedt een landelijke voorziening voor een basisregistratie:
 
 -   Eén loket voor afnemers
     -   Gebruikers hoeven niet te weten welke bronhouder de gegevens beheert.
