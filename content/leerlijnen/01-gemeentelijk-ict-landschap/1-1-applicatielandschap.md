@@ -121,7 +121,7 @@ Daarbij worden vooral andere partijen ondersteund bij ontwikkelen en beheren van
 
 Op hoofdlijnen zijn kan je voor de volgende onderwerpen bij KCA terecht: 
 
--   Kennis over architectuur (met name Archimate, Modellering, API’s, registers, interactiepatronen)
+-   Kennis over architectuur (met name ArchiMate, Modellering, API’s, registers, interactiepatronen)
 -   Kaders: GEMMA referentiearchitectuur en Dienstverlening Doelarchitectuur = DIDO (bewaken van het ontwerp)
 -   Platform voor alle architecturen: GEMMA online
 -   Standaarden: StUF, RSGB, RGBZ, imZTC
