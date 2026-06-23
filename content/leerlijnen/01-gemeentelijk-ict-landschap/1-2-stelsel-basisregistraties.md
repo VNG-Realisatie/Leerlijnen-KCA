@@ -20,40 +20,45 @@ Het stelsel biedt een overheidsbrede, organisatie-onafhankelijke gegevensinfrast
 
 #### Gebruik
 
-Gegevens uit basisregistraties worden — veelal in combinatie — ingezet bij:
-- Uitvoering van overheidstaken en publieke dienstverlening
-- Maatschappelijke opgaven zoals de energietransitie, de Omgevingswet, het tegengaan van ondermijning en de woningbouw
+Gegevens uit basisregistraties worden — veelal in combinatie — ingezet bij maatschappelijke opgaven zoals 
+-   de energietransitie 
+-   uitvoering geven aan de Omgevingswet
+-   het tegengaan van ondermijning 
+-   de woningbouw
 
 #### Rollen en verantwoordelijkheden
 
 Bij het stelsel zijn drie hoofdrollen te onderscheiden:
-- **Bronhouders**: organisaties die gegevens aanleveren en bijhouden (bijv. gemeenten voor de BAG, BGT en WOZ)
-- **Verstrekkers**: organisaties die de gegevens beschikbaar stellen aan afnemers
-- **Afnemers**: overheidsorganisaties die de gegevens gebruiken in hun processen
+- **Bronhouders**: organisaties die gegevens inwinnen en bijhouden (bijv. gemeenten voor de BRP, BAG, BGT en WOZ)
+- **Verstrekkers**: organisaties die de gegevens beschikbaar stellen aan afnemers (bijv. het Kadaster en de RVIG)
+- **Afnemers**: overheidsorganisaties die de gegevens gebruiken in hun processen (bijv. gemeenten, provincies en belastingdienst)
+
+Per basisregistratie is er één (categorie van) organisatie(s) als bronhouder. Bijv. het Kadaster is bronhouder voor de Basisregistratie Kadaster, maar voor de Basisregistratie Personen zijn alle 342 gemeenten gezamenlijk bronhouder.
 
 De minister van Binnenlandse Zaken en Koninkrijksrelaties heeft de regie over het stelsel als geheel.
 
-#### Doorontwikkeling naar het Federatief Datastelsel
+### 1.2.2 Wat is een basisregistratie
 
-Het stelsel van basisregistraties wordt de komende jaren doorontwikkeld naar het **Federatief Datastelsel (FDS)**. Dit gebeurt binnen het programma Interbestuurlijke Datastrategie (IBDS). Het FDS bouwt voort op de fundamenten van het huidige stelsel, maar richt zich op een breder data-ecosysteem waarbij gegevens makkelijker bij de bron opgehaald en gecombineerd gebruikt kunnen worden — ook buiten de overheid en voor andere doelen dan waarvoor de gegevens oorspronkelijk zijn verzameld.
 
-Meer informatie over het Federatief Datastelsel: [federatief.datastelsel.nl](https://federatief.datastelsel.nl/)
+Een **basisregistratie** is een door de rijksoverheid aangewezen registratie met authentieke gegevens die overheidsorganisaties verplicht moeten gebruiken. 
+Elke basisregistratie heeft een specifieke wettelijke grondslag die bepaalt:
+-   Welke gegevens worden opgenomen
+-   Wie verantwoordelijk is voor het bijhouden
+-   Wie toegang heeft tot de gegevens
+-   Onder welke voorwaarden gegevens worden verstrekt
 
-### 1.2.2 Wat is een basisregistratie.
+Bijvoorbeeld: 
 
-Een **basisregistratie** is een door de rijksoverheid aangewezen informatiesysteem waarin basisgegevens van maatschappelijk belang worden opgeslagen en onderhouden (Wet basisregistraties personen en adressen, artikel 1.1).
+-   Basisregistratie Personen (BRP) is geregeld in de **Wet basisregistratie personen**.
+-   Kadaster en de kadastrale registraties zijn geregeld in de **Kadasterwet**.
+-   Basisregistratie Adressen en Gebouwen (BAG) is geregeld in de **Wet basisregistratie adressen en gebouwen**.
+-   Basisregistratie Grootschalige Topografie (BGT) is geregeld in de **Wet basisregistratie grootschalige topografie**.
+-   . . . 
 
 #### Kernkenmerken van basisregistraties
 
 **Authentieke bron**
 Basisregistraties fungeren als de authentieke bron voor specifieke gegevens. Dit betekent dat de gegevens in een basisregistratie als waarheidsgetrouw en actueel worden beschouwd en gebruikt door overheidsorganisaties (Visie op het stelsel van basisregistraties, 2011).
-
-**Wettelijke grondslag**
-Elke basisregistratie heeft een specifieke wettelijke grondslag die bepaalt:
-- Welke gegevens worden opgenomen
-- Wie verantwoordelijk is voor het bijhouden
-- Wie toegang heeft tot de gegevens
-- Onder welke voorwaarden gegevens worden verstrekt
 
 **Kwaliteitseisen**
 Basisregistraties moeten voldoen aan hoge kwaliteitseisen op het gebied van:
@@ -68,16 +73,9 @@ Het primaire doel van basisregistraties is om:
 - Eenduidige en betrouwbare basisgegevens te leveren aan overheidsorganisaties
 - Administratieve lasten voor burgers en ondernemers te verminderen door gegevens eenmalig op te vragen en meermalig te gebruiken
 - Efficiëntere en effectievere overheidsprocessen mogelijk te maken
-- De kwaliteit van overheidsdienstverlening te verbeteren (Wet algemene bepalingen burgerservicenummer, 2007)
+- De kwaliteit van overheidsdienstverlening te verbeteren 
 
-#### Bronnen
-- Wet basisregistraties personen en adressen (Wet BRP)
-- Visie op het stelsel van basisregistraties (2011)  
-- Regeringsbeleid inzake basisregistraties (2007)
-- Wet algemene bepalingen burgerservicenummer (2007)
-
-### 1.2.3 Welke basisregistraties zijn relevant vanuit gemeente-perspectief
-
+### 1.2.3 Opsomming basisregistraties
 In Nederland zijn de volgende basisregistraties officieel erkend:
 
 **BRP - Basisregistratie Personen**  
@@ -152,7 +150,63 @@ Houdt gegevens bij van alle bedrijven, verenigingen en stichtingen in Nederland 
 **Verantwoordelijke organisatie:** Kamer van Koophandel  
 **Vastlegging en bijhoudingsproces:** Bedrijfs- en organisatiegegevens worden geregistreerd bij oprichting, wijzigingen in statuten of bestuurswisselingen via online-aangiften en notariële akten, met een wettelijke plicht tot tijdige melding van mutaties.
 
-### 1.2.5 Hoe worden basisregistraties bijgehouden
+### 1.2.5 Wat is een landelijke voorziening
 
-### 1.2.6 Hoe worden gegevens uit basisregistratie beschikbaar gesteld aan afnemers
+Bij de decentrale basisregistraties worden gegevens door veel verschillende bronhouders beheerd (gemeenten, provincies, waterschappen, enz.). De landelijke voorziening vormt dan de centrale schakel die die gegevens per basisregistratie bijeenbrengt en beschikbaar stelt aan afnemers. 
+
+Bij de Basisregistratie Ondergrond (BRO) bijvoorbeeld leveren vele bronhouders gegevens aan, terwijl de landelijke voorziening één centraal toegangspunt biedt.
+
+Zonder landelijke voorzieningen zou iedere afnemer afzonderlijk gegevens moeten ophalen bij honderden bronhouders en daarbij waarschijnlijk rekening moeten houden met verschillende technische interfaces. Ook zou de afnemer zelf kwaliteitscontroles en gegevensintegratie moeten uitvoeren.
+
+Dat zou leiden tot hogere kosten, meer fouten en minder efficiëntie.
+
+Samengevat biedt een landelijke voorziening voor een basisregistratie:
+
+-   Eén loket voor afnemers
+    -   Gebruikers hoeven niet te weten welke bronhouder de gegevens beheert.
+    -   Eén aansluiting geeft toegang tot landelijke gegevens.
+-   Uniformiteit
+    -   Gegevens worden volgens dezelfde definities, standaarden en uitwisselingsformaten aangeboden.
+-   Betere gegevenskwaliteit
+    -   Centrale validaties en controles verhogen de betrouwbaarheid.
+-   Efficiëntie
+    -   Minder dubbele ICT-voorzieningen bij afzonderlijke bronhouders.
+    -   Lagere beheer- en aansluitkosten voor afnemers.
+-   Samenhang tussen registraties
+    -   Gegevens uit verschillende basisregistraties kunnen eenvoudiger worden gecombineerd.
+-   Continuïteit en beschikbaarheid
+    -   Professioneel beheer zorgt voor stabiele dienstverlening en ondersteuning.
+
+**Waarom toch decentraal?**
+
+De combinatie van decentrale verantwoordelijkheid en centrale ontsluiting probeert het beste van twee werelden te bieden:
+
+de bronhouder blijft verantwoordelijk voor de juistheid van de gegevens;
+de landelijke voorziening zorgt voor uniforme en efficiënte beschikbaarstelling.
+
+De volgende basisregistraties hebben decentrale bronhouders en een landelijke voorziening: 
+
+| Registratie     | Decentrale bronhouders                          | Beheerder Landelijke voorziening  |
+| --------------- | ----------------------------------------------- | --------------------------------- |
+| BRP             | Ja (gemeenten)                                  | [RVIG](https://www.rvig.nl/)      |
+| BAG             | Ja (gemeenten)                                  | [Kadaster](https://www.kadaster.nl/zakelijk/registraties/basisregistraties/bag) |
+| BGT             | Ja (gemeenten, provincies, waterschappen, Rijk) | [Kadaster](https://www.kadaster.nl/zakelijk/registraties/basisregistraties/bgt) |
+| BRO             | Ja (gemeenten, provincies, waterschappen, enz.) | [Geologische dienst TNO](https://basisregistratieondergrond.nl/) |
+| WOZ             | Ja (gemeenten)                                  | [Kadaster](https://www.kadaster.nl/zakelijk/registraties/landelijke-voorzieningen/woz) |
+
+De andere basisregistraties die eerder genoemd zijn zijn centraal beheerde basisregistraties. 
+
+### 1.2.6 Samenhang basisregistraties op hoofdlijnen
+
+![](/images/Stelselplaat.png)
+
+*(Bron: [Stelsel van basisregistraties](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/stelsel-van-basisregistraties/stelselplaat/))*
+
+### 1.2.7 Samenhang basisgegevens op hoofdlijnen
+
+
+![](/images/Stelselplaat-Gegevens.png)
+
+*(Bron: [Stelselplaat Gegevens](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/stelsel-van-basisregistraties/stelselplaat/))*
+
 
