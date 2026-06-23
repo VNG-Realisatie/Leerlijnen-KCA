@@ -5,16 +5,15 @@ weight: 21
 leerlijn: 2
 paragraaf: "2.1"
 parent: "GEMMA-architectuur"
-leerdoel: "Leerdoel nog toe te voegen"
+leerdoel: "Begrijpt de GEMMA-referentiearchitectuur en hoe die door gemeenten gebruikt kan worden"
 ---
 
 ## 2.1 GEMMA Referentie-architectuur
 
-Begrijpt de GEMMA-referentiearchitectuur en de positie van gegevensuitwisseling daarin.
-
 ### Wat is GEMMA?
 
-**GEMMA** (Gemeentelijke Model Architectuur) is de referentiearchitectuur voor Nederlandse gemeenten, ontwikkeld door VNG Realisatie. Het biedt een samenhangend kader voor de inrichting van de gemeentelijke informatievoorziening.
+De GEMMA (GEMeentelijke Model Architectuur) is de referentiearchitectuur voor Nederlandse gemeenten. Ze biedt een gemeenschappelijk architectuurkader waarmee gemeenten, leveranciers en de VNG hun bedrijfsvoering en informatievoorziening eenduidig kunnen verbeteren en op elkaar afstemmen. De GEMMA bestaat uit een samenhangende set architectuurproducten die gemeenten in de praktijk gebruiken. Onderstaande animatie licht toe hoe de GEMMA is opgebouwd. 
+*(Bron)
 
 GEMMA helpt gemeenten bij:
 - Het maken van architectuurkeuzes
