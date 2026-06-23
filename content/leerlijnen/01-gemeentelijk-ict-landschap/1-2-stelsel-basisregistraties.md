@@ -20,15 +20,18 @@ Het stelsel biedt een overheidsbrede, organisatie-onafhankelijke gegevensinfrast
 
 #### Gebruik
 
-Gegevens uit basisregistraties worden — veelal in combinatie — ingezet bij:
-- Maatschappelijke opgaven zoals de energietransitie, de Omgevingswet, het tegengaan van ondermijning en de woningbouw
+Gegevens uit basisregistraties worden — veelal in combinatie — ingezet bij maatschappelijke opgaven zoals 
+-   de energietransitie 
+-   uitvoering geven aan de Omgevingswet
+-   het tegengaan van ondermijning 
+-   de woningbouw
 
 #### Rollen en verantwoordelijkheden
 
 Bij het stelsel zijn drie hoofdrollen te onderscheiden:
 - **Bronhouders**: organisaties die gegevens inwinnen en bijhouden (bijv. gemeenten voor de BRP, BAG, BGT en WOZ)
-- **Verstrekkers**: organisaties die de gegevens beschikbaar stellen aan afnemers
-- **Afnemers**: overheidsorganisaties die de gegevens gebruiken in hun processen
+- **Verstrekkers**: organisaties die de gegevens beschikbaar stellen aan afnemers (bijv. het Kadaster en de RVIG)
+- **Afnemers**: overheidsorganisaties die de gegevens gebruiken in hun processen (bijv. gemeenten, provincies en belastingdienst)
 
 Per basisregistratie is er één (categorie van) organisatie(s) als bronhouder. Bijv. het Kadaster is bronhouder voor de Basisregistratie Kadaster, maar voor de Basisregistratie Personen zijn alle 342 gemeenten gezamenlijk bronhouder.
 
@@ -173,7 +176,8 @@ Samengevat biedt een landelijke voorziening voor een basisregistratie:
     -   Gegevens uit verschillende basisregistraties kunnen eenvoudiger worden gecombineerd.
 -   Continuïteit en beschikbaarheid
     -   Professioneel beheer zorgt voor stabiele dienstverlening en ondersteuning.
-Waarom toch decentraal?
+
+**Waarom toch decentraal?**
 
 De combinatie van decentrale verantwoordelijkheid en centrale ontsluiting probeert het beste van twee werelden te bieden:
 
@@ -190,6 +194,7 @@ De volgende basisregistraties hebben decentrale bronhouders en een landelijke vo
 | BRO             | Ja (gemeenten, provincies, waterschappen, enz.) | [Geologische dienst TNO](https://basisregistratieondergrond.nl/) |
 | WOZ             | Ja (gemeenten)                                  | [Kadaster](https://www.kadaster.nl/zakelijk/registraties/landelijke-voorzieningen/woz) |
 
+De andere basisregistraties die eerder genoemd zijn zijn centraal beheerde basisregistraties. 
 
 ### 1.2.6 Samenhang basisregistraties op hoofdlijnen
 

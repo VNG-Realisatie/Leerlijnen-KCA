@@ -28,7 +28,7 @@ Dat gebeurt niet door alles centraal te regelen, maar door te zorgen voor een ge
 De Interbestuurlijke Datastrategie (IBDS) is het interbestuurlijk databeleid voor de hele overheid; tot stand gekomen in nauwe samenwerking tussen departementen, uitvoeringsorganisaties en koepels van gemeenten, provincies en waterschappen. Doel is dat de overheid het volle potentieel van data benut bij maatschappelijke opgaven. Op een manier die juridisch houdbaar, ethisch verantwoord en maatschappelijk uitlegbaar is. 
 *(Bron: [www.digitaleoverheid.nl](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/data/interbestuurlijke-datastrategie/))*
 
-Niet alle onderwerpen die onderdeel uitmaken van de IBDS raken direct aan het werk van Kenniscentrum Architectuur. Die onderwerpen die dat wel doen zijn hier apart genoemd. 
+Niet alle onderwerpen die onderdeel uitmaken van de IBDS raken direct aan het werk van Kenniscentrum Architectuur. Die onderwerpen die dat wel doen zijn apart in paragrafen 1.3.3 en 1.3.4 
 
 ### 1.3.3 Nederlandse DigitaliseringsStrategie
 
@@ -43,13 +43,23 @@ De NDS is één van de pijlers van het kabinetsbeleid op digitalisering. De NDS 
 
 ### 1.3.4 Doorontwikkeling naar het Federatief Datastelsel (FDS)
 
-Voor de uitwerking van "prioriteit 2 - Data" van de Nederlandse DigitaliseringsStrategie (NDS) wordt het stelsel van basisregistraties de komende jaren doorontwikkeld naar het **Federatief Datastelsel (FDS)**. Dit gebeurt binnen het programma Realisatie Interbestuurlijke Datastrategie (IBDS). Het FDS bouwt voort op de fundamenten van het huidige stelsel, maar richt zich op een breder data-ecosysteem waarbij gegevens makkelijker bij de bron opgehaald en gecombineerd gebruikt kunnen worden — ook buiten de overheid en voor andere doelen dan waarvoor de gegevens oorspronkelijk zijn verzameld.
+Voor de uitwerking van "prioriteit 2 - Data" van de Nederlandse DigitaliseringsStrategie (NDS, zie paragraaf 1.3.3) wordt het stelsel van basisregistraties de komende jaren doorontwikkeld naar het **Federatief Datastelsel (FDS)**. Dit gebeurt binnen het programma Realisatie Interbestuurlijke Datastrategie (IBDS). Het FDS bouwt voort op de fundamenten van het huidige stelsel, maar richt zich op een breder data-ecosysteem waarbij gegevens makkelijker bij de bron opgehaald en gecombineerd gebruikt kunnen worden — ook buiten de overheid en voor andere doelen dan waarvoor de gegevens oorspronkelijk zijn verzameld.
 
 Meer informatie over het Federatief Datastelsel: *(Bron: [federatief.datastelsel.nl](https://federatief.datastelsel.nl/))*
 
 ### 1.3.5 Omnichannel / MijnServices
 
 **Omnichannel**
+
+Omnichannel verwijst doorgaans naar een organisatiebrede strategie die alle communicatie- en verkoopkanalen (zowel online als offline) volledig met elkaar integreert. Het doel is om klanten of burgers op elk moment, via elk kanaal, een naadloze, consistente en persoonlijke ervaring te bieden.
+
+Wat houdt de aanpak in?
+
+In plaats van kanalen (zoals telefoon, fysieke balie, website of app) los van elkaar te beheren, worden ze in een omnichannel project samengevoegd tot één centrale ervaring.
+
+-   Consistente beleving: Informatie is overal hetzelfde en up-to-date.
+-   Naadloze overgang: Een proces dat online start (bijvoorbeeld het indienen van een aanvraag), kan offline of via een ander kanaal moeiteloos worden afgerond.
+-   Centraal systeem: Medewerkers werken vanuit één systeem waarin alle interactiegeschiedenis met de klant is opgeslagen.
 
 Er is een handreiking "Aan de slag met de omnichannel-aanpak" gemaakt om gemeenten te helpen bij het verbeteren van hun kanaalaanpak. Daarbij ziet men een omnichannel aanpak als de ideale stip aan de horizon. Met de handreiking kunnen gemeenten stapsgewijs toewerken naar naadloze, inclusieve klantinteractie waarin alle kanalen naadloos bij elkaar komen.
 
