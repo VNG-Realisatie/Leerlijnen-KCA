@@ -1,14 +1,14 @@
 ---
-title: "6.4 StUF-berichten ontwerpen"
+title: "6.5 StUF-berichten ontwerpen"
 date: 2026-05-13
-weight: 64
+weight: 605
 leerlijn: 6
-paragraaf: "6.4"
+paragraaf: "6.5"
 parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 6.4 StUF-berichten ontwerpen
+## 6.5 StUF-berichten ontwerpen
 
 Kan StUF-berichten ontwerpen waarmee gegevens uitgewisseld worden.
 
