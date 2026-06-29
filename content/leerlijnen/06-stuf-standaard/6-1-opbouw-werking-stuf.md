@@ -19,25 +19,25 @@ Kan de opbouw en werking van de StUF-standaard (Standaard Uitwisseling Formaat) 
 **Kernprincipes van StUF:**
 
 ***1. Standaardisatie***
-* **Gestandaardiseerde berichten**: Voorgedefinieerde bericht-types
-* **Uniforme structuur**: Consistente opbouw over sectoren
-* **Gedeelde vocabulaire**: Eenduidige semantiek
+* **Gestandaardiseerde berichten**: Voorgedefinieerde bericht-types met generieke functionaliteit;
+* **Uniforme structuur**: Consistente opbouw over sectoren;
+* **Gedeelde vocabulaire**: Eenduidige semantiek.
 
 ***2. Ontkoppeling***
-* **Technisch**: Verschillende systemen/technologieën kunnen StUF-berichten uitwisselen
-* **Semantisch**: Business-logica gescheiden van transport
-* **Temporeel**: Asynchroon berichtverkeer mogelijk
+* **Technisch**: Verschillende systemen/technologieën kunnen StUF-berichten uitwisselen;
+* **Semantisch**: Business-logica gescheiden van transport;
+* **Temporeel**: Zowel synchroon als asynchroon berichtverkeer mogelijk.
 
 ***3. Herbruikbaarheid***
-* **Onderlaag**: Herbruikbare basis-componenten
-* **Sectormodellen**: Domein-specifieke uitbreidingen
-* **Koppelvlakken**: Concrete implementatie-specificaties
+* **Onderlaag**: Herbruikbare generieke basis-componenten;
+* **Sectormodellen**: Domein-specifieke uitbreidingen;
+* **Koppelvlakken**: Concrete implementatie-specificaties.
 
 ### Historie
 
 De eerste versie van StUF (1.05) is in 1998 gepubliceerd. Inmiddels worden alleen de versies 2.04 en 3.01 ondersteund door VNG. In deze module focussen we echter op versie 3.01 aangezien dat de meest gebruikte versie is. In het volgende onderdeel van deze module ([6.2 Versies van de StUF-standaard](../6.2-versies-van-de-stuf-standaard)) zullen we iets dieper ingaan op beide versies en de verschillen daartussen.
 
-In 2024 is overigens een traject gestart voor de transitie van StUF naar REST-JSON API's. De verwachting is dat de StUF standaard daardoor op termijn zal komen te vervallen.
+In 2024 is overigens een traject gestart voor de transitie van StUF naar REST-JSON API's. De verwachting is dat de transitie een doorlooptijd van 10 jaar zal beslaan maar ook dat de StUF standaard daardoor op termijn zal komen te vervallen. Tijdens die transitie moet StUF als werkbare standaard beheerd en onderhouden worden.
 
 ### StUF-architectuur
 
