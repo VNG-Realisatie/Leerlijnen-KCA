@@ -1,7 +1,7 @@
 ---
 title: "6.1 Opbouw en werking van StUF"
 date: 2026-05-13
-weight: 610
+weight: 601
 leerlijn: 6
 paragraaf: "6.1"
 parent: "StUF-standaard"
