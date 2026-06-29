@@ -12,7 +12,7 @@ leerdoel: "Standaarden binnen de GEMMA"
 
 In de GEMMA wordt [hier](https://www.gemmaonline.nl/wiki/Wat_is_een_standaard) beschreven wat als een standaard wordt beschouwd. 
 
-Alle relevante standaarden voor de gemeentelijke informatievoorziening zijn opgenomen op de [GEMMA standaardenlijst](https://www.gemmaonline.nl/wiki/GEMMA_standaardenlijst). Van die standaarden zijn er een aantal die door VNG-realisatie beheerd worden. Dies standaarden zij hieronder genoemd.met de kanttekening dat dit een momentopname is van de [Standaardenpagina op GEMMA-online](https://www.gemmaonline.nl/wiki/GEMMA_standaardenlijst). 
+Alle relevante standaarden voor de gemeentelijke informatievoorziening zijn opgenomen op de [GEMMA standaardenlijst](https://www.gemmaonline.nl/wiki/GEMMA_standaardenlijst). Van die standaarden zijn er een aantal die door VNG-realisatie beheerd worden. Die  standaarden zijn hieronder genoemd met de kanttekening dat dit een momentopname is van de [Standaardenpagina op GEMMA-online](https://www.gemmaonline.nl/wiki/GEMMA_standaardenlijst). 
 
 
 | Standaard | Type | Toelichting | Status | 

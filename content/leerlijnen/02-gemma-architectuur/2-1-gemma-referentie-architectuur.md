@@ -5,7 +5,7 @@ weight: 21
 leerlijn: 2
 paragraaf: "2.1"
 parent: "GEMMA-architectuur"
-leerdoel: "Begrijpt hoe de GEMMA is opgebouwd en de rol i de gemeentelijke informatievoorziening"
+leerdoel: "Begrijpt hoe de GEMMA is opgebouwd en de rol in de gemeentelijke informatievoorziening"
 ---
 
 ## 2.1 GEMMA Referentie-architectuur
@@ -18,7 +18,7 @@ De GEMMA is meer dan uitstekend gedocumenteerd. Het zou een brug te ver zijn om 
 
 Om inzicht te verkrijgen in wat de GEMMA is verwijzen we naar [Gemma-online](https://www.gemmaonline.nl/wiki/Hoofdpagina)
 
-Uiteraard is de volledige GEMMA relevant echter voor de rol van StUF-beheerder, informatiemodelleur en API-designer. Het werk waar wij ons voornamelijk op concentreren is gepositioneerd in de [informatie-architectuur](https://www.gemmaonline.nl/wiki/Informatie-architectuur) wat een onderdeel is van de [GEMMA basisarchitectuur](https://www.gemmaonline.nl/wiki/Wat_is_de_basisarchitectuur).
+Uiteraard is de volledige GEMMA relevant maar voor de rol van StUF-beheerder, informatiemodelleur en API-designer brengen we in de uitleg wat focus aan. Het werk waar wij ons voornamelijk op concentreren is gepositioneerd in de [informatie-architectuur](https://www.gemmaonline.nl/wiki/Informatie-architectuur) wat een onderdeel is van de [GEMMA basisarchitectuur](https://www.gemmaonline.nl/wiki/Wat_is_de_basisarchitectuur).
 
 Daarnaast zijn er een aantal [thema-architecturen](https://www.gemmaonline.nl/wiki/Thema-architectuur) uitgewerkt. 
 
