@@ -468,7 +468,7 @@ Hieronder een voorbeeld van een Fo01 foutbericht als functionele asynchrone resp
 
 ### Verdere verdieping
 
-Je hebt nu een globale kennis van wat StUF is en hoe het er uitziet. Lees nu de [de specificatie van StUF Standaard](https://vng-realisatie.github.io/StUF-onderlaag/documenten/Stuf0301.pdf) om je het onderwerp verder eigen te maken.
+Je hebt nu een globale kennis van wat StUF is en hoe het er uitziet. Lees nu de <a href="https://vng-realisatie.github.io/StUF-onderlaag/documenten/Stuf0301.pdf" target="_blank">de specificatie van StUF Standaard</a> om je het onderwerp verder eigen te maken.
 
 ### Meer resources
 
