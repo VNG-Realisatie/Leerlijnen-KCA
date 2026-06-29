@@ -1,6 +1,6 @@
 ---
 title: "GEMMA-architectuur"
-date: 2026-006-29
+date: 2026-06-29
 weight: 2
 leerlijn_nummer: 2
 icon: "🏗️"
