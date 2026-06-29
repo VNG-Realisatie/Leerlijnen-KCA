@@ -5,7 +5,7 @@ weight: 1
 leerlijn_nummer: 1
 icon: "🏛️"
 beschrijving: "Begrijp het gemeentelijke ICT-landschap, de samenhang met het stelsel van basisregistraties en de rol gegevensuitwisseling daarin."
-aantal_onderdelen: 7
+aantal_onderdelen: 4
 ---
 
 <div class="leerlijn-header">
