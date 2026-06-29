@@ -159,7 +159,7 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 <img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-entiteiten.jpg" />
 
-> **Let op!** Zoals al eerder gesteld hebben de complexTypes voor de gerelateerde soms wat uitgebreidere namen. In de bovenstaande illustratie hebben we voor de eenvoud de naam `NPS-basis` gebruikt. In werkelijkheid heeft deze echter de naam 'NPSNINING-basis`. We verwijzen weer naar het onderdeel waarin we het verStUFfingsdocument bespreken voor meer uitleg daarover.
+> **Let op!** Zoals al eerder gesteld hebben de complexTypes voor de gerelateerde soms wat uitgebreidere namen. In de bovenstaande illustratie hebben we voor de eenvoud de naam `NPS-basis` gebruikt. In werkelijkheid heeft deze echter de naam `NPSNINING-basis`. We verwijzen weer naar het onderdeel waarin we het verStUFfingsdocument bespreken voor meer uitleg daarover.
 
 ***bg0310_stuf_simpleTypes.xsd***
 
