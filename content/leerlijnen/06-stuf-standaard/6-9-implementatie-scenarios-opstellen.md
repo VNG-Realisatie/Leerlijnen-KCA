@@ -1,14 +1,14 @@
 ---
-title: "6.8 Implementatie-scenario's opstellen"
+title: "6.9 Implementatie-scenario's opstellen"
 date: 2026-05-13
-weight: 68
+weight: 609
 leerlijn: 6
-paragraaf: "6.8"
+paragraaf: "6.9"
 parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 6.8 Implementatie-scenario's opstellen
+## 6.9 Implementatie-scenario's opstellen
 
 Kan verschillende implementatie-strategieën voor StUF-migraties ontwikkelen, afgestemd op organisatie-eisen, technische constraints en risicotolerantie.
 

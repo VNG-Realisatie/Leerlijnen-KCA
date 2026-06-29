@@ -1,9 +1,9 @@
 ---
-title: "6.7 Impactanalyses uitvoeren"
+title: "6.8 Impactanalyses uitvoeren"
 date: 2026-05-13
-weight: 67
+weight: 608
 leerlijn: 6
-paragraaf: "6.7"
+paragraaf: "6.8"
 parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---

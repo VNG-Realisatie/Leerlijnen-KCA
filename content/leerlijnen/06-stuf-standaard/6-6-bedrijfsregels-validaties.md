@@ -1,14 +1,14 @@
 ---
-title: "6.5 Bedrijfsregels en validaties"
+title: "6.6Bedrijfsregels en validaties"
 date: 2026-05-13
-weight: 65
+weight: 606
 leerlijn: 6
-paragraaf: "6.5"
+paragraaf: "6.6"
 parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 6.5 Bedrijfsregels en validaties
+## 6.6 Bedrijfsregels en validaties
 
 Kan bedrijfsregels en validaties definiëren die bij StUF-berichten horen.
 

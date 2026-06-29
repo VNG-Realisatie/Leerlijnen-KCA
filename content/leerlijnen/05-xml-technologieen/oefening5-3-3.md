@@ -1,7 +1,6 @@
 ---
 title: "Oefening 5-3-3"
 date: 2026-03-17
-weight: 3.1
 leerlijn: 5
 paragraaf: "5.3.3"
 oefendoel: "Oefen het beperken van het waardetype van een element."

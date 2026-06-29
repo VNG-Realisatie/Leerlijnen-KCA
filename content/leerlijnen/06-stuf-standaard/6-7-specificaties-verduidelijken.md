@@ -1,14 +1,14 @@
 ---
-title: "6.6 Specificaties verduidelijken"
+title: "6.7 Specificaties verduidelijken"
 date: 2026-05-13
-weight: 66
+weight: 607
 leerlijn: 6
-paragraaf: "6.6"
+paragraaf: "6.7"
 parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 6.6 Specificaties verduidelijken
+## 6.7 Specificaties verduidelijken
 
 Kan bij vragen of meningsverschillen over de toepassing van StUF specificaties en schema's verduidelijken ten behoeve van eenduidige implementatie.
 

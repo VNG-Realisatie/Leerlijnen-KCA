@@ -4,7 +4,7 @@ date: 2026-03-04
 weight: 6
 leerlijn_nummer: 6
 icon: "📨"
-beschrijving: "Grondige kennis van de StUF-standaard: toepassen, beheren en doorontwikkelen."
+beschrijving: "Grondige kennis van de StUF-standaard en het beheer van StUF‑sectormodellen en koppelvlakken."
 aantal_onderdelen: 10
 ---
 
@@ -24,23 +24,13 @@ Deze leerlijn behandelt de StUF (Standaard Uitwisseling Formaat) standaard, een 
 
 Na het voltooien van deze leerlijn kun je:
 
-- **StUF-architectuur beheersen**: De structuur, principes en werking van StUF-standaard volledig begrijpen
-- **Versiemanagement**: Verschillende StUF-versies kennen en migratiepaden bepalen
-- **Koppelvlakken ontwikkelen**: StUF-koppelvlakspecificaties opstellen en beheren
-- **Berichtontwerp**: Complexe StUF-berichten ontwerpen voor specifieke uitwisselingsscenario's
-- **Kwaliteitsborging**: Bedrijfsregels en validaties implementeren voor correcte gegevensuitwisseling
-- **Implementatieondersteuning**: Teams en organisaties begeleiden bij StUF-implementaties
-- **Change management**: Impact van wijzigingen analyseren en implementeren
-- **Standaardontwikkeling**: Bijdragen aan doorontwikkeling van de StUF-standaard
+* de opbouw van StUF (onderlaag, sectormodel, koppelvlak) uitleggen;
+* bestaande StUF‑koppelingen analyseren en beheren;
+* berichtenverkeer interpreteren en controleren (XML / StUF‑structuur);
+* impact van wijzigingen (wetgeving, informatiemodellen, fouten) inschatten;
+* incidenten en verstoringen in StUF‑koppelingen analyseren en oplossen;
+* compliance toetsen (bijv. via testplatform).
 
 ## Voorkennis
 
-Voor deze leerlijn is basiskennis van XML, web services en informatiemodellering vereist. Kennis van [Leerlijn 4: Uitwisselingsformaten](../04-uitwisselingsformaten/) is sterk aanbevolen.
-
-## Certificering
-
-Deze leerlijn bereidt voor op StUF-expertcertificering en kan bijdragen aan NORA-compliancy binnen overheidsorganisaties.
-
----
-
-*Geschat tijdsbeslag: 6-8 weken, afhankelijk van voorkennis en praktijkervaring.*
+Voor deze leerlijn is basiskennis van XML, web services en informatiemodellering vereist. Kennis van [Leerlijn 4: Uitwisselingsformaten](../uitwisselingsformaten-en-protocollen//) is sterk aanbevolen.

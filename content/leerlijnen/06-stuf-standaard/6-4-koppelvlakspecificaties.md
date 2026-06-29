@@ -1,14 +1,14 @@
 ---
-title: "6.3 Koppelvlakspecificaties"
+title: "6.4 Koppelvlakspecificaties"
 date: 2026-05-13
-weight: 63
+weight: 604
 leerlijn: 6
-paragraaf: "6.3"
+paragraaf: "6.4"
 parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 6.3 Koppelvlakspecificaties
+## 6.4 Koppelvlakspecificaties
 
 Kan StUF-koppelvlakspecificaties opstellen, lezen en beheren.
 

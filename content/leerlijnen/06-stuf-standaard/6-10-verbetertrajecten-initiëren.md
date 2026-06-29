@@ -1,14 +1,14 @@
 ---
-title: "6.9 Verbetertrajecten initiëren"
+title: "6.10 Verbetertrajecten initiëren"
 date: 2026-05-13
-weight: 69
+weight: 610
 leerlijn: 6
-paragraaf: "6.9"
+paragraaf: "6.10"
 parent: "StUF-standaard"
 leerdoel: "Leerdoel nog toe te voegen"
 ---
 
-## 6.9 Verbetertrajecten initiëren
+## 6.10 Verbetertrajecten initiëren
 
 Kan continue-verbeteringsinitiatieven voor StUF-implementaties opzetten, monitoren en sturen om de kwaliteit en efficiëntie van gegevensuitwisseling structureel te verhogen.
 
