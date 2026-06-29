@@ -157,7 +157,7 @@ Hieronder hebben we nog even voor het entiteittype HHD de relaties op hoofdlijne
 
 In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
-<img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-entiteiten.jpg" />
+<img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-entiteiten.jpg" />
 
 > **Let op!** Zoals al eerder gesteld hebben de complexTypes voor de gerelateerde soms wat uitgebreidere namen. In de bovenstaande illustratie hebben we voor de eenvoud de naam `NPS-basis` gebruikt. In werkelijkheid heeft deze echter de naam 'NPSNINING-basis`. We verwijzen weer naar het onderdeel waarin we het verStUFfingsdocument bespreken voor meer uitleg daarover.
 
@@ -289,7 +289,7 @@ Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tuss
 
 In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
-<img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-vraagAntwoord.jpg" />
+<img width="850" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-vraagAntwoord.jpg" />
 
 ***bg0310_msg_stuf_vraagAntwoord.xsd***
 
