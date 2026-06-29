@@ -30,7 +30,7 @@ Kan de opbouw en werking van de StUF-standaard (Standaard Uitwisseling Formaat) 
 
 ***3. Herbruikbaarheid***
 * **Onderlaag**: Herbruikbare generieke basis-componenten;
-* **Sectormodellen**: Domein-specifieke uitbreidingen;
+* **Sectormodellen**: Herbruikbare domein-specifieke uitbreidingen;
 * **Koppelvlakken**: Concrete implementatie-specificaties.
 
 ### Historie
