@@ -10,11 +10,18 @@ leerdoel: "De folderstructuur van de StUF standaarden kennen en weten hoe de ver
 
 ## 6.2 StUF folder en XML-Schema structuur
 
+Voor het kunnen browsen door de StUF folderstructuur en het inhoudelijk kunnen onderzoeken van de XML-Schema's is het van belang om [het zip bestand met de laatste complete patch van StUF 3.01](https://vng-realisatie.github.io/StUF-onderlaag/documenten/20260227_patch34.zip) op te halen. Een andere optie is het plaatsen van de StUFmaster in je eigen folder structuur. De StUFmaster is een beheerinstrument van VNG Realisatie waarmee we versiebeheer toepassen of alle StUF (gerelateerde) documenten en is alleen voor beheerders van StUF en bij VNG Realisatie in beheer zijnde sectormodellen en koppelvlakken beschikbaar. 
+
+> **Let op!** De in dit onderdeel behandelde en getoonde folderstructuren zijn de structuren die als zodanig zijn vastgelegd in de StUFmaster. Bij het publiceren van de zip files voor (patches op) de specifieke StUF standaarden kan het zijn dat niet alle folders terug komen. De zip file voor StUF-BG bevat bijvoorbeeld niet de folders voor StUF-ZKN (zkn0310) en StUF-ZTC (ztc0310). Als de folders echter wel zijn opgenomen dan zijn ze opgenomen in de structuur die in de StUFmaster is vastgelegd.
+
+Neem voor het plaatsen van de StUFmaster contact op met de beheerder van de StUF standaard.
+Daarnaast moet je ook kunnen beschikken over een XML-Schema viewer/editor.
+
 ### XML-Schema folderstructuur
 
 De StUF standaard en de bijbehorende sectormodellen bestaat naast de documentatie ook uit een set van XML-Schemabestanden die een sterke samenhang hebben met elkaar. De folderstructuur waarin die XML-Schema bestanden zijn opgeslagen is een vast gegeven en de folders, en daarmee ook de XML-Schema bestanden, bevinden zich altijd op dezelfde relatieve locatie van elkaar. We leggen deze structuur hier uit.
 
-**Basisfolderstructuur**
+**Basisfolderstructuur (0301)**
 
 <img width="150" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/basisfolderstructuur.jpg" />
 
@@ -25,6 +32,14 @@ De XML- en WSDL-schema's behorende bij de onderlaag van de StUF 3.01 standaard b
 * **stuf0301_types.wsdl**<br/>Definieert in WSDL termen de mesages voor de bevestigings-, fout- en triggerberichten.
 
 Deze folder is essentieel voor alle StUF 3.01 XML-Schema's en moet dus ook altijd aanwezig zijn.
+
+**Ondersteunende standaarden**
+
+In de set van bij StUF benodigde folders komen ook wat folders voor die noodzakelijk zijn omdat de XML-Schema's daarin direct of indirect worden geïmporteerd in de StUF XML-Schema's. Het gaat om die roze gearceerde folders in de onderstaande image:
+
+<img width="150" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/ondersteunende-standaarden.jpg" />
+
+Een van die standaarden is 'GML' (Geography Markup Language). Dit is een open, internationaal erkend bestandsformaat (gebaseerd op XML), dat wordt gebruikt om geografische informatie en digitale kaarten op te slaan en uit te wisselen. Deze standaard wordt bijv, gebruikt in de entiteit 'Wegdeel' (StUF-BG 3.10) om de geometrische informatie van zo'n wegdeel mee te kunnen verzenden.
 
 **Sectormodellen en hun berichtencatalogi**
 
@@ -45,14 +60,6 @@ Deze folders bevatten op de functie van de berichtencatalogus toegespitste aansc
 
 Een berichtcatalogus specificeert samen met zijn voorbeeld-wsdl's een verzameling services waarvan een systeem moet aangeven in hoeverre het deze implementeert in voor dat systeem specifieke wsdl's.
 
-**Ondersteunende standaarden**
-
-In de set van bij StUF benodigde folders komen ook wat folders voor die noodzakelijk zijn omdat de XML-Schema's daarin direct of indirect worden geïmporteerd in de StUF XML-Schema's. Het gaat om die roze gearceerde folders in de onderstaande image:
-
-<img width="150" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/ondersteunende-standaarden.jpg" />
-
-Een van die standaarden is 'GML' (Geography Markup Language). Dit is een open, internationaal erkend bestandsformaat (gebaseerd op XML), dat wordt gebruikt om geografische informatie en digitale kaarten op te slaan en uit te wisselen. Deze standaard wordt bijv, gebruikt in de entiteit 'Wegdeel' (StUF-BG 3.10) om de geometrische informatie van zo'n wegdeel mee te kunnen verzenden.
-
 **Koppelvlak berichtcatalogi**
 
 Naast de standaard berichtcatalogi kunnen er in een sectormodel ook berichtencatalogi zijn opgenomen voor specifieke op een sectormodel gebaseerde koppelvlakken. Hieronder zie je voor zowel het sectormodel StUF-BG als StUF-ZKN een voorbeeld:
@@ -65,7 +72,7 @@ In de berichtcatalogus 'zkn0310/zs-dms' vind je de definitie van de berichten wa
 
 ### Samenhang XML-Schema's
 
-Laten we eens naar de XML-Schema's van StUF-BG 3.10 (folder 'bg0310') kijken zonder daarbij al te veel te focussen op de inhoudelijke aspecten van de in deze XML-Schema's opgenomen entiteiten maar vooral op de generiek toegepaste principes. We nemen daarvoor als voorbeeld de redelijk eenvoudige entiteit 'Huishouden' (ook wel bekend onder de mnemonic 'HHD') en starten met de basale complexTypes. Daarna kijken we hoe de complexTypes voor de verschillende berichten zich hiertoe verhouden. Daar waar nodig zullen we daar andere entiteiten bij betrekken.
+Laten we eens naar de XML-Schema's van StUF-BG 3.10 (folder 'bg0310') kijken zonder daarbij al te veel te focussen op de inhoudelijke aspecten van de in deze XML-Schema's opgenomen entiteiten maar vooral op de generiek toegepaste principes. We nemen daarvoor als voorbeeld het redelijk eenvoudige entiteittype 'Huishouden' (ook wel bekend onder de mnemonic 'HHD' dat in het RSGB aan gerelateerde objecttype is toegekend) en starten met de basale complexTypes. Daarna kijken we hoe de complexTypes voor de verschillende berichten zich hiertoe verhouden. Daar waar nodig zullen we daar andere entiteiten bij betrekken.
 
 **XML-Schema's in 'entiteiten'**
 
@@ -90,7 +97,11 @@ Zoals je ziet zijn alle elementen hierin optioneel. Daardoor kunnen we in restri
 
 Basis entiteiten kunnen relaties bevatten. De wijze waarop relaties worden opgenomen in basis entiteiten is nagenoeg altijd hetzelfde. In de entiteit die de relatie bevat wordt deze relatie als een element met een onderscheidende naam (bijv. `heeftAlsOuders`) opgenomen. Vervolgens bevat de relatie een 'gerelateerde' element dat als typering heeft de complexType van de basis entiteit waar de relatie naartoe gaat.
 
-Zo bevat `HHD-basis` een tweetal relaties `BG:isGehuisvestIn` en `BG:heeftAlsLeden` en hebben deze een `BG:gerelateerde` element. Normaliter krijgen de `BG:gerelateerde` elementen een complexType toegekend met de naam `xxx-basis`. In dit geval . Relatie elementen worden in een basis complexType altijd na de `StUF:tijdvakGeldigheid`, `StUF:tijdstipRegistratie`, `StUF:extraElementen`, `historieMaterieel` en/of `historieFormeel` elementen geplaatst. 
+Zo bevat `HHD-basis` een tweetal relaties `BG:isGehuisvestIn` en `BG:heeftAlsLeden` en hebben deze een `BG:gerelateerde` element. Normaliter krijgen de `BG:gerelateerde` elementen een complexType toegekend met de naam `xxx-basis`. 
+
+> **Let op!** In dit geval hebben de complexTypes voor de gerelateerde echter de wat uitgebreidere namen `TGOAOT-basis' en 'NPSNINING-basis'. In het onderdeel waarin we het verStUFfingsdocument bespreken leggen we uit waarom hier in sommige situaties voor wordt gekozen.
+
+Relatie elementen worden in een basis complexType altijd na de `StUF:tijdvakGeldigheid`, `StUF:tijdstipRegistratie`, `StUF:extraElementen`, `historieMaterieel` en/of `historieFormeel` elementen geplaatst. 
 
 Een relatie wordt altijd gemodelleerd in een eigen complexType waarvan de naamgeving (in de basis complexType) aan de volgende syntax voldoet:
 
@@ -102,7 +113,11 @@ Voor de relatie `BG:heeftAlsLeden` heet de complexType dus `HHDNPS-basis` die er
 
 De mnemonic 'NPS' betekent overigens 'Natuurlijk Persoon'.
 
-Een relatie element bevat altijd minimaal het `gerelateerde` element maar mag ook andere elementen bevatten die dan iets zeggen over de relatie (maar niet de `gerelateerde` entiteit). Zo kan de relatie `BG:heeftAlsEchtgenootPartner` die 2 'NPS' entiteiten met elkaar verbindt ook de elementen `BG:soortVerbintenis` en `BG:datumSluiting` bevatten. Daarnaast kan een relatie ook nog elementen als `StUF:tijdvakGeldigheid`, `tUF:tijdstipRegistratie`, `StUF:extraElementen` en `historieMaterieel` bevatten en zelfs eigen relaties.
+Een relatie element bevat altijd minimaal het `gerelateerde` element maar mag ook andere elementen bevatten die dan iets zeggen over de relatie (maar niet de `gerelateerde` entiteit). Zo kan de relatie `BG:heeftAlsEchtgenootPartner` die 2 'NPS' entiteiten met elkaar verbindt ook de elementen `BG:soortVerbintenis` en `BG:datumSluiting` bevatten. 
+
+> **Let op!** In het RSGB zijn relaties met eigen attributen oveR het algemeen gemodelleerd als relatieklassen (zie leerlijn 7). In een StUF sectormodel wordt die constructie vaak vertaalt naar een relatie element met naast het element `gerelateerde` o.a. ook de attribuutsoorten zoals gedefinieerd in de relatieklasse. In het onderdeel waarin we het verStUFfingsdocument bespreken komen we daar op terug.
+
+Daarnaast kan een relatie ook nog elementen als `StUF:tijdvakGeldigheid`, `tUF:tijdstipRegistratie`, `StUF:extraElementen` en `historieMaterieel` bevatten en zelfs eigen relaties.
 
 *Andere gebruikelijke elementen*
 
@@ -115,7 +130,7 @@ Naast relaties kunnen basis entiteiten ook nog de volgende elementen bevatten:
 
 De functie van de eerste en de laatste twee heeft te maken met temporele aspecten van het vastleggen van gegevens. Voor een aantal entiteiten, attributen en relaties is het van belang vast te leggen op welk tijdstip een gegeven welke waarde had. Niet alleen m.b.t. de waarde in de werkelijkheid (materiële historie) maar ook m.b.t. de waarde in de registratie (formele historie). Dit is bijv. van belang wanneer in juridische procedures moet worden aangetoond dat op een bepaald tijdstip bekend was dat iets een bepaalde waarde had. Het element `StUF:tijdvakGeldigheid` heeft daarbij betrekking op tijdstippen in de werkelijkheid en `StUF:tijdstipRegistratie` op tijdstippen in de registratie.
 
-Het element `StUF:extraElementen` is tenslotte bedoelt om te voorzien in enige flexibiliteit in de XML-Schema's zodat leveranciers t.b.v. eigen behoeftes extra informatie met een bericht mee kunnen sturen. Tevens wordt dit op het moment veelvuldig gebruikt om XML-Schema's wel aan te kunnen passen aan nieuwe wetgeving zonder de backwardse compatibiliteit van de XML-Schema's aan te tasten. Dat dit zonder duidelijke regels de interoperabiliteit aan kan tasten moge duidelijk zijn.
+Het element `StUF:extraElementen` is tenslotte bedoelt om te voorzien in enige flexibiliteit in de XML-Schema's zodat leveranciers t.b.v. eigen behoeftes extra informatie met een bericht mee kunnen sturen. Tevens wordt dit op het moment veelvuldig gebruikt om XML-Schema's wel aan te kunnen passen aan nieuwe wetgeving zonder de backwardse compatibiliteit van de XML-Schema's aan te tasten. Omdat deze extraElementen relatief vrije elementen zijn (er wordt met een spreadsheet gestandaardiseerd) kan hier geen acurate schema-validatie op plaatsvinden. Dat gaat ten kosten van de standaard-operabiliteit.
 
 *Complextypes voor kerngegevens*
 
@@ -123,15 +138,28 @@ Naast de complexType 'HHD-basis' is ook het complexType `HHD-kerngegevens` aanwe
 
 <img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHD-kerngegevens.jpg" />
 
-Dit definieert de kerngegevens van het 'HHD' entiteittype en wordt gedefinieerd als een restriction op het “HHD-basis” complexType met als elementen diens kerngegevens en de kernrelaties. Ook hierin zijn alle elementen optioneel omdat niet altijd alle kerngegevens beschikbaar hoeven te zijn. Binnen een kerngegevens complexType zijn de complexTypes voor de gerelateerden van relaties en voor de historie-elementen altijd kerngegevens complexTypes.
+Kerngegevens zijn een deelverzameling van de attributen en relaties van een entiteittype aan de hand waarvan een object kan worden geïdentificeerd. `HHD-kerngegevens` definieert dus de kerngegevens van het 'HHD' entiteittype en wordt gedefinieerd als een restriction op het “HHD-basis” complexType met als elementen diens kerngegevens en de kernrelaties. Ook hierin zijn alle elementen optioneel omdat niet altijd alle kerngegevens beschikbaar hoeven te zijn. Binnen een kerngegevens complexType zijn de complexTypes voor de gerelateerden van relaties en voor de historie-elementen altijd kerngegevens complexTypes.
 
-Tenslotte bevat het XML-Schema 'bg0310_ent_basis.xsd' ook nog complexTypes voor elementgroepen en tabel entiteiten.
+Tenslotte bevat het XML-Schema 'bg0310_ent_basis.xsd' ook nog complexTypes voor elementgroepen en tabel-entiteiten. Elementgroepen zijn herbruikbare gegevensgroepen en tabel-entiteiten zijn (dynamische) enumeraties.
+Een goed voorbeeld van een elementgroep is `verblijfBuitenlandGrp`:
+
+<img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/verblijfBuitenlandGrp.jpg" />
+
+Een goed voorbeeld van een tabel-entiteit is LND-tabel:
+
+<img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/LND-tabel.jpg" />
 
 *Relaties tussen complexTypes*
 
-Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tussen de diverse complexTypes binnen de XML-Schema's in de 'entiteiten' folder gevisualiseerd.
+Hieronder hebben we nog even voor het entiteittype HHD de relaties op hoofdlijnen tussen de diverse complexTypes binnen de XML-Schema's in de 'entiteiten' folder gevisualiseerd.
 
 <img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Structuur-entiteiten.jpg" />
+
+In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
+
+<img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-entiteiten.jpg" />
+
+> **Let op!** Zoals al eerder gesteld hebben de complexTypes voor de gerelateerde soms wat uitgebreidere namen. In de bovenstaande illustratie hebben we voor de eenvoud de naam `NPS-basis` gebruikt. In werkelijkheid heeft deze echter de naam 'NPSNINING-basis`. We verwijzen weer naar het onderdeel waarin we het verStUFfingsdocument bespreken voor meer uitleg daarover.
 
 ***bg0310_stuf_simpleTypes.xsd***
 
@@ -194,6 +222,10 @@ Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tuss
 
 <img width="600" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Structuur-mutaties.jpg" />
 
+In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
+
+<img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-mutaties.jpg" />
+
 ***bg0310_msg_stuf_mutatie.xsd***
 
 In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit het 'stuf0301.xsd' XML-Schema verder aangescherpt voor gebruik in de kennisgevingberichten. Dat aanscherpen betreft eigenlijk niet meer dan het beperken van de waarde van het XML attribute 'StUF:entiteittype' zodat die niet conflicteert met het entiteittype waar het bericht betrekking op heeft.
@@ -229,27 +261,19 @@ Het aantal verschillende complexTypes geeft al aan dat de structuur van de vraag
 
 *vraagberichten*
 
-Zoals je waarschijnlijk al aan de group definities in het XML-Schema 'bg0310_msg_vraagAntwoord.xsd' hebt kunnen zien bestaat deze uit een vijftal verschillende elementen waarmee:
-
-* de selectiecriteria voor het terug te leveren object of objecten kunnen worden gedefinieerd;
-* de terug te leveren gegevens (elementen) kunnen worden aangegeven;
-* kan worden aangegeven bij welk object in de selectie gestart moet worden.
-
-Hieronder nog even de verschillende elementen
+Zoals je waarschijnlijk al aan de group definities in het XML-Schema 'bg0310_msg_vraagAntwoord.xsd' hebt kunnen zien bestaat deze uit een vijftal verschillende elementen:
 
 <img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHD-VraagBody.jpg" />
 
-Met de `BG:gelijk`, `BG:vanaf` of `BG:totEnMet` kunnen de selectiecriteria in een vraagbericht worden gedefinieerd. Deze elementen hebben altijd een `XXX-vraag` of `XXX-vraagSelectie` complexType als body. Een `XXX:vraagSelectie` complexType is alleen van toepassing als de inhoud van het `BG:scope` element afwijkt van de inhoud van de selectie elementen. Met het `G:scope` element kunnen de terug te leveren elementen worden gedefinieerd. Dit element heeft altijd een `XXX-vraag` of `XXX:vraagScope` complexType als body waarbij de laatste natuurlijk alleen van toepassing is op `BG:scope` elementen die een andere inhoud hebben dan de selectie elementen. 
+* Met de `BG:gelijk`, `BG:vanaf` of `BG:totEnMet` kunnen de selectiecriteria in een vraagbericht worden gedefinieerd. Deze elementen hebben altijd een `XXX-vraag` of `XXX-vraagSelectie` complexType als body. Een `XXX:vraagSelectie` complexType is alleen van toepassing als de inhoud van het `BG:scope` element afwijkt van de inhoud van de selectie elementen.
+* Met het `G:scope` element kunnen de terug te retourneren elementen worden gedefinieerd. Dit element heeft altijd een `XXX-vraag` of `XXX:vraagScope` complexType als body waarbij de laatste natuurlijk alleen van toepassing is op `BG:scope` elementen die een andere inhoud hebben dan de selectie elementen.<br/><br/>De belangrijkste regels voor de vraag complexTypes zijn:
+  - ze bevatten geen van allen historie-elementen (`historieMaterieel` en`historieFormeel`);
+  - het attribute `StUF:verwerkingssoort` mag er niet in voorkomen;
+  - de elementen voor attributen en relaties mogen maximaal één keer voorkomen. 
+  - alleen in de topfundamenteel van een vraag complexType mag het attribute `StUF:scope` voorkomen. Dit is een alternatief voor het gebruik van het `BG:scope` element.
 
-De belangrijkste regels voor de vraag complexTypes zijn:
-* ze bevatten geen van allen historie-elementen (`historieMaterieel` en`historieFormeel`);
-* het attribute `StUF:verwerkingssoort` mag er niet in voorkomen;
-* de elementen voor attributen en relaties mogen maximaal één keer voorkomen. 
-* alleen in de topfundamenteel van een vraag complexType mag het attribute `StUF:scope` voorkomen. Dit is een alternatief voor het gebruik van het `BG:scope` element.
-
-Welke gerelateerde complexTypes gebruikt moeten worden (`XXX-gerelateerdeVraag`, `XXX-gerelateerdeVraagSelectie` of `XXX-gerelateerdeVraagScope`) is afhankelijk van hetzelfde criterium als hierboven bij de `XXX-vraag`, `XXX-vraagSelectie` of `XXX-vraagScope` is beschreven. Soms kan in al deze situaties echter een `XXX-gerelateerde` worden gebruikt.
-
-Met het `BG:start` element kan het object waarmee moet worden gestart worden gedefinieerd. Dit element heeft altijd een `XXX-antwoord` complexType als body.
+  Welke gerelateerde complexTypes gebruikt moeten worden (`XXX-gerelateerdeVraag`, `XXX-gerelateerdeVraagSelectie` of `XXX-gerelateerdeVraagScope`) is afhankelijk van hetzelfde criterium als hierboven bij de `XXX-vraag`, `XXX-vraagSelectie` of `XXX-vraagScope` is beschreven. Soms kan in al deze situaties echter een `XXX-gerelateerde` worden gebruikt.
+* Met het `BG:start` element kan het object waarmee moet worden gestart worden gedefinieerd. Dit element heeft altijd een `XXX-antwoord` complexType als body.
 
 *antwoordberichten*
 
@@ -262,6 +286,10 @@ In de topfundamenteel, een relatie element of een `gerelateerde` element binnen 
 Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tussen de diverse complexTypes binnen de XML-Schema's in de 'vraagAntwoord' folder gevisualiseerd. Daarin zijn ook de afleidingen van de basis entiteiten meegenomen.
 
 <img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Structuur-vraagAntwoord.jpg" />
+
+In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
+
+<img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-vraagAntwoord.jpg" />
 
 ***bg0310_msg_stuf_vraagAntwoord.xsd***
 
@@ -277,5 +305,5 @@ Bestudeer de XML-Schema's in de folder 'bg0310/vraagAntwoord' en probeer de in d
 
 ### Verdere verdieping
 
-Lees voor een verdere verdieping in de folderstructuren, XML-Schema structuren en naamgevingsconventies de [Ontwerpregels en best practices voor op StUF 3.01 gebaseerde berichten](https://vng-realisatie.github.io/StUF-onderlaag/documenten/Diversen/Stuf_best_practices.pdf).
+Lees voor een verdere verdieping in de folderstructuren, XML-Schema structuren en naamgevingsconventies de <a href="https://vng-realisatie.github.io/StUF-onderlaag/documenten/Diversen/Stuf_best_practices.pdf" target="_blank">Ontwerpregels en best practices voor op StUF 3.01 gebaseerde berichten</a>.
 
