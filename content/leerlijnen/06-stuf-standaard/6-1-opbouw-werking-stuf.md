@@ -41,7 +41,7 @@ In 2024 is overigens een traject gestart voor de transitie van StUF naar REST-JS
 
 ### StUF-architectuur
 
-StUF kent een gelaagde opbouw waarbij de lagen steeds specifieker zijn in hun toepassing en voortbouwen op wat de eronder liggende laag biedt. In de onderstaande diagram hebben we dit gevisualiseerd.
+StUF kent een gelaagde opbouw waarbij de lagen steeds specifieker worden in hun toepassing. Iedere laag bouwt voort op wat de onderliggende laag biedt. In de onderstaande diagram hebben we dit gevisualiseerd.
 
 <img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/StUF-lagenmodel.png" />
 
@@ -72,19 +72,19 @@ De StUF onderlaag is een XML Schema-gebaseerd framework met:
 * gemeenschappelijke datatypen;
 * voorzieningen voor identificatie en tijdsstempeling.
 
-aangevuld met documentatie over de proceslogica. De StUF onderlaag definieert dus geen domeininhoud.
+aangevuld met documentatie over generieke proceslogica. De StUF onderlaag definieert dus geen domeininhoud.
 
 **StUF horizontale sectormodellen**
 
 StUF sectormodellen StUF-BG, StUF-ZKN. Basis- en zaakgegevens spelen in vrijwel alle domeinen een rol. Deze:
 
-* zijn gebaseerd op domein-specifieke informatiemodellen (RSGB, RGBZ, IMWOZ);
+* zijn gebaseerd op domein-specifieke informatiemodellen (RSGB, RGBZ);
 * bevatten in XML Schema uitgedrukte business-objecten, relaties en generieke maar op een domein van toepassing zijnde berichten;
 * worden aangevuld met sectorspecifieke regels/documentatie.
 
 **StUF verticale sectormodellen**
 
-Maken waar mogelijk gebruik maken van de definities in de horizontale sectormodellen StUF-BG, StUF-ZKN.  Een voorbeeld is StUF-WOZ dat overigens niet in beheer is bij VNG Realisatie.
+Maken waar mogelijk gebruik maken van de definities in de horizontale sectormodellen StUF-BG, StUF-ZKN.  Een voorbeeld is StUF-WOZ (gebaseerd op het IMWOZ) dat overigens niet in beheer is bij VNG Realisatie.
 
 **StUF Koppelvlakken**
 
@@ -95,28 +95,6 @@ Deze bevatten:
 * een strakke beschrijving van het gewenste gedrag zo mogelijk als een verdere aanscherping van de sectorspecifieke regels/documentatie.
 
 <br/>In de volgende paragraaf gaan we iets dieper in op deze lagen.
-
-<!--**Componenten-overzicht**
-
-**1. Onderlaag (Foundation Layer)**
-- Basisstructuren voor berichten
-- Gemeenschappelijke datatypen
-- Identificatie en tijdsstempeling
-
-**2. Sectormodel**
-- Domein-specifieke informatiemodellen (RSGB, RGBZ, ) 
-- Business-objecten en relaties
-- Sectorspecifieke regels
-
-**3. Koppelvlakspecificatie**
-- StUF-BG (Basisgegevens)
-- StUF-ZKN (Zaak- en Documentservices)
-- StUF-ZTC (Zaaktype Catalogus)
-
-**4. Berichtspecificatie**
-- Request/response-berichten
-- Kennisgevingsberichten
-- Synchronisatieberichten -->
 
 ### StUF onderlaag
 
@@ -241,6 +219,7 @@ Voor berichten die een reactie zijn op een ander bericht, is het wenselijk te we
 Met een vraagbericht worden gegevens opgevraagd die vervolgens met een antwoordbericht worden verstrekt. Van beide bestaan diverse varianten (Lv01 t/m Lv14 en La01 t/m La14) waar overigens niet elk sectormodel/koppelvlak altijd allemaal in voorziet. De variaties hebben betrekking op synchroon/asynchroon, met of zonder materiële/formele historie en het peiltijdstip waarvoor de dan geldende gegevens moeten worden teruggegeven.
 
 Hieronder van een voorbeeld van een setje bij elkaar horende vraag- en antwoordberichten uit de StUF-BG 3.10 standaard.
+Zoals je ziet heeft het onderstaande bericht de naam `npsLv01'. Lv01 heeft aan dat het om een vraagbericht gaat, `nps` betekent dat het bericht betrekking heeft op het entiteittype met de mnemonic 'NPS' wat staat voor Natuurlijk Persoon. Zo heeft elke entiteittype dat geïmplementeerd wordt in een StUF sectormodel zijn eigen mnemonic. 
 
 ***Vraagbericht***
 
@@ -272,9 +251,11 @@ Hieronder van een voorbeeld van een setje bij elkaar horende vraag- en antwoordb
 </BG:npsLv01>
 ```
 M.b.v. het `<gelijk>` element wordt aangegeven aan welk selectie criterium de terug te geven gegevens moeten voldoen. In dit geval moet het om de gegevens gaan van de persoon met het burgerservicenummer '123456789'. Naast `<gelijk>` zijn er nog de selectie mogelijkheden `<vanaf>` en `<totEnMet>`.
-Met het `<scope>` element wordt aangegeven welke gegevens gewenst zijn. Naast dit element zijn er nog andere mogelijkheden om de scope te definiëren.
+Met het `<scope>` element wordt aangegeven welke gegevens gewenst zijn. Naast dit element zijn er nog andere mogelijkheden om de scope te definiëren. In feite betreft het hier de bevragingsparameters.
 
 ***Antwoordbericht***
+
+Hieronder het bij het hierboven geschetse voorbeeld vraagbericht horende antwoordbericht.
 
 ```xml
 <BG:npsLa01>
@@ -299,6 +280,8 @@ Met het `<scope>` element wordt aangegeven welke gegevens gewenst zijn. Naast di
     </BG:antwoord>
 </BG:npsLa01>
 ```
+
+Vraag- en antwoorberichten vormen vaste sets. Een Lv01 wordt altijd beantwoord met een La01, een Lv02 altijd met een La02, etc...
 
 **Kennisgeving- en synchronisatieberichten**
 
@@ -408,18 +391,18 @@ Je ziet hier meteen een voorbeeld van een bericht uit een koppelvlak dat gebasee
 
 ### StUF-tijdlijnen en geldigheid
 
-De eigenschappen van een object kunnen in de tijd variëren, bijvoorbeeld doordat een persoon een aantal keren ver­huist. Een object kan ook niet langer bestaan, bijvoorbeeld een overleden persoon. In het eerste geval spreken we over een historisch gegeven en in het tweede geval over een historisch object. 
+De eigenschappen van een object kunnen in de tijd wijzigen, bijvoorbeeld doordat een persoon een aantal keren ver­huist. Een object kan ook niet langer bestaan, bijvoorbeeld een overleden persoon. In het eerste geval spreken we over een historisch gegeven en in het tweede geval over een historisch object. 
 
 * Een historisch object is een object dat in de werkelijkheid niet meer bestaat maar nog wel van belang is. Een historisch object heeft als actuele gegevens de laatste (actuele) waarden, voordat het object ophield te bestaan. Deze waarden zijn nog steeds geldig.
 * Onder een historisch gegeven wordt verstaan een gegeven met een waarde die vroeger geldig was, dat wil zeggen met een eind geldigheid in het verleden.
 * Onder een actueel gegeven wordt verstaan een gegeven dat nu geldig is, dat wil zeggen met een begin geldigheid in het verleden of heden en een eind geldigheid die geen waarde heeft of in de toekomst ligt.
-* Onder een toekomstig gegeven wordt een gegeven verstaan met een begin geldigheid in de toekomst.
+* Onder een toekomstig gegeven wordt een gegeven verstaan met een begin geldigheid in de toekomst. In de praktijk komt dit niet voor en naar de huidige inzichten wordt het ook niet toegepast.
 
 Gegevens kunnen om twee redenen wijzigen:
-1. In de werkelijkheid verandert de waarde van het gegeven. Ten gevolge daarvan wordt de waarde in de registratie veranderd. Dit wordt in het stelsel van basisregistraties gedefinieerd als materiële historie.
-2. In de werkelijkheid is er niets veranderd, maar de waarde van het gegeven wordt veranderd om een administratieve fout te corrigeren. Dit wordt in het stelsel van basisregistraties gedefinieerd als formele historie.
+1. In de werkelijkheid verandert de waarde van het gegeven. Ten gevolge daarvan wordt de waarde en het moment waarop de wijziging in de werkelijkheid ingaat in de registratie vastgelegd. Dit wordt in het stelsel van basisregistraties gedefinieerd als materiële historie.
+2. In de werkelijkheid is er niets veranderd, maar de waarde van het gegeven wordt veranderd om een administratieve fout te corrigeren. Tevens wordt daarbij het moment waarop die correctie plaatsvindt in de regisratie vastgelegd. Dit wordt in het stelsel van basisregistraties gedefinieerd als formele historie.
 
-In het stelsel van basisregistratie dienen beide soorten van historie te worden ondersteund. En in bovenstaande voorbeeld berichten (behalve in die van StUF Jeugdzorg) moet daar dan ook nog worden voorzien in de daarvoor noodzakelijke elementen. Hieronder een korte uitleg daarvan.
+In het stelsel van basisregistratie dienen beide historische tijdlijnen te worden ondersteund. En in bovenstaande voorbeeld berichten (behalve in die van StUF Jeugdzorg) moet daar dan ook nog worden voorzien in de daarvoor noodzakelijke elementen. Hieronder een korte uitleg daarvan.
 
 **Materiële historie**
 
@@ -449,13 +432,13 @@ Formele historie wordt geregistreerd door middel van het metagegeven `<StUF:tijd
 </BG:object>
 ```
 
-De gegevens in het bericht waar dit fragment is opgenomen zijn op 5 januari 2024 om 14:30 opgenomen in de registratie.
+De gegevens in het bericht waar dit fragment is opgenomen zijn op 5 januari 2024 om 14:30 opgenomen in de registratie. StUF kent geen `tijdstipEindeRegistratie`. Dat betekent dat de formele eindgeldigheid van een waarde alleen kan worden afgeleid uit een nieuwe `tijdstipRegistratie`. Daarnaast kan, als de registratie van een gegeven wordt beëindigt, dat in StUF alleen worden gecommuniceerd door een leeg voorkomen van die gegevens te versturen met een nieuwe `tijdstipRegistratie`. Tegenwoordig zien we dit als een omissie van StUF.
 
 ### StUF-foutafhandeling
 
-Bij synchroon berichtenverkeer wordt de respons over dezelfde verbinding wordt gegeven als waarover het verzoek is gedaan. Het voordeel van synchroon verkeer is dat de verzoekende partij kan wachten op de respons op de verbinding waarover het verzoek gedaan is. Als de respons er binnen een zekere time-out tijd is, dan is het verzoek geslaagd en anders faalt het verzoek. Synchroon berichtenverkeer stelt hoge eisen aan de aanbieder van een service.
+Bij synchroon berichtenverkeer wordt de respons over dezelfde verbinding wordt teruggegeven als waarover het verzoek is gedaan. Het voordeel van synchroon verkeer is dat de verzoekende partij kan wachten op de respons op de verbinding waarover het verzoek gedaan is. Als de respons er binnen een zekere time-out tijd is, dan is het verzoek geslaagd en anders faalt het verzoek. Synchroon berichtenverkeer stelt hoge eisen aan de aanbieder van een service.
 
-Asynchroon wil zeggen dat de respons over een andere meestal nieuw opgezette verbinding wordt gegeven. Service-aanbieders waarbij de belasting van de service sterk kan variëren, geven vaak de voorkeur aan asynchroon berichtenverkeer, want dan kunnen zij conform de eigen capaciteit de binnenkomende berichten verwerken. Asynchroon berichtenverkeer is dus robuuster, maar heeft als nadeel dat de serviceverzoeker herhaaldelijk zal moeten checken of er inmiddels een antwoord is ontvangen (pollen). De service-aanbieder verschuift dus een deel van zijn probleem naar de serviceverzoeker. Ook bij asynchroon berichtenverkeer kan er veel mis gaan.
+Asynchroon wil zeggen dat de respons over een, andere meestal nieuw opgezette, verbinding wordt gegeven. Service-aanbieders waarbij de belasting van de service sterk kan variëren, geven vaak de voorkeur aan asynchroon berichtenverkeer, want dan kunnen zij conform de eigen capaciteit de binnenkomende berichten verwerken. Asynchroon berichtenverkeer is dus robuuster, maar heeft als nadeel dat de serviceverzoeker herhaaldelijk zal moeten checken of er inmiddels een antwoord is ontvangen (pollen). De service-aanbieder verschuift dus een deel van zijn probleem naar de serviceverzoeker. Ook bij asynchroon berichtenverkeer kan er veel mis gaan.
 Gebruik van intermediaire nodes maakt het berichtenverkeer nog gevoeliger voor fouten.
 
 StUF kent daarom een eigen vorm van foutafhandeling van zowel synchroon als asynchroon berichtenverkeer. We onderkennen daarbij bevestigingsberichten (Bv01 t/m Bv04) en foutberichten (Fo01 t/m Fo03) in zowel synchrone als asynchrone varianten.
