@@ -472,7 +472,7 @@ Je hebt nu een globale kennis van wat StUF is en hoe het er uitziet. Lees nu de 
 
 ### Meer resources
 
-- [Protocolbindingen voor StUF (versie 3.2.4)](https://vng-realisatie.github.io/StUF-onderlaag/documenten/Stuf.bindingen.030204.pdf)
-- [Portal StUF standaarden](https://standaarden.vng.nl/StUF-standaarden)
-- [Website StUF onderlaag](https://vng-realisatie.github.io/StUF-onderlaag/)
-- [Website StUF-BG](https://vng-realisatie.github.io/StUF-BG/)
+- <a href="https://vng-realisatie.github.io/StUF-onderlaag/documenten/Stuf.bindingen.030204.pdf" target="_blank">Protocolbindingen voor StUF (versie 3.2.4)</a>
+- <a href="https://standaarden.vng.nl/StUF-standaarden" target="_blank">Portal StUF standaarden</a>
+- <a href="https://vng-realisatie.github.io/StUF-onderlaag/" target="_blank">Website StUF onderlaag</a>
+- <a href="https://vng-realisatie.github.io/StUF-BG/" target="_blank">Website StUF-BG</a>
