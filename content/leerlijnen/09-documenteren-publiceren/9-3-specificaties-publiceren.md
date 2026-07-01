@@ -1,7 +1,7 @@
 ---
 title: "9.3 Specificaties publiceren"
 date: 2026-05-13
-weight: 93
+weight: 903
 leerlijn: 9
 paragraaf: "9.3"
 parent: "Documenteren en publiceren"

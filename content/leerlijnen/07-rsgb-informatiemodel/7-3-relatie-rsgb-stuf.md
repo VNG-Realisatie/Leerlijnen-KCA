@@ -1,7 +1,7 @@
 ---
 title: "7.3 Relatie RSGB en StUF"
 date: 2026-03-04
-weight: 73
+weight: 703
 leerlijn: 7
 paragraaf: "7.3"
 parent: "RSGB-informatiemodel"

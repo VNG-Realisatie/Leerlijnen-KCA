@@ -1,7 +1,7 @@
 ---
 title: "1.2 Stelsel van Basisregistraties"
 date: 2026-03-04
-weight: 12
+weight: 102
 leerlijn: 1
 paragraaf: "1.2"
 leerdoel: "Inzicht krijgen in het stelsel van Basisregistraties. Wat is een basisregistratie en welke rol speelt een basisregisteratie. Hoe hangen de basisregistraties samen."

@@ -1,7 +1,7 @@
 ---
 title: "9.4 Impactanalyses en adviezen vastleggen"
 date: 2026-05-13
-weight: 94
+weight: 904
 leerlijn: 9
 paragraaf: "9.4"
 parent: "Documenteren en publiceren"

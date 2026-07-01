@@ -1,7 +1,7 @@
 ---
 title: "9.0 Todo voor documenteren publiceren"
 date: 2026-05-13
-weight: 90
+weight: 900
 leerlijn: 9
 paragraaf: "9.0"
 parent: "Documenteren en publiceren"

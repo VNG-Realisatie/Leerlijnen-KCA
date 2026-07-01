@@ -1,7 +1,7 @@
 ---
 title: "1.1 Het gemeentelijk applicatielandschap en de rol van KCA"
 date: 2026-05-28
-weight: 11
+weight: 101
 leerlijn: 1
 paragraaf: "1.1"
 leerdoel: "Hoe is het gemeentelijk applicatielandschap in de praktijk opgebouwd:  werken met pakketten, de rol van gegevensmagazijnen en servicebussen, en wat dit betekent voor de informatie-analist."
