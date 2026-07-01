@@ -5,7 +5,7 @@ weight: 6
 leerlijn_nummer: 6
 icon: "📨"
 beschrijving: "Grondige kennis van de StUF-standaard en het beheer van StUF‑sectormodellen en koppelvlakken."
-aantal_onderdelen: 10
+aantal_onderdelen: 9
 ---
 
 <div class="back-link-wrapper">
