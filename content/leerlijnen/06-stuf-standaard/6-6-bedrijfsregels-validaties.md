@@ -1,5 +1,5 @@
 ---
-title: "6.6Bedrijfsregels en validaties"
+title: "6.6 Bedrijfsregels en validaties"
 date: 2026-05-13
 weight: 606
 leerlijn: 6
