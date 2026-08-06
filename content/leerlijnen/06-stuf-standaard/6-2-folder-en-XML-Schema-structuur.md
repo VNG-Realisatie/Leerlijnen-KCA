@@ -1,6 +1,6 @@
 ---
 title: "6.2 StUF folder en XML-Schema structuur"
-date: 2026-05-13
+date: 2026-08-06
 weight: 602
 leerlijn: 6
 paragraaf: "6.2"
