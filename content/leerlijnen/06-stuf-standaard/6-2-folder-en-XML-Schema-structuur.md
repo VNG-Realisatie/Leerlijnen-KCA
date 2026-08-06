@@ -23,7 +23,7 @@ De StUF standaard en de bijbehorende sectormodellen bestaat naast de documentati
 
 **Basisfolderstructuur (0301)**
 
-<img width="150" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/basisfolderstructuur.jpg" />
+<img width="150" alt="basisfolder structuur" src="/Leerlijnen-KCA/images/basisfolderstructuur.jpg" />
 
 De XML- en WSDL-schema's behorende bij de onderlaag van de StUF 3.01 standaard bevinden zich in de folder 301. Het gaat daarbij om de volgende bestanden:
 * **stuf0301.xsd**<br/>
@@ -37,13 +37,13 @@ Deze folder is essentieel voor alle StUF 3.01 XML-Schema's en moet dus ook altij
 
 In de set van bij StUF benodigde folders komen ook wat folders voor die noodzakelijk zijn omdat de XML-Schema's daarin direct of indirect worden geïmporteerd in de StUF XML-Schema's. Het gaat om die roze gearceerde folders in de onderstaande image:
 
-<img width="150" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/ondersteunende-standaarden.jpg" />
+<img width="150" alt="Ondersteunende standaarden" src="/Leerlijnen-KCA/images/ondersteunende-standaarden.jpg" />
 
 Een van die standaarden is 'GML' (Geography Markup Language). Dit is een open, internationaal erkend bestandsformaat (gebaseerd op XML), dat wordt gebruikt om geografische informatie en digitale kaarten op te slaan en uit te wisselen. Deze standaard wordt bijv, gebruikt in de entiteit 'Wegdeel' (StUF-BG 3.10) om de geometrische informatie van zo'n wegdeel mee te kunnen verzenden.
 
 **Sectormodellen en hun berichtencatalogi**
 
-<img width="150" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/sectormodellen.jpg" />
+<img width="150" alt="Sectormodellen" src="/Leerlijnen-KCA/images/sectormodellen.jpg" />
 
 De hier blauw gearceerde folders bevatten de implementaties van de horizontale sectormodellen. Dat is naast documentatie ook XML-Schema en voorbeeld WSDL-Schema componenten waarmee de entiteittypes, attribuuttypes, relatietypes en berichten die gerelateerd zijn met een informatiemodel.
 
@@ -54,7 +54,7 @@ Naast de folder 'entiteiten', waarin de generieke XML-Schema definities per enti
 * mutatie
 * vraagAntwoord 
 
-<img width="210" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/berichtencatalogi.jpg" />
+<img width="210" alt="Berichtencatalogi" src="/Leerlijnen-KCA/images/berichtencatalogi.jpg" />
 
 Deze folders bevatten op de functie van de berichtencatalogus toegespitste aanscherpingen van de in te folder 'entiteiten' gedefinieerde XML-Schema  definities. En daarnaast ook op de functie van de berichtencatalogus betrekking hebbende voorbeeld WSDL-Schema's.
 
@@ -64,7 +64,7 @@ Een berichtcatalogus specificeert samen met zijn voorbeeld-wsdl's een verzamelin
 
 Naast de standaard berichtcatalogi kunnen er in een sectormodel ook berichtencatalogi zijn opgenomen voor specifieke op een sectormodel gebaseerde koppelvlakken. Hieronder zie je voor zowel het sectormodel StUF-BG als StUF-ZKN een voorbeeld:
 
-<img width="200" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/koppelvlakmappen-berichtencatalogi.jpg" />
+<img width="200" alt="Koppelvlakmappen berichtencatalogi" src="/Leerlijnen-KCA/images/koppelvlakmappen-berichtencatalogi.jpg" />
 
 In de berichtcatalogus 'bg0310/bag' vind je de definitie van samengestelde berichten, gebaseerd op de werkprocessen BAG, die gebruikt kunnen worden voor het melden van BAG mutaties aan alle andere gemeentelijke applicaties.
 
@@ -87,7 +87,7 @@ Deze folder bevat de volgende schema's:
 
 In 'bg0310_ent_basis.xsd' zijn alle complexTypes die een rol spelen binnen StUF-BG 3.10 op een generieke wijze gemodelleerd opgenomen. Dus zodanig dat ze als basis kunnen dienen voor alle type berichten. In principe is voor elk entiteittype in het RSGB (zie daarvoor de module over het RSGB informatiemodel) een basis complexType gedefinieerd (`XXX-basis`). 'In principe' omdat we bij het verStUFfen van het RSGB technische keuzes maken. Op het verStUFfen zullen we in een ander onderdeel van deze module in gaan. Voor 'HHD' is in ieder geval de complexType `HHD-basis` opgenomen die er als volgt uitziet:
 
-<img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHD-basis.jpg" />
+<img width="400" alt="HHD-basis complexType" src="/Leerlijnen-KCA/images/HHD-basis.jpg" />
 
 Dit is tevens de maximale omvang van een antwoordbericht.
 
@@ -103,7 +103,7 @@ Een relatie wordt altijd gemodelleerd in een eigen complexType waarvan de naamge
 
 Voor de relatie `BG:heeftAlsLeden` heet de complexType dus `HHDNPS-basis` die er als volgt uitziet:
 
-<img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHDNPS-basis.jpg" />
+<img width="400" alt="HHDNPS-basis complexType" src="/Leerlijnen-KCA/images/HHDNPS-basis.jpg" />
 
 De mnemonic 'NPS' betekent overigens 'Natuurlijk Persoon'.
 
@@ -137,7 +137,7 @@ Binnen StUF 3.01 is het ook mogelijk om het met `StUF:extraElementen` vergelijkb
 
 Naast de complexType 'HHD-basis' is ook het complexType `HHD-kerngegevens` aanwezig:  
 
-<img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHD-kerngegevens.jpg" />
+<img width="400" alt="HHD-kerngegevens complexType" src="/Leerlijnen-KCA/images/HHD-kerngegevens.jpg" />
 
 Kerngegevens zijn een deelverzameling van de attributen en relaties van een entiteittype aan de hand waarvan een object kan worden geïdentificeerd. `HHD-kerngegevens` definieert dus de kerngegevens van het 'HHD' entiteittype en wordt gedefinieerd als een restriction op het “HHD-basis” complexType met als elementen diens kerngegevens en de kernrelaties. Ook hierin zijn alle elementen optioneel omdat niet altijd alle kerngegevens beschikbaar hoeven te zijn. Binnen een kerngegevens complexType zijn de complexTypes voor de gerelateerden van relaties en voor de historie-elementen altijd kerngegevens complexTypes.
 
@@ -146,21 +146,21 @@ Kerngegevens zijn een deelverzameling van de attributen en relaties van een enti
 Tenslotte bevat het XML-Schema 'bg0310_ent_basis.xsd' ook nog complexTypes voor elementgroepen en tabel-entiteiten. Elementgroepen zijn herbruikbare gegevensgroepen en tabel-entiteiten zijn (dynamische) enumeraties.
 Een goed voorbeeld van een elementgroep is `verblijfBuitenlandGrp`:
 
-<img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/verblijfBuitenlandGrp.jpg" />
+<img width="400" alt="Group verblijfBuitenlandGrp" src="/Leerlijnen-KCA/images/verblijfBuitenlandGrp.jpg" />
 
 Een goed voorbeeld van een tabel-entiteit is `LND-tabel`:
 
-<img width="400" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/LND-tabel.jpg" />
+<img width="400" alt="LND (Landen) tabel" src="/Leerlijnen-KCA/images/LND-tabel.jpg" />
 
 *Relaties tussen complexTypes*
 
 Hieronder hebben we nog even voor het entiteittype HHD de relaties op hoofdlijnen tussen de diverse complexTypes binnen de XML-Schema's in de 'entiteiten' folder gevisualiseerd.
 
-<img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Structuur-entiteiten.jpg" />
+<img width="300" alt="Structuur complexTypes" src="/Leerlijnen-KCA/images/Structuur-entiteiten.jpg" />
 
 In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
-<img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-entiteiten.jpg" />
+<img width="300" alt="Voorbeeldstructuur HHD complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-entiteiten.jpg" />
 
 > **Let op!** Zoals al eerder gesteld hebben de complexTypes voor de gerelateerde soms wat uitgebreidere namen. In de bovenstaande illustratie hebben we voor de eenvoud de naam `NPS-basis` gebruikt. In werkelijkheid heeft deze echter de naam `NPSNINING-basis`. We verwijzen weer naar het onderdeel waarin we het verStUFfingsdocument bespreken voor meer uitleg daarover.
 
@@ -171,7 +171,7 @@ Denk aan datatypes voor de elementen `BG:ingangsdatumObject` en `BG:einddatumObj
 
 Daarnaast importeert het t.b.v. toepassing in StUF-BG 3.10 bijv. ook een aantal constructs uit de StUF namespace die worden gebruikt om een aantal standaard StUF attributen te definiëren op elke StUF-BG 3.10 basis complexType. Hieronder een voorbeeld m.b.t. het 'HHD' entiteittype:
 
-<img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHD-StUF-attributes.jpg" />
+<img width="300" alt="HHD StUF attributes" src="/Leerlijnen-KCA/images/HHD-StUF-attributes.jpg" />
 
 Het attribuut `StUF:entiteittype` krijgt altijd een fixed waarde mee die gelijk is aan de mnemonic die voorkomt in de naam van het complexType van het objecttype of relatietype.
 
@@ -185,7 +185,7 @@ Die definitie gebeurd in 2 stappen.
 
 Hieronder zie je het datatype `HuishoudenSoort-e` dat wordt gebruikt in het element `soort` binnen het 'HHD' entiteittype.
 
-<img width="600" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHD-e-type.jpg" />
+<img width="600" alt="HHD e-type" src="/Leerlijnen-KCA/images/HHD-e-type.jpg" />
 
 Zoals je rechts ziet is het gebaseerd op het basis datatype `BG:HuishoudenSoort`, betreft het een enumeration en beschikt het over een tweetal StUF attributes.
 
@@ -207,7 +207,7 @@ Deze folder bevat de volgende schema's:
 Dit XML-Schema bevat de elementen die de StUF-BG 3.10 kennisgeving- en synchronisatieberichten vertegenwoordigen en de complexTypes met de elementen die het eerste niveau van die berichten vormen. 
 Hieronder het 'hhdLk01' bericht als voorbeeld:
 
-<img width="600" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/hhdLk01.jpg" />
+<img width="600" alt="hhdLk01 bericht" src="/Leerlijnen-KCA/images/hhdLk01.jpg" />
 
 Dit betreft een asynchroon kennisgevingsbericht (soms ook mutatieberichten genoemd) voor het entiteittype HHD waarbij de body van dit bericht in een apart complexType is gedefinieerd. 
 
@@ -234,11 +234,11 @@ De inhoud van het `object` (of eigenlijk specifiek het`BG:object`) element in da
 
 Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tussen de diverse complexTypes binnen de XML-Schema's in de 'mutatie' folder gevisualiseerd. Daarin zijn ook de afleidingen van de basis entiteiten meegenomen.
 
-<img width="600" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Structuur-mutaties.jpg" />
+<img width="600" alt="Structuur mutaties complexTypes" src="/Leerlijnen-KCA/images/Structuur-mutaties.jpg" />
 
 In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
-<img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-mutaties.jpg" />
+<img width="750" alt="Voorbeeldstructuur HHD mutaties complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-mutaties.jpg" />
 
 ***bg0310_msg_stuf_mutatie.xsd***
 
@@ -263,11 +263,11 @@ Dit XML-Schema bevat de elementen die de StUF-BG 3.10 vraag- en antwoordberichte
 
 Hieronder het 'hhdLv01' bericht:
 
-<img width="600" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/hhdLv01.jpg" />
+<img width="600" alt="hhdLv01 bericht" src="/Leerlijnen-KCA/images/hhdLv01.jpg" />
 
 en het 'hhdLa01' bericht als voorbeeld:
 
-<img width="600" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/hhdLa01.jpg" />
+<img width="600" alt="hhdLa01 bericht" src="/Leerlijnen-KCA/images/hhdLa01.jpg" />
 
 Het betreft bij elkaar horende synchrone berichten voor wederom het entiteittype HHD.
 
@@ -294,7 +294,7 @@ Het aantal verschillende complexTypes geeft al aan dat de structuur van de vraag
 
 Zoals we al eerder aangaven bestaat de payload van een vraagbericht uit een vijftal elementen:
 
-<img width="300" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/HHD-VraagBody.jpg" />
+<img width="300" alt="HHD-VraagBody complexType" src="/Leerlijnen-KCA/images/HHD-VraagBody.jpg" />
 
 * Met de `BG:gelijk`, `BG:vanaf` of `BG:totEnMet` kunnen de selectiecriteria in een vraagbericht worden gedefinieerd. Deze elementen hebben altijd een `XXX-vraag` of `XXX-vraagSelectie` complexType als body. Een `XXX:vraagSelectie` complexType is alleen van toepassing als de inhoud van het `BG:scope` element afwijkt van de inhoud van de selectie elementen.
 * Met het `G:scope` element kunnen de terug te retourneren elementen worden gedefinieerd. Dit element heeft altijd een `XXX-vraag` of `XXX:vraagScope` complexType als body waarbij de laatste natuurlijk alleen van toepassing is op `BG:scope` elementen die een andere inhoud hebben dan de selectie elementen.<br/><br/>De belangrijkste regels voor de vraag complexTypes zijn:
@@ -316,11 +316,11 @@ In de topfundamenteel, een relatie element of een `gerelateerde` element binnen 
 
 Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tussen de diverse complexTypes binnen de XML-Schema's in de 'vraagAntwoord' folder gevisualiseerd. Daarin zijn ook de afleidingen van de basis entiteiten meegenomen.
 
-<img width="750" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Structuur-vraagAntwoord.jpg" />
+<img width="750" alt="Structuur vraagAntwoord complexTypes" src="/Leerlijnen-KCA/images/Structuur-vraagAntwoord.jpg" />
 
 In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
-<img width="850" alt="StUF lagenmodel" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-vraagAntwoord.jpg" />
+<img width="850" alt="Voorbeeldstructuur HHD vraagAntwoord complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-vraagAntwoord.jpg" />
 
 ***bg0310_msg_stuf_vraagAntwoord.xsd***
 
