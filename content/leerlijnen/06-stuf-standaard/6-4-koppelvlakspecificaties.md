@@ -31,7 +31,7 @@ Het opstellen van een koppelvlakspecificatie start altijd vanuit een specifieke 
 
 ### Functionele en technische specificatie
 
-In een functionele en technische specificatie kan je de volgende onderdelen tegenkomen:
+In een functionele en technische specificatie kan je o.a. de volgende onderdelen tegenkomen:
 * Functionaliteit op hoofdlijnen
 * Architectuur
 * Specificatie per bericht/service
