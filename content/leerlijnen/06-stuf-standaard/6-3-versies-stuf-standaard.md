@@ -38,14 +38,16 @@ Aangezien deze standaard nog slechts door een klein aantal leveranciers wordt ge
 ### Integratie versie 2.04 met versie 3.01
 
 Voor zowel versie 2.04 als 3.01 is het sectormodel (zie verderop voor een uitleg) StUF-BG gepubliceerd (2.04 resp. 3.10). Voor de transformatie in de keten van StUF-BG 2.04 naar StUF-BG 3.10 en vice versa zijn mapping tabellen gepubliceerd.
-Hieronder zie je bijv. een deel van de mapping tussen de entiteit ADR in StUF-BG 2.04 naar de entiteit AOA in StUF-BG 3.10 envice versa.
+Hieronder zie je bijv. een deel van de mapping tussen de entiteit ADR in StUF-BG 2.04 naar de entiteit AOA in StUF-BG 3.10:
 
-<img width="600" alt="StUF-BG 2.04 Stuurgegevens" src="/Leerlijnen-KCA/images/Mapping-ADR-op-AOA.jpg" />
+<img width="800" alt="StUF-BG 2.04 Stuurgegevens" src="/Leerlijnen-KCA/images/Mapping-ADR-op-AOA.jpg" />
 
-<img width="600" alt="StUF-BG 2.04 Stuurgegevens" src="/Leerlijnen-KCA/images/Mapping-AOA-op-ADR.jpg" />
+en vice versa:
 
-Soms betreft de mapping simpelweg het wijzigen van een elementnaam zoals in de eerste van `woonplaatsnaam` naar `wpl.woonplaatsNaamNen` maar soms ligt dat ook ingewikkelder.
-Zoals in het geval van het element `identificatie` in AOA. Daarvoor is geen tegenhanger aanwezig in StUF-BG 2.04 reden waarom we in dat geval mappen naar het extraElement `identificatieAOA`. Of in het geval van `gor.openbareRuimteNaam`, `gor.straatnaam` en het extraElement `straatnaam` in AOA. Alledrie die elementen moeten gemapt worden op `straatnaam`. Het zal duidelijk zijn dat je niet drie elementen daarop kunt mappen. Reden waarom er is beschreven wat de doen als meer dan een van die elementen aanwezig is: 
+<img width="800" alt="StUF-BG 2.04 Stuurgegevens" src="/Leerlijnen-KCA/images/Mapping-AOA-op-ADR.jpg" />
+
+Soms betreft de mapping simpelweg het wijzigen van een elementnaam zoals in de eerste figuur van `woonplaatsnaam` naar `wpl.woonplaatsNaamNen` maar soms ligt dat ook ingewikkelder.
+Zoals in de tweede figuur het geval van het element `identificatie` in AOA. Daarvoor is geen tegenhanger aanwezig in StUF-BG 2.04 reden waarom we in dat geval mappen naar het extraElement `identificatieAOA`. Of in het geval van `gor.openbareRuimteNaam`, `gor.straatnaam` en het extraElement `straatnaam` in AOA. Alledrie die elementen moeten gemapt worden op `straatnaam`. Het zal duidelijk zijn dat je niet tegelijkertijd drie elementen daarop kunt mappen. Reden waarom er is beschreven wat de doen als meer dan een van die elementen aanwezig is: 
 
 > Als gor.straatnaam is gevuld, dan wordt deze gemapt, anders gor.openbareRuimteNaam, zonodig wordt de waarde afgekapt op 24 posities.<br/>Binnen de BAG berichtencatalogus is gor.straatnaam in sommige berichten niet beschikbaar. Gebruik dan het extraElement 'straatnaam'.
 

@@ -5,7 +5,7 @@ weight: 604
 leerlijn: 6
 paragraaf: "6.4"
 parent: "StUF-standaard"
-leerdoel: "Het kunnen lezen en beheren van een StUF koppelvlak standaard met alle documenten die daarbij horen."
+leerdoel: "De onderdelen van een StUF koppelvlak standaard kennen met alle documenten die daarbij hoort."
 ---
 
 ## 6.4 Koppelvlakspecificaties
@@ -17,9 +17,9 @@ Kan StUF-koppelvlakspecificaties lezen en beheren.
 Een **StUF koppelvlakspecificatie** is een set van documenten die precies beschrijft hoe twee systemen met elkaar kunnen communiceren via StUF-berichten. Het definieert de berichten, scenario's en business-regels die nodig zijn voor succesvolle gegevensuitwisseling. een StUF koppelvlak specificeert hoe de gegevensuitwisseling tussen applicaties en voorzieningen eruit moet zien. Het legt concrete afspraken vast waarmee specifieke gegevens kunnen worden gecommuniceerd. Afspraken over specifieke berichten die tussen bepaalde referentiecomponenten uitgewisseld moeten en/of kunnen worden, afspraken over aanscherping van de berichten uit een StUF sectormodel en afspraken over de wijze waarop die berichten verstuurd moeten worden. In een StUF koppelvlakspecificatie is ook altijd aangegeven op welke referentiecomponenten de specificatie van toepassing is. Een StUF sectormodel is wat dat betreft minder restrictief en laat meer ruimte open voor eigen interpretatie.
 
 Een aantal bekende StUF koppelvlakken zijn:
-* Zaak- en Documentservices
-* Documentcreatieservices
-* en StUF Jeugdzorg
+* <a href="https://vng-realisatie.github.io/Zaak-en-Documentservices/" target="_blank">Zaak- en Documentservices</a>
+* <a href="https://vng-realisatie.github.io/Documentcreatieservices/Documentatie" target="_blank">Documentcreatieservices</a>
+* en <a href="https://vng-realisatie.github.io/StUF-Jeugdzorg/" target="_blank">StUF Jeugdzorg</a>
 
 #### Componenten van een StUF koppelvlakspecificatie
 
@@ -31,11 +31,21 @@ Het opstellen van een koppelvlakspecificatie start altijd vanuit een specifieke 
 
 ### Functionele en technische specificatie
 
-Een functionele en technische specificatie bevat over het algemeen de volgende onderdelen:
+In een functionele en technische specificatie kan je de volgende onderdelen tegenkomen:
+* Functionaliteit op hoofdlijnen
+* Architectuur
+* Specificatie per bericht/service
+* Foutafhandeling
+* informatiemodel
+* VerStUFfing
+* Beveiliging en autorisatie
+* Protocolbinding
+* Foutafhandeling
 
+Bij het opstellen van de StUF koppelvlakken zijn hierin eigen keuzes gemaakt.
 
-Het opstellen en beheren van StUF-koppelvlakspecificaties vereist grondige kennis van zowel de technische als functionele aspecten van gegevensuitwisseling. Een goede specificatie is de basis voor succesvolle systeemintegratie en interoperabiliteit binnen de overheid.
+Het beheren van StUF-koppelvlakspecificaties vereist grondige kennis van zowel de technische als functionele aspecten van gegevensuitwisseling. Een goede specificatie is de basis voor succesvolle systeemintegratie en interoperabiliteit binnen de overheid.
 
 **Resources:**
+- [StUF Sectormodellen en koppelvlakken](https://standaarden.vng.nl/StUF-koppelvlakken-en-sectormodellen)
 - [StUF Testplatform](https://www.stuftest.nl/)
-- [GEMMA Koppelvlakspecificaties](https://www.gemmaonline.nl/)
