@@ -72,16 +72,18 @@ In de berichtcatalogus 'zkn0310/zs-dms' vind je de definitie van de berichten wa
 
 ### Samenhang XML-Schema's
 
-Laten we eens naar de XML-Schema's van StUF-BG 3.10 (folder 'bg0310') kijken zonder daarbij al te veel te focussen op de inhoudelijke aspecten van de in deze XML-Schema's opgenomen entiteiten maar vooral op de generiek toegepaste principes. We nemen daarvoor als voorbeeld het redelijk eenvoudige entiteittype 'Huishouden' (ook wel bekend onder de mnemonic 'HHD' dat in het RSGB aan gerelateerde objecttype is toegekend) en starten met de basale complexTypes. Daarna kijken we hoe de complexTypes voor de verschillende berichten zich hiertoe verhouden. Daar waar nodig zullen we daar andere entiteiten bij betrekken. Voor andere sectormodellen gelden dezelfde principes.
+Laten we eens naar de XML-Schema's van StUF-BG 3.10 (folder 'bg0310') kijken zonder daarbij al te veel te focussen op de inhoudelijke aspecten van de in deze XML-Schema's opgenomen entiteiten maar vooral op de generiek toegepaste principes. We nemen daarvoor als voorbeeld het redelijk eenvoudige entiteittype 'Huishouden' (ook wel bekend onder de mnemonic 'HHD' dat in het RSGB aan gerelateerde objecttype is toegekend) en starten met de basale complexTypes. Daarna kijken we hoe de complexTypes voor de mutatie-, synchronisatie- en vraagAntwoordberichten zich hiertoe verhouden. Daar waar nodig zullen we daar andere entiteiten bij betrekken. Voor andere sectormodellen zoals StUF-ZKN 3.10 gelden dezelfde principes.
 
-**XML-Schema's in 'entiteiten'**
+Op vrije berichten gaan we in dit onderdeel niet in. Vrije berichten vinden hun toepassing nagenoeg alleen binnen de StUF koppelvlakken, reden waarom we daarop in het onderdeel dat daarover gaat op terugkomen.
+
+### _XML-Schema's in 'entiteiten'_
 
 Deze folder bevat de volgende schema's:
 * bg0310_ent_basis.xsd
 * bg0310_simpleTypes.xsd
 * bg0310_stuf_simpleTypes.xsd
 
-***bg0310_ent_basis.xsd***
+**bg0310_ent_basis.xsd**
 
 *Complextypes voor basis entiteittypes*
 
@@ -164,7 +166,7 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 > **Let op!** Zoals al eerder gesteld hebben de complexTypes voor de gerelateerde soms wat uitgebreidere namen. In de bovenstaande illustratie hebben we voor de eenvoud de naam `NPS-basis` gebruikt. In werkelijkheid heeft deze echter de naam `NPSNINING-basis`. We verwijzen weer naar het onderdeel waarin we het verStUFfingsdocument bespreken voor meer uitleg daarover.
 
-***bg0310_stuf_simpleTypes.xsd***
+**bg0310_stuf_simpleTypes.xsd**
 
 Dit schema bevat een aantal datatypes en extensions daarop in de StUF namespace maar specifiek bedoelt voor toepassing in StUF-BG 3.10.
 Denk aan datatypes voor de elementen `BG:ingangsdatumObject` en `BG:einddatumObject` binnen het entiteittype 'HHD'. Dit soort datatypes komen in meerdere sectormodellen terug en om die reden zijn ze in de StUF namespace ondergebracht.
@@ -175,7 +177,7 @@ Daarnaast importeert het t.b.v. toepassing in StUF-BG 3.10 bijv. ook een aantal 
 
 Het attribuut `StUF:entiteittype` krijgt altijd een fixed waarde mee die gelijk is aan de mnemonic die voorkomt in de naam van het complexType van het objecttype of relatietype.
 
-***bg0310_simpleTypes.xsd***
+**bg0310_simpleTypes.xsd**
 
 Als je kijkt naar het complexType `HHD-basis` dan zie je dat daarin enkele elementen worden gedefinieerd voor het entiteittype HHD maar die geen relaties vertegenwoordigen. Elementen die binnen de StUF-BG namespace vallen zoals `nummer`, `soort` en `grootte`. Sommige daarvan kunnen ook in andere StUF-BG entiteittypes voorkomen. De datatypes van deze elementen worden in dit XML-Schema en dus ook in de StUF-BG namespace gedefinieerd.
 
@@ -189,22 +191,24 @@ Hieronder zie je het datatype `HuishoudenSoort-e` dat wordt gebruikt in het elem
 
 Zoals je rechts ziet is het gebaseerd op het basis datatype `BG:HuishoudenSoort`, betreft het een enumeration en beschikt het over een tweetal StUF attributes.
 
-***Opdracht***
+**Opdracht**
 
 Bestudeer de XML-Schema's in de folder 'bg0310/entiteiten' en probeer de in deze paragraaf beschreven principes terug te vinden in andere entiteiten dan 'HHD'.
 
-**XML-Schema's in 'mutaties'**
+### _XML-Schema's in 'mutaties'_
 
-In de bestudering van de StUF standaard heb je al gezien dat er verschillende types kennisgevingberichtsoorten bestaan en wat de onderdelen daarvan zijn. Hier proberen we je inzicht te geven in de principes die ten grondslag liggen aan de vorm van de complexTypes en elementen die we gebruiken om die kennisgevingsberichten vorm te geven.
+In de bestudering van de StUF standaard heb je al gezien dat er verschillende types kennisgeving- en synchronisatieberichtsoorten bestaan en wat de onderdelen daarvan zijn. Hier proberen we je inzicht te geven in de principes die ten grondslag liggen aan de vorm van de complexTypes en elementen die we gebruiken om die kennisgevings- en synchronisatieberichten vorm te geven. We behandelen daarbij eerst de complexTypes en elementen van de kennisgevingsberichten en komen in de laatste subparagraaf van deze paragraaf terug op die van de synchronisatieberichten.
 
-Deze folder bevat de volgende schema's:
+De folder 'mutaties' bevat de volgende schema's:
 * bg0310_msg_mutatie.xsd
 * bg0310_ent_mutatie.xsd
 * bg0310_msg_stuf_mutatie.xsd
 
+**Kennisgevingsberichten**
+
 ***bg0310_msg_mutatie.xsd***
 
-Dit XML-Schema bevat de elementen die de StUF-BG 3.10 kennisgeving- en synchronisatieberichten vertegenwoordigen en de complexTypes met de elementen die het eerste niveau van die berichten vormen. 
+Dit XML-Schema bevat de elementen die de StUF-BG 3.10 kennisgevingberichten vertegenwoordigen en de complexTypes met de elementen die het eerste niveau van die berichten vormen. 
 Hieronder het 'hhdLk01' bericht als voorbeeld:
 
 <img width="600" alt="hhdLk01 bericht" src="/Leerlijnen-KCA/images/hhdLk01.jpg" />
@@ -213,9 +217,7 @@ Dit betreft een asynchroon kennisgevingsbericht (soms ook mutatieberichten genoe
 
 De basisstructuur van het kennisgevingsbericht, dat deels ook wordt toegepast op een groot deel van de andere berichttypen, bevat altijd een `stuurgegevens` element met een op de entiteit-bericht combinatie aangepaste complexType. Dat complexType is in de basis een restriction van het in de StUF 3.01 namespace aanwezige `Stuurgegevens` complexType. Een kennisgevingsbericht bevat ook een `parameters` element dat een specifiek op het type bericht toegesneden complexType kent dat eveneens in de basis een restriction is van een in de StUF 3.01 namespace aanwezig complexType. Tenslotte bevat een kennisgevingsbericht een `object` element dat 1 of 2 keer voor mag komen. Voor de reden daarvoor verwijs ik je naar de StUF standaard. In de volgende paragraaf gaan we dieper in op hoe de restriction tot stand komt.
 
-Op de synchronisatieberichten ga ik in de rest van deze paragraaf niet verder in.
-
-***bg0310_ent_mutatie.xsd***
+**bg0310_ent_mutatie.xsd**
 
 Dit schema bevat alle complexTypes met de specifieke kennisgevingstructuren voor de diverse entiteittypen. In deze paragraaf proberen je inzicht te geven in de principes die ten grondslag liggen aan de vorm van de complexTypes die de payload, dus de inhoud van het `object` element, van het bericht vormen.
 
@@ -240,15 +242,21 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 <img width="750" alt="Voorbeeldstructuur HHD mutaties complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-mutaties.jpg" />
 
-***bg0310_msg_stuf_mutatie.xsd***
+**bg0310_msg_stuf_mutatie.xsd**
 
 In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit het 'stuf0301.xsd' XML-Schema verder aangescherpt voor gebruik in de kennisgevingberichten. Dat aanscherpen betreft eigenlijk niet meer dan het beperken van de waarde van het XML attribute `StUF:entiteittype` binnen de `Stuurgegevens` complexTypes zodat die niet conflicteert met het entiteittype waar het bericht betrekking op heeft.
 
-***Opdracht***
+**Synchronisatieberichten**
+
+Synchronisatieberichten maken deels gebruik van de complexTypes voor kennisgevingsberichten
+
+!!!!!!!!!!!!!!!!!!!!!!Aanvullen!!!!!!!!!!!!!!!!!!!!!
+
+**Opdracht**
 
 Bestudeer de XML-Schema's in de folder 'bg0310/mutaties' en probeer de in deze paragraaf beschreven principes terug te vinden in andere entiteiten dan 'HHD'.
 
-**XML-Schema's in 'vraagAntwoord'**
+## _XML-Schema's in 'vraagAntwoord'_
 
 Tenslotte gaan we nog in de 'vraagAntwoord' berichten. Ook hier liggen een aantal principes ten grondslag aan de vorm van de complexTypes en elementen die we gebruiken om die vraagAntwoordberichten vorm te geven.
 
@@ -257,7 +265,9 @@ Deze folder bevat de volgende schema's:
 * bg0310_ent_vraagAntwoord.xsd
 * bg0310_msg_stuf_vraagAntwoord.xsd
 
-***bg0310_msg_vraagAntwoord.xsd***
+**VraagAntwoordberichten**
+
+**bg0310_msg_vraagAntwoord.xsd**
 
 Dit XML-Schema bevat de elementen die de StUF-BG 3.10 vraag- en antwoordberichten vertegenwoordigen en de group definities met de vraagbodies.
 
@@ -276,7 +286,7 @@ Een antwoordbericht kent daarnaast nog een optioneel `melding` element waarmee d
 
 Voor de payload van het bericht wordt hier gebruik gemaakt van een elders in dit schema gedefinieerde group. Elk group component kent dezelfde vorm die je in de illustratie van het 'hhdLv01' bericht terugziet (`gelijk`, `vanaf`, `totEnMet`, `scope` en `start`).
 
-***bg0310_ent_vraagAntwoord.xsd***
+**bg0310_ent_vraagAntwoord.xsd**
 
 Dit XML-Schema kan de volgende complexTypes per entiteittype bevatten:
 
@@ -322,7 +332,7 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 <img width="850" alt="Voorbeeldstructuur HHD vraagAntwoord complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-vraagAntwoord.jpg" />
 
-***bg0310_msg_stuf_vraagAntwoord.xsd***
+**bg0310_msg_stuf_vraagAntwoord.xsd**
 
 In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit het 'stuf0301.xsd' XML-Schema verder aangescherpt voor gebruik in de vraag- en antwoordberichten. Dat aanscherpen betreft:
 * de parameters voor synchrone danwel asynchrone berichttypes (met of zonder voorzieningen voor formele- en materiële historie). 
@@ -330,7 +340,7 @@ In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit h
 
 Daarnaast voorziet dit XML-Schema nog in simpleTypes t.b.v. sortering.
 
-***Opdracht***
+**Opdracht**
 
 Bestudeer de XML-Schema's in de folder 'bg0310/vraagAntwoord' en probeer de in deze paragraaf beschreven principes terug te vinden in andere entiteiten dan 'HHD'.
 

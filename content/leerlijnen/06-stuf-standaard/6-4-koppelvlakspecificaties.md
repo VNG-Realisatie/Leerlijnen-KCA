@@ -46,6 +46,12 @@ Bij het opstellen van de StUF koppelvlakken zijn hierin eigen keuzes gemaakt.
 
 Het beheren van StUF-koppelvlakspecificaties vereist grondige kennis van zowel de technische als functionele aspecten van gegevensuitwisseling. Een goede specificatie is de basis voor succesvolle systeemintegratie en interoperabiliteit binnen de overheid.
 
+### Vrij berichttype
+
+Een StUF koppelvlakspecicatie is DE plaats waar je een StUF vrij bericht tegen kunt komen.
+
+!!!!!!!!!!!!!!!!!!!!!!Aanvullen!!!!!!!!!!!!!!!!!!!!!
+
 **Resources:**
 - [StUF Sectormodellen en koppelvlakken](https://standaarden.vng.nl/StUF-koppelvlakken-en-sectormodellen)
 - [StUF Testplatform](https://www.stuftest.nl/)
