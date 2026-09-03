@@ -83,7 +83,7 @@ Deze folder bevat de volgende schema's:
 * bg0310_simpleTypes.xsd
 * bg0310_stuf_simpleTypes.xsd
 
-**bg0310_ent_basis.xsd**
+***bg0310_ent_basis.xsd***
 
 *Complextypes voor basis entiteittypes*
 
@@ -166,7 +166,7 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 > **Let op!** Zoals al eerder gesteld hebben de complexTypes voor de gerelateerde soms wat uitgebreidere namen. In de bovenstaande illustratie hebben we voor de eenvoud de naam `NPS-basis` gebruikt. In werkelijkheid heeft deze echter de naam `NPSNINING-basis`. We verwijzen weer naar het onderdeel waarin we het verStUFfingsdocument bespreken voor meer uitleg daarover.
 
-**bg0310_stuf_simpleTypes.xsd**
+***bg0310_stuf_simpleTypes.xsd***
 
 Dit schema bevat een aantal datatypes en extensions daarop in de StUF namespace maar specifiek bedoelt voor toepassing in StUF-BG 3.10.
 Denk aan datatypes voor de elementen `BG:ingangsdatumObject` en `BG:einddatumObject` binnen het entiteittype 'HHD'. Dit soort datatypes komen in meerdere sectormodellen terug en om die reden zijn ze in de StUF namespace ondergebracht.
@@ -177,7 +177,7 @@ Daarnaast importeert het t.b.v. toepassing in StUF-BG 3.10 bijv. ook een aantal 
 
 Het attribuut `StUF:entiteittype` krijgt altijd een fixed waarde mee die gelijk is aan de mnemonic die voorkomt in de naam van het complexType van het objecttype of relatietype.
 
-**bg0310_simpleTypes.xsd**
+***bg0310_simpleTypes.xsd***
 
 Als je kijkt naar het complexType `HHD-basis` dan zie je dat daarin enkele elementen worden gedefinieerd voor het entiteittype HHD maar die geen relaties vertegenwoordigen. Elementen die binnen de StUF-BG namespace vallen zoals `nummer`, `soort` en `grootte`. Sommige daarvan kunnen ook in andere StUF-BG entiteittypes voorkomen. De datatypes van deze elementen worden in dit XML-Schema en dus ook in de StUF-BG namespace gedefinieerd.
 
@@ -217,7 +217,7 @@ Dit betreft een asynchroon kennisgevingsbericht (soms ook mutatieberichten genoe
 
 De basisstructuur van het kennisgevingsbericht, dat deels ook wordt toegepast op een groot deel van de andere berichttypen, bevat altijd een `stuurgegevens` element met een op de entiteit-bericht combinatie aangepaste complexType. Dat complexType is in de basis een restriction van het in de StUF 3.01 namespace aanwezige `Stuurgegevens` complexType. Een kennisgevingsbericht bevat ook een `parameters` element dat een specifiek op het type bericht toegesneden complexType kent dat eveneens in de basis een restriction is van een in de StUF 3.01 namespace aanwezig complexType. Tenslotte bevat een kennisgevingsbericht een `object` element dat 1 of 2 keer voor mag komen. Voor de reden daarvoor verwijs ik je naar de StUF standaard. In de volgende paragraaf gaan we dieper in op hoe de restriction tot stand komt.
 
-**bg0310_ent_mutatie.xsd**
+***bg0310_ent_mutatie.xsd***
 
 Dit schema bevat alle complexTypes met de specifieke kennisgevingstructuren voor de diverse entiteittypen. In deze paragraaf proberen je inzicht te geven in de principes die ten grondslag liggen aan de vorm van de complexTypes die de payload, dus de inhoud van het `object` element, van het bericht vormen.
 
@@ -244,18 +244,18 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 <img width="750" alt="Voorbeeldstructuur HHD mutaties complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-mutaties.jpg" />
 
-**bg0310_msg_stuf_mutatie.xsd**
+***bg0310_msg_stuf_mutatie.xsd***
 
 In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit het 'stuf0301.xsd' XML-Schema verder aangescherpt voor gebruik in de kennisgevingberichten. Dat aanscherpen betreft eigenlijk niet meer dan het beperken van de waarde van het XML attribute `StUF:entiteittype` binnen de `Stuurgegevens` complexTypes zodat die niet conflicteert met het entiteittype waar het bericht betrekking op heeft.
 
 **Samengestelde kennisgevingberichten**
 
-We kennen een tweetal samengestelde kennisgevingen, Lk03 en Lk04 berichten. Hier als voorbeeld het 'bagIN_Lk03' bericht:
+We kennen een tweetal verschillende samengestelde kennisgevingen, Lk03 en Lk04 berichten. Hier als voorbeeld het 'bagIN_Lk03' bericht:
 
-<img width="600" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/bagIN_Lk03-Samengestelde-kennisgeving.jpg" />
+<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/bagIN_Lk03-Samengestelde-kennisgeving.jpg" />
 
 Samengestelde kennisgevingen bevatten:
-* Een op het betreffende Lk03 of Lk04 bericht toegesneden specifieke stuurgegevens element. In het voorbeeld het 'stuurgegevens' element direct in 'bagIN_Lk03'. Daarin krijgt het element `functie` een specifieke op het bericht van toepassing zijnde waarde zoalls in het voorbeeld de waarde 'bagIN'.
+* Een op het betreffende Lk03 of Lk04 bericht toegesneden specifieke stuurgegevens element. In het voorbeeld het 'stuurgegevens' element direct in 'bagIN_Lk03'. Daarin krijgt het element `functie` een specifieke op het bericht van toepassing zijnde waarde zoals in het voorbeeld de waarde 'bagIN'.
 * Gevolgd door twee of meer op het betreffende Lk03 of Lk04 bericht toegesneden specifieke enkelvoudige kennisgevingen (Lk03 berichten bevatten Lk01 berichten en Lk04 berichten bevatten Lk02 berichten). In het voorbeeld vertegenwoordigd door de elementen 'aoaLk01', 'ligStaLk01' en 'vboLk01'. Dit zijn complete enkelvoudige kennisgevingberichten dus zoals je in het voorbeeld ziet incl. stuurgegevens en parameters. De complexTypes die in samengestelde berichten gebruikt worden voor de specifieke enkelvoudige berichten zijn gebaseerd op complexTypes die gebruikt worden in de generieke enkelvoudige kennisgevingen.
 
 <img width="730" alt="Structuur samengestelde mutaties complexTypes" src="/Leerlijnen-KCA/images/Structuur-samengestelde-mutaties.jpg" />
@@ -272,14 +272,41 @@ Synchronisatieberichten maken deels gebruik van de complexTypes voor kennisgevin
 
 ***Berichtstructuur***
 
-We onderkennen
-!!!!!!!!!!!!!!!!!!!!!!Aanvullen!!!!!!!!!!!!!!!!!!!!!
+We beperken ons in deze paragraaf tot het schetsen van de top-level structuur van de syndchronisatieberichten. 
+
+We onderkennen een achttal verschillende soorten synchronisatie berichten:
+* Sa01 en Sa02;
+* Sa03 en Sa04;
+* Sh01 en Sh02;
+* Sh03 en Sh04.
+
+De eerste twee zijn synchronisatieberichten voor actuele gegevens. Een verzoek voor het verzenden daarvan kan verstuurd worden met een Sa03 of een Sa04.
+Het Sh01 en Sh02 bericht zijn synchronisatieberichten voor actuele en historische gegevens. Met een Sh03 en een Sh04 kan een verzoek voor het verzenden daarvan worden gedaan.
+
+Hieronder zie van alle paren één variant m.b.t. het HHD objecttype:
+
+<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSa01.jpg" />
+
+<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSa03.jpg" />
+
+<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSh01.jpg" />
+
+<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSh03.jpg" />
+
+Een Sa01/Sa02 bericht bevat een toevoeg kennisgeving en het complexType van het 'object' element is over het algemeen een 'XXX-kennisgeving' maar kan ook een een restriction daarop zijn.
+Het 'object' element in een Sa03/Sa04 bericht heeft een XXX-kerngegevens complexType tenzij er geen kerngegevens zijn. In dat geval is het een XXX-kennisgeving.
+
+Het Sh01/Sh02 bericht is wat complexer. 
+* Deze bevat direct na het stuurgegevens element eerst een 'actueel' element met daarin een toevoegkennisgevingbericht voor het synchroniseren van actuele gegevens. Dit 'actueel' element is gelijk aan de inhoud van het gerelateerde Sa01 of Sa02 bericht;
+* Daarna een 'historie' element met daarin een toevoegkennisgevingbericht voor het synchroniseren van de oudste historische bekende gegevens gevolgd door een wijzigkennisgevingbericht voor het synchroniseren van de wijzigingen daarop. Het element 'historie' is daarin optioneel omdat niet alle objecten al historie opgebouwd hoeven te hebben;
+* De 'object' elementen in dit bericht gebruiken allemaal dezelfde complexType;
+* Het 'actueel' en 'ouste' element in dit bericht gebruiken eveneens beiden dezelfde complexType.
 
 **Opdracht**
 
 Bestudeer de XML-Schema's in de folder 'bg0310/mutaties' en probeer de in deze paragraaf beschreven principes terug te vinden in andere entiteiten dan 'HHD'.
 
-## _XML-Schema's in 'vraagAntwoord'_
+### _XML-Schema's in 'vraagAntwoord'_
 
 Tenslotte gaan we nog in de 'vraagAntwoord' berichten. Ook hier liggen een aantal principes ten grondslag aan de vorm van de complexTypes en elementen die we gebruiken om die vraagAntwoordberichten vorm te geven.
 
@@ -290,7 +317,7 @@ Deze folder bevat de volgende schema's:
 
 **VraagAntwoordberichten**
 
-**bg0310_msg_vraagAntwoord.xsd**
+***bg0310_msg_vraagAntwoord.xsd***
 
 Dit XML-Schema bevat de elementen die de StUF-BG 3.10 vraag- en antwoordberichten vertegenwoordigen en de group definities met de vraagbodies.
 
@@ -309,7 +336,7 @@ Een antwoordbericht kent daarnaast nog een optioneel `melding` element waarmee d
 
 Voor de payload van het bericht wordt hier gebruik gemaakt van een elders in dit schema gedefinieerde group. Elk group component kent dezelfde vorm die je in de illustratie van het 'hhdLv01' bericht terugziet (`gelijk`, `vanaf`, `totEnMet`, `scope` en `start`).
 
-**bg0310_ent_vraagAntwoord.xsd**
+***bg0310_ent_vraagAntwoord.xsd***
 
 Dit XML-Schema kan de volgende complexTypes per entiteittype bevatten:
 
@@ -357,7 +384,7 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 <img width="850" alt="Voorbeeldstructuur HHD vraagAntwoord complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-vraagAntwoord.jpg" />
 
-**bg0310_msg_stuf_vraagAntwoord.xsd**
+***bg0310_msg_stuf_vraagAntwoord.xsd***
 
 In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit het 'stuf0301.xsd' XML-Schema verder aangescherpt voor gebruik in de vraag- en antwoordberichten. Dat aanscherpen betreft:
 * de parameters voor synchrone danwel asynchrone berichttypes (met of zonder voorzieningen voor formele- en materiële historie). 
