@@ -238,6 +238,8 @@ Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tuss
 
 <img width="600" alt="Structuur mutaties complexTypes" src="/Leerlijnen-KCA/images/Structuur-mutaties.jpg" />
 
+*In enkele gevallen kan de naamgeving afwijken.
+
 In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 <img width="750" alt="Voorbeeldstructuur HHD mutaties complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-mutaties.jpg" />
@@ -246,10 +248,27 @@ In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
 In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit het 'stuf0301.xsd' XML-Schema verder aangescherpt voor gebruik in de kennisgevingberichten. Dat aanscherpen betreft eigenlijk niet meer dan het beperken van de waarde van het XML attribute `StUF:entiteittype` binnen de `Stuurgegevens` complexTypes zodat die niet conflicteert met het entiteittype waar het bericht betrekking op heeft.
 
+**Samengestelde kennisgevingberichten**
+
+We kennen een tweetal samengestelde kennisgevingen, Lk03 en Lk04 berichten. Deze bevatten:
+* Een op het betreffende Lk03 of Lk04 bericht toegesneden specifieke stuurgegevens element wat betekent dat het element `functie` daarin een specifieke op het bericht van toepassing zijnde waarde heeft gekregen.
+* Gevolgd door twee of meer op het betreffende Lk03 of Lk04 bericht toegesneden specifieke enkelvoudige kennisgevingen (Lk03 berichten bevatten Lk01 berichten en Lk04 berichten bevatten Lk02 berichten). Complete enkelvoudige kennisgevingberichten dus incl. stuurgegevens. De complexTypes die in samengestelde berichten gebruikt worden voor de specifieke enkelvoudige berichten zijn gebaseerd op complexTypes die gebruikt worden in de generieke enkelvoudige kennisgevingen.
+
+<img width="600" alt="Structuur mutaties complexTypes" src="/Leerlijnen-KCA/images/Structuur-samengestelde-mutaties.jpg" />
+
+*In enkele gevallen kan de naamgeving afwijken.
+
+Hieronder een voorbeeld uit het 'ligStaLk01' bericht binnen het samengestelde kennisgevingbericht 'bagIN_Lk03':
+
+<img width="750" alt="Voorbeeldstructuur HHD mutaties complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-samengestelde-mutaties.jpg" />
+
 **Synchronisatieberichten**
 
-Synchronisatieberichten maken deels gebruik van de complexTypes voor kennisgevingsberichten
+Synchronisatieberichten maken deels gebruik van de complexTypes voor kennisgevingsberichten. We verkennen in de onderstaande paragrafen de schemastructuren voor dat soort berichten waarbij we eerst kijken naar de berichtstructuur van de verschillende synchronisatieberichten en daarna zullen inzoomen op de payload van die berichten.
 
+***Berichtstructuur***
+
+We onderkennen
 !!!!!!!!!!!!!!!!!!!!!!Aanvullen!!!!!!!!!!!!!!!!!!!!!
 
 **Opdracht**
@@ -327,6 +346,8 @@ In de topfundamenteel, een relatie element of een `gerelateerde` element binnen 
 Hieronder hebben we nog even de relaties op hoofdlijnen en in generieke zin tussen de diverse complexTypes binnen de XML-Schema's in de 'vraagAntwoord' folder gevisualiseerd. Daarin zijn ook de afleidingen van de basis entiteiten meegenomen.
 
 <img width="750" alt="Structuur vraagAntwoord complexTypes" src="/Leerlijnen-KCA/images/Structuur-vraagAntwoord.jpg" />
+
+*In enkele gevallen kan de naamgeving afwijken.
 
 In het geval van 'Huishouden' (HHD) ziet dat er dan als volgt uit:
 
