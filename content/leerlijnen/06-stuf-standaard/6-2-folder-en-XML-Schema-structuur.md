@@ -283,24 +283,27 @@ We onderkennen een achttal verschillende soorten synchronisatie berichten:
 De eerste twee zijn synchronisatieberichten voor actuele gegevens. Een verzoek voor het verzenden daarvan kan verstuurd worden met een Sa03 of een Sa04.
 Het Sh01 en Sh02 bericht zijn synchronisatieberichten voor actuele en historische gegevens. Met een Sh03 en een Sh04 kan een verzoek voor het verzenden daarvan worden gedaan.
 
-Hieronder zie van alle paren één variant m.b.t. het HHD objecttype:
+Hieronder zie van alle paren één variant m.b.t. het HHD objecttype en daarbij in het kort een omschrijving van de opbouw:
 
-<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSa01.jpg" />
+<img width="550" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSa01.jpg" />
 
-<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSa03.jpg" />
+Een Sa01/Sa02 bericht bevat een toevoegkennisgeving en het complexType van het 'object' element is over het algemeen een 'XXX-kennisgeving' maar kan ook een een restriction daarop zijn.
 
-<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSh01.jpg" />
+<img width="550" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSa03.jpg" />
 
-<img width="750" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSh03.jpg" />
+Het 'object' element in een Sa03/Sa04 bericht heeft een 'XXX-kerngegevens' complexType tenzij er geen kerngegevens zijn. In dat geval is het een 'XXX-kennisgeving' complexType.
 
-Een Sa01/Sa02 bericht bevat een toevoeg kennisgeving en het complexType van het 'object' element is over het algemeen een 'XXX-kennisgeving' maar kan ook een een restriction daarop zijn.
-Het 'object' element in een Sa03/Sa04 bericht heeft een XXX-kerngegevens complexType tenzij er geen kerngegevens zijn. In dat geval is het een XXX-kennisgeving.
+<img width="550" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSh01.jpg" />
 
 Het Sh01/Sh02 bericht is wat complexer. 
 * Deze bevat direct na het stuurgegevens element eerst een 'actueel' element met daarin een toevoegkennisgevingbericht voor het synchroniseren van actuele gegevens. Dit 'actueel' element is gelijk aan de inhoud van het gerelateerde Sa01 of Sa02 bericht;
 * Daarna een 'historie' element met daarin een toevoegkennisgevingbericht voor het synchroniseren van de oudste historische bekende gegevens gevolgd door een wijzigkennisgevingbericht voor het synchroniseren van de wijzigingen daarop. Het element 'historie' is daarin optioneel omdat niet alle objecten al historie opgebouwd hoeven te hebben;
 * De 'object' elementen in dit bericht gebruiken allemaal dezelfde complexType;
 * Het 'actueel' en 'ouste' element in dit bericht gebruiken eveneens beiden dezelfde complexType.
+
+<img width="550" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/hhdSh03.jpg" />
+
+Ook in een Sa03/Sa04 bericht heeft het 'object' element een 'XXX-kerngegevens' complexType tenzij er geen kerngegevens zijn. In dat geval is het een 'XXX-kennisgeving' complexType.
 
 **Opdracht**
 
