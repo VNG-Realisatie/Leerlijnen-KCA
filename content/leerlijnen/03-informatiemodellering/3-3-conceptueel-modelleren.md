@@ -57,6 +57,18 @@ Attribuutsoort: Geboortedatum
 - Cardinaliteit: [1..1] (verplicht, enkelvoudig)
 ```
 
+#### Referentielijsten en enumeraties
+<!-- Deze paragraaf is toegevoegd n.a.v. https://github.com/VNG-Realisatie/Actualisering-RSGB/issues/78 -->
+
+ Bij het bepalen van de mogelijke waarden van een attribuutsoort is er een beperkt aantal waarden dat ingevuld mag worden. Dat is altijd een (domein-)specifieke businessregel.
+ Er zijn twee manieren om dergelijke waardelijsten vorm te geven.
+
+Het bereik van die waarden kan statisch of dynamisch zijn. Vuistregel is dat een statisch bereik in een enumeratie wordt weergegeven en een dynamisch bereik in een referentielijst wordt weergegeven.
+
+Of een bereik statisch of dynamisch wordt gemodelleerd is een modelleer vraagstuk.
+In ieder geval is het verstandig om bij bereiken die door andere partijen worden bepaald een referentielijst te gebruiken omdat je zelf geen invloed hebt in de mate van dynamiek van het bereik.
+
+
 #### Relaties
 Verbanden tussen objecttypen:
 
