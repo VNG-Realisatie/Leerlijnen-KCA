@@ -1,7 +1,7 @@
 ---
 title: "10.4 Nieuwe ideeën uitdragen"
 date: 2026-05-13
-weight: 104
+weight: 1004
 leerlijn: 10
 paragraaf: "10.4"
 parent: "Stakeholdermanagement en communicatie"

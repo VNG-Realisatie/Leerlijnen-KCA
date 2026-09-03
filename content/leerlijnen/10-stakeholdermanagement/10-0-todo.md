@@ -1,7 +1,7 @@
 ---
 title: "10.0 Todo voor stakeholdermanagement"
 date: 2026-05-13
-weight: 100
+weight: 1000
 leerlijn: 10
 paragraaf: "10.0"
 parent: "Stakeholdermanagement en communicatie"

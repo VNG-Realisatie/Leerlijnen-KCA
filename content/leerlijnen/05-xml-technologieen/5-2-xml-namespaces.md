@@ -1,7 +1,7 @@
 ---
 title: "5.2 XML-namespaces"
 date: 2026-05-13
-weight: 52
+weight: 502
 leerlijn: 5
 paragraaf: "5.2"
 parent: "XSD, XML en gerelateerde technologieën"

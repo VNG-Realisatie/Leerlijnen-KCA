@@ -1,7 +1,7 @@
 ---
 title: "11.7 Transitie StUF naar API's"
 date: 2026-05-13
-weight: 117
+weight: 1107
 leerlijn: 11
 paragraaf: "11.7"
 parent: "API-technologie en moderne koppelvlakken"

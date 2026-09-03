@@ -1,7 +1,7 @@
 ---
 title: "8.1 Sparx Enterprise Architect"
 date: 2026-05-13
-weight: 81
+weight: 801
 leerlijn: 8
 paragraaf: "8.1"
 parent: "Modelleer-tooling"

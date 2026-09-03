@@ -1,7 +1,7 @@
 ---
 title: "1.3 Relevante ontwikkelingen"
 date: 2026-06-09
-weight: 13
+weight: 103
 leerlijn: 1
 paragraaf: "1.3"
 leerdoel: "Inzicht krijgen in de relevante ontwikkelingen waarom die relevant zijn voor Kenniscentrum Architectuur"
