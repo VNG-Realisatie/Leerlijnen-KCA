@@ -250,17 +250,21 @@ In dit schema worden specifieke per berichttype gedefinieerde complexTypes uit h
 
 **Samengestelde kennisgevingberichten**
 
-We kennen een tweetal samengestelde kennisgevingen, Lk03 en Lk04 berichten. Deze bevatten:
-* Een op het betreffende Lk03 of Lk04 bericht toegesneden specifieke stuurgegevens element wat betekent dat het element `functie` daarin een specifieke op het bericht van toepassing zijnde waarde heeft gekregen.
-* Gevolgd door twee of meer op het betreffende Lk03 of Lk04 bericht toegesneden specifieke enkelvoudige kennisgevingen (Lk03 berichten bevatten Lk01 berichten en Lk04 berichten bevatten Lk02 berichten). Complete enkelvoudige kennisgevingberichten dus incl. stuurgegevens. De complexTypes die in samengestelde berichten gebruikt worden voor de specifieke enkelvoudige berichten zijn gebaseerd op complexTypes die gebruikt worden in de generieke enkelvoudige kennisgevingen.
+We kennen een tweetal samengestelde kennisgevingen, Lk03 en Lk04 berichten. Hier als voorbeeld het 'bagIN_Lk03' bericht:
 
-<img width="600" alt="Structuur mutaties complexTypes" src="/Leerlijnen-KCA/images/Structuur-samengestelde-mutaties.jpg" />
+<img width="600" alt="Voorbeeld: bagIN_Lk03 bericht" src="/Leerlijnen-KCA/images/bagIN_Lk03-Samengestelde-kennisgeving.jpg" />
+
+Samengestelde kennisgevingen bevatten:
+* Een op het betreffende Lk03 of Lk04 bericht toegesneden specifieke stuurgegevens element. In het voorbeeld het 'stuurgegevens' element direct in 'bagIN_Lk03'. Daarin krijgt het element `functie` een specifieke op het bericht van toepassing zijnde waarde zoalls in het voorbeeld de waarde 'bagIN'.
+* Gevolgd door twee of meer op het betreffende Lk03 of Lk04 bericht toegesneden specifieke enkelvoudige kennisgevingen (Lk03 berichten bevatten Lk01 berichten en Lk04 berichten bevatten Lk02 berichten). In het voorbeeld vertegenwoordigd door de elementen 'aoaLk01', 'ligStaLk01' en 'vboLk01'. Dit zijn complete enkelvoudige kennisgevingberichten dus zoals je in het voorbeeld ziet incl. stuurgegevens en parameters. De complexTypes die in samengestelde berichten gebruikt worden voor de specifieke enkelvoudige berichten zijn gebaseerd op complexTypes die gebruikt worden in de generieke enkelvoudige kennisgevingen.
+
+<img width="730" alt="Structuur samengestelde mutaties complexTypes" src="/Leerlijnen-KCA/images/Structuur-samengestelde-mutaties.jpg" />
 
 *In enkele gevallen kan de naamgeving afwijken.
 
 Hieronder een voorbeeld uit het 'ligStaLk01' bericht binnen het samengestelde kennisgevingbericht 'bagIN_Lk03':
 
-<img width="750" alt="Voorbeeldstructuur HHD mutaties complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-samengestelde-mutaties.jpg" />
+<img width="750" alt="Voorbeeldstructuur samengestelde mutaties complexTypes" src="/Leerlijnen-KCA/images/Voorbeeldstructuur-samengestelde-mutaties.jpg" />
 
 **Synchronisatieberichten**
 
