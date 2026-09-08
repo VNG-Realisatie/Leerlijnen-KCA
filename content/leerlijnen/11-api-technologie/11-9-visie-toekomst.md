@@ -1,7 +1,7 @@
 ---
 title: "11.9 Visie op de toekomst"
 date: 2026-05-13
-weight: 119
+weight: 1109
 leerlijn: 11
 paragraaf: "11.9"
 parent: "API-technologie en moderne koppelvlakken"

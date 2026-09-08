@@ -1,7 +1,7 @@
 ---
 title: "2.2 Standaarden binnen de GEMMA "
 date: 2026-06-29
-weight: 22
+weight: 202
 leerlijn: 2
 paragraaf: "2.2"
 parent: "GEMMA-architectuur"

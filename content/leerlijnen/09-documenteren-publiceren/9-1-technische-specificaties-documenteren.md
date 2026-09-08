@@ -1,7 +1,7 @@
 ---
 title: "9.1 Technische specificaties documenteren"
 date: 2026-05-13
-weight: 91
+weight: 901
 leerlijn: 9
 paragraaf: "9.1"
 parent: "Documenteren en publiceren"

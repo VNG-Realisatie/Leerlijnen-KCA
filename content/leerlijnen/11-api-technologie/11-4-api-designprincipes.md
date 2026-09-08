@@ -1,7 +1,7 @@
 ---
 title: "11.4 API-designprincipes"
 date: 2026-05-13
-weight: 114
+weight: 1104
 leerlijn: 11
 paragraaf: "11.4"
 parent: "API-technologie en moderne koppelvlakken"

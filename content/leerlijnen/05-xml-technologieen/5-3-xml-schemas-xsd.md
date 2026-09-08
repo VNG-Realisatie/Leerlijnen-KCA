@@ -1,7 +1,7 @@
 ---
 title: "5.3 XML-Schema's (XSD)"
 date: 2026-05-13
-weight: 53
+weight: 503
 leerlijn: 5
 paragraaf: "5.3"
 parent: "XSD, XML en gerelateerde technologieën"

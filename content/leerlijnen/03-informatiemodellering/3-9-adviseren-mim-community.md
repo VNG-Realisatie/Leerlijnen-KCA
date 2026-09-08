@@ -1,7 +1,7 @@
 ---
 title: "3.9 Adviseren aan MIM-community"
 date: 2026-03-04
-weight: 39
+weight: 309
 leerlijn: 3
 paragraaf: "3.9"
 parent: "Informatiemodellering"

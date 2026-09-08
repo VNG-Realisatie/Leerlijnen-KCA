@@ -1,99 +1,57 @@
 ---
 title: "6.4 Koppelvlakspecificaties"
-date: 2026-05-13
+date: 2026-08-06
 weight: 604
 leerlijn: 6
 paragraaf: "6.4"
 parent: "StUF-standaard"
-leerdoel: "Leerdoel nog toe te voegen"
+leerdoel: "De onderdelen van een StUF koppelvlak standaard kennen met alle documenten die daarbij hoort."
 ---
 
 ## 6.4 Koppelvlakspecificaties
 
-Kan StUF-koppelvlakspecificaties opstellen, lezen en beheren.
+Kan StUF-koppelvlakspecificaties lezen en beheren.
 
-### Wat zijn koppelvlakspecificaties?
+### Wat zijn StUF koppelvlakspecificaties?
 
-Een **koppelvlakspecificatie** is een document dat precies beschrijft hoe twee systemen met elkaar kunnen communiceren via StUF-berichten. Het definieert de berichten, scenario's, en business-regels die nodig zijn voor succesvolle gegevensuitwisseling.
+Een **StUF koppelvlakspecificatie** is een set van documenten die precies beschrijft hoe twee systemen met elkaar kunnen communiceren via StUF-berichten. Het definieert de berichten, scenario's en business-regels die nodig zijn voor succesvolle gegevensuitwisseling. een StUF koppelvlak specificeert hoe de gegevensuitwisseling tussen applicaties en voorzieningen eruit moet zien. Het legt concrete afspraken vast waarmee specifieke gegevens kunnen worden gecommuniceerd. Afspraken over specifieke berichten die tussen bepaalde referentiecomponenten uitgewisseld moeten en/of kunnen worden, afspraken over aanscherping van de berichten uit een StUF sectormodel en afspraken over de wijze waarop die berichten verstuurd moeten worden. In een StUF koppelvlakspecificatie is ook altijd aangegeven op welke referentiecomponenten de specificatie van toepassing is. Een StUF sectormodel is wat dat betreft minder restrictief en laat meer ruimte open voor eigen interpretatie.
 
-#### Componenten van een koppelvlakspecificatie:
+Een aantal bekende StUF koppelvlakken zijn:
+* <a href="https://vng-realisatie.github.io/Zaak-en-Documentservices/" target="_blank">Zaak- en Documentservices</a>
+* <a href="https://vng-realisatie.github.io/Documentcreatieservices/Documentatie" target="_blank">Documentcreatieservices</a>
+* en <a href="https://vng-realisatie.github.io/StUF-Jeugdzorg/" target="_blank">StUF Jeugdzorg</a>
 
-- **Functionele specificatie**: Wat wordt uitgewisseld en waarom
-- **Technische specificatie**: Hoe wordt het uitgewisseld
-- **Berichtcatalogus**: Welke berichten zijn beschikbaar
-- **Scenario's**: Workflows en use cases
-- **Schema's**: XML-schema definities
-- **Implementatie-voorbeelden**: Concrete berichten
+#### Componenten van een StUF koppelvlakspecificatie
 
-### Structuur van een koppelvlakspecificatie
+De set van documenten van een StUF koppelvlakspecificatie bestaat minimaal uit een **functionele en technische specificatie** en een **berichtcatalogus**. In de eerste staat beschreven wat, waarom en hoe precies wordt uitgewisseld. Denk daarbij ook aan beveiliging en autorisatie. Over het algemeen is dit beschreven in een Word bestand dat wordt gepubliceerd m.b.v. een pdf. Het tweede bestaat uit een set van XML-Schema bestanden die soms gebaseerd zijn op een sectormodel en in dat geval een aanscherping op de berichten in het StUF sectormodel bevatten. Vaak ziet men dat in een koppelvlak ook vrije berichten worden gedefinieerd ten einde tegemoet te kunnen komen aan specifieke wensen m.b.t. de uit te wisselen gegevens.
 
-```mermaid
-graph TB
-    A[Koppelvlakspecificatie] --> B[Functionele Specificatie]
-    A --> C[Technische Specificatie]
-    A --> D[Berichtcatalogus]
-    A --> E[XML Schema's]
-    A --> F[Voorbeeldberichten]
-    
-    B --> B1[Use Cases]
-    B --> B2[Business Rules]
-    B --> B3[Autorisaties]
-    
-    C --> C1[Protocol-binding]
-    C --> C2[Error Handling]
-    C --> C3[Security]
-    
-    D --> D1[Request Messages]
-    D --> D2[Response Messages]
-    D --> D3[Notification Messages]
-    
-    E --> E1[Message Schemas]
-    E --> E2[Data Type Definitions]
-    E --> E3[Validation Rules]
-    
-    F --> F1[Successful Scenarios]
-    F --> F2[Error Scenarios]
-    F --> F3[Edge Cases]
-```
+Optioneel kan een StUF koppelvlakspecificatie ook nog **scenario beschrijvingen** bevatten. Workflows (zowel de happy als de unhappy) en use cases welke bijv. beschreven zijn m.b.v. een Excel spreadsheet. Tenslotte kunnen ook nog **implementatie-voorbeelden** van concrete berichten zijn toegevoegd.
 
-### StUF-BG Koppelvlakspecificatie
+Het opstellen van een koppelvlakspecificatie start altijd vanuit een specifieke behoefte van de business en vindt zijn basis in een informatiemodel, bijv. het RSGB, RGBZ, een ander, niet door VNG Realisatie beheerd, model of een specifiek voor het koppelvlak opgesteld model.
 
-#### Basisgegevens koppelvlak
+### Functionele en technische specificatie
 
-**StUF-BG specificatie componenten:**
+In een functionele en technische specificatie kan je o.a. de volgende onderdelen tegenkomen:
+* Functionaliteit op hoofdlijnen
+* Architectuur
+* Specificatie per bericht/service
+* Foutafhandeling
+* informatiemodel
+* VerStUFfing
+* Beveiliging en autorisatie
+* Protocolbinding
+* Foutafhandeling
 
-```yaml
-stuf_bg_specificatie:
-  naam: "StUF-BG 3.10"
-  versie: "3.10.00"
-  publicatiedatum: "2011-11-01"
-  
-  doelgroep:
-    - "BRP/GBA leveranciers"
-    - "Gemeente ICT-afdelingen"  
-    - "Zaaksysteem leveranciers"
-    
-  scope:
-    - "Natuurlijke personen (NPS)"
-    - "Niet-natuurlijke personen (NNP)"
-    - "Vestigingen (VES)"
-    - "Adressen (AOA)"
-    - "Nummeraanduidingen (NAG)"
-    
-  berichten:
-    vraag_antwoord:
-      - "Lv01/La01 - Vraag/Antwoord"
-      - "Lv02/La02 - Detail vraag/antwoord"
-    kennisgevingen:
-      - "Lk01 - Objectkennisgeving"
-      - "Lk02 - Beëindiging abonnement"
-    synchronisatie:
-      - "Sv01/Sa01 - Synchronisatie vraag/antwoord"
-      - "Sh01 - Historievraag"
-```
+Bij het opstellen van de StUF koppelvlakken zijn hierin eigen keuzes gemaakt.
 
-Het opstellen en beheren van StUF-koppelvlakspecificaties vereist grondige kennis van zowel de technische als functionele aspecten van gegevensuitwisseling. Een goede specificatie is de basis voor succesvolle systeemintegratie en interoperabiliteit binnen de overheid.
+Het beheren van StUF-koppelvlakspecificaties vereist grondige kennis van zowel de technische als functionele aspecten van gegevensuitwisseling. Een goede specificatie is de basis voor succesvolle systeemintegratie en interoperabiliteit binnen de overheid.
+
+### Vrij berichttype
+
+Een StUF koppelvlakspecicatie is DE plaats waar je een StUF vrij bericht tegen kunt komen.
+
+!!!!!!!!!!!!!!!!!!!!!!Aanvullen!!!!!!!!!!!!!!!!!!!!!
 
 **Resources:**
+- [StUF Sectormodellen en koppelvlakken](https://standaarden.vng.nl/StUF-koppelvlakken-en-sectormodellen)
 - [StUF Testplatform](https://www.stuftest.nl/)
-- [GEMMA Koppelvlakspecificaties](https://www.gemmaonline.nl/)

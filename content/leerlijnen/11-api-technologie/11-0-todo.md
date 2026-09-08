@@ -1,7 +1,7 @@
 ---
 title: "11.0 Todo voor API-technologie"
 date: 2026-05-13
-weight: 110
+weight: 1100
 leerlijn: 11
 paragraaf: "11.0"
 parent: "API-technologie en moderne koppelvlakken"

@@ -1,7 +1,7 @@
 ---
 title: "3.1 Ervaring als informatiemodelleur"
 date: 2026-03-04
-weight: 31
+weight: 301
 leerlijn: 3
 paragraaf: "3.1"
 parent: "Informatiemodellering"

@@ -1,7 +1,7 @@
 ---
 title: "10.2 Afstemmen met architecten en adviseurs"
 date: 2026-05-13
-weight: 102
+weight: 1002
 leerlijn: 10
 paragraaf: "10.2"
 parent: "Stakeholdermanagement en communicatie"

@@ -1,7 +1,7 @@
 ---
 title: "10.7 Stakeholders ondersteunen"
 date: 2026-05-13
-weight: 107
+weight: 1007
 leerlijn: 10
 paragraaf: "10.7"
 parent: "Stakeholdermanagement en communicatie"
