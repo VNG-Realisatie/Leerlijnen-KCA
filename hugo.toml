@@ -47,10 +47,6 @@ theme = "PaperMod"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Archief"
-    url = "/archief/"
-    weight = 3
-  [[menu.main]]
     name = "GitHub"
     url = "https://github.com/VNG-Realisatie/Leerlijnen-KCA"
     weight = 10
